@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-
+use App\Models\Package;
 
 class AdminController extends Controller
 {
@@ -55,5 +55,20 @@ class AdminController extends Controller
     public function dashboard()
     {
         return view('admin.index');
+    }
+
+    public function delete($type, $id)
+    {
+        if ($type === "package") {
+            $area = Package::findOrFail($id);
+            $area->delete();
+            return redirect()->back()->with('success_message', "Package delete succesfully");
+        }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('admin/login');
     }
 }
