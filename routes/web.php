@@ -21,5 +21,11 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
     Route::match(['get', 'post'], 'login', 'AdminController@login');
     Route::middleware(['admin'])->group(function () {
         Route::get('dashboard', 'AdminController@dashboard');
+
+        //packages
+        Route::get('packages', 'PackageController@packages');
+        Route::match(['get', 'post'], 'add-edit-package/{id?}', 'PackageController@addEditPackage')->name('admin.addEditPackage');
+
+        Route::match(array('get', 'post'), 'delete/{type}/{id}', [AdminController::class, 'delete'])->name('admin.delete');
     });
 });
