@@ -30,19 +30,15 @@
   </div>
 
   <!-- Search Bar -->
-  <div class="row mb-3">
-    <div class="col-12">
-      <div class="p-4">
-        <input type="text" placeholder="Start typing to search for Inquiries"
-          class="form-control form-control--search mx-auto" id="table-search" />
-      </div>
-    </div>
-  </div>
+ 
 
   <!-- Inquiries Table -->
   <div class="row">
     <div class="col-lg-12">
       <div class="card">
+      <div class="p-4">
+          <input type="text" placeholder="Start typing to search for Shop Owners" class="form-control form-control--search mx-auto" id="table-search" />
+        </div>
         <div class="sa-divider"></div>
         <table class="sa-datatables-init" data-order="[[ 0, &quot;desc&quot; ]]" data-sa-search-input="#table-search">
           <thead>
@@ -63,12 +59,12 @@
               <td>{{ $inquiry->phone }}</td>
               <td>{{ $inquiry->message }}</td>
               <td>
-                @if ($inquiry->status == 'pending')
-                <span class="badge bg-warning">Pending</span>
+                @if ($inquiry->status == 'in_progress')
+                <span class="badge bg-warning">In Progress</span>
                 @elseif ($inquiry->status == 'resolved')
                 <span class="badge bg-success">Resolved</span>
                 @else
-                <span class="badge bg-danger">Closed</span>
+                <span class="badge bg-info">New</span>
                 @endif
               </td>
               <td>

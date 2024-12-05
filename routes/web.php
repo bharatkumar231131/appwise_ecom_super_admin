@@ -30,7 +30,24 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::match(array('get', 'post'), 'delete/{type}/{id}', [AdminController::class, 'delete'])->name('admin.delete');
         Route::get('inquiries', 'InquiryController@index');
         Route::any('inquiry_details/{id}', 'InquiryController@InquiryDetails')->name('admin.returnOrderDetail');
+<<<<<<< HEAD
         Route::get('shop-owners', 'ShopOwnerController@index');
         Route::match(['get', 'post'], 'shop-owners/{id?}', 'ShopOwnerController@createOrEdit');
+=======
+
+        Route::get('shop-owners', 'ShopOwnerController@index');
+        Route::match(['get', 'post'], 'shop-owners/{id?}', 'ShopOwnerController@createOrEdit');
+
+        Route::get('shop-owners', 'ShopOwnerController@index')->name('admin.shopOwners');
+        Route::match(['get', 'post'], 'add-edit-shop-owner/{id?}', 'ShopOwnerController@addEditShopOwner')->name('admin.addEditShopOwner');
+        Route::delete('delete-shop-owner/{id}', 'ShopOwnerController@deleteShopOwner')->name('admin.deleteShopOwner');
+
+        Route::match(['get', 'post'], 'admin-details', 'AdminController@adminDetails');
+        Route::match(['get', 'post'], 'update-admin-detail', 'AdminController@updateAdminDetails');
+        Route::match(['get', 'post'], 'admin-profile', 'AdminController@adminprofile');
+
+       
+
+>>>>>>> 68a5db711764f4291de061410e0100204bd92046
     });
 });

@@ -130,15 +130,15 @@ ons__item-icon">
           <img src="https://123ecommerce.co.za/public/admin/images/photos/ahmed.jpg" width="64" height="64"
             alt=""></span>
         <span class="sa-toolbar-user__info">
-          <span class="sa-toolbar-user__title">Admin Panel</span>
-          <span class="sa-toolbar-user__subtitle">admin@gmail.com</span>
+          <span class="sa-toolbar-user__title">{{ Auth::user()->name }}</span>
+          <span class="sa-toolbar-user__subtitle">{{ Auth::user()->email }}</span>
         </span>
       </button>
       <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="#">Profile</a>
+        <li><a class="dropdown-item" href="{{ url('admin/admin-profile') }}">Profile</a>
         </li>
 
-        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="{{ url('admin/admin-details') }}">Settings</a></li>
         <li>
           <hr class="dropdown-divider">
         </li>

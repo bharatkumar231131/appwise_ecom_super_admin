@@ -92,7 +92,7 @@
                               viewBox="0 0 24 24">
                               <path
                                 d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l7.45 3.72-2.92 1.47L12 6.04 7.47 7.37 4.55 5.9 12 4.18zM4 9.6v7.91l8 4 8-4V9.6l-8 4-8-4zm8 2.36l4.7 2.36-4.7 2.35-4.7-2.35 4.7-2.36z" />
-                            </svg></span><span class="sa-nav__title">Shop-Owner
+                            </svg></span><span class="sa-nav__title">ShopOwner
                             Management</span><span class="sa-nav__arrow"><svg xmlns="http://www.w3.org/2000/svg"
                               width="6" height="9" viewBox="0 0 6 9" fill="currentColor">
                               <path
@@ -102,7 +102,7 @@
                         <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
                           <li class="sa-nav__menu-item">
                             <a href="{{ url('admin/shop-owners') }}" class="sa-nav__link"><span
-                                class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Shop-Owner</span></a>
+                                class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">ShopOwner</span></a>
                           </li>
                         </ul>
                       </li>
