@@ -137,7 +137,8 @@ class AdminController extends Controller
 
 
 public function adminprofile(){
-    return 'hell0';
+    $users = User::all();
+    return view('admin.setting.admin_profile' , compact('users'));
 }
 
 

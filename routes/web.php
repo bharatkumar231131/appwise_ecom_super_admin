@@ -40,7 +40,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
         Route::match(['get', 'post'], 'admin-details', 'AdminController@adminDetails');
         Route::match(['get', 'post'], 'update-admin-detail', 'AdminController@updateAdminDetails');
-        Route::match(['get', 'post'], ' admin-profile', 'AdminController@adminprofile');
+        Route::match(['get', 'post'], 'admin-profile', 'AdminController@adminprofile');
 
        
 
