@@ -29,22 +29,9 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
         Route::match(array('get', 'post'), 'delete/{type}/{id}', [AdminController::class, 'delete'])->name('admin.delete');
         Route::get('inquiries', 'InquiryController@index');
+        Route::any('inquiry_details/{id}', 'InquiryController@InquiryDetails')->name('admin.returnOrderDetail');
+
         Route::get('shop-owners', 'ShopOwnerController@index');
         Route::match(['get', 'post'], 'shop-owners/{id?}', 'ShopOwnerController@createOrEdit');
-
-
-
     });
 });
-
-
-// // Display the list of all shop owners
-// Route::get('shop-owners', [ShopOwnerController::class, 'index'])->name('shop_owners.index');
-
-// // Show the form to create or edit a shop owner
-
-// // Store or update the shop owner
-// Route::post('shop-owners/{id?}', [ShopOwnerController::class, 'storeOrUpdate'])->name('shop_owners.storeOrUpdate');
-
-// // Delete the shop owner
-// Route::delete('shop-owners/{id}', [ShopOwnerController::class, 'destroy'])->name('shop_owners.destroy');
