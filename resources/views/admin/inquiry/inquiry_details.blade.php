@@ -66,6 +66,14 @@
               <dt class="col-sm-4">Mobile:</dt>
               <dd class="col-sm-8 text-muted">{{$inquiry_detail['phone'] ?? "N/A" }}</dd>
             </div>
+            <div class="row mb-3">
+              <dt class="col-sm-4">Message:</dt>
+              <dd class="col-sm-8 text-muted">{{$inquiry_detail['message'] ?? "N/A" }}</dd>
+            </div>
+            <div class="row mb-3">
+              <dt class="col-sm-4">Status:</dt>
+              <dd class="col-sm-8 text-muted">{{$inquiry_detail['status'] ?? "N/A" }}</dd>
+            </div>
 
           </div>
         </div>

@@ -33,5 +33,16 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
         Route::get('shop-owners', 'ShopOwnerController@index');
         Route::match(['get', 'post'], 'shop-owners/{id?}', 'ShopOwnerController@createOrEdit');
+
+        Route::get('shop-owners', 'ShopOwnerController@index')->name('admin.shopOwners');
+        Route::match(['get', 'post'], 'add-edit-shop-owner/{id?}', 'ShopOwnerController@addEditShopOwner')->name('admin.addEditShopOwner');
+        Route::delete('delete-shop-owner/{id}', 'ShopOwnerController@deleteShopOwner')->name('admin.deleteShopOwner');
+
+        Route::match(['get', 'post'], 'admin-details', 'AdminController@adminDetails');
+        Route::match(['get', 'post'], 'update-admin-detail', 'AdminController@updateAdminDetails');
+        Route::match(['get', 'post'], ' admin-profile', 'AdminController@adminprofile');
+
+       
+
     });
 });

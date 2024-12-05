@@ -50,6 +50,8 @@
               <th>Number Of Category</th>
               <th>Number Of Product</th>
               <th>Price</th>
+              <th>Days</th>
+              <th>Status</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -63,6 +65,17 @@
               <td>{{ $package['number_of_category'] ?? "N/A"}}</td>
               <td>{{ $package['number_of_product'] ?? "N/A"}}</td>
               <td>{{ $package['price'] ?? "N/A"}}</td>
+              <td>{{ $package['days'] ?? "N/A"}}</td>
+              <td>
+                @if($package['status'] == 'Active')
+                <span class="badge bg-success">Active</span>
+                @elseif($package['status'] == 'Inactive')
+                <span class="badge bg-danger">Inactive</span>
+                @else
+                <span class="badge bg-secondary">N/A</span>
+                @endif
+              </td>
+
               <td>
                 <div class="d-flex gap-3">
                   <a href="{{ url('admin/add-edit-package/' . $package['id']) }}" class="actionbtn-tb actionbtn-edit"

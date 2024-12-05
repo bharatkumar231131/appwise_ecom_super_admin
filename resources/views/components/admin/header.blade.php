@@ -135,10 +135,10 @@ ons__item-icon">
         </span>
       </button>
       <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="#">Profile</a>
+        <li><a class="dropdown-item" href="{{ url('admin/admin-profile') }}">Profile</a>
         </li>
 
-        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="{{ url('admin/admin-details') }}">Settings</a></li>
         <li>
           <hr class="dropdown-divider">
         </li>

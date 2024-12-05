@@ -17,9 +17,10 @@ class ShopOwner extends Model
         'domain',
         'package_id',
         'status',
+        'start_date',
+        'end_date',
     ];
 
-    // Define the relationship with the Package model
     public function package()
     {
         return $this->belongsTo(Package::class);
