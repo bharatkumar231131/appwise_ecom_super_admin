@@ -30,5 +30,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::match(array('get', 'post'), 'delete/{type}/{id}', [AdminController::class, 'delete'])->name('admin.delete');
         Route::get('inquiries', 'InquiryController@index');
         Route::any('inquiry_details/{id}', 'InquiryController@InquiryDetails')->name('admin.returnOrderDetail');
+        Route::get('shop-owners', 'ShopOwnerController@index');
+        Route::match(['get', 'post'], 'shop-owners/{id?}', 'ShopOwnerController@createOrEdit');
     });
 });

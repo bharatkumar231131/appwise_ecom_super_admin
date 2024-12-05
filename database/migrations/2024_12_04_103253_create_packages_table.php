@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('number_of_category')->nullable();
             $table->integer('number_of_product')->nullable();
             $table->integer('price')->nullable();
+            $table->string('status')->default('Active');
             $table->timestamps();
             $table->softDeletes();
         });
