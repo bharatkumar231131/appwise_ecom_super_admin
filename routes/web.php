@@ -71,6 +71,12 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         // Route::post('/users', [UserController::class, 'store'])->name('users.store');
         Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
         Route::post('/users/{id}', [UserController::class, 'update'])->name('users.update');
+
+
+        Route::match(['get', 'post'], 'logo', 'AdminController@updateLogo')->name('logo');
+
+        
+
     });
 });
 

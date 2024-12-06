@@ -7,12 +7,10 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "intervention/image": "^2.7",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
-<<<<<<< HEAD
         "laravel/ui": "^4.6",
-=======
->>>>>>> fa50966ab30b6f24fcfea6ef937837b53e264a20
         "spatie/laravel-permission": "^6.10"
     },
     "require-dev": {
