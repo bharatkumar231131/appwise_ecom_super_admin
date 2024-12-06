@@ -6,9 +6,20 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Package;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 
-class PackageController extends Controller
+class PackageController extends Controller implements HasMiddleware
 {
+    public static function middleware(): array
+    {
+        return [
+            new Middleware('permission:view packages', only: ['index']),
+            new Middleware('permission:add edit package', only: ['addEditPackage']),
+            // new Middleware('permission:create role', only: ['create']),
+            // new Middleware('permission:delete users', only: ['destroy']),
+        ];
+    }
     //
     public function packages()
     {

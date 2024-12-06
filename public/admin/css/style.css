@@ -1524,6 +1524,25 @@ body {
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
+
+.eyebtn {
+  position: absolute;
+  cursor: pointer;
+  top: 35px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: 0;
+}
+
+.eyebtn i {
+  font-size: 20px;
+  line-height: normal;
+}
+
 [dir=ltr] .form-select {
   background-position: right var(--sa-input-padding-x) center;
   padding-right: calc(var(--sa-input-padding-x)*2 + 5px)
@@ -5804,6 +5823,24 @@ input:checked+.sa-color-checkbox__box {
   max-height: calc(100vh - 370px);
 }
 
+/* 
+.dataTables_wrapper .sa-datatables__table::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: transparent
+}
+
+.dataTables_wrapper .sa-datatables__table::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: transparent
+}
+
+.dataTables_wrapper .sa-datatables__table::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  box-shadow: #0000004d 0 0 6px inset;
+  background-color: transparent
+} */
+
 .sa-app {
   --sa-footer-visible-height: 0rem;
   --sa-sidebar-shown: 1;
@@ -9107,22 +9144,4 @@ input:checked+.sa-color-checkbox__box {
   height: 100%;
   width: 100%;
   object-fit: contain;
-}
-
-.eyebtn {
-  position: absolute;
-  cursor: pointer;
-  top: 35px;
-  right: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border: 0;
-  background: 0;
-}
-
-.eyebtn i {
-  font-size: 20px;
-  line-height: normal;
 }
