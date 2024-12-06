@@ -27,6 +27,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         //packages
         Route::get('packages', 'PackageController@packages');
         Route::match(['get', 'post'], 'add-edit-package/{id?}', 'packagecontroller@addeditpackage')->name('admin.addeditpackage');
+        Route::post('change-package-status', 'packagecontroller@changePackageStatus')->name('packages.status');
 
         Route::match(array('get', 'post'), 'delete/{type}/{id}', [AdminController::class, 'delete'])->name('admin.delete');
         Route::get('inquiries', 'InquiryController@index');
@@ -34,10 +35,11 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
         Route::get('shop-owners', 'ShopOwnerController@index');
         Route::match(['get', 'post'], 'shop-owners/{id?}', 'ShopOwnerController@createOrEdit');
+        Route::post('change-owner-status', 'ShopOwnerController@changeOwnerStatus')->name('owners.status');
 
         Route::get('shop-owners', 'shopownercontroller@index')->name('admin.shopOwners');
         Route::match(['get', 'post'], 'add-edit-shop-owner/{id?}', 'shopownercontroller@addeditshopowner')->name('admin.addEditShopOwner');
-        Route::delete('delete-shop-owner/{id}', 'shopownercontroller@deleteshopowner')->name('admin.deleteshopowner');
+        Route::delete('delete-shop-owner/{id}', 'shopownercontroller@deleteshopowner')->name('admin.deleteShopOwner');
 
         Route::match(['get', 'post'], 'admin-details', 'AdminController@adminDetails');
         Route::match(['get', 'post'], 'update-admin-detail', 'AdminController@updateAdminDetails');

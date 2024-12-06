@@ -87,4 +87,14 @@ class PackageController extends Controller implements HasMiddleware
 
         return view('admin.packages.add_edit_package')->with(compact('title', 'package'));
     }
+
+    public function changePackageStatus(Request $request)
+    {
+
+        Package::where('id', $request->package_id)->update([
+            "status" => $request->status
+        ]);
+
+        return response()->json(['success' => true]);
+    }
 }
