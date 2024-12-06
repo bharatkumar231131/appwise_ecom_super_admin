@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Models\Package;
+use App\Models\Setting;
 use App\Models\ShopOwner;
 use Carbon\Carbon;
 use PhpParser\Node\Stmt\Return_;
@@ -146,8 +147,11 @@ public function adminprofile(){
 
 public function updateLogo(Request $request)
 {
-    $admin_logo = Logo::select('image')->first();
-        $admin_logo = $admin_logo->image;
+    $admin_logo = Setting::first();
+        $admin_logo = $admin_logo->admin_logo;
+
+        $front_logo = Setting::first();
+        $front_logo = $front_logo->front_logo;
     // Check if any data is being posted (i.e., if there's any file uploaded)
     if ($request->isMethod('post') && $request->hasFile('admin_logo')) {
         // Validate the uploaded file
@@ -165,28 +169,66 @@ public function updateLogo(Request $request)
         $logo->move(public_path('admin/images/logo'), $imageName);
 
         // Get the existing logo (assuming only one record in the database)
-        $existingLogo = Logo::first(); 
+        $existingLogo = Setting::first(); 
 
         if ($existingLogo) {
             // If there's an existing logo, delete the old file from the server
-            if (file_exists(public_path('front/images/logo/' . $existingLogo->image))) {
-                unlink(public_path('front/images/logo/' . $existingLogo->image));
+            if (file_exists(public_path('admin/images/logo/' . $existingLogo->admin_logo))) {
+                unlink(public_path('admin/images/logo/' . $existingLogo->admin_logo));
             }
 
             // Update the existing logo in the database
-            $existingLogo->update(['image' => $imageName]);
+            $existingLogo->update(['admin_logo' => $imageName]);
+            return $existingLogo;
 
             // Return success message and redirect to the logo page
             return redirect()->route('logo')->with('success_message', 'Logo updated successfully!');
         } else {
             // If no logo exists, create a new record
-            Logo::create(['image' => $imageName]);
+            Setting::create(['admin_logo' => $imageName]);
 
             return redirect()->route('logo')->with('success_message', 'Logo uploaded successfully!');
         }
     }
 
-    return view('admin.setting.admin_logo', compact('admin_logo'));
+    if ($request->isMethod('post') && $request->hasFile('front_logo')) {
+        // Validate the uploaded file
+        $request->validate([
+            'front_logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        // Handle the uploaded file
+        $logo = $request->file('front_logo');
+        
+        // Generate a unique name for the image
+        $imageName =  time() . '.' . $logo->getClientOriginalExtension();
+        
+        // Move the image to the public directory
+        $logo->move(public_path('front/images/logo'), $imageName);
+
+        // Get the existing logo (assuming only one record in the database)
+        $existingLogo = Setting::first(); 
+
+        if ($existingLogo) {
+            // If there's an existing logo, delete the old file from the server
+            if (file_exists(public_path('front/images/logo/' . $existingLogo->front_logo))) {
+                unlink(public_path('front/images/logo/' . $existingLogo->front_logo));
+            }
+
+            // Update the existing logo in the database
+            $existingLogo->update(['front_logo' => $imageName]);
+
+            // Return success message and redirect to the logo page
+            return redirect()->route('logo')->with('success_message', 'Logo updated successfully!');
+        } else {
+            // If no logo exists, create a new record
+            Setting::create(['front_logo' => $imageName]);
+
+            return redirect()->route('logo')->with('success_message', 'Logo uploaded successfully!');
+        }
+    }
+
+    return view('admin.setting.admin_logo', compact('admin_logo' , 'front_logo'));
 }
 
 
