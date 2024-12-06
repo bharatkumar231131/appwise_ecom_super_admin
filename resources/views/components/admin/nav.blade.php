@@ -4,9 +4,9 @@
       <a class="sa-sidebar__logo" href="{{ url('admin/dashboard')}}">
         <div class="sa-sidebar-logo">
           <img src="https://123ecommerce.co.za/public/front/images/logo/41101.jpg" alt="">
-          <div class="sa-sidebar-logo__caption">
+          {{-- <div class="sa-sidebar-logo__caption">
             Super Admin
-          </div>
+          </div> --}}
         </div>
         <!-- logo / end -->
       </a>
