@@ -62,7 +62,7 @@
                 @if ($inquiry->status == 'in_progress')
                 <span class="badge bg-warning">In Progress</span>
                 @elseif ($inquiry->status == 'resolved')
-                <span class="badge bg-success">Resolved</span>
+                <span class="badge bg-success">Resolved</span>  
                 @else
                 <span class="badge bg-info">New</span>
                 @endif
