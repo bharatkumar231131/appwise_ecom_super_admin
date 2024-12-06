@@ -5,12 +5,14 @@
         <div class="py-5">
             <div class="row g-4 align-items-center">
                 <div class="col-12">
-                    <nav class="mb-2" aria-label="breadcrumb">
-                        <ol class="breadcrumb breadcrumb-sa-simple">
-                            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Inquiry Details</li>
-                        </ol>
-                    </nav>
+                <nav class="mb-2" aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-sa-simple">
+            <li class="breadcrumb-item"><a href="{{ url('admin/dashboard')}}">Dashboard</a></li>
+            <span>&nbsp;/&nbsp;</span>
+            <li class="breadcrumb-item active">Inquiry Details</li>
+          </ol>
+        </nav>
+                    
                     <h1 class="h3 m-0">Inquiry Details</h1>
                 </div>
                 <div class="col-12">

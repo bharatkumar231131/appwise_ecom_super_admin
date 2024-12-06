@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\InquiryController;
+use App\Http\Controllers\Admin\CmsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +43,14 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::match(['get', 'post'], 'update-admin-detail', 'AdminController@updateAdminDetails');
         Route::match(['get', 'post'], 'admin-profile', 'AdminController@adminprofile');
 
+
+        Route::get('pages', 'CmsController@pages');
+        Route::get('add-edit-page/{id?}', 'CmsController@addEditPage')->name('admin.addEditPage');
+        Route::post('update-page/{id?}', 'CmsController@updatePage')->name('admin.updatePage');
+        Route::post('upload-image', 'CmsController@uploadImage');
+
        
 
     });
 });
+
