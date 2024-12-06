@@ -76,17 +76,33 @@
                                             @if(!empty($package['number_of_product'])) value="{{ $package['number_of_product'] }}" @else
                                             value="{{ old('number_of_product') }}" @endif data-parsley-required="true">
                                     </div>
-                                </div>
-                                <div class="col-md-6">
                                     <div class="mb-4">
                                         <label class="form-label" for="price">Price</label>
                                         <input type="number" class="form-control" id="price" placeholder="Enter Package Price" name="price"
                                             @if (!empty($package['price'])) value="{{ $package['price'] }}" @else value="{{ old('price') }}"
                                             @endif data-parsley-required="true">
                                     </div>
+                                </div>
+                                <div class="col-md-6">
+                                   
+
                                     <div class="mb-4">
-                                        <label class="form-label" for="description">Package Description
-                                        </label>
+                                        <label class="form-label" for="days">Days</label>
+                                        <input type="number" class="form-control" id="days" placeholder="Enter Package Days" name="days"
+                                            @if (!empty($package['days'])) value="{{ $package['days'] }}" @else value="{{ old('days') }}"
+                                            @endif data-parsley-required="true">
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label class="form-label" for="status">Status</label>
+                                        <select class="form-control" id="status" name="status" required>
+                                            <option value="Active" @if(old('status', $package['status'] ?? '') == 'Active') selected @endif>Active</option>
+                                            <option value="Inactive" @if(old('status', $package['status'] ?? '') == 'Inactive') selected @endif>Inactive</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label class="form-label" for="description">Package Description</label>
                                         <textarea name="description" id="description" class="form-control" rows="7"
                                             data-parsley-required="true">{{ old('description', $package['description']) }}</textarea>
                                     </div>
@@ -104,6 +120,5 @@
     </div>
 
 </div>
-
 
 @endsection

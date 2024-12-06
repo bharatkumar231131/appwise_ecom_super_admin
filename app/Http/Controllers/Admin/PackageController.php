@@ -6,9 +6,20 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Package;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 
-class PackageController extends Controller
+class PackageController extends Controller implements HasMiddleware
 {
+    public static function middleware(): array
+    {
+        return [
+            new Middleware('permission:view packages', only: ['index']),
+            new Middleware('permission:add edit package', only: ['addEditPackage']),
+            // new Middleware('permission:create role', only: ['create']),
+            // new Middleware('permission:delete users', only: ['destroy']),
+        ];
+    }
     //
     public function packages()
     {
@@ -36,41 +47,38 @@ class PackageController extends Controller
         if ($request->isMethod('post')) {
             $data = $request->all();
 
-            // Define validation rules
             $rules = [
                 'name' => 'required',
                 'number_of_section' => 'nullable|integer|min:0',
                 'number_of_category' => 'nullable|integer|min:0',
                 'number_of_product' => 'nullable|integer|min:0',
                 'price' => 'nullable|numeric|min:0',
+                'days' => 'nullable|numeric|min:0',
                 'description' => 'nullable|string',
             ];
 
-            // Define custom error messages
             $customMessages = [
                 'name.required' => 'Package Name is required.',
                 'number_of_section.integer' => 'Number of sections must be an integer.',
                 'number_of_category.integer' => 'Number of categories must be an integer.',
                 'number_of_product.integer' => 'Number of products must be an integer.',
                 'price.numeric' => 'Price must be a valid number.',
+                'days.numeric' => 'Price must be a valid number.',
             ];
 
-            // Validate the request data using Validator
-            // $validator = \validator::make($data, $rules, $customMessages);
             $validator = Validator::make($data, $rules, $customMessages);
 
-
-            // Check if validation fails
             if ($validator->fails()) {
                 return redirect()->back()->withErrors($validator)->withInput();
             }
 
-            // Save the package data
             $package->name = $data['name'];
             $package->number_of_section = $data['number_of_section'];
             $package->number_of_category = $data['number_of_category'];
             $package->number_of_product = $data['number_of_product'];
             $package->price = $data['price'];
+            $package->days = $data['days'];
+            $package->status = $data['status'];
             $package->description = $data['description'];
             $package->save();
 
