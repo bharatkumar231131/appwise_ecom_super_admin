@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\InquiryController;
 use App\Http\Controllers\Admin\CmsController;
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +19,6 @@ use App\Http\Controllers\Admin\CmsController;
 |
 */
 
-
-
 Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function () {
     Route::match(['get', 'post'], 'login', 'AdminController@login');
     Route::middleware(['admin'])->group(function () {
@@ -26,18 +27,18 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
         //packages
         Route::get('packages', 'PackageController@packages');
-        Route::match(['get', 'post'], 'add-edit-package/{id?}', 'PackageController@addEditPackage')->name('admin.addEditPackage');
+        Route::match(['get', 'post'], 'add-edit-package/{id?}', 'packagecontroller@addeditpackage')->name('admin.addeditpackage');
 
         Route::match(array('get', 'post'), 'delete/{type}/{id}', [AdminController::class, 'delete'])->name('admin.delete');
         Route::get('inquiries', 'InquiryController@index');
-        Route::any('inquiry_details/{id}', 'InquiryController@InquiryDetails')->name('admin.returnOrderDetail');
+        Route::any('inquiry_details/{id}', 'inquirycontroller@inquirydetails')->name('admin.returnorderdetail');
 
         Route::get('shop-owners', 'ShopOwnerController@index');
         Route::match(['get', 'post'], 'shop-owners/{id?}', 'ShopOwnerController@createOrEdit');
 
-        Route::get('shop-owners', 'ShopOwnerController@index')->name('admin.shopOwners');
-        Route::match(['get', 'post'], 'add-edit-shop-owner/{id?}', 'ShopOwnerController@addEditShopOwner')->name('admin.addEditShopOwner');
-        Route::delete('delete-shop-owner/{id}', 'ShopOwnerController@deleteShopOwner')->name('admin.deleteShopOwner');
+        Route::get('shop-owners', 'shopownercontroller@index')->name('admin.shopOwners');
+        Route::match(['get', 'post'], 'add-edit-shop-owner/{id?}', 'shopownercontroller@addeditshopowner')->name('admin.addEditShopOwner');
+        Route::delete('delete-shop-owner/{id}', 'shopownercontroller@deleteshopowner')->name('admin.deleteshopowner');
 
         Route::match(['get', 'post'], 'admin-details', 'AdminController@adminDetails');
         Route::match(['get', 'post'], 'update-admin-detail', 'AdminController@updateAdminDetails');
@@ -50,7 +51,26 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::post('upload-image', 'CmsController@uploadImage');
 
        
+        Route::get('/permissions/index', [PermissionController::class, 'index'])->name('permissions.index');
+        Route::get('/permissions/create', [PermissionController::class, 'create'])->name('permissions.create');
+        Route::post('/permissions', [PermissionController::class, 'store'])->name('permissions.store');
+        Route::get('/permissions/{id}/edit', [PermissionController::class, 'edit'])->name('permissions.edit');
+        Route::post('/permissions/{id}', [PermissionController::class, 'update'])->name('permissions.update');
+        Route::any('/permissions/{id}/delete', [PermissionController::class, 'destroy'])->name('permissions.delete');
 
+
+        Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
+        Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create');
+        Route::post('/roles', [RoleController::class, 'store'])->name('roles.store');
+        Route::get('/roles/{id}/edit', [RoleController::class, 'edit'])->name('roles.edit');
+        Route::post('/roles/{id}', [RoleController::class, 'update'])->name('roles.update');
+        Route::any('/roles/{id}/delete', [RoleController::class, 'destroy'])->name('roles.delete');
+
+        Route::get('/users', [UserController::class, 'index'])->name('users.index');
+        // Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+        // Route::post('/users', [UserController::class, 'store'])->name('users.store');
+        Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+        Route::post('/users/{id}', [UserController::class, 'update'])->name('users.update');
     });
 });
 
