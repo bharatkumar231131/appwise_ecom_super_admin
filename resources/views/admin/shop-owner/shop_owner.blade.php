@@ -81,7 +81,7 @@
                   <a href="{{ route('admin.addEditShopOwner', $shopOwner->id) }}" class="actionbtn-tb actionbtn-edit" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Edit">
                     <i class="far fa-edit text-white"></i>
                   </a>
-                  <form action="{{ route('admin.deleteShopOwner', $shopOwner->id) }}" method="POST" style="display:inline-block;">
+                  <form action="" method="POST" style="display:inline-block;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="actionbtn-tb actionbtn-remove delete-btn" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Delete">

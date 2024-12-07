@@ -46,6 +46,7 @@
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
+              <th>Address</th>
               <th>Message</th>
               <th>Status</th>
               <th>Actions</th>
@@ -57,6 +58,7 @@
               <td>{{ $inquiry->name }}</td>
               <td>{{ $inquiry->email }}</td>
               <td>{{ $inquiry->phone }}</td>
+              <td>{{ $inquiry->address }}</td>
               <td>{{ $inquiry->message }}</td>
               <td>
                 @if ($inquiry->status == 'in_progress')

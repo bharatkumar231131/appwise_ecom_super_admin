@@ -8,6 +8,7 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +36,8 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::match(array('get', 'post'), 'delete/{type}/{id}', [AdminController::class, 'delete'])->name('admin.delete');
         Route::get('inquiries', 'InquiryController@index');
         Route::any('inquiry_details/{id}', 'inquirycontroller@inquirydetails')->name('admin.returnorderdetail');
+
+
 
         Route::get('shop-owners', 'ShopOwnerController@index');
         Route::match(['get', 'post'], 'shop-owners/{id?}', 'ShopOwnerController@createOrEdit');
@@ -81,5 +84,15 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         
 
     });
+
+
 });
 
+Route::namespace('App\Http\Controllers\Front')->group(function () {
+
+Route::match(['get', 'post'], 'inquiry-form', 'InquiryController@inquiryForm')->name('inquiry');
+Route::match(['get', 'post'], 'inquiry-submit', 'InquiryController@inquirySubmit');
+
+
+
+});
