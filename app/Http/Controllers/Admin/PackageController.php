@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Package;
+use App\Models\PackageBuy;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
 
-class PackageController extends Controller 
+class PackageController extends Controller
 {
     // public static function middleware(): array
     // {
@@ -96,5 +97,11 @@ class PackageController extends Controller
         ]);
 
         return response()->json(['success' => true]);
+    }
+
+    public function packageBuy()
+    {
+        $packageBuy = PackageBuy::all();
+        return view('admin.packages.package_buy', compact('packageBuy'));
     }
 }

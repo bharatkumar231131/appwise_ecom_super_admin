@@ -32,6 +32,9 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::match(['get', 'post'], 'add-edit-package/{id?}', 'packagecontroller@addeditpackage')->name('admin.addeditpackage');
         Route::post('change-package-status', 'packagecontroller@changePackageStatus')->name('packages.status');
 
+        Route::get('package_buy', 'PackageController@packageBuy');
+
+
         Route::match(array('get', 'post'), 'delete/{type}/{id}', [AdminController::class, 'delete'])->name('admin.delete');
         Route::get('inquiries', 'InquiryController@index');
         Route::any('inquiry_details/{id}', 'inquirycontroller@inquirydetails')->name('admin.returnorderdetail');
