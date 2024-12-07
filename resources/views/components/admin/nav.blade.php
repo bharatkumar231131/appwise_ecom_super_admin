@@ -60,6 +60,13 @@
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Packages</span></a>
                                                     </li>
                                                 </ul>
+
+                                                <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
+                                                    <li class="sa-nav__menu-item">
+                                                        <a href="{{ url('admin/package_buy') }}" class="sa-nav__link"><span
+                                                                class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Package Buy</span></a>
+                                                    </li>
+                                                </ul>
                                             </li>
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
@@ -221,6 +228,8 @@
                                                     </li>
                                                 </ul>
                                             </li>
+
+
                                             
                                         </ul>
                                     </li>

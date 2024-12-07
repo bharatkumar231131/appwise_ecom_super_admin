@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Package;
+use App\Models\PackageBuy;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
@@ -86,5 +87,11 @@ class PackageController extends Controller
         }
 
         return view('admin.packages.add_edit_package')->with(compact('title', 'package'));
+    }
+
+
+    public function packageBuy(){
+        $packageBuy = PackageBuy::all();
+        return view('admin.packages.package_buy' , compact('packageBuy'));
     }
 }
