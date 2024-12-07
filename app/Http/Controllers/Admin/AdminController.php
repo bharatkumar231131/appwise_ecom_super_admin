@@ -147,89 +147,59 @@ public function adminprofile(){
 
 public function updateLogo(Request $request)
 {
-    $admin_logo = Setting::first();
-        $admin_logo = $admin_logo->admin_logo;
+    // Retrieve the existing settings
+    
 
-        $front_logo = Setting::first();
-        $front_logo = $front_logo->front_logo;
     // Check if any data is being posted (i.e., if there's any file uploaded)
-    if ($request->isMethod('post') && $request->hasFile('admin_logo')) {
-        // Validate the uploaded file
+    if ($request->isMethod('post')) {
+        // Validate the uploaded files
         $request->validate([
-            'admin_logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'admin_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'front_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        // Handle the uploaded file
-        $logo = $request->file('admin_logo');
-        
-        // Generate a unique name for the image
-        $imageName =  time() . '.' . $logo->getClientOriginalExtension();
-        
-        // Move the image to the public directory
-        $logo->move(public_path('admin/images/logo'), $imageName);
+        // Handle the Admin Logo
+        if ($request->hasFile('admin_logo')) {
+            // Handle the uploaded admin logo
+            $admin_logo = $request->file('admin_logo');
+            $admin_logo_name =  time() . '.' . $admin_logo->getClientOriginalExtension();
+            $admin_logo->move(public_path('admin/images/logo'), $admin_logo_name);
 
-        // Get the existing logo (assuming only one record in the database)
-        $existingLogo = Setting::first(); 
-
-        if ($existingLogo) {
-            // If there's an existing logo, delete the old file from the server
-            if (file_exists(public_path('admin/images/logo/' . $existingLogo->admin_logo))) {
-                unlink(public_path('admin/images/logo/' . $existingLogo->admin_logo));
+            // Delete the old admin logo if it exists
+            if ($settings && file_exists(public_path('admin/images/logo/' . $settings->admin_logo))) {
+                unlink(public_path('admin/images/logo/' . $settings->admin_logo));
             }
 
-            // Update the existing logo in the database
-            $existingLogo->update(['admin_logo' => $imageName]);
-            return $existingLogo;
-
-            // Return success message and redirect to the logo page
-            return redirect()->route('logo')->with('success_message', 'Logo updated successfully!');
-        } else {
-            // If no logo exists, create a new record
-            Setting::create(['admin_logo' => $imageName]);
-
-            return redirect()->route('logo')->with('success_message', 'Logo uploaded successfully!');
+           
         }
-    }
 
-    if ($request->isMethod('post') && $request->hasFile('front_logo')) {
-        // Validate the uploaded file
-        $request->validate([
-            'front_logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+        // Handle the Front Logo
+        if ($request->hasFile('front_logo')) {
+            // Handle the uploaded front logo
+            $front_logo = $request->file('front_logo');
+            $front_logo_name =  time() . '.' . $front_logo->getClientOriginalExtension();
+            $front_logo->move(public_path('front/images/logo'), $front_logo_name);
 
-        // Handle the uploaded file
-        $logo = $request->file('front_logo');
-        
-        // Generate a unique name for the image
-        $imageName =  time() . '.' . $logo->getClientOriginalExtension();
-        
-        // Move the image to the public directory
-        $logo->move(public_path('front/images/logo'), $imageName);
-
-        // Get the existing logo (assuming only one record in the database)
-        $existingLogo = Setting::first(); 
-
-        if ($existingLogo) {
-            // If there's an existing logo, delete the old file from the server
-            if (file_exists(public_path('front/images/logo/' . $existingLogo->front_logo))) {
-                unlink(public_path('front/images/logo/' . $existingLogo->front_logo));
+            // Delete the old front logo if it exists
+            if ($settings && file_exists(public_path('front/images/logo/' . $settings->front_logo))) {
+                unlink(public_path('front/images/logo/' . $settings->front_logo));
             }
 
-            // Update the existing logo in the database
-            $existingLogo->update(['front_logo' => $imageName]);
-
-            // Return success message and redirect to the logo page
-            return redirect()->route('logo')->with('success_message', 'Logo updated successfully!');
-        } else {
-            // If no logo exists, create a new record
-            Setting::create(['front_logo' => $imageName]);
-
-            return redirect()->route('logo')->with('success_message', 'Logo uploaded successfully!');
+            // Update the front logo path in the database
+            $settings->front_logo = $front_logo_name;
         }
+        // dd($settings);
+        // Save the changes to the database
+        $settings->save();
+
+        // Return success message and redirect to the logo page
+        return redirect()->route('logo')->with('success_message', 'Logos updated successfully!');
     }
 
-    return view('admin.setting.admin_logo', compact('admin_logo' , 'front_logo'));
+    // Pass the existing logos to the view
+    return view('admin.setting.admin_logo', compact('settings'));
 }
+
 
 
 
