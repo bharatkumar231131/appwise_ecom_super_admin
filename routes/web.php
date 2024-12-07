@@ -86,6 +86,9 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
 
 Route::namespace('App\Http\Controllers\Front')->group(function () {
-
     Route::get('/home', 'IndexController@index')->name('home');
+    Route::any('/package/buy/{id}', 'IndexController@PackageBuy')->name('package.buy');
+    Route::any('/save_owner_details/{id}', 'IndexController@saveOwnerDetails')->name('package.saveOwnerDetails');
+    Route::get('/package/{id}/{owner_id}', 'IndexController@paymentPage')->name('package.payment');
+    Route::post('/package/{id}/process-payment', 'IndexController@processPayment')->name('package.processPayment');
 });
