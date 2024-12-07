@@ -52,7 +52,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::post('update-page/{id?}', 'CmsController@updatePage')->name('admin.updatePage');
         Route::post('upload-image', 'CmsController@uploadImage');
 
-       
+
         Route::get('/permissions/index', [PermissionController::class, 'index'])->name('permissions.index');
         Route::get('/permissions/create', [PermissionController::class, 'create'])->name('permissions.create');
         Route::post('/permissions', [PermissionController::class, 'store'])->name('permissions.store');
@@ -69,16 +69,12 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::any('/roles/{id}/delete', [RoleController::class, 'destroy'])->name('roles.delete');
 
         Route::get('/users', [UserController::class, 'index'])->name('users.index');
-        // Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
-        // Route::post('/users', [UserController::class, 'store'])->name('users.store');
+        Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+        Route::post('/users', [UserController::class, 'store'])->name('users.store');
         Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
         Route::post('/users/{id}', [UserController::class, 'update'])->name('users.update');
 
 
         Route::match(['get', 'post'], 'logo', 'AdminController@updateLogo')->name('logo');
-
-        
-
     });
 });
-

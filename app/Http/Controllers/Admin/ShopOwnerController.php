@@ -18,15 +18,12 @@ class ShopOwnerController extends Controller
         return view('admin.shop-owner.shop_owner', compact('shopOwners'));
     }
 
-
-
     public function addEditShopOwner(Request $request, $id = null)
     {
         $shopOwner = $id ? ShopOwner::find($id) : null;
         $packages = Package::all();
 
         if ($request->isMethod('post')) {
-
             $validated = $request->validate([
                 'name' => 'required|string|max:255',
                 'shop_name' => 'required|string|max:255',
