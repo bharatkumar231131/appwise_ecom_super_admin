@@ -14,7 +14,8 @@
 
         <form action="{{ url('admin/logo') }}" method="POST" enctype="multipart/form-data">
             @csrf
-<div class="row">
+
+            <div class="row">
                 <div class="col-6 position-relative">
                     <label for="admin_logo" class="form-label">Admin Logo (200px x 200px)</label>
                     <input type="file" class="form-control position-absolute" id="admin_logo" name="admin_logo"
@@ -32,13 +33,13 @@
                         style="opacity: 0; cursor: pointer; height: 200px; width: 200px; top: 0; left: 0;"
                         onchange="previewImage(event, 'front_preview')">
                     <img id="front_preview"
-                        src="{{ !empty($settings->front_logo) ? asset('public/admin/images/logo/' . $settings->front_logo) : '' }}"
+                        src="{{ !empty($settings->front_logo) ? asset('public/front/images/logo/' . $settings->front_logo) : '' }}"
                         alt="Front Logo Preview"
                         style="width: 200px; height: 200px; margin-top: 10px; display: {{ !empty($settings->front_logo) ? 'block' : 'none' }};">
-            </div>
+                </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary mt-5">Update</button>
         </form>
     </div>
 </div>
