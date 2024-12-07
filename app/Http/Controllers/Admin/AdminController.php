@@ -147,59 +147,59 @@ public function adminprofile(){
 
 public function updateLogo(Request $request)
 {
-    // Retrieve the existing settings
-    
+    // Get existing logo images
+    $front_logo = Setting::where('id', '1')->select('front_logo')->first();
+    $front_logo = $front_logo->front_logo;
+    $admin_logo = Setting::where('id', '1')->select('admin_logo')->first();
+    $admin_logo = $admin_logo->admin_logo;
 
-    // Check if any data is being posted (i.e., if there's any file uploaded)
+    // Check if the request is a POST request
     if ($request->isMethod('post')) {
-        // Validate the uploaded files
-        $request->validate([
-            'admin_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'front_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
-        // Handle the Admin Logo
-        if ($request->hasFile('admin_logo')) {
-            // Handle the uploaded admin logo
-            $admin_logo = $request->file('admin_logo');
-            $admin_logo_name =  time() . '.' . $admin_logo->getClientOriginalExtension();
-            $admin_logo->move(public_path('admin/images/logo'), $admin_logo_name);
-
-            // Delete the old admin logo if it exists
-            if ($settings && file_exists(public_path('admin/images/logo/' . $settings->admin_logo))) {
-                unlink(public_path('admin/images/logo/' . $settings->admin_logo));
-            }
-
-           
-        }
-
-        // Handle the Front Logo
+        // Handling Front Logo upload
         if ($request->hasFile('front_logo')) {
-            // Handle the uploaded front logo
-            $front_logo = $request->file('front_logo');
-            $front_logo_name =  time() . '.' . $front_logo->getClientOriginalExtension();
-            $front_logo->move(public_path('front/images/logo'), $front_logo_name);
+            $image_tmp = $request->file('front_logo');
+            if ($image_tmp->isValid()) {
+                // Get the image extension
+                $extension = $image_tmp->getClientOriginalExtension();
+                // Generate a random name for the uploaded image
+                $imageName = rand(111, 99999) . '.' . $extension;
+                // Assigning the uploaded image path
+                $imagePath = 'public/front/images/logo/' . $imageName;
 
-            // Delete the old front logo if it exists
-            if ($settings && file_exists(public_path('front/images/logo/' . $settings->front_logo))) {
-                unlink(public_path('front/images/logo/' . $settings->front_logo));
+                // Resize and save the image
+                Image::make($image_tmp)->resize(200, 200)->save($imagePath);
+
+                // Update the database with the new image name
+                Setting::where('id', '1')->update(['front_logo' => $imageName]);
             }
-
-            // Update the front logo path in the database
-            $settings->front_logo = $front_logo_name;
         }
-        // dd($settings);
-        // Save the changes to the database
-        $settings->save();
 
-        // Return success message and redirect to the logo page
-        return redirect()->route('logo')->with('success_message', 'Logos updated successfully!');
+        // Handling Admin Logo upload
+        if ($request->hasFile('admin_logo')) {
+            $image_tmp = $request->file('admin_logo');
+            if ($image_tmp->isValid()) {
+                // Get the image extension
+                $extension = $image_tmp->getClientOriginalExtension();
+                // Generate a random name for the uploaded image
+                $imageName = rand(111, 99999) . '.' . $extension;
+                // Assigning the uploaded image path
+                $imagePath = 'public/front/images/logo/' . $imageName;
+
+                // Resize and save the image
+                Image::make($image_tmp)->resize(200, 200)->save($imagePath);
+
+                // Update the database with the new image name
+                Setting::where('id', '1')->update(['admin_logo' => $imageName]);
+            }
+        }
+
+        // Set a success message
+        return redirect()->back()->with('success_message', 'Logos updated successfully!');
     }
 
-    // Pass the existing logos to the view
-    return view('admin.setting.admin_logo', compact('settings'));
+    // Return the view with existing logo images
+    return view('admin.setting.admin_logo', compact('front_logo', 'admin_logo'));
 }
-
 
 
 
