@@ -99,6 +99,10 @@ class AdminController extends Controller
             $owner = ShopOwner::findOrFail($id);
             $owner->delete();
             return redirect()->back()->with('success_message', "ShopOwner delete succesfully");
+        } elseif ($type === "user") {
+            $owner = User::findOrFail($id);
+            $owner->delete();
+            return redirect()->back()->with('success_message', "User delete succesfully");
         }
     }
 
@@ -160,10 +164,10 @@ class AdminController extends Controller
     public function updateLogo(Request $request)
     {
         $settings = Setting::first();
-
         // Check if any data is being posted (i.e., if there's any file uploaded)
         if ($request->isMethod('post')) {
             // Validate the uploaded files
+
             $request->validate([
                 'admin_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'front_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -174,6 +178,7 @@ class AdminController extends Controller
 
                 // Handle the uploaded admin logo
                 $admin_logo = $request->file('admin_logo');
+
                 $admin_logo_name =  time() . '.' . $admin_logo->getClientOriginalExtension();
                 $admin_logo->move(public_path('admin/images/logo'), $admin_logo_name);
 
@@ -188,6 +193,7 @@ class AdminController extends Controller
             }
 
             if ($request->hasFile('front_logo')) {
+
                 // Handle the uploaded front logo
                 $front_logo = $request->file('front_logo');
                 $front_logo_name =  time() . '.' . $front_logo->getClientOriginalExtension();

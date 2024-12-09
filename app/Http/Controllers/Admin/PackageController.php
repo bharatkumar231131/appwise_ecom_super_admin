@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Package;
 use App\Models\PackageBuy;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Routing\Controllers\HasMiddleware;
-use Illuminate\Routing\Controllers\Middleware;
+// use Illuminate\Routing\Controllers\HasMiddleware;
+// use Illuminate\Routing\Controllers\Middleware;
 
 class PackageController extends Controller
 {
@@ -22,6 +22,15 @@ class PackageController extends Controller
     //     ];
     // }
     //
+
+    public function __construct()
+    {
+        $this->middleware('permission:view packages')->only(['packages']);
+        // $this->middleware('permission:edit package')->only(['edit']);
+        // $this->middleware('permission:create package')->only(['create']);
+        // $this->middleware('permission:delete permission')->only(['destroy']);
+    }
+
     public function packages()
     {
         $packages = Package::get()->toArray();

@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Permission;
-use Illuminate\Routing\Controllers\HasMiddleware;
-use Illuminate\Routing\Controllers\Middleware;
+// use Illuminate\Routing\Controllers\HasMiddleware;
+// use Illuminate\Routing\Controllers\Middleware;
 
 
 class PermissionController extends Controller
@@ -21,13 +21,13 @@ class PermissionController extends Controller
     //     ];
     // }
 
-    // public function __construct()
-    // {
-    //     $this->middleware('permission:view permission')->only(['index']);
-    //     $this->middleware('permission:edit permission')->only(['edit']);
-    //     $this->middleware('permission:create permission')->only(['create']);
-    //     // $this->middleware('permission:delete users')->only(['destroy']);
-    // }
+    public function __construct()
+    {
+        $this->middleware('permission:view permissions')->only(['index']);
+        $this->middleware('permission:edit permission')->only(['edit']);
+        $this->middleware('permission:create permission')->only(['create']);
+        // $this->middleware('permission:delete permission')->only(['destroy']);
+    }
 
 
     public function index()

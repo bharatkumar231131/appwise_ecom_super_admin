@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
-use Illuminate\Routing\Controllers\HasMiddleware;
-use Illuminate\Routing\Controllers\Middleware;
 
-class RoleController extends Controller 
+class RoleController extends Controller
 {
     //
 
@@ -22,6 +20,15 @@ class RoleController extends Controller
     //         // new Middleware('permission:delete users', only: ['destroy']),
     //     ];
     // }
+
+    public function __construct()
+    {
+        $this->middleware('permission:view roles')->only(['index']);
+        $this->middleware('permission:edit role')->only(['edit']);
+        $this->middleware('permission:create role')->only(['create']);
+        // $this->middleware('permission:delete users')->only(['destroy']);
+    }
+
 
     public function index()
     {

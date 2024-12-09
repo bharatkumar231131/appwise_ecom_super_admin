@@ -15,6 +15,7 @@ class IndexController extends Controller
     {
         $packages = Package::all();
         return view('front.index', compact('packages'));
+        return view('front.home', compact('packages'));
     }
 
     public function packageBuy($id)
