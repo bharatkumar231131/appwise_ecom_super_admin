@@ -3522,10 +3522,21 @@ header.fix_style.white_header {
 
 .contact_page_section .contact_inner .contact_form form .form-group button {
     width: 240px;
-    margin: 0 auto;
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 0;
+    color: #fff;
+    background-color: #00b0ff;
+    font-size: 16px;
+    padding: 9px 40px;
+    border-radius: 25px;
+    margin: auto;
+    position: relative;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.contact_page_section .contact_inner .contact_form form .form-group button::before {
+    display: none;
 }
 
 .contact_page_section .contact_inner .contact_info {

@@ -60,11 +60,11 @@
                 <div class="col-lg-6 col-md-12" data-aos="fade-in" data-aos-duration="1500">
                     <div class="banner_slider">
                         <!-- <div class="left_icon">
-                                                                        <img src="images/message_icon.png" alt="image">
-                                                                      </div>
-                                                                      <div class="right_icon">
-                                                                        <img src="images/shield_icon.png" alt="image">
-                                                                      </div> -->
+                                                                                                <img src="images/message_icon.png" alt="image">
+                                                                                              </div>
+                                                                                              <div class="right_icon">
+                                                                                                <img src="images/shield_icon.png" alt="image">
+                                                                                              </div> -->
                         <div id="frmae_slider" class="owl-carousel owl-theme">
                             <div class="item">
                                 <div class="slider_img">
@@ -381,117 +381,71 @@
                         @php
                             $i = $i + 1;
                         @endphp
-                        <div class="modal fade" id="buyNowModal-{{ $package->id }}" data-bs-backdrop="false"
-                            aria-labelledby="buyNowModalLabel-{{ $package->id }}" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="buyNowModalLabel-{{ $package->id }}">Fill Owner
-                                            Details</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <form action="{{ route('package.saveOwnerDetails', $package->id) }}" method="POST">
-                                        @csrf
-                                        <div class="modal-body">
-                                            <div class="mb-3">
-                                                <label for="ownerName-{{ $package->id }}" class="form-label">Owner
-                                                    Name</label>
-                                                <input type="text" class="form-control"
-                                                    id="ownerName-{{ $package->id }}" name="owner_name" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="ownerShop-{{ $package->id }}" class="form-label">Shop
-                                                    Name</label>
-                                                <input type="text" class="form-control"
-                                                    id="ownerShop-{{ $package->id }}" name="shop_name" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="ownerDomain-{{ $package->id }}"
-                                                    class="form-label">Domain</label>
-                                                <input type="text" class="form-control"
-                                                    id="ownerDomain-{{ $package->id }}" name="domain" required>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="ownerAddress-{{ $package->id }}"
-                                                    class="form-label">Address</label>
-                                                <textarea class="form-control" id="ownerAddress-{{ $package->id }}" name="address" rows="3" required></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary">Save</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                     @endforeach
 
                     <!-- pricing box 2 -->
                     <!-- <div class="col-md-4">
-                                                                            <div class="pricing_block highlited_block">
-                                                                                <div class="icon">
-                                                                                    <img src="{{ asset('public/front/images/unlimited.png') }}" alt="image">
-                                                                                </div>
-                                                                                <div class="pkg_name">
-                                                                                    <h3>Unlimited</h3>
-                                                                                    <span>For the professionals</span>
-                                                                                </div>
-                                                                                <span class="price">$99</span>
-                                                                                <ul class="benifits">
-                                                                                    <li>
-                                                                                        <p>Unlimited Website</p>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <p>200 GB disk space</p>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <p>20 Customize sub pages</p>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <p>10 Domains access</p>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <p>24/7 Customer support</p>
-                                                                                    </li>
-                                                                                </ul>
-                                                                                <a href="contact.html" class="btn white_btn">BUY NOW</a>
-                                                                            </div>
-                                                                        </div> -->
+                                                                                                    <div class="pricing_block highlited_block">
+                                                                                                        <div class="icon">
+                                                                                                            <img src="{{ asset('public/front/images/unlimited.png') }}" alt="image">
+                                                                                                        </div>
+                                                                                                        <div class="pkg_name">
+                                                                                                            <h3>Unlimited</h3>
+                                                                                                            <span>For the professionals</span>
+                                                                                                        </div>
+                                                                                                        <span class="price">$99</span>
+                                                                                                        <ul class="benifits">
+                                                                                                            <li>
+                                                                                                                <p>Unlimited Website</p>
+                                                                                                            </li>
+                                                                                                            <li>
+                                                                                                                <p>200 GB disk space</p>
+                                                                                                            </li>
+                                                                                                            <li>
+                                                                                                                <p>20 Customize sub pages</p>
+                                                                                                            </li>
+                                                                                                            <li>
+                                                                                                                <p>10 Domains access</p>
+                                                                                                            </li>
+                                                                                                            <li>
+                                                                                                                <p>24/7 Customer support</p>
+                                                                                                            </li>
+                                                                                                        </ul>
+                                                                                                        <a href="contact.html" class="btn white_btn">BUY NOW</a>
+                                                                                                    </div>
+                                                                                                </div> -->
 
                     <!-- pricing box 3 -->
                     <!-- <div class="col-md-4">
-                                                                            <div class="pricing_block">
-                                                                                <div class="icon">
-                                                                                    <img src="{{ asset('public/front/images/premium.png') }}" alt="image">
-                                                                                </div>
-                                                                                <div class="pkg_name">
-                                                                                    <h3>Premium</h3>
-                                                                                    <span>For small team</span>
-                                                                                </div>
-                                                                                <span class="price">$55</span>
-                                                                                <ul class="benifits">
-                                                                                    <li>
-                                                                                        <p>Up to 10 Website</p>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <p>100 GB disk space</p>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <p>15 Customize sub pages</p>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <p>4 Domains access</p>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <p>24/7 Customer support</p>
-                                                                                    </li>
-                                                                                </ul>
-                                                                                <a href="contact.html" class="btn white_btn">BUY NOW</a>
-                                                                            </div>
-                                                                        </div> -->
+                                                                                                    <div class="pricing_block">
+                                                                                                        <div class="icon">
+                                                                                                            <img src="{{ asset('public/front/images/premium.png') }}" alt="image">
+                                                                                                        </div>
+                                                                                                        <div class="pkg_name">
+                                                                                                            <h3>Premium</h3>
+                                                                                                            <span>For small team</span>
+                                                                                                        </div>
+                                                                                                        <span class="price">$55</span>
+                                                                                                        <ul class="benifits">
+                                                                                                            <li>
+                                                                                                                <p>Up to 10 Website</p>
+                                                                                                            </li>
+                                                                                                            <li>
+                                                                                                                <p>100 GB disk space</p>
+                                                                                                            </li>
+                                                                                                            <li>
+                                                                                                                <p>15 Customize sub pages</p>
+                                                                                                            </li>
+                                                                                                            <li>
+                                                                                                                <p>4 Domains access</p>
+                                                                                                            </li>
+                                                                                                            <li>
+                                                                                                                <p>24/7 Customer support</p>
+                                                                                                            </li>
+                                                                                                        </ul>
+                                                                                                        <a href="contact.html" class="btn white_btn">BUY NOW</a>
+                                                                                                    </div>
+                                                                                                </div> -->
                 </div>
                 <!-- row end -->
             </div>
@@ -761,7 +715,7 @@
                             <input type="checkbox" id="term">
                             <label for="term">I agree to receive emails, newsletters and promotional messages</label>
                         </div>
-                        <div class="form-group mb-0">
+                        <div class="form-group mb-0 text-center">
                             <button type="submit" class="btn puprple_btn">SEND MESSAGE</button>
                         </div>
                     </form>
@@ -916,4 +870,75 @@
         <!-- container end -->
     </section>
     <!-- FAQ-Section end -->
+
+    <div class="modal fade" id="buyNowModal-{{ $package->id }}" tabindex="-1"
+        aria-labelledby="buyNowModalLabel-{{ $package->id }}" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="buyNowModalLabel-{{ $package->id }}">Fill Owner
+                        Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('package.saveOwnerDetails', $package->id) }}" method="POST">
+                        @csrf
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="ownerName-{{ $package->id }}" class="form-label">Owner
+                                    Name</label>
+                                <input type="text" class="form-control" id="ownerName-{{ $package->id }}"
+                                    name="owner_name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ownerShop-{{ $package->id }}" class="form-label">Shop
+                                    Name</label>
+                                <input type="text" class="form-control" id="ownerShop-{{ $package->id }}"
+                                    name="shop_name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ownerDomain-{{ $package->id }}" class="form-label">Domain</label>
+                                <input type="text" class="form-control" id="ownerDomain-{{ $package->id }}"
+                                    name="domain" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ownerAddress-{{ $package->id }}" class="form-label">Address</label>
+                                <textarea class="form-control" id="ownerAddress-{{ $package->id }}" name="address" rows="3" required></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{--  --}}
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    {{--  --}}
 @endsection
