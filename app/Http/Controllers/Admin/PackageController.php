@@ -5,22 +5,32 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Package;
+use App\Models\PackageBuy;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Routing\Controllers\HasMiddleware;
-use Illuminate\Routing\Controllers\Middleware;
+// use Illuminate\Routing\Controllers\HasMiddleware;
+// use Illuminate\Routing\Controllers\Middleware;
 
-class PackageController extends Controller implements HasMiddleware
+class PackageController extends Controller
 {
-    public static function middleware(): array
-    {
-        return [
-            new Middleware('permission:view packages', only: ['index']),
-            new Middleware('permission:add edit package', only: ['addEditPackage']),
-            // new Middleware('permission:create role', only: ['create']),
-            // new Middleware('permission:delete users', only: ['destroy']),
-        ];
-    }
+    // public static function middleware(): array
+    // {
+    //     return [
+    //         new Middleware('permission:view packages', only: ['index']),
+    //         new Middleware('permission:add edit package', only: ['addEditPackage']),
+    //         // new Middleware('permission:create role', only: ['create']),
+    //         // new Middleware('permission:delete users', only: ['destroy']),
+    //     ];
+    // }
     //
+
+    public function __construct()
+    {
+        $this->middleware('permission:view packages')->only(['packages']);
+        // $this->middleware('permission:edit package')->only(['edit']);
+        // $this->middleware('permission:create package')->only(['create']);
+        // $this->middleware('permission:delete permission')->only(['destroy']);
+    }
+
     public function packages()
     {
         $packages = Package::get()->toArray();
@@ -86,5 +96,21 @@ class PackageController extends Controller implements HasMiddleware
         }
 
         return view('admin.packages.add_edit_package')->with(compact('title', 'package'));
+    }
+
+    public function changePackageStatus(Request $request)
+    {
+
+        Package::where('id', $request->package_id)->update([
+            "status" => $request->status
+        ]);
+
+        return response()->json(['success' => true]);
+    }
+
+    public function packageBuy()
+    {
+        $packageBuy = PackageBuy::all();
+        return view('admin.packages.package_buy', compact('packageBuy'));
     }
 }

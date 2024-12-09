@@ -6,22 +6,29 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
-use Illuminate\Routing\Controllers\HasMiddleware;
-use Illuminate\Routing\Controllers\Middleware;
 
-class RoleController extends Controller implements HasMiddleware
+class RoleController extends Controller
 {
     //
 
-    public static function middleware(): array
+    // public static function middleware(): array
+    // {
+    //     return [
+    //         new Middleware('permission:view roles', only: ['index']),
+    //         new Middleware('permission:edit role', only: ['edit']),
+    //         new Middleware('permission:create role', only: ['create']),
+    //         // new Middleware('permission:delete users', only: ['destroy']),
+    //     ];
+    // }
+
+    public function __construct()
     {
-        return [
-            new Middleware('permission:view roles', only: ['index']),
-            new Middleware('permission:edit role', only: ['edit']),
-            new Middleware('permission:create role', only: ['create']),
-            // new Middleware('permission:delete users', only: ['destroy']),
-        ];
+        $this->middleware('permission:view roles')->only(['index']);
+        $this->middleware('permission:edit role')->only(['edit']);
+        $this->middleware('permission:create role')->only(['create']);
+        // $this->middleware('permission:delete users')->only(['destroy']);
     }
+
 
     public function index()
     {

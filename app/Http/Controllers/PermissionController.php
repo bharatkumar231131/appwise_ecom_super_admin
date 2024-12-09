@@ -5,29 +5,29 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Permission;
-use Illuminate\Routing\Controllers\HasMiddleware;
-use Illuminate\Routing\Controllers\Middleware;
+// use Illuminate\Routing\Controllers\HasMiddleware;
+// use Illuminate\Routing\Controllers\Middleware;
 
 
-class PermissionController extends Controller implements HasMiddleware
+class PermissionController extends Controller
 {
-    public static function middleware(): array
-    {
-        return [
-            new Middleware('permission:view permissions', only: ['index']),
-            new Middleware('permission:edit permission', only: ['edit']),
-            new Middleware('permission:create permission', only: ['create']),
-            // new Middleware('permission:delete users', only: ['destroy']),
-        ];
-    }
-
-    // public function __construct()
+    // public static function middleware(): array
     // {
-    //     $this->middleware('permission:view permission')->only(['index']);
-    //     $this->middleware('permission:edit permission')->only(['edit']);
-    //     $this->middleware('permission:create permission')->only(['create']);
-    //     // $this->middleware('permission:delete users')->only(['destroy']);
+    //     return [
+    //         new Middleware('permission:view permissions', only: ['index']),
+    //         new Middleware('permission:edit permission', only: ['edit']),
+    //         new Middleware('permission:create permission', only: ['create']),
+    //         // new Middleware('permission:delete users', only: ['destroy']),
+    //     ];
     // }
+
+    public function __construct()
+    {
+        $this->middleware('permission:view permissions')->only(['index']);
+        $this->middleware('permission:edit permission')->only(['edit']);
+        $this->middleware('permission:create permission')->only(['create']);
+        // $this->middleware('permission:delete permission')->only(['destroy']);
+    }
 
 
     public function index()

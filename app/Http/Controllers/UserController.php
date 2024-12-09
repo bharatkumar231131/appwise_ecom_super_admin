@@ -6,20 +6,28 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
-use Illuminate\Routing\Controllers\HasMiddleware;
-use Illuminate\Routing\Controllers\Middleware;
+// use Illuminate\Routing\Controllers\HasMiddleware;
+// use Illuminate\Routing\Controllers\Middleware;
 
-class UserController extends Controller implements HasMiddleware
+class UserController extends Controller
 {
 
-    public static function middleware(): array
+    // public static function middleware(): array
+    // {
+    //     return [
+    //         new Middleware('permission:view users', only: ['index']),
+    //         new Middleware('permission:edit user', only: ['edit']),
+    //         // new Middleware('permission:create user', only: ['create']),
+    //         // new Middleware('permission:delete users', only: ['destroy']),
+    //     ];
+    // }
+
+    public function __construct()
     {
-        return [
-            new Middleware('permission:view users', only: ['index']),
-            new Middleware('permission:edit user', only: ['edit']),
-            // new Middleware('permission:create user', only: ['create']),
-            // new Middleware('permission:delete users', only: ['destroy']),
-        ];
+        $this->middleware('permission:view users')->only(['index']);
+        $this->middleware('permission:edit user')->only(['edit']);
+        $this->middleware('permission:create user')->only(['create']);
+        // $this->middleware('permission:delete user')->only(['destroy']);
     }
 
     /**
@@ -38,6 +46,10 @@ class UserController extends Controller implements HasMiddleware
     public function create()
     {
         //
+        $roles = Role::orderBy('name', 'ASC')->get();
+        return view('admin.users.create', [
+            'roles' => $roles,
+        ]);
     }
 
     /**
@@ -45,7 +57,23 @@ class UserController extends Controller implements HasMiddleware
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:3',
+            'email' => 'required|email|unique:users,email,'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('user.create')->withInput()->withErrors($validator);
+        }
+
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt('12345678');
+        $user->save();
+
+        $user->syncRoles($request->role);
+        return redirect()->route('users.index')->with('success_message', "User Added Successfully");
     }
 
     /**
@@ -54,6 +82,7 @@ class UserController extends Controller implements HasMiddleware
     public function show(string $id)
     {
         //
+
     }
 
     /**
