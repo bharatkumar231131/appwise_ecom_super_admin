@@ -94,5 +94,5 @@ Route::namespace('App\Http\Controllers\Front')->group(function () {
     Route::post('/package/{id}/process-payment', 'IndexController@processPayment')->name('package.processPayment');
 
     Route::get('/inquiry', 'InquiryController@inquiry')->name('inquiry');
-    Route::post('/save-inquiry', 'InquiryController@inquiry')->name('save_inquiry');
+    Route::post('/save-inquiry', 'InquiryController@saveInquiry')->name('save_inquiry');
 });
