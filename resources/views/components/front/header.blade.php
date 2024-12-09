@@ -4,7 +4,7 @@
         <!-- navigation bar -->
         <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand" href="#">
-                <img src="{{ asset('public/front/images/logo.png')}}" alt="image">
+                <img src="{{ asset('public/front/images/logo.png') }}" alt="image">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,6 +26,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link white_btn" href="contact.html">GET DEMO</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link dark_btn" href="contact.html">GET STARTED</a>
