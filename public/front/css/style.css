@@ -3455,7 +3455,8 @@ header.fix_style.white_header {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    margin-top: -150px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .contact_page_section .contact_inner .section_title h2 {
@@ -3483,8 +3484,8 @@ header.fix_style.white_header {
 }
 
 .contact_page_section .contact_inner .contact_form form .form-group .form-control {
-    height: 60px;
-    padding: 5px 20px;
+    height: auto;
+    padding: 10px 16px;
     color: var(--body-text-purplenew);
     border: 2px solid #E1DBF4;
     border-radius: 12px;
