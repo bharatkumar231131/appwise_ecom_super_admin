@@ -1722,7 +1722,7 @@ iframe#youtubevideo {
 /* interface wraper */
 .interface_section .screen_slider {
     margin-top: 35px;
-    min-height: 720px;
+    /* min-height: 720px; */
 }
 
 /* interface images */
@@ -1745,7 +1745,7 @@ iframe#youtubevideo {
 
 /* download app wraper */
 .free_app_section {
-    padding-top: 70px;
+    padding-top: 200px;
     position: relative;
 }
 
@@ -1759,7 +1759,7 @@ iframe#youtubevideo {
     padding: 20px 100px;
     padding-bottom: 50px;
     position: relative;
-    z-index: 999999;
+    /* z-index: 999999; */
 }
 
 /* download app dark background */
@@ -1816,7 +1816,7 @@ iframe#youtubevideo {
     margin-left: -65px;
 }
 
-.purple_backdrop {
+/* .purple_backdrop {
     content: "";
     position: fixed;
     left: 0;
@@ -1828,7 +1828,7 @@ iframe#youtubevideo {
     opacity: 0;
     transition: .4s all;
     pointer-events: none;
-}
+} */
 
 /* ---------------Latest_Story-Css-Start------------- */
 
