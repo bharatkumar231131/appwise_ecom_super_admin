@@ -1,30 +1,12 @@
 <div class="sa-app__sidebar">
-  <div class="sa-sidebar">
-    <div class="sa-sidebar__header">
-      <a class="sa-sidebar__logo" href="{{ url('admin/dashboard')}}">
-        <div class="sa-sidebar-logo">
-          <img src="https://123ecommerce.co.za/public/front/images/logo/41101.jpg" alt="">
-          {{-- <div class="sa-sidebar-logo__caption">
-            Super Admin
-          </div> --}}
-        </div>
-        <!-- logo / end -->
-      </a>
-    </div>
-    <div class="sa-sidebar__body" data-simplebar="init">
-      <div class="simplebar-wrapper">
-        <div class="simplebar-height-auto-observer-wrapper">
-          <div class="simplebar-height-auto-observer"></div>
-        </div>
-        <div class="simplebar-mask">
-          <div class="simplebar-offset">
-            <div class="simplebar-content-wrapper">
-              <div class="simplebar-content">
-                <ul class="sa-nav sa-nav--sidebar" data-sa-collapse="">
-                  <li class="sa-nav__section">
-                    <div class="sa-nav__section-title">
-                      <span>Application</span>
-                    </div>
+    <div class="sa-sidebar">
+        <div class="sa-sidebar__header">
+            <a class="sa-sidebar__logo" href="{{ url('admin/dashboard')}}">
+                <div class="sa-sidebar-logo">
+                    <img src="https://123ecommerce.co.za/public/front/images/logo/41101.jpg" alt="">
+                    {{-- <div class="sa-sidebar-logo__caption">
+                        Super Admin
+                    </div> --}}
                 </div>
                 <!-- logo / end -->
             </a>
