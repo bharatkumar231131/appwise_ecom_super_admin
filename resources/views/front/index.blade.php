@@ -60,11 +60,11 @@
                 <div class="col-lg-6 col-md-12" data-aos="fade-in" data-aos-duration="1500">
                     <div class="banner_slider">
                         <!-- <div class="left_icon">
-                                                <img src="images/message_icon.png" alt="image">
-                                              </div>
-                                              <div class="right_icon">
-                                                <img src="images/shield_icon.png" alt="image">
-                                              </div> -->
+                                                            <img src="images/message_icon.png" alt="image">
+                                                          </div>
+                                                          <div class="right_icon">
+                                                            <img src="images/shield_icon.png" alt="image">
+                                                          </div> -->
                         <div id="frmae_slider" class="owl-carousel owl-theme">
                             <div class="item">
                                 <div class="slider_img">
@@ -431,67 +431,67 @@
 
                     <!-- pricing box 2 -->
                     <!-- <div class="col-md-4">
-                                                    <div class="pricing_block highlited_block">
-                                                        <div class="icon">
-                                                            <img src="{{ asset('public/front/images/unlimited.png') }}" alt="image">
-                                                        </div>
-                                                        <div class="pkg_name">
-                                                            <h3>Unlimited</h3>
-                                                            <span>For the professionals</span>
-                                                        </div>
-                                                        <span class="price">$99</span>
-                                                        <ul class="benifits">
-                                                            <li>
-                                                                <p>Unlimited Website</p>
-                                                            </li>
-                                                            <li>
-                                                                <p>200 GB disk space</p>
-                                                            </li>
-                                                            <li>
-                                                                <p>20 Customize sub pages</p>
-                                                            </li>
-                                                            <li>
-                                                                <p>10 Domains access</p>
-                                                            </li>
-                                                            <li>
-                                                                <p>24/7 Customer support</p>
-                                                            </li>
-                                                        </ul>
-                                                        <a href="contact.html" class="btn white_btn">BUY NOW</a>
-                                                    </div>
-                                                </div> -->
+                                                                <div class="pricing_block highlited_block">
+                                                                    <div class="icon">
+                                                                        <img src="{{ asset('public/front/images/unlimited.png') }}" alt="image">
+                                                                    </div>
+                                                                    <div class="pkg_name">
+                                                                        <h3>Unlimited</h3>
+                                                                        <span>For the professionals</span>
+                                                                    </div>
+                                                                    <span class="price">$99</span>
+                                                                    <ul class="benifits">
+                                                                        <li>
+                                                                            <p>Unlimited Website</p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p>200 GB disk space</p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p>20 Customize sub pages</p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p>10 Domains access</p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p>24/7 Customer support</p>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <a href="contact.html" class="btn white_btn">BUY NOW</a>
+                                                                </div>
+                                                            </div> -->
 
                     <!-- pricing box 3 -->
                     <!-- <div class="col-md-4">
-                                                    <div class="pricing_block">
-                                                        <div class="icon">
-                                                            <img src="{{ asset('public/front/images/premium.png') }}" alt="image">
-                                                        </div>
-                                                        <div class="pkg_name">
-                                                            <h3>Premium</h3>
-                                                            <span>For small team</span>
-                                                        </div>
-                                                        <span class="price">$55</span>
-                                                        <ul class="benifits">
-                                                            <li>
-                                                                <p>Up to 10 Website</p>
-                                                            </li>
-                                                            <li>
-                                                                <p>100 GB disk space</p>
-                                                            </li>
-                                                            <li>
-                                                                <p>15 Customize sub pages</p>
-                                                            </li>
-                                                            <li>
-                                                                <p>4 Domains access</p>
-                                                            </li>
-                                                            <li>
-                                                                <p>24/7 Customer support</p>
-                                                            </li>
-                                                        </ul>
-                                                        <a href="contact.html" class="btn white_btn">BUY NOW</a>
-                                                    </div>
-                                                </div> -->
+                                                                <div class="pricing_block">
+                                                                    <div class="icon">
+                                                                        <img src="{{ asset('public/front/images/premium.png') }}" alt="image">
+                                                                    </div>
+                                                                    <div class="pkg_name">
+                                                                        <h3>Premium</h3>
+                                                                        <span>For small team</span>
+                                                                    </div>
+                                                                    <span class="price">$55</span>
+                                                                    <ul class="benifits">
+                                                                        <li>
+                                                                            <p>Up to 10 Website</p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p>100 GB disk space</p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p>15 Customize sub pages</p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p>4 Domains access</p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p>24/7 Customer support</p>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <a href="contact.html" class="btn white_btn">BUY NOW</a>
+                                                                </div>
+                                                            </div> -->
                 </div>
                 <!-- row end -->
             </div>
