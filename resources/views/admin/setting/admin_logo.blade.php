@@ -25,9 +25,9 @@
                         style="opacity: 0; cursor: pointer; height: 200px; width: 200px; top: 0; left: 0;"
                         onchange="previewImage(event, 'admin_preview')">
                     <img id="admin_preview"
-                        src="{{ !empty($admin_logo) ? asset('public/front/images/logo/' . $admin_logo) : '' }}"
+                        src="{{ !empty($setting['admin_logo']) ? asset('public/admin/images/logo/' . $setting['admin_logo']) : '' }}"
                         alt="Admin Logo Preview"
-                        style="width: 200px; height: 200px; margin-top: 10px; display: {{ !empty($admin_logo) ? 'block' : 'none' }};">
+                        style="width: 200px; height: 200px; margin-top: 10px; display: {{ !empty($setting['admin_logo']) ? 'block' : 'none' }};">
                 </div>
 
                 <div class="col-6 position-relative">
@@ -36,9 +36,9 @@
                         style="opacity: 0; cursor: pointer; height: 200px; width: 200px; top: 0; left: 0;"
                         onchange="previewImage(event, 'front_preview')">
                     <img id="front_preview"
-                        src="{{ !empty($front_logo) ? asset('public/front/images/logo/' . $front_logo) : '' }}"
+                        src="{{ !empty($setting['front_logo']) ? asset('public/front/images/logo/' . $setting['front_logo']) : '' }}"
                         alt="Front Logo Preview"
-                        style="width: 200px; height: 200px; margin-top: 10px; display: {{ !empty($front_logo) ? 'block' : 'none' }};">
+                        style="width: 200px; height: 200px; margin-top: 10px; display: {{ !empty($setting['front_logo']) ? 'block' : 'none' }};">
                 </div>
             </div>
 

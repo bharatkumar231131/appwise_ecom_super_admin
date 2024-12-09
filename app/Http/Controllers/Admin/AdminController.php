@@ -163,10 +163,10 @@ class AdminController extends Controller
 
     public function updateLogo(Request $request)
     {
-        $settings = Setting::first();
         // Check if any data is being posted (i.e., if there's any file uploaded)
         if ($request->isMethod('post')) {
             // Validate the uploaded files
+            $settings = Setting::where('id', '1')->first();
 
             $request->validate([
                 'admin_logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -211,12 +211,11 @@ class AdminController extends Controller
             }
             // dd($settings);
             // Save the changes to the database
-
             // Return success message and redirect to the logo page
             return redirect()->route('logo')->with('success_message', 'Logos updated successfully!');
+        } else {
+            $setting = Setting::where('id', '1')->first();
+            return view('admin.setting.admin_logo', compact('setting'));
         }
-
-        // Pass the existing logos to the view
-        return view('admin.setting.admin_logo', compact('settings'));
     }
 }
