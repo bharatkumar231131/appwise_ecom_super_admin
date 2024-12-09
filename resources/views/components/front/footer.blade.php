@@ -3,15 +3,15 @@
     <div class="top_footer" id="contact">
         <!-- animation line -->
         <div class="anim_line dark_bg">
-            <span><img src="{{ asset('public/front/images/anim_line.png')}}" alt="anim_line"></span>
-            <span><img src="{{ asset('public/front/images/anim_line.png')}}" alt="anim_line"></span>
-            <span><img src="{{ asset('public/front/images/anim_line.png')}}" alt="anim_line"></span>
-            <span><img src="{{ asset('public/front/images/anim_line.png')}}" alt="anim_line"></span>
-            <span><img src="{{ asset('public/front/images/anim_line.png')}}" alt="anim_line"></span>
-            <span><img src="{{ asset('public/front/images/anim_line.png')}}" alt="anim_line"></span>
-            <span><img src="{{ asset('public/front/images/anim_line.png')}}" alt="anim_line"></span>
-            <span><img src="{{ asset('public/front/images/anim_line.png')}}" alt="anim_line"></span>
-            <span><img src="{{ asset('public/front/images/anim_line.png')}}" alt="anim_line"></span>
+            <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
+            <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
+            <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
+            <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
+            <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
+            <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
+            <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
+            <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
+            <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
         </div>
         <!-- container start -->
         <div class="container">
@@ -20,7 +20,8 @@
                 <!-- footer link 1 -->
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="abt_side">
-                        <div class="logo"> <img src="{{ asset('public/front/images/footer_logo.png')}}" alt="image"></div>
+                        <div class="logo"> <img src="{{ asset('public/front/images/logo.png') }}" alt="image">
+                        </div>
                         <ul>
                             <li><a href="#">support@example.com</a></li>
                             <li><a href="#">+1-900-123 4567</a></li>
@@ -78,7 +79,8 @@
                     <p>© Copyrights 2022. All rights reserved.</p>
                 </div>
                 <div class="col-md-6">
-                    <p class="developer_text">Design & developed by <a href="#" target="blank">Kalanidhi Themes</a></p>
+                    <p class="developer_text">Design & developed by <a href="#" target="blank">Kalanidhi
+                            Themes</a></p>
                 </div>
             </div>
             <!-- row end -->
@@ -88,7 +90,7 @@
 
     <!-- go top button -->
     <div class="go_top">
-        <span><img src="{{ asset('public/front/images/go_top.png')}}" alt="image"></span>
+        <span><img src="{{ asset('public/front/images/go_top.png') }}" alt="image"></span>
     </div>
 </footer>
 <!-- Footer-Section end -->

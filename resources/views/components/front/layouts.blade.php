@@ -16,16 +16,15 @@
     <!-- Owl-Carosal-Style-link -->
     <link rel="stylesheet" href="{{ asset('public/front/css/owl.carousel.min.css') }}">
     <!-- Bootstrap-Style-link -->
-    <link rel="stylesheet" href="{{ asset('public/front/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('public/front/css/bootstrap.min.css') }}">
     <!-- Aos-Style-link -->
-    <link rel="stylesheet" href="{{ asset('public/front/css/aos.css')}}">
+    <link rel="stylesheet" href="{{ asset('public/front/css/aos.css') }}">
     <!-- Coustome-Style-link -->
-    <link rel="stylesheet" href="{{ asset('public/front/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('public/front/css/style.css') }}">
     <!-- Responsive-Style-link -->
-    <link rel="stylesheet" href="{{ asset('public/front/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{ asset('public/front/css/responsive.css') }}">
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('public/front/images/favicon.png') }}" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     @yield('styles')
 </head>
@@ -47,15 +46,18 @@
         @include('components.front.footer')
 
         <!-- VIDEO MODAL -->
-        <div class="modal fade youtube-video" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade youtube-video" id="myModal" tabindex="-1" role="dialog"
+            aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <button id="close-video" type="button" class="button btn btn-default text-right" data-dismiss="modal">
+                    <button id="close-video" type="button" class="button btn btn-default text-right"
+                        data-dismiss="modal">
                         <i class="icofont-close-line-circled"></i>
                     </button>
                     <div class="modal-body">
                         <div id="video-container" class="video-container">
-                            <iframe id="youtubevideo" src="#" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                            <iframe id="youtubevideo" src="#" width="640" height="360" frameborder="0"
+                                allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="modal-footer">

@@ -766,41 +766,13 @@ header.fixed .navbar {
 }
 
 /* hero slider list */
-.banner_section .app_btn li a {
-    display: block;
-    padding: 12px 30px;
-    background-color: var(--bg-white);
-    border: 2px solid var(--primaryclr);
-    position: relative;
-    border-radius: 12px;
-    transition: .4s all;
-}
 
 .banner_section .app_btn li:last-child {
     margin-left: 25px;
 }
 
-.banner_section .app_btn li a img {
-    transition: .4s all;
-}
-
-.banner_section .app_btn li a .white_img {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-}
-
-.banner_section .app_btn li a:hover {
-    background-color: var(--primaryclr);
-}
-
-.banner_section .app_btn li a:hover .blue_img {
-    opacity: 0;
-}
-
-.banner_section .app_btn li a:hover .white_img {
-    opacity: 1;
+.banner_section .app_btn .blue_img {
+    max-width: 155px;
 }
 
 /* hero slider users */
@@ -1173,7 +1145,6 @@ header.fixed .navbar {
 .how_it_works .how_it_inner {
     background-color: var(--bg-white);
     padding: 70px 0;
-    padding-bottom: 250px;
     border-radius: 30px;
     box-shadow: 0px 4px 30px #EDE9FE;
 }
@@ -1591,11 +1562,15 @@ iframe#youtubevideo {
 .pricing_section .pricing_pannel .pricing_block {
     text-align: center;
     background-color: var(--bg-white);
-    min-height: 700px;
-    border-radius: 12px;
-    padding-top: 60px;
+    min-height: 550px;
+    padding: 40px;
     margin-bottom: 40px;
     box-shadow: 0px 4px 30px #EDE9FE;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
 }
 
 .pricing_section .pricing_pannel .pricing_block.highlited_block {
@@ -1641,6 +1616,25 @@ iframe#youtubevideo {
 /* pricing box list */
 .pricing_section .pricing_pannel .pricing_block .benifits {
     margin-bottom: 40px;
+    text-align: left;
+}
+
+.pricing_section .pricing_pannel .pricing_block .benifits li {
+    padding-left: 25px;
+    position: relative;
+}
+
+.pricing_section .pricing_pannel .pricing_block .benifits li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    background-image: url(../images/right_icon.png);
+    width: 17px;
+    height: 17px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .pricing_section .pricing_pannel .pricing_block .benifits li p {
@@ -1798,18 +1792,10 @@ iframe#youtubevideo {
 
 .free_app_section .container .free_app_inner .free_text .app_btn li a {
     display: block;
-    padding: 12px 30px;
-    background-color: var(--bg-white);
-    border: 2px solid var(--primaryclr);
-    position: relative;
-    border-radius: 12px;
-    transition: .4s all;
 }
 
-.free_app_section .container .free_app_inner .free_text .app_btn li a:hover {
-    -webkit-box-shadow: 1px 4px 8px -2px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 1px 4px 8px -2px rgba(0, 0, 0, 0.5);
-    box-shadow: 1px 4px 8px -2px rgba(0, 0, 0, 0.5);
+.free_app_section .container .free_app_inner .free_text .app_btn .blue_img {
+    max-width: 155px;
 }
 
 .free_app_section .container .free_app_inner .free_text .app_btn li:last-child {
@@ -2027,6 +2013,9 @@ footer .top_footer .logo {
 
 footer .top_footer .logo img {
     width: 150px;
+    max-height: 80px;
+    object-fit: contain;
+    object-position: left;
 }
 
 footer .top_footer .abt_side li {
