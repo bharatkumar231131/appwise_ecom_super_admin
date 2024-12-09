@@ -13,7 +13,9 @@
                 </nav>
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 m-0">Pages</h1>
+                    @can('create page')
                     <a href="{{ url('admin/add-edit-page') }}" class="btn btn-primary">New Page Add</a>
+                    @endcan
                 </div>
                 @if (Session::has('success_message'))
                 <!-- Check AdminController.php, updateAdminPassword() method -->
@@ -46,7 +48,9 @@
                             <th>ID</th>
                             <th>page title</th>
                             <!-- <th>url key</th> -->
+                            @can('edit page')
                             <th>Actions</th>
+                            @endcan
                         </tr>
                     </thead>
                     <tbody>
@@ -57,6 +61,7 @@
                             {{--<td>
                                 {{ $page['url_key'] }}
                             </td>--}}
+                            @can('edit page')
                             <td>
                                 <div class="d-flex gap-3">
                                     <a href="{{ url('admin/add-edit-page/' . $page['id']) }}" class="actionbtn-tb actionbtn-edit"
@@ -64,6 +69,7 @@
                                             class="far fa-edit text-white"></i></a>
                                 </div>
                             </td>
+                            @endcan
                         </tr>
                         @empty
                         @endforelse
