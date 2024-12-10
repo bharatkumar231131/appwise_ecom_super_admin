@@ -4,7 +4,11 @@
     <div class="container">
         <div class="py-5">
             <h1 class="h3 mb-3">Upload Admin and Front Logos</h1>
-
+            <div class="mb-5">
+                <a class="btn btn-secondary backbtn" href="{{ url()->previous() }}">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </a>
+            </div>
             @if (Session::has('success_message'))
                 <!-- Check AdminController.php, updateAdminPassword() method -->
                 <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
@@ -22,7 +26,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row mb-3">
-                            <div class="col-6 position-relative">
+                            <div class="col-md-6 position-relative">
                                 <div>
                                     <h6>Admin Logo (200px x 200px)</h6>
                                     <label for="admin_logo"
@@ -56,7 +60,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-6 position-relative">
+                            <div class="col-md-6 position-relative">
                                 <div>
                                     <h6>Front Logo (200px x 200px)</h6>
                                     <label for="front_logo"
