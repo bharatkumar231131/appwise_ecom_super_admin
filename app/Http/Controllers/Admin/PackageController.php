@@ -110,7 +110,9 @@ class PackageController extends Controller
 
     public function packageBuy()
     {
-        $packageBuy = PackageBuy::all();
+        $packageBuy = PackageBuy::with('shop')->first();
+        return $packageBuy;
+        dd($packageBuy);
         return view('admin.packages.package_buy', compact('packageBuy'));
     }
 }
