@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
 
-class PackageController extends Controller 
+class PackageController extends Controller
 {
     // public static function middleware(): array
     // {
@@ -89,9 +89,19 @@ class PackageController extends Controller
         return view('admin.packages.add_edit_package')->with(compact('title', 'package'));
     }
 
+    public function changePackageStatus(Request $request)
+    {
 
-    public function packageBuy(){
+        Package::where('id', $request->package_id)->update([
+            "status" => $request->status
+        ]);
+
+        return response()->json(['success' => true]);
+    }
+
+    public function packageBuy()
+    {
         $packageBuy = PackageBuy::all();
-        return view('admin.packages.package_buy' , compact('packageBuy'));
+        return view('admin.packages.package_buy', compact('packageBuy'));
     }
 }

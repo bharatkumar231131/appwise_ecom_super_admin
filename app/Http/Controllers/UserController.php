@@ -9,7 +9,7 @@ use Spatie\Permission\Models\Role;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
 
-class UserController extends Controller 
+class UserController extends Controller
 {
 
     // public static function middleware(): array
@@ -38,6 +38,10 @@ class UserController extends Controller
     public function create()
     {
         //
+        $roles = Role::orderBy('name', 'ASC')->get();
+        return view('admin.users.create', [
+            'roles' => $roles,
+        ]);
     }
 
     /**
@@ -45,7 +49,22 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:3',
+            'email' => 'required|email|unique:users,email,'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('user.create')->withInput()->withErrors($validator);
+        }
+
+        $user = User::new();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
+
+        $user->syncRoles($request->role);
+        return redirect()->route('users.index')->with('success_message', "User Added Successfully");
     }
 
     /**
@@ -54,6 +73,7 @@ class UserController extends Controller
     public function show(string $id)
     {
         //
+
     }
 
     /**

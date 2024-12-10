@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class PackageBuy extends Model
 {
-    protected $table = 'package_buy';
+    public $table = 'package_buy';
+    protected $guarded = [];
 }
