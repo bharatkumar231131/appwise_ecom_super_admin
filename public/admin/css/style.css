@@ -1410,6 +1410,16 @@ body {
   padding: var(--sa-input-padding-y) var(--sa-input-padding-x)
 }
 
+.infajk {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.infajk .ajrwba {
+  min-width: 90px;
+}
+
 [dir=rtl] .form-control::file-selector-button {
   margin-left: var(--sa-input-padding-x)
 }
