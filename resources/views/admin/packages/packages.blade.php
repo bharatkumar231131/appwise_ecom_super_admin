@@ -11,10 +11,12 @@
                         <li class="breadcrumb-item active">Packages</li>
                     </ol>
                 </nav>
+                @can('create package')
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 m-0">Packages</h1>
                     <a href="{{ url('admin/add-edit-package') }}" class="btn btn-primary">New Package Add</a>
                 </div>
+                @endcan
                 @if (Session::has('success_message'))
                 <!-- Check AdminController.php, updateAdminPassword() method -->
                 <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
@@ -52,7 +54,10 @@
                             <th>Price</th>
                             <th>Days</th>
                             <th>Status</th>
+                            @if (Gate::check('edit package') || Gate::check('delete package'))
                             <th>Actions</th>
+                            @endif
+                            <!-- <th>Actions</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -77,19 +82,24 @@
                                 <span class="badge bg-secondary">N/A</span>
                                 @endif
                             </td>
-
+                            @if (Gate::check('edit package') || Gate::check('delete package'))
                             <td>
                                 <div class="d-flex gap-3">
+                                    @can('edit package')
                                     <a href="{{ url('admin/add-edit-package/' . $package['id']) }}" class="actionbtn-tb actionbtn-edit"
                                         data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Edit"><i
                                             class="far fa-edit text-white"></i></a>
+                                    @endcan
+                                    @can('delete package')
                                     <a href="#" data-url="{{ route('admin.delete', ['type' => 'package', 'id' => $package['id']]) }}"
                                         class="actionbtn-tb actionbtn-remove delete-btn" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-original-title="Delete">
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
+                                    @endcan
                                 </div>
                             </td>
+                            @endif
                         </tr>
                         @empty
                         @endforelse

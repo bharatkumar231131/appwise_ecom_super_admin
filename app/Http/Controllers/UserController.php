@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
-use Illuminate\Routing\Controllers\HasMiddleware;
-use Illuminate\Routing\Controllers\Middleware;
+// use Illuminate\Routing\Controllers\HasMiddleware;
+// use Illuminate\Routing\Controllers\Middleware;
 
 class UserController extends Controller
 {
@@ -21,6 +21,14 @@ class UserController extends Controller
     //         // new Middleware('permission:delete users', only: ['destroy']),
     //     ];
     // }
+
+    public function __construct()
+    {
+        $this->middleware('permission:view users')->only(['index']);
+        $this->middleware('permission:edit user')->only(['edit']);
+        $this->middleware('permission:create user')->only(['create']);
+        // $this->middleware('permission:delete user')->only(['destroy']);
+    }
 
     /**
      * Display a listing of the resource.
@@ -58,9 +66,10 @@ class UserController extends Controller
             return redirect()->route('user.create')->withInput()->withErrors($validator);
         }
 
-        $user = User::new();
+        $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->password = bcrypt('12345678');
         $user->save();
 
         $user->syncRoles($request->role);

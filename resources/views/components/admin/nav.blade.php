@@ -9,9 +9,9 @@ $admin_logo = $setting['admin_logo'];
                 <div class="sa-sidebar-logo">
                     <!-- <img src="https://123ecommerce.co.za/public/front/images/logo/41101.jpg" alt=""> -->
                     <img src="{{ asset('public/admin/images/logo/' . $admin_logo) }}" alt="">
-                    <div class="sa-sidebar-logo__caption">
+                    {{--<div class="sa-sidebar-logo__caption">
                         Super Admin
-                    </div>
+                    </div>--}}
                 </div>
                 <!-- logo / end -->
             </a>
@@ -73,6 +73,7 @@ $admin_logo = $setting['admin_logo'];
                                                     </li>
                                                 </ul>
                                             </li>
+                                            @can('view inquiries')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
                                                 <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
@@ -94,8 +95,8 @@ $admin_logo = $setting['admin_logo'];
                                                     </li>
                                                 </ul>
                                             </li>
-
-
+                                            @endcan
+                                            @can('view owners')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
                                                 <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
@@ -118,7 +119,31 @@ $admin_logo = $setting['admin_logo'];
                                                     </li>
                                                 </ul>
                                             </li>
-
+                                            @endcan
+                                            @can('view pages')
+                                            <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
+                                                data-sa-collapse-item="sa-nav__menu-item--open">
+                                                <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                                            viewBox="0 0 24 24">
+                                                            <path
+                                                                d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l7.45 3.72-2.92 1.47L12 6.04 7.47 7.37 4.55 5.9 12 4.18zM4 9.6v7.91l8 4 8-4V9.6l-8 4-8-4zm8 2.36l4.7 2.36-4.7 2.35-4.7-2.35 4.7-2.36z" />
+                                                        </svg></span><span class="sa-nav__title">CMS
+                                                        Management</span><span class="sa-nav__arrow"><svg xmlns="http://www.w3.org/2000/svg"
+                                                            width="6" height="9" viewBox="0 0 6 9" fill="currentColor">
+                                                            <path
+                                                                d="M5.605,0.213 C6.007,0.613 6.107,1.212 5.706,1.612 L2.696,4.511 L5.706,7.409 C6.107,7.809 6.107,8.509 5.605,8.808 C5.204,9.108 4.702,9.108 4.301,8.709 L-0.013,4.511 L4.401,0.313 C4.702,-0.087 5.304,-0.087 5.605,0.213 Z">
+                                                            </path>
+                                                        </svg></span></a>
+                                                <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
+                                                    <li class="sa-nav__menu-item">
+                                                        <a href="{{ url('admin/pages') }}" class="sa-nav__link"><span
+                                                                class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Pages</span></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            @endcan
+                                            @can('view permissions')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
                                                 <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
@@ -141,8 +166,8 @@ $admin_logo = $setting['admin_logo'];
                                                     </li>
                                                 </ul>
                                             </li>
-
-
+                                            @endcan
+                                            @can('view roles')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
                                                 <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
@@ -164,7 +189,8 @@ $admin_logo = $setting['admin_logo'];
                                                     </li>
                                                 </ul>
                                             </li>
-
+                                            @endcan
+                                            @can('view users')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
                                                 <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
@@ -186,32 +212,9 @@ $admin_logo = $setting['admin_logo'];
                                                     </li>
                                                 </ul>
                                             </li>
+                                            @endcan
 
-
-                                            <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
-                                                data-sa-collapse-item="sa-nav__menu-item--open">
-                                                <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
-                                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                                            viewBox="0 0 24 24">
-                                                            <path
-                                                                d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l7.45 3.72-2.92 1.47L12 6.04 7.47 7.37 4.55 5.9 12 4.18zM4 9.6v7.91l8 4 8-4V9.6l-8 4-8-4zm8 2.36l4.7 2.36-4.7 2.35-4.7-2.35 4.7-2.36z" />
-                                                        </svg></span><span class="sa-nav__title">CMS
-                                                        Management</span><span class="sa-nav__arrow"><svg xmlns="http://www.w3.org/2000/svg"
-                                                            width="6" height="9" viewBox="0 0 6 9" fill="currentColor">
-                                                            <path
-                                                                d="M5.605,0.213 C6.007,0.613 6.107,1.212 5.706,1.612 L2.696,4.511 L5.706,7.409 C6.107,7.809 6.107,8.509 5.605,8.808 C5.204,9.108 4.702,9.108 4.301,8.709 L-0.013,4.511 L4.401,0.313 C4.702,-0.087 5.304,-0.087 5.605,0.213 Z">
-                                                            </path>
-                                                        </svg></span></a>
-                                                <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
-                                                        <a href="{{ url('admin/pages') }}" class="sa-nav__link"><span
-                                                                class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Pages</span></a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-
-
-
+                                            @can('update setting')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
                                                 <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
@@ -233,7 +236,7 @@ $admin_logo = $setting['admin_logo'];
                                                     </li>
                                                 </ul>
                                             </li>
-
+                                            @endcan
                                         </ul>
                                     </li>
                                 </ul>

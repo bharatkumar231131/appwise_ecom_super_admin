@@ -14,7 +14,9 @@
                 </nav>
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 m-0">Shop Owners</h1>
+                    @can('create owner')
                     <a href="{{ route('admin.addEditShopOwner') }}" class="btn btn-primary">Add Shop Owner</a>
+                    @endcan
                 </div>
 
                 @if (Session::has('success_message'))
@@ -54,7 +56,10 @@
                             <th>Start Date</th>
                             <th>End Date </th>
                             <th>Status</th>
+                            @if (Gate::check('edit owner') || Gate::check('delete owner'))
                             <th>Actions</th>
+                            @endif
+                            <!-- <th>Actions</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -70,28 +75,38 @@
 
                             <td>
                                 @if ($shopOwner->status == 'active' && (!$shopOwner->end_date || now() <= $shopOwner->end_date))
-                                    <span class="badge bg-success change-status" data-id="{{ $shopOwner->id }}"
-                                        data-status="active">Active</span>
+                                    <span class="badge bg-success @can('owner status') change-status @endcan"
+                                        data-id="{{ $shopOwner->id }}" data-status="active">Active</span>
                                     @elseif ($shopOwner->status == 'inactive' && (!$shopOwner->end_date || now() <= $shopOwner->end_date))
-                                        <span class="badge bg-warning change-status" data-id="{{ $shopOwner->id }}"
-                                            data-status="inactive">Inactive</span>
+                                        <span class="badge bg-warning @can('owner status') change-status @endcan"
+                                            data-id="{{ $shopOwner->id }}" data-status="inactive">Inactive</span>
                                         @elseif ($shopOwner->end_date && now() > $shopOwner->end_date)
                                         <span class="badge bg-danger">Suspended</span>
                                         @endif
                             </td>
+                            @if (Gate::check('edit owner') || Gate::check('delete owner'))
                             <td>
                                 <div class="d-flex gap-3">
+                                    @can('edit owner')
                                     <a href="{{ route('admin.addEditShopOwner', $shopOwner->id) }}" class="actionbtn-tb actionbtn-edit"
                                         data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Edit">
                                         <i class="far fa-edit text-white"></i>
                                     </a>
+                                    @endcan
+                                    @can('delete owner')
                                     <a href="#" data-url="{{ route('admin.delete', ['type' => 'owner', 'id' => $shopOwner->id] ) }}"
                                         class="actionbtn-tb actionbtn-remove delete-btn" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-original-title="Delete">
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
+                                    @endcan
+                                    <a href="{{ url('admin/shop-owners-details/' . $shopOwner->id) }}" class="actionbtn-tb actionbtn-edit"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="View">
+                                        <i class="far fa-eye text-white"></i>
+                                    </a>
                                 </div>
                             </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

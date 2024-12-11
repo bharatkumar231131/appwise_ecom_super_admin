@@ -34,10 +34,8 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Package Id</th>
-              <th>Shop-Owner Id</th>
+              <th>Shop-Owner Name</th>
               <th>Package Name</th>
-              <th>Description</th>
               <th>Number Of Section</th>
               <th>Number Of Category</th>
               <th>Number Of Product</th>
@@ -51,10 +49,13 @@
             @foreach ($packageBuy as $package)
           <tr>
             <td>{{ $package->id }}</td>
-            <td>{{ $package->package_id }}</td>
-            <td>{{ $package->shop_owner_id }}</td>
+            <td>
+    <a href="{{url('admin/shop-owners-details/' . $package->shopowner->id)}}">
+        {{ $package->shopowner->name }}
+    </a>
+</td>
+
             <td>{{ $package->package_name }}</td>
-            <td>{{ $package->description }}</td> 
             <td>{{ $package->number_of_section }}</td>
             <td>{{ $package->number_of_category }}</td>
             <td>{{ $package->number_of_product }}</td>

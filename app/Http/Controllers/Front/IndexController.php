@@ -60,6 +60,7 @@ class IndexController extends Controller
 
     public function processPayment(Request $request, $id)
     {
+        
         // Retrieve the package details
         $package = Package::find($id);
         $owner_id = $request->owner_id;

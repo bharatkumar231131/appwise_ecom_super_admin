@@ -1,75 +1,89 @@
-@extends('components.admin.layouts')
+@extends('components.front.layouts')
 @section('content')
-<div class="container">
-  <div class="py-5">
-    <div class="row g-4 align-items-center">
-      <div class="col-12">
-        <nav class="mb-2" aria-label="breadcrumb">
-          <ol class="breadcrumb breadcrumb-sa-simple">
-            <li class="breadcrumb-item"><a href="{{ url('admin/dashboard')}}">Dashboard</a></li>
-            <span>&nbsp;/&nbsp;</span>
-            <li class="breadcrumb-item active">Inquiries</li>
-          </ol>
-        </nav>
-        <div class="d-flex justify-content-between">
-          <h1 class="h3 m-0">Inquiries</h1>
+<section class="contact_page_section">
+    <div class="container">
+        <div class="contact_inner">
+            <div class="contact_form">
+                <div class="section_title">
+                    <h2>Leave a <span>message</span></h2>
+                    <p>Fill up form below, our team will get back soon</p>
+                </div>
+                <form action="{{ url('save-inquiry') }}" method="post">
+                    @csrf
+                    <div class="form-group">
+                        <input type="text" placeholder="Name" name="name" id="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" name="email" id="email" class="form-control">
+                    </div>
+                    <!-- <div class="form-group">
+                        <input type="text" placeholder="Company Name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option value="">Country</option>
+                        </select>
+                    </div> -->
+                    <div class="form-group">
+                        <input type="text" placeholder="Phone" name="phone" id="phone" class="form-control">
+                    </div>
+                    <!-- <div class="form-group">
+                        <input type="text" placeholder="Website" class="form-control">
+                    </div> -->
+                    <div class="form-group">
+                        <input type="text" placeholder="Address" name="address" id="address" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="message" id="message" placeholder="Your message"></textarea>
+                    </div>
+                    {{--<div class="form-group term_check">
+                        <input type="checkbox" id="term">
+                        <label for="term">I agree to receive emails, newsletters and promotional messages</label>
+                    </div>--}}
+                    <div class="form-group mb-0">
+                        <button type="submit" class="btn puprple_btn">SEND MESSAGE</button>
+                    </div>
+                </form>
+            </div>
+            <div class="contact_info">
+                <div class="icon"><img src="images/contact_message_icon.png" alt="image"></div>
+                <div class="section_title">
+                    <h2>Have any <span>question?</span></h2>
+                    <p>If you have any question about our product, service, payment or company, Visit our <a href="faq.html">FAQs
+                            page.</a></p>
+                </div>
+                <a href="faq.html" class="btn puprple_btn">READ FAQ</a>
+                <ul class="contact_info_list">
+                    <li>
+                        <div class="img">
+                            <img src="images/mail_icon.png" alt="image">
+                        </div>
+                        <div class="text">
+                            <span>Email Us</span>
+                            <a href="mailto:example@gmail.com">example@gmail.com</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img">
+                            <img src="images/call_icon.png" alt="image">
+                        </div>
+                        <div class="text">
+                            <span>Call Us</span>
+                            <a href="tel:+1(888)553-46-11">+1 (888) 553-46-11</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img">
+                            <img src="images/location_icon.png" alt="image">
+                        </div>
+                        <div class="text">
+                            <span>Visit Us</span>
+                            <p>5687, Business Avenue, New York, USA 5687</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        @if (Session::has('success_message'))
-        <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
-          <strong>Success:</strong> {{ Session::get('success_message') }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        @endif
-      </div>
-      <div class="col-12">
-        <a class="btn btn-secondary backbtn" href="{{ url()->previous() }}">
-          <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        </a>
-      </div>
     </div>
-  </div>
-
-<form action="{{ url('inquiry-submit') }}" name="contact-us-form" method="post" class="needs-validation" novalidate>
-    @csrf
-
-    <!-- Name Field -->
-    <div class="form-floating my-4">
-        <input type="text" id="contact-name" class="form-control" placeholder="Name" required name="name" value="{{ old('name') }}">
-        <label for="contact-name">Your Name *</label>
-    </div>
-
-    <!-- Email Field -->
-    <div class="form-floating my-4">
-        <input type="email" id="contact-email" class="form-control" placeholder="Email" required name="email" value="{{ old('email') }}">
-        <label for="contact-email">Your Email *</label>
-    </div>
-
-    <!-- Phone Field -->
-    <div class="form-floating my-4">
-        <input type="tel" id="contact-phone" class="form-control" placeholder="Phone" required name="phone" value="{{ old('phone') }}">
-        <label for="contact-phone">Your Phone *</label>
-    </div>
-
-    <div class="form-floating my-4">
-        <input type="tel" id="contact-address" class="form-control" placeholder="Address" required name="address" value="{{ old('address') }}">
-        <label for="contact-address">Your Address *</label>
-    </div>
-
-    <!-- Message Field -->
-    <div class="form-floating my-4">
-        <textarea id="contact-message" class="form-control" placeholder="Message" required name="message">{{ old('message') }}</textarea>
-        <label for="contact-message">Your Message *</label>
-    </div>
-
-   
-
-    <!-- Submit Button -->
-    <div class="">
-        <button type="submit" class="btn btn-primary">Send Message</button>
-    </div>
-
-
-</form>
-
-</div>
+</section>
 @endsection
