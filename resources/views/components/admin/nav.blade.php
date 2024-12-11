@@ -1,19 +1,20 @@
 @php
-$setting = App\Models\Setting::where('id','1')->first();
-$admin_logo = $setting['admin_logo'];
+$setting = App\Models\Setting::where('id', '1')->first();
+$admin_logo = $setting['admin_logo'] ?? '';
 @endphp
 <div class="sa-app__sidebar">
     <div class="sa-sidebar">
         <div class="sa-sidebar__header">
-            <a class="sa-sidebar__logo" href="{{ url('admin/dashboard')}}">
+            <a class="sa-sidebar__logo" href="{{ url('admin/dashboard') }}">
                 <div class="sa-sidebar-logo">
                     <!-- <img src="https://123ecommerce.co.za/public/front/images/logo/41101.jpg" alt=""> -->
                     <img src="{{ asset('public/admin/images/logo/' . $admin_logo) }}" alt="">
-                    {{--<div class="sa-sidebar-logo__caption">
+                    {{-- <div class="sa-sidebar-logo__caption">
                         Super Admin
-                    </div>--}}
+                    </div> --}}
                 </div>
                 <!-- logo / end -->
+
             </a>
         </div>
         <div class="sa-sidebar__body" data-simplebar="init">
@@ -31,8 +32,8 @@ $admin_logo = $setting['admin_logo'];
                                             <span>Application</span>
                                         </div>
                                         <ul class="sa-nav__menu sa-nav__menu--root">
-                                            <li class="sa-nav__menu-item sa-nav__menu-item--has-icon active">
-                                                <a href="{{ url('admin/dashboard')}}" class="sa-nav__link">
+                                            <li class="sa-nav__menu-item sa-nav__menu-item--has-icon ">
+                                                <a href="{{ url('admin/dashboard') }}" class="sa-nav__link">
                                                     <span class="sa-nav__icon">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"
                                                             fill="currentColor">
@@ -44,6 +45,7 @@ $admin_logo = $setting['admin_logo'];
                                                     <span class="sa-nav__title">Dashboard</span>
                                                 </a>
                                             </li>
+                                            @can('view packages')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
                                                 <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
@@ -73,6 +75,7 @@ $admin_logo = $setting['admin_logo'];
                                                     </li>
                                                 </ul>
                                             </li>
+                                            @endcan
                                             @can('view inquiries')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">

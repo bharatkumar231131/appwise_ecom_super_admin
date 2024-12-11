@@ -90,6 +90,10 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
 
         Route::match(['get', 'post'], 'logo', 'AdminController@updateLogo')->name('logo');
+
+        // Route::get('/shop/upgrade-package', 'PackageController@upgradePackage');
+        Route::get('/test-package-upgrade', 'PackageController@upgradePackage')->name('testpackage');
+
     });
 
 
@@ -98,7 +102,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
 
 Route::namespace('App\Http\Controllers\Front')->group(function () {
-    Route::get('/', 'IndexController@index')->name('home');
+    // Route::get('/', 'IndexController@index')->name('home');
     Route::get('/home', 'IndexController@index')->name('home');
     Route::any('/package/buy/{id}', 'IndexController@PackageBuy')->name('package.buy');
     Route::any('/save_owner_details/{id}', 'IndexController@saveOwnerDetails')->name('package.saveOwnerDetails');
@@ -116,4 +120,10 @@ Route::post('payfastnotify', [PayfastController::class, 'payFastNotify'])->name(
 
     Route::get('/inquiry', 'InquiryController@inquiry')->name('inquiry');
     Route::post('/save-inquiry', 'InquiryController@saveInquiry')->name('save_inquiry');
+
+    
 });
+
+
+
+

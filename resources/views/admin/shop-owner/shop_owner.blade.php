@@ -83,6 +83,7 @@
                                         @elseif ($shopOwner->end_date && now() > $shopOwner->end_date)
                                         <span class="badge bg-danger">Suspended</span>
                                         @endif
+                                        
                             </td>
                             @if (Gate::check('edit owner') || Gate::check('delete owner'))
                             <td>

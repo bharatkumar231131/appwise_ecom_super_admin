@@ -39,16 +39,16 @@ class AdminController extends Controller
 
             if (Auth::attempt(['email' => $data['email'], 'password' => $data['password']])) {
                 $user = Auth::user();
-
-                if ($user->type == 'admin' && $user->status == '0') {
-                    Auth::logout();
-                    return redirect()->back()->with('error_message', 'Your admin account is not active');
-                } elseif ($user->type == 'superadmin' || $user->type == 'admin') {
-                    return redirect('/admin/dashboard');
-                } else {
-                    Auth::logout();
-                    return redirect()->back()->with('error_message', 'Unauthorized access');
-                }
+                return redirect('/admin/dashboard');
+                // if ($user->type == 'admin' && $user->status == '0') {
+                //     Auth::logout();
+                //     return redirect()->back()->with('error_message', 'Your admin account is not active');
+                // } elseif ($user->type == 'superadmin' || $user->type == 'admin') {
+                //     return redirect('/admin/dashboard');
+                // } else {
+                //     Auth::logout();
+                //     return redirect()->back()->with('error_message', 'Unauthorized access');
+                // }
             } else {
                 return redirect()->back()->with('error_message', 'Invalid Email or Password');
             }

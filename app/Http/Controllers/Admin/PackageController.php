@@ -9,6 +9,7 @@ use App\Models\PackageBuy;
 use Illuminate\Support\Facades\Validator;
 // use Illuminate\Routing\Controllers\HasMiddleware;
 // use Illuminate\Routing\Controllers\Middleware;
+use App\Services\PackageLogicService;
 
 class PackageController extends Controller
 {
@@ -23,12 +24,15 @@ class PackageController extends Controller
     // }
     //
 
-    public function __construct()
+    protected $packageLogicService;
+
+    public function __construct(PackageLogicService $packageLogicService)
     {
         $this->middleware('permission:view packages')->only(['packages']);
         // $this->middleware('permission:edit package')->only(['edit']);
         // $this->middleware('permission:create package')->only(['create']);
         // $this->middleware('permission:delete permission')->only(['destroy']);
+        $this->packageLogicService = $packageLogicService;
     }
 
     public function packages()
@@ -113,4 +117,62 @@ class PackageController extends Controller
         $packageBuy = PackageBuy::with('shopOwner')->get();
         return view('admin.packages.package_buy', compact('packageBuy'));
     }
+
+    // public function upgradePackage(Request $request)
+    // {
+    //     // Validate the incoming request
+    //     $validatedData = $request->validate([
+    //         'package_id' => 'required|integer',
+    //         'name' => 'required|string',
+    //         'number_of_section' => 'required|integer',
+    //         'number_of_category' => 'required|integer',
+    //         'number_of_product' => 'required|integer',
+    //         'price' => 'required|numeric',
+    //     ]);
+
+    //     // Send data to API
+    //     $response = $this->packageLogicService->sendPackageUpgradeData($validatedData);
+
+    //     if (isset($response['error']) && $response['error']) {
+    //         return response()->json([
+    //             'message' => 'Failed to upgrade package.',
+    //             'details' => $response['message'],
+    //         ], 500);
+    //     }
+
+    //     return response()->json([
+    //         'message' => 'Package upgraded successfully!',
+    //         'response' => $response,
+    //     ]);
+    // }
+
+    public function upgradePackage()
+    {
+        $staticData = [
+            "package_id" => 1,
+            "name" => "basic",
+            "number_of_section" => 20,
+            "number_of_category" => 25,
+            "number_of_product" => 30,
+            "price" => 5000
+        ];
+        $staticData = json_encode($staticData);
+    
+        $domainUrl = 'http://localhost/appwise-ecom';
+        $response = $this->packageLogicService->sendPackageUpgradeData($domainUrl, $staticData);
+        $response = json_encode($response);
+    
+        if (isset($response['error']) && $response['error']) {
+            return response()->json([
+                'message' => 'Failed to upgrade package.',
+                'details' => $response['message'],
+            ], 500);
+        }
+    
+        return response()->json([
+            'message' => 'Package upgraded successfully!',
+            'response' => $response,
+        ]);
+    }
+    
 }
