@@ -16,8 +16,11 @@ class ShipLogicService
     public function __construct()
     {
         $this->client = new Client();
-        $this->apiUrl = env('SaHIPLOGIC_API_URL', 'https://api.shiplogic.com');  // Replace with the actual ShipLogic API URL
-        $this->apiKey = 'a601d99c75fc4c64b5a64288f97d52b4';
+        // $this->apiUrl = env('SaHIPLOGIC_API_URL', 'https://api.shiplogic.com');  // Replace with the actual ShipLogic API URL
+        // $this->apiUrl = 'https://api.shiplogic.com';
+        $this->apiUrl = 'http://localhost/appwise/api';
+        // http://localhost/appwise/api/shop-owner/shop-details
+        // $this->apiKey = 'a601d99c75fc4c64b5a64288f97d52b4';
         // $this->apiKey = '749b951424134149b2d2b5ac414e3f59';
         //env('SHIPLOGIC_API_KEY');  // Your API Key from ShipLogic
         //$this->apiKey = '6d841a65168143fc952836a27086abb2';//env('SHIPLOGIC_API_KEY');  // aslam test
@@ -29,7 +32,7 @@ class ShipLogicService
     public function getShippingCharge($originZip, $destinationZip, $weight, $dimensions)
     {
         // $endpoint = '/shipping/charge';  // Replace with the actual API endpoint for shipping charge
-        $endpoint = '/v2/rates';  // Replace with the actual API endpoint for shipping charge
+        $endpoint = '/shop-owner/shop-details';  // Replace with the actual API endpoint for shipping charge
         $company_address = CompanyAddress::where('id', '1')->first();
         $payload = array(
             'collection_address' => array(

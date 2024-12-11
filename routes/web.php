@@ -27,7 +27,6 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::get('dashboard', 'AdminController@dashboard');
         Route::get('logout', 'AdminController@logout');
 
-
         //packages
         Route::get('packages', 'PackageController@packages');
         Route::match(['get', 'post'], 'add-edit-package/{id?}', 'packagecontroller@addeditpackage')->name('admin.addeditpackage');
@@ -82,12 +81,14 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
 
         Route::match(['get', 'post'], 'logo', 'AdminController@updateLogo')->name('logo');
+
+        Route::get('/shop/upgrade-package', 'PackageController@upgradePackage');
     });
 });
 
 
 Route::namespace('App\Http\Controllers\Front')->group(function () {
-    Route::get('/', 'IndexController@index')->name('home');
+    // Route::get('/', 'IndexController@index')->name('home');
     Route::get('/home', 'IndexController@index')->name('home');
     Route::any('/package/buy/{id}', 'IndexController@PackageBuy')->name('package.buy');
     Route::any('/save_owner_details/{id}', 'IndexController@saveOwnerDetails')->name('package.saveOwnerDetails');

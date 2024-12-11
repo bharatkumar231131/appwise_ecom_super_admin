@@ -9,6 +9,7 @@ use App\Models\PackageBuy;
 use Illuminate\Support\Facades\Validator;
 // use Illuminate\Routing\Controllers\HasMiddleware;
 // use Illuminate\Routing\Controllers\Middleware;
+use App\Services\PackageLogicService;
 
 class PackageController extends Controller
 {
@@ -23,12 +24,15 @@ class PackageController extends Controller
     // }
     //
 
-    public function __construct()
+    protected $packageLogicService;
+
+    public function __construct(PackageLogicService $packageLogicService)
     {
         $this->middleware('permission:view packages')->only(['packages']);
         // $this->middleware('permission:edit package')->only(['edit']);
         // $this->middleware('permission:create package')->only(['create']);
         // $this->middleware('permission:delete permission')->only(['destroy']);
+        $this->packageLogicService = $packageLogicService;
     }
 
     public function packages()
@@ -114,5 +118,63 @@ class PackageController extends Controller
         return $packageBuy;
         dd($packageBuy);
         return view('admin.packages.package_buy', compact('packageBuy'));
+    }
+
+    // public function upgradePackage(Request $request)
+    // {
+    //     // Validate the incoming request
+    //     $validatedData = $request->validate([
+    //         'package_id' => 'required|integer',
+    //         'name' => 'required|string',
+    //         'number_of_section' => 'required|integer',
+    //         'number_of_category' => 'required|integer',
+    //         'number_of_product' => 'required|integer',
+    //         'price' => 'required|numeric',
+    //     ]);
+
+    //     // Send data to API
+    //     $response = $this->packageLogicService->sendPackageUpgradeData($validatedData);
+
+    //     if (isset($response['error']) && $response['error']) {
+    //         return response()->json([
+    //             'message' => 'Failed to upgrade package.',
+    //             'details' => $response['message'],
+    //         ], 500);
+    //     }
+
+    //     return response()->json([
+    //         'message' => 'Package upgraded successfully!',
+    //         'response' => $response,
+    //     ]);
+    // }
+
+    public function upgradePackage()
+    {
+        // return "hello";
+        $staticData = [
+            'id' => 1,
+            'name' => 'gold',
+            'description' => 'Gold Package',
+            'number_of_section' => 10,
+            'number_of_category' => 5,
+            'number_of_product' => 20,
+            'price' => 1000,
+        ];
+
+        $response = $this->packageLogicService->sendPackageUpgradeData($staticData);
+        $response = json_encode($response);
+        // print_r($response);
+        // die;
+        if (isset($response['error']) && $response['error']) {
+            return response()->json([
+                'message' => 'Failed to upgrade package.',
+                'details' => $response['message'],
+            ], 500);
+        }
+
+        return response()->json([
+            'message' => 'Package upgraded successfully!',
+            'response' => $response,
+        ]);
     }
 }
