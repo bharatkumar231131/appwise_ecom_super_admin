@@ -83,6 +83,7 @@
                                         @elseif ($shopOwner->end_date && now() > $shopOwner->end_date)
                                         <span class="badge bg-danger">Suspended</span>
                                         @endif
+                                        
                             </td>
                             @if (Gate::check('edit owner') || Gate::check('delete owner'))
                             <td>
@@ -100,6 +101,10 @@
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                     @endcan
+                                    <a href="{{ url('admin/shop-owners-details/' . $shopOwner->id) }}" class="actionbtn-tb actionbtn-edit"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="View">
+                                        <i class="far fa-eye text-white"></i>
+                                    </a>
                                 </div>
                             </td>
                             @endif
