@@ -148,6 +148,15 @@ class PackageController extends Controller
 
     public function upgradePackage(Request $request)
     {
+        PackageBuy::where('id', $request->id)->update([
+            "package_name" => $request->name,
+            "number_of_section" => $request->number_of_section,
+            "number_of_category" => $request->number_of_category,
+            "number_of_product" => $request->number_of_product,
+            "price" => $request->price,
+            "days" => $request->days
+        ]);
+
         $data = [
             "package_id" => $request->id,
             "name" => $request->name,
