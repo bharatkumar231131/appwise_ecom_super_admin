@@ -92,6 +92,7 @@
                                 <td>{{ $inquiry->name ?? 'N/A' }}</td>
                                 <td>{{ $inquiry->email ?? 'N/A' }}</td>
                                 <td>{{ $inquiry->phone ?? 'N/A' }}</td>
+                                <td>{{ $inquiry->address ?? 'N/A' }}</td>
                                 <td>{{ $inquiry->message ?? 'N/A' }}</td>
                                 <td>
                                 @if ($inquiry->status == 'in_progress')

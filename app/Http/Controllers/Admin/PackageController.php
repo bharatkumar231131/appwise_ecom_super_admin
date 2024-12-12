@@ -114,9 +114,7 @@ class PackageController extends Controller
 
     public function packageBuy()
     {
-        $packageBuy = PackageBuy::with('shop')->first();
-        return $packageBuy;
-        dd($packageBuy);
+        $packageBuy = PackageBuy::with('shopOwner')->get();
         return view('admin.packages.package_buy', compact('packageBuy'));
     }
 
@@ -150,21 +148,20 @@ class PackageController extends Controller
 
     public function upgradePackage()
     {
-        // return "hello";
         $staticData = [
-            'id' => 1,
-            'name' => 'gold Package title',
-            'description' => 'Gold Package',
-            'number_of_section' => 10,
-            'number_of_category' => 5,
-            'number_of_product' => 20,
-            'price' => 1000,
+            "package_id" => 1,
+            "name" => "basic",
+            "number_of_section" => 20,
+            "number_of_category" => 25,
+            "number_of_product" => 30,
+            "price" => 5000
         ];
+        $staticData = json_encode($staticData);
 
-        $response = $this->packageLogicService->sendPackageUpgradeData($staticData);
+        $domainUrl = 'http://localhost/appwise-ecom';
+        $response = $this->packageLogicService->sendPackageUpgradeData($domainUrl, $staticData);
         $response = json_encode($response);
-        // print_r($response);
-        // die;
+
         if (isset($response['error']) && $response['error']) {
             return response()->json([
                 'message' => 'Failed to upgrade package.',

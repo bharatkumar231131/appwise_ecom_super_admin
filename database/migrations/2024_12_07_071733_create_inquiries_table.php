@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name'); // Inquiry name
             $table->string('email'); // Inquiry email
             $table->string('phone'); // Inquiry phone number
+            $table->string('address');
             $table->text('message'); // Inquiry message
             $table->enum('status', ['new', 'in_progress', 'resolved'])->default('new'); // Inquiry status
             $table->timestamps();
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('inquires');
+        Schema::dropIfExists('inquiries');
     }
 };

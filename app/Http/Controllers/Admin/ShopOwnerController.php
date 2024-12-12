@@ -87,4 +87,13 @@ class ShopOwnerController extends Controller
 
         return response()->json(['success' => true]);
     }
+
+
+    public function showShopOwner($id){
+        $shopOwnerDetails = ShopOwner::with('package')->find($id);
+        return view('admin.shop-owner.show_shop_owner' , compact('shopOwnerDetails'));
+    }
+
+   
+
 }

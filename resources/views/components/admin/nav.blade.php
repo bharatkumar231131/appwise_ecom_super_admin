@@ -32,7 +32,7 @@ $admin_logo = $setting['admin_logo'] ?? '';
                                             <span>Application</span>
                                         </div>
                                         <ul class="sa-nav__menu sa-nav__menu--root">
-                                            <li class="sa-nav__menu-item sa-nav__menu-item--has-icon active">
+                                            <li class="sa-nav__menu-item sa-nav__menu-item--has-icon ">
                                                 <a href="{{ url('admin/dashboard') }}" class="sa-nav__link">
                                                     <span class="sa-nav__icon">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"

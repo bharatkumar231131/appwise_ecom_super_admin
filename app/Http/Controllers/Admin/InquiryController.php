@@ -36,4 +36,9 @@ class InquiryController extends Controller
         $inquiry_detail = Inquiry::where('id', $id)->first();
         return view('admin.inquiry.inquiry_details', compact('inquiry_detail'));
     }
+
+
+    public function inquiryForm(){
+        return view('front.inquiry.inquiry');
+    }
 }
