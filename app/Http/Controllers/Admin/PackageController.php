@@ -168,7 +168,7 @@ class PackageController extends Controller
         ];
         $data = json_encode($data);
 
-        $domainUrl = 'http://localhost/appwise';
+        $domainUrl = 'http://localhost/appwise-ecom';
         $response = $this->packageLogicService->sendPackageUpgradeData($domainUrl, $data);
         $response = json_encode($response);
 
@@ -179,7 +179,7 @@ class PackageController extends Controller
             ], 500);
         }
 
-        return redirect()->back()->with('success_message', 'Package Upgrade Successfully');
+        // return redirect()->back()->with('success_message', 'Package Upgrade Successfully');
 
         return response()->json([
             'message' => 'Package upgraded successfully!',
