@@ -111,7 +111,7 @@
             const reader = new FileReader();
             reader.onload = function(e) {
                 preview.src = e.target.result;
-                preview.style.display = 'block'; // Image ko visible karne ke liye
+                preview.style.display = 'block';
             }
             reader.readAsDataURL(file);
 
@@ -123,7 +123,7 @@
                 uploadText.style.display = 'none';
             }
         } else {
-            preview.style.display = 'none'; // Agar file select nahi hui ho to image hide ho jaye
+            preview.style.display = 'none';
         }
     }
 </script>

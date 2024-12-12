@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Models\Package;
+use App\Models\PackageBuy;
 use App\Models\Setting;
 use App\Models\ShopOwner;
 use Carbon\Carbon;
@@ -103,6 +104,10 @@ class AdminController extends Controller
             $owner = User::findOrFail($id);
             $owner->delete();
             return redirect()->back()->with('success_message', "User delete succesfully");
+        } elseif ($type === "package_buy") {
+            $area = PackageBuy::findOrFail($id);
+            $area->delete();
+            return redirect()->back()->with('success_message', "Package delete succesfully");
         }
     }
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Package;
 use App\Models\PackageBuy;
+use App\Models\PackageLog;
 use Illuminate\Support\Facades\Validator;
 // use Illuminate\Routing\Controllers\HasMiddleware;
 // use Illuminate\Routing\Controllers\Middleware;
@@ -168,6 +169,10 @@ class PackageController extends Controller
         ];
 
         $data = json_encode($data);
+
+        PackageLog::create([
+            'logs' => $data
+        ]);
 
         $domainUrl = 'http://localhost/appwise';
         $response = $this->packageLogicService->sendPackageUpgradeData($domainUrl, $data);
