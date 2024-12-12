@@ -1003,7 +1003,13 @@ body {
   line-height: 1.625rem;
   min-height: var(--sa-button--min-size)
 }
-
+.dashcrds {
+  text-decoration: none !important;
+ 
+}
+.dashcrds:hover{
+   background: #f3f3f3;
+}
 .btn-group-lg>.btn.btn-sa-loading:before,
 .btn-group>.btn-lg.btn-sa-loading:before,
 .btn-lg.btn-sa-loading:before {

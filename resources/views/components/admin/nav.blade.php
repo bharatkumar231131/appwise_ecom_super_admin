@@ -128,7 +128,7 @@ $admin_logo = $setting['admin_logo'] ?? '';
                                                 </ul>
                                             </li>
                                             @endcan
-                                            @can('view pages')
+                                            <!-- @can('view pages')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
                                                 <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
@@ -150,7 +150,7 @@ $admin_logo = $setting['admin_logo'] ?? '';
                                                     </li>
                                                 </ul>
                                             </li>
-                                            @endcan
+                                            @endcan -->
                                             @can('view permissions')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">

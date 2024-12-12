@@ -150,7 +150,7 @@ class PackageController extends Controller
     {
         $staticData = [
             "package_id" => 1,
-            "name" => "basic",
+            "name" => "Gold",
             "number_of_section" => 20,
             "number_of_category" => 25,
             "number_of_product" => 30,
