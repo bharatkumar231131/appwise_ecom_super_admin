@@ -37,7 +37,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::post('change-package-status', 'packagecontroller@changePackageStatus')->name('packages.status');
 
         Route::get('package_buy', 'PackageController@packageBuy');
-
+        Route::get('edit_package_buy/{id}', 'PackageController@editPackageBuy');
 
         Route::match(array('get', 'post'), 'delete/{type}/{id}', [AdminController::class, 'delete'])->name('admin.delete');
         Route::get('inquiries', 'InquiryController@index');
@@ -92,11 +92,8 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::match(['get', 'post'], 'logo', 'AdminController@updateLogo')->name('logo');
 
         // Route::get('/shop/upgrade-package', 'PackageController@upgradePackage');
-        Route::get('/test-package-upgrade', 'PackageController@upgradePackage')->name('testpackage');
-
+        Route::post('/test-package-upgrade', 'PackageController@upgradePackage')->name('testpackage');
     });
-
-
 });
 
 
@@ -109,21 +106,15 @@ Route::namespace('App\Http\Controllers\Front')->group(function () {
     Route::get('/package/{id}/{owner_id}', 'IndexController@paymentPage')->name('package.payment');
     Route::post('/package/{id}/process-payment', 'IndexController@processPayment')->name('package.processPayment');
 
-    
-// Route::match(['get', 'post'], 'inquiry-form', 'InquiryController@inquiryForm')->name('inquiry');
-// Route::match(['get', 'post'], 'inquiry-submit', 'InquiryController@inquirySubmit');
 
-Route::get('payfast', [PayfastController::class, 'payFast'])->name('payfast');
-Route::get('payfastsuccess', [PayfastController::class, 'payFastSuccess'])->name('payfastsuccess');
-Route::get('payfastcancel', [PayfastController::class, 'payFastCancel'])->name('payfastcancel');
-Route::post('payfastnotify', [PayfastController::class, 'payFastNotify'])->name('payfastnotify');
+    // Route::match(['get', 'post'], 'inquiry-form', 'InquiryController@inquiryForm')->name('inquiry');
+    // Route::match(['get', 'post'], 'inquiry-submit', 'InquiryController@inquirySubmit');
+
+    Route::get('payfast', [PayfastController::class, 'payFast'])->name('payfast');
+    Route::get('payfastsuccess', [PayfastController::class, 'payFastSuccess'])->name('payfastsuccess');
+    Route::get('payfastcancel', [PayfastController::class, 'payFastCancel'])->name('payfastcancel');
+    Route::post('payfastnotify', [PayfastController::class, 'payFastNotify'])->name('payfastnotify');
 
     Route::get('/inquiry', 'InquiryController@inquiry')->name('inquiry');
     Route::post('/save-inquiry', 'InquiryController@saveInquiry')->name('save_inquiry');
-
-    
 });
-
-
-
-

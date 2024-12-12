@@ -146,20 +146,21 @@ class PackageController extends Controller
     //     ]);
     // }
 
-    public function upgradePackage()
+    public function upgradePackage(Request $request)
     {
-        $staticData = [
-            "package_id" => 1,
-            "name" => "basic",
-            "number_of_section" => 20,
-            "number_of_category" => 25,
-            "number_of_product" => 30,
-            "price" => 5000
+        $data = [
+            "package_id" => $request->id,
+            "name" => $request->name,
+            "number_of_section" => $request->number_of_section,
+            "number_of_category" => $request->number_of_category,
+            "number_of_product" => $request->number_of_product,
+            "price" => $request->price,
+            "days" => $request->days
         ];
-        $staticData = json_encode($staticData);
+        $data = json_encode($data);
 
-        $domainUrl = 'http://localhost/appwise-ecom';
-        $response = $this->packageLogicService->sendPackageUpgradeData($domainUrl, $staticData);
+        $domainUrl = 'http://localhost/appwise';
+        $response = $this->packageLogicService->sendPackageUpgradeData($domainUrl, $data);
         $response = json_encode($response);
 
         if (isset($response['error']) && $response['error']) {
@@ -169,9 +170,18 @@ class PackageController extends Controller
             ], 500);
         }
 
+        return redirect()->back()->with('success_message', 'Package Upgrade Successfully');
+
         return response()->json([
             'message' => 'Package upgraded successfully!',
             'response' => $response,
         ]);
+    }
+
+    public function editPackageBuy($id)
+    {
+        $package = PackageBuy::where('id', $id)->first();
+        // return $package;
+        return view('admin.packages.edit_package_buy', compact('package'));
     }
 }

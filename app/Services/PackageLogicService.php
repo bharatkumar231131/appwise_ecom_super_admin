@@ -14,15 +14,14 @@ class PackageLogicService
     public function __construct()
     {
         $this->client = new Client();
-        $this->apiUrl = 'http://localhost/appwise/api';
+        // $this->apiUrl = 'http://localhost/appwise/api';
     }
 
     public function sendPackageUpgradeData($domainUrl, $queryParams)
     {
-
         // $url = "http://localhost/appwise/api/shop-owner/update-package";
         $endpoint = "/api/shop-owner/update-package";
-        $mailUrl = $domainUrl . $endpoint;
+        $mainUrl = $domainUrl . $endpoint;
         // try {
         //     // API ko POST request bhejna with queryParams
         //     $response = Http::post($domainUrl . $endpoint, $queryParams);
@@ -63,7 +62,7 @@ class PackageLogicService
         //     return json_decode($response->getBody(), true);
         // }
 
-        $curlHandle = curl_init('http://localhost/appwise-ecom/api/shop-owner/update-package');
+        $curlHandle = curl_init($mainUrl);
         curl_setopt($curlHandle, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
         curl_setopt($curlHandle, CURLOPT_POST, true);
         curl_setopt($curlHandle, CURLOPT_POSTFIELDS, $queryParams);
