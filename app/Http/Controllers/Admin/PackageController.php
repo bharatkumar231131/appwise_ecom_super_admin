@@ -157,22 +157,21 @@ class PackageController extends Controller
             "price" => 5000
         ];
         $staticData = json_encode($staticData);
-    
+
         $domainUrl = 'http://localhost/appwise-ecom';
         $response = $this->packageLogicService->sendPackageUpgradeData($domainUrl, $staticData);
         $response = json_encode($response);
-    
+
         if (isset($response['error']) && $response['error']) {
             return response()->json([
                 'message' => 'Failed to upgrade package.',
                 'details' => $response['message'],
             ], 500);
         }
-    
+
         return response()->json([
             'message' => 'Package upgraded successfully!',
             'response' => $response,
         ]);
     }
-    
 }

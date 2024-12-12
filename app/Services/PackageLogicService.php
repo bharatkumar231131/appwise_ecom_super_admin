@@ -17,12 +17,12 @@ class PackageLogicService
         $this->apiUrl = 'http://localhost/appwise/api';
     }
 
-    public function sendPackageUpgradeData($domainUrl , $queryParams )
+    public function sendPackageUpgradeData($domainUrl, $queryParams)
     {
 
         // $url = "http://localhost/appwise/api/shop-owner/update-package";
         $endpoint = "/api/shop-owner/update-package";
-        $mailUrl = $domainUrl . $endpoint ;
+        $mailUrl = $domainUrl . $endpoint;
         // try {
         //     // API ko POST request bhejna with queryParams
         //     $response = Http::post($domainUrl . $endpoint, $queryParams);
@@ -44,44 +44,44 @@ class PackageLogicService
         //         'message' => $e->getMessage(),
         //     ];
         // }
-    //    echo $queryParams; die ;
+        //    echo $queryParams; die ;
 
         // try {
-            // $response = $this->client->post($domainUrl . $endpoint, [
-            //     'headers' => [
-            //         // 'Authorization' => 'Bearer '  ,
-            //         'Accept' => 'application/json',
-            //         // 'Content-Type' => 'application/json',
-            //     ],
-            //     'json' => $queryParams,
-            // ]);
-            // print_r($response); die;
+        // $response = $this->client->post($domainUrl . $endpoint, [
+        //     'headers' => [
+        //         // 'Authorization' => 'Bearer '  ,
+        //         'Accept' => 'application/json',
+        //         // 'Content-Type' => 'application/json',
+        //     ],
+        //     'json' => $queryParams,
+        // ]);
+        // print_r($response); die;
 
 
 
-            // if ($response->getStatusCode() == 200) {
-            //     return json_decode($response->getBody(), true);
-            // }
+        // if ($response->getStatusCode() == 200) {
+        //     return json_decode($response->getBody(), true);
+        // }
 
-            $curlHandle = curl_init('http://localhost/appwise-ecom/api/shop-owner/update-package');
-            curl_setopt( $curlHandle, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-curl_setopt($curlHandle, CURLOPT_POST, true);
-curl_setopt($curlHandle, CURLOPT_POSTFIELDS, $queryParams);
-curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
+        $curlHandle = curl_init('http://localhost/appwise-ecom/api/shop-owner/update-package');
+        curl_setopt($curlHandle, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+        curl_setopt($curlHandle, CURLOPT_POST, true);
+        curl_setopt($curlHandle, CURLOPT_POSTFIELDS, $queryParams);
+        curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
 
-$curlResponse = curl_exec($curlHandle);
+        $curlResponse = curl_exec($curlHandle);
 
-curl_close($curlHandle);
+        curl_close($curlHandle);
 
-// print_r($curlResponse); die;
+        // print_r($curlResponse); die;
 
-            // return ['error' => 'Failed to retrieve shipping charge'];
+        // return ['error' => 'Failed to retrieve shipping charge'];
 
-            if ($curlResponse === false) {
-                return ['error' => true, 'message' => 'Failed to retrieve shipping charge'];
-            }
+        if ($curlResponse === false) {
+            return ['error' => true, 'message' => 'Failed to retrieve shipping charge'];
+        }
 
-            return json_decode($curlResponse, true);
+        return json_decode($curlResponse, true);
         // }
         //  catch (RequestException $e) {
         //     // Handle request errors
