@@ -166,6 +166,7 @@ class PackageController extends Controller
             "price" => $request->price,
             "days" => $request->days
         ];
+
         $data = json_encode($data);
 
         $domainUrl = 'http://localhost/appwise-ecom';
@@ -179,7 +180,7 @@ class PackageController extends Controller
             ], 500);
         }
 
-        return redirect()->back()->with('success_message', 'Package Upgrade Successfully');
+            return redirect()->back()->with('success_message', 'Package Upgrade Successfully');
 
         // return response()->json([
         //     'message' => 'Package upgraded successfully!',
@@ -190,7 +191,6 @@ class PackageController extends Controller
     public function editPackageBuy($id)
     {
         $package = PackageBuy::where('id', $id)->first();
-        // return $package;
         return view('admin.packages.edit_package_buy', compact('package'));
     }
 }

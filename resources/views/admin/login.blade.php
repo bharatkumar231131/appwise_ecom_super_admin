@@ -128,13 +128,15 @@
             </span>
           </div>
           <div class="mb-4 row py-2 flex-wrap">
-            <div class="col-auto me-auto"><label class="form-check mb-0"><input type="checkbox"
+            <div class="col-auto me-auto"><label class="form-check mb-0"><input type="checkbox" name="remember"
                   class="form-check-input" /><span class="form-check-label">Remember me</span></label>
             </div>
             <!-- <div class="col-auto d-flex align-items-center">
                         <a href="auth-forgot-password.html">Forgot
                             password?</a></div> -->
           </div>
+
+
           <div><button type="submit" class="btn btn-primary btn-lg w-100">Sign In</button></div>
       </div>
     </div>
