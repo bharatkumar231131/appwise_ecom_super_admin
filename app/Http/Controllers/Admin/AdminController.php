@@ -183,7 +183,7 @@ class AdminController extends Controller
                 $admin_logo->move(public_path('admin/images/logo'), $admin_logo_name);
 
                 // Delete the old admin logo if it exists
-                if ($settings && file_exists(public_path('admin/images/logo/' . $settings->admin_logo))) {
+                if (!empty($settings->admin_logo) && file_exists(public_path('admin/images/logo/' . $settings->admin_logo))) {
                     unlink(public_path('admin/images/logo/' . $settings->admin_logo));
                 }
 
@@ -200,7 +200,7 @@ class AdminController extends Controller
                 $front_logo->move(public_path('front/images/logo'), $front_logo_name);
 
                 // Delete the old front logo if it exists
-                if ($settings && file_exists(public_path('front/images/logo/' . $settings->front_logo))) {
+                if (!empty($settings->admin_logo) && file_exists(public_path('front/images/logo/' . $settings->front_logo))) {
                     unlink(public_path('front/images/logo/' . $settings->front_logo));
                 }
                 // Update the front logo path in the database

@@ -14,7 +14,6 @@
         <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
             <strong>Success:</strong> {{ Session::get('success_message') }}
             <button type="button" class="sa-close" data-bs-dismiss="alert" aria-label="Close">
-
             </button>
         </div>
         @endif
@@ -68,7 +67,7 @@
                                     <div class="max-w-20x text-center">
                                         <div class="d-flex align-items-center justify-content-center flex-column">
                                             @if(empty($setting['front_logo']))
-                                            <span id="upload-text">
+                                            <span id="upload-text_front">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                                     class="bi bi-upload" viewBox="0 0 16 16">
                                                     <path
@@ -115,6 +114,14 @@
                 preview.style.display = 'block'; // Image ko visible karne ke liye
             }
             reader.readAsDataURL(file);
+
+            if (previewId === "front_preview") {
+                const uploadText = document.getElementById('upload-text_front')
+                uploadText.style.display = 'none';
+            } else {
+                const uploadText = document.getElementById('upload-text')
+                uploadText.style.display = 'none';
+            }
         } else {
             preview.style.display = 'none'; // Agar file select nahi hui ho to image hide ho jaye
         }
