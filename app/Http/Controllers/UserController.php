@@ -70,6 +70,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt('12345678');
+        // $user->status = '1';
         $user->save();
 
         $user->syncRoles($request->role);

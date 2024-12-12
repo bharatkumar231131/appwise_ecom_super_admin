@@ -4,13 +4,13 @@
     <div class="py-5">
         <div class="row g-4 align-items-center">
             <div class="col">
-            <nav class="mb-2" aria-label="breadcrumb">
-          <ol class="breadcrumb breadcrumb-sa-simple">
-            <li class="breadcrumb-item"><a href="{{ url('admin/dashboard')}}">Dashboard</a></li>
-            <span>&nbsp;/&nbsp;</span>
-            <li class="breadcrumb-item active">Profile</li>
-          </ol>
-        </nav>
+                <nav class="mb-2" aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-sa-simple">
+                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard')}}">Dashboard</a></li>
+                        <span>&nbsp;/&nbsp;</span>
+                        <li class="breadcrumb-item active">Profile</li>
+                    </ol>
+                </nav>
                 <div class=" d-flex justify-content-between align-items-center">
                     <h1 class="h3 m-0">Profile</h1>
                 </div>
@@ -25,7 +25,6 @@
                     <div class="mb-5">
                         <h2 class="mb-0 fs-exact-18">Personal Information</h2>
                     </div>
-                    @foreach ($users as $user)
 
                     <div class="list-unstyled row">
                         <dt class="list-unstyled m-0 col-sm-3">Email: </dt>
@@ -83,12 +82,10 @@
                         </dd>
                     </div>
 
-                   @endforeach
-
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 

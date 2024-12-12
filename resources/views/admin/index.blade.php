@@ -12,7 +12,7 @@
     <div class="row g-4 g-xl-5">
         <!-- Total Packages Card -->
         <div class="col-12 col-md-4 d-flex">
-            <div class="card saw-indicator flex-grow-1">
+            <a href="{{ url('admin/packages') }}" class="card saw-indicator flex-grow-1 d-block text-black dashcrds">
                 <div class="sa-widget-header saw-indicator__header">
                     <h2 class="sa-widget-header__title">Total Packages</h2>
                 </div>
@@ -20,12 +20,12 @@
                     <div class="text-start saw-indicator__value">{{ $totalPackages }}</div>
                     <div class="text-end"><i class="fas fa-cube"></i></div>
                 </div>
-            </div>
+            </a>
         </div>
-        
+
         <!-- Active Packages Card -->
         <div class="col-12 col-md-4 d-flex">
-            <div class="card saw-indicator flex-grow-1">
+            <a href="{{ url('admin/packages') }}" class="card saw-indicator flex-grow-1 d-block text-black dashcrds">
                 <div class="sa-widget-header saw-indicator__header">
                     <h2 class="sa-widget-header__title">Active Packages</h2>
                 </div>
@@ -33,12 +33,12 @@
                     <div class="text-start saw-indicator__value">{{ $activePackages }}</div>
                     <div class="text-end"><i class="fas fa-th"></i></div>
                 </div>
-            </div>
+            </a>
         </div>
 
         <!-- Total Shop Owners Card -->
         <div class="col-12 col-md-4 d-flex">
-            <div class="card saw-indicator flex-grow-1">
+            <a href="{{ url('admin/shop-owners') }}" class="card saw-indicator flex-grow-1 d-block text-black dashcrds">
                 <div class="sa-widget-header saw-indicator__header">
                     <h2 class="sa-widget-header__title">Total Shop-Owner</h2>
                 </div>
@@ -46,8 +46,11 @@
                     <div class="text-start saw-indicator__value">{{ $totalShopOwner }}</div>
                     <div class="text-end"><i class="fas fa-dolly-flatbed"></i></div>
                 </div>
-            </div>
+            </a>
         </div>
+
+       
+
 
         <!-- Monthly Packages Bought Chart -->
         <div class="col-12 col-lg-12 col-xxl-12 d-flex">
@@ -60,6 +63,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Recent Inquiry Section -->
         <div class="col-12 col-xxl-12 d-flex">
             <div class="card flex-grow-1 saw-table">
                 <div class="sa-widget-header saw-table__header">
@@ -69,9 +74,6 @@
                             All Inquiry
                         </button>
                     </a>
-
-                    <div class="sa-widget-header__actions">
-                    </div>
                 </div>
                 <div class="saw-table__body sa-widget-table text-nowrap">
                     <table>
@@ -88,19 +90,20 @@
                         <tbody>
                             @foreach ($recentInquiries as $inquiry)
                             <tr>
-                                <td>{{ $inquiry->id  }}</td> <!-- Displaying the row number -->
+                                <td>{{ $inquiry->id  }}</td>
                                 <td>{{ $inquiry->name ?? 'N/A' }}</td>
                                 <td>{{ $inquiry->email ?? 'N/A' }}</td>
                                 <td>{{ $inquiry->phone ?? 'N/A' }}</td>
+                                <td>{{ $inquiry->address ?? 'N/A' }}</td>
                                 <td>{{ $inquiry->message ?? 'N/A' }}</td>
                                 <td>
-                                @if ($inquiry->status == 'in_progress')
-                                <span class="badge bg-warning">In Progress</span>
-                                @elseif ($inquiry->status == 'resolved')
-                                <span class="badge bg-success">Resolved</span>
-                                @else
-                                <span class="badge bg-info">New</span>
-                                @endif
+                                    @if ($inquiry->status == 'in_progress')
+                                    <span class="badge bg-warning">In Progress</span>
+                                    @elseif ($inquiry->status == 'resolved')
+                                    <span class="badge bg-success">Resolved</span>
+                                    @else
+                                    <span class="badge bg-info">New</span>
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach
@@ -111,6 +114,32 @@
             </div>
         </div>
 
+        <!-- <div class="col-12 col-xxl-12 d-flex">
+    <div class="card flex-grow-1 saw-table">
+        <div class="sa-widget-header saw-table__header">
+            <h2 class="sa-widget-header__title">Sales Report</h2>
+        </div>
+        <div class="saw-table__body sa-widget-table text-nowrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Shop Owner Name</th>
+                        <th>Product Name</th>
+                        <th>Quantity Sold</th>
+                        <th>Total Sales</th>
+                        <th>Revenue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> -->
+      
+
     </div>
 </div>
 
@@ -118,13 +147,13 @@
 
 <script>
     // Get data from PHP to JavaScript
-    var labels = @json($labels);  // Month-Year labels
-    var data = @json($data);      // Package count per month
+    var labels = @json($labels); // Month-Year labels
+    var data = @json($data); // Package count per month
 
     // Chart.js setup
     var ctx = document.getElementById('salesChart').getContext('2d');
     var salesChart = new Chart(ctx, {
-        type: 'bar',  // You can change this to 'line' if you prefer a line chart
+        type: 'bar', // You can change this to 'line' if you prefer a line chart
         data: {
             labels: labels,
             datasets: [{
@@ -145,7 +174,3 @@
     });
 </script>
 @endsection
-
-
-
-

@@ -7,6 +7,10 @@ use App\Http\Controllers\Admin\CmsController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Front\PayfastController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,11 +37,13 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::post('change-package-status', 'packagecontroller@changePackageStatus')->name('packages.status');
 
         Route::get('package_buy', 'PackageController@packageBuy');
-
+        Route::get('edit_package_buy/{id}', 'PackageController@editPackageBuy');
 
         Route::match(array('get', 'post'), 'delete/{type}/{id}', [AdminController::class, 'delete'])->name('admin.delete');
         Route::get('inquiries', 'InquiryController@index');
         Route::any('inquiry_details/{id}', 'inquirycontroller@inquirydetails')->name('admin.returnorderdetail');
+
+
 
         Route::get('shop-owners', 'ShopOwnerController@index');
         Route::match(['get', 'post'], 'shop-owners/{id?}', 'ShopOwnerController@createOrEdit');
@@ -46,6 +52,9 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::get('shop-owners', 'shopownercontroller@index')->name('admin.shopOwners');
         Route::match(['get', 'post'], 'add-edit-shop-owner/{id?}', 'shopownercontroller@addeditshopowner')->name('admin.addEditShopOwner');
         Route::delete('delete-shop-owner/{id}', 'shopownercontroller@deleteshopowner')->name('admin.deleteShopOwner');
+
+        Route::match(['get', 'post'], 'shop-owners-details/{id}', 'ShopOwnerController@showShopOwner');
+
 
         Route::match(['get', 'post'], 'admin-details', 'AdminController@adminDetails');
         Route::match(['get', 'post'], 'update-admin-detail', 'AdminController@updateAdminDetails');
@@ -81,18 +90,31 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
 
         Route::match(['get', 'post'], 'logo', 'AdminController@updateLogo')->name('logo');
+
+        // Route::get('/shop/upgrade-package', 'PackageController@upgradePackage');
+        Route::post('/test-package-upgrade', 'PackageController@upgradePackage')->name('testpackage');
     });
 });
 
 
+
 Route::namespace('App\Http\Controllers\Front')->group(function () {
-    Route::get('/', 'IndexController@index')->name('home');
+    // Route::get('/', 'IndexController@index')->name('home');
     Route::get('/home', 'IndexController@index')->name('home');
     Route::any('/package/buy/{id}', 'IndexController@PackageBuy')->name('package.buy');
     Route::any('/save_owner_details/{id}', 'IndexController@saveOwnerDetails')->name('package.saveOwnerDetails');
     Route::get('/package/{id}/{owner_id}', 'IndexController@paymentPage')->name('package.payment');
     Route::post('/package/{id}/process-payment', 'IndexController@processPayment')->name('package.processPayment');
 
+
+    // Route::match(['get', 'post'], 'inquiry-form', 'InquiryController@inquiryForm')->name('inquiry');
+    // Route::match(['get', 'post'], 'inquiry-submit', 'InquiryController@inquirySubmit');
+
+    Route::get('payfast', [PayfastController::class, 'payFast'])->name('payfast');
+    Route::get('payfastsuccess', [PayfastController::class, 'payFastSuccess'])->name('payfastsuccess');
+    Route::get('payfastcancel', [PayfastController::class, 'payFastCancel'])->name('payfastcancel');
+    Route::post('payfastnotify', [PayfastController::class, 'payFastNotify'])->name('payfastnotify');
+
     Route::get('/inquiry', 'InquiryController@inquiry')->name('inquiry');
-    Route::post('/save-inquiry', 'InquiryController@inquiry')->name('save_inquiry');
+    Route::post('/save-inquiry', 'InquiryController@saveInquiry')->name('save_inquiry');
 });

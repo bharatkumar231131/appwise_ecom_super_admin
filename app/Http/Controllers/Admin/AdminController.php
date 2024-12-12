@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Models\Package;
+use App\Models\PackageBuy;
 use App\Models\Setting;
 use App\Models\ShopOwner;
 use Carbon\Carbon;
@@ -39,16 +40,16 @@ class AdminController extends Controller
 
             if (Auth::attempt(['email' => $data['email'], 'password' => $data['password']])) {
                 $user = Auth::user();
-
-                if ($user->type == 'admin' && $user->status == '0') {
-                    Auth::logout();
-                    return redirect()->back()->with('error_message', 'Your admin account is not active');
-                } elseif ($user->type == 'superadmin' || $user->type == 'admin') {
-                    return redirect('/admin/dashboard');
-                } else {
-                    Auth::logout();
-                    return redirect()->back()->with('error_message', 'Unauthorized access');
-                }
+                return redirect('/admin/dashboard');
+                // if ($user->type == 'admin' && $user->status == '0') {
+                //     Auth::logout();
+                //     return redirect()->back()->with('error_message', 'Your admin account is not active');
+                // } elseif ($user->type == 'superadmin' || $user->type == 'admin') {
+                //     return redirect('/admin/dashboard');
+                // } else {
+                //     Auth::logout();
+                //     return redirect()->back()->with('error_message', 'Unauthorized access');
+                // }
             } else {
                 return redirect()->back()->with('error_message', 'Invalid Email or Password');
             }
@@ -103,6 +104,10 @@ class AdminController extends Controller
             $owner = User::findOrFail($id);
             $owner->delete();
             return redirect()->back()->with('success_message', "User delete succesfully");
+        } elseif ($type === "package_buy") {
+            $area = PackageBuy::findOrFail($id);
+            $area->delete();
+            return redirect()->back()->with('success_message', "Package delete succesfully");
         }
     }
 
@@ -156,8 +161,8 @@ class AdminController extends Controller
 
     public function adminprofile()
     {
-        $users = User::all();
-        return view('admin.setting.admin_profile', compact('users'));
+        $user = User::where('id', Auth::user()->id)->first();
+        return view('admin.setting.admin_profile', compact('user'));
     }
 
 
@@ -183,7 +188,7 @@ class AdminController extends Controller
                 $admin_logo->move(public_path('admin/images/logo'), $admin_logo_name);
 
                 // Delete the old admin logo if it exists
-                if ($settings && file_exists(public_path('admin/images/logo/' . $settings->admin_logo))) {
+                if (!empty($settings->admin_logo) && file_exists(public_path('admin/images/logo/' . $settings->admin_logo))) {
                     unlink(public_path('admin/images/logo/' . $settings->admin_logo));
                 }
 
@@ -200,7 +205,7 @@ class AdminController extends Controller
                 $front_logo->move(public_path('front/images/logo'), $front_logo_name);
 
                 // Delete the old front logo if it exists
-                if ($settings && file_exists(public_path('front/images/logo/' . $settings->front_logo))) {
+                if (!empty($settings->admin_logo) && file_exists(public_path('front/images/logo/' . $settings->front_logo))) {
                     unlink(public_path('front/images/logo/' . $settings->front_logo));
                 }
                 // Update the front logo path in the database

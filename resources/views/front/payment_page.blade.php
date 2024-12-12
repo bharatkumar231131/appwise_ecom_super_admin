@@ -9,33 +9,51 @@
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Payment for {{ $package->name }}</h1>
-        <h2 class="text-center mb-4">Amount: R{{ $package->price }}</h2>
 
-        <form action="{{ route('package.processPayment', ['id' => $package->id]) }}" method="POST">
-            @csrf
-            <!-- Hidden Fields for Owner Details -->
-            <input type="hidden" name="owner_id" value="{{ $owner_id }}">
-            <input type="hidden" name="package_id" value="{{ $package->id }}">
-            <input type="hidden" name="price" value="{{ $package->price }}">
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight">Toggle right offcanvas</button>
 
-            <!-- Payment Method Selection -->
-            <div class="mb-4">
-                <h5 class="text-center">Select Payment Method</h5>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="payment_method" id="cod" value="cod" required>
-                    <label class="form-check-label" for="cod">Cash on Delivery</label>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Payment for {{ $package->name }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <hr>
+        <div class="offcanvas-body">
+            <h3 class=" text-success">Amount: R{{ $package->price }}</h3>
+
+            <form action="{{ route('package.processPayment', ['id' => $package->id]) }}" method="POST">
+                @csrf
+                <!-- Hidden Fields for Owner Details -->
+                <input type="hidden" name="owner_id" value="{{ $owner_id }}">
+                <input type="hidden" name="package_id" value="{{ $package->id }}">
+                <input type="hidden" name="price" value="{{ $package->price }}">
+
+                <!-- Payment Method Selection -->
+                <div class="mb-4">
+                    <h5>Select Payment Method</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="payment_method" id="cod"
+                            value="cod" required>
+                        <label class="form-check-label" for="cod">Cash on Delivery</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="payment_method" id="payfast"
+                            value="payfast" required>
+                        <label class="form-check-label" for="payfast">Pay with PayFast</label>
+                    </div>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="payment_method" id="payfast" value="payfast" required>
-                    <label class="form-check-label" for="payfast">Pay with PayFast</label>
-                </div>
-            </div>
 
-            <button type="submit" class="btn btn-primary w-100">Proceed to Payment</button>
-        </form>
+                <button type="submit" class="btn btn-success w-100">Proceed to Payment</button>
+            </form>
+        </div>
     </div>
+
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

@@ -53,8 +53,8 @@
                             <th>Shop Name</th>
                             <th>Domain</th>
                             <th>Package</th>
-                            <th>Start Date</th>
-                            <th>End Date </th>
+                            <!-- <th>Start Date</th>
+                            <th>End Date </th> -->
                             <th>Status</th>
                             @if (Gate::check('edit owner') || Gate::check('delete owner'))
                             <th>Actions</th>
@@ -70,8 +70,8 @@
                             <td>{{ $shopOwner->shop_name ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->domain ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->package->name ?? 'No Package' }}</td>
-                            <td>{{ $shopOwner->start_date ?? 'N/A' }}</td>
-                            <td>{{ $shopOwner->end_date ?? 'N/A' }}</td>
+                            <!-- <td>{{ $shopOwner->start_date ?? 'N/A' }}</td>
+                            <td>{{ $shopOwner->end_date ?? 'N/A' }}</td> -->
 
                             <td>
                                 @if ($shopOwner->status == 'active' && (!$shopOwner->end_date || now() <= $shopOwner->end_date))
@@ -83,6 +83,7 @@
                                         @elseif ($shopOwner->end_date && now() > $shopOwner->end_date)
                                         <span class="badge bg-danger">Suspended</span>
                                         @endif
+                                        
                             </td>
                             @if (Gate::check('edit owner') || Gate::check('delete owner'))
                             <td>
@@ -100,6 +101,10 @@
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                     @endcan
+                                    <a href="{{ url('admin/shop-owners-details/' . $shopOwner->id) }}" class="actionbtn-tb actionbtn-edit"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="View">
+                                        <i class="far fa-eye text-white"></i>
+                                    </a>
                                 </div>
                             </td>
                             @endif

@@ -2,18 +2,24 @@
 $setting = App\Models\Setting::where('id','1')->first();
 $admin_logo = $setting['admin_logo'] ?? 'default-logo.png'; 
 @endphp
+<style>
+    .active {
+        color: lightskyblue;
+    }
+</style>
 <div class="sa-app__sidebar">
     <div class="sa-sidebar">
         <div class="sa-sidebar__header">
-            <a class="sa-sidebar__logo" href="{{ url('admin/dashboard')}}">
+            <a class="sa-sidebar__logo" href="{{ url('admin/dashboard') }}">
                 <div class="sa-sidebar-logo">
                     <!-- <img src="https://123ecommerce.co.za/public/front/images/logo/41101.jpg" alt=""> -->
                     <img src="{{ asset('public/admin/images/logo/' . $admin_logo) }}" alt="">
-                    {{--<div class="sa-sidebar-logo__caption">
+                    {{-- <div class="sa-sidebar-logo__caption">
                         Super Admin
-                    </div>--}}
+                    </div> --}}
                 </div>
                 <!-- logo / end -->
+
             </a>
         </div>
         <div class="sa-sidebar__body" data-simplebar="init">
@@ -31,8 +37,8 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                             <span>Application</span>
                                         </div>
                                         <ul class="sa-nav__menu sa-nav__menu--root">
-                                            <li class="sa-nav__menu-item sa-nav__menu-item--has-icon active">
-                                                <a href="{{ url('admin/dashboard')}}" class="sa-nav__link">
+                                            <li class="sa-nav__menu-item sa-nav__menu-item--has-icon {{ request()->is('admin/dashboard') ? 'active' : '' }}">
+                                                <a href="{{ url('admin/dashboard') }}" class="sa-nav__link">
                                                     <span class="sa-nav__icon">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"
                                                             fill="currentColor">
@@ -44,7 +50,8 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                     <span class="sa-nav__title">Dashboard</span>
                                                 </a>
                                             </li>
-                                            <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
+                                            @can('view packages')
+                                            <li class="sa-nav__menu-item sa-nav__menu-item--has-icon "
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
                                                 <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
                                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
@@ -59,20 +66,21 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/packages') ? 'active' : '' }}">
                                                         <a href="{{ url('admin/packages') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Packages</span></a>
                                                     </li>
                                                 </ul>
 
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/package_buy') ? 'active' : '' }}">
                                                         <a href="{{ url('admin/package_buy') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Package
                                                                 Buy</span></a>
                                                     </li>
                                                 </ul>
                                             </li>
+                                            @endcan
                                             @can('view inquiries')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
@@ -89,8 +97,8 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
-                                                        <a href="{{ url('admin/inquiries') }}" class="sa-nav__link"><span
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/inquiries') ? 'active' : '' }}" >
+                                                        <a href="{{ url('admin/inquiries') }}" class="sa-nav__link" ><span
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Inquiry</span></a>
                                                     </li>
                                                 </ul>
@@ -112,7 +120,7 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/shop-owners') ? 'active' : '' }}">
                                                         <a href="{{ url('admin/shop-owners') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span
                                                                 class="sa-nav__title">ShopOwner</span></a>
@@ -120,7 +128,7 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                 </ul>
                                             </li>
                                             @endcan
-                                            @can('view pages')
+                                            <!-- @can('view pages')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
                                                 <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
@@ -136,13 +144,13 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/pages') ? 'active' : '' }}">
                                                         <a href="{{ url('admin/pages') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Pages</span></a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            @endcan
+                                            @endcan -->
                                             @can('view permissions')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
@@ -159,7 +167,7 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/permissions/index') ? 'active' : '' }}">
                                                         <a href="{{ route('permissions.index') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span
                                                                 class="sa-nav__title">Permissions</span></a>
@@ -183,7 +191,7 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/roles') ? 'active' : '' }}">
                                                         <a href="{{ route('roles.index') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Roles</span></a>
                                                     </li>
@@ -206,7 +214,7 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/users') ? 'active' : '' }}">
                                                         <a href="{{ route('users.index') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">users</span></a>
                                                     </li>
@@ -230,7 +238,7 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/logo') ? 'active' : '' }}">
                                                         <a href="{{ url('admin/logo') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Logo</span></a>
                                                     </li>

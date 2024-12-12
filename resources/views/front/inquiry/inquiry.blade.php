@@ -8,34 +8,38 @@
                     <h2>Leave a <span>message</span></h2>
                     <p>Fill up form below, our team will get back soon</p>
                 </div>
-                <form action="#">
+                <form action="{{ url('save-inquiry') }}" method="post">
+                    @csrf
                     <div class="form-group">
-                        <input type="text" placeholder="Name" class="form-control">
+                        <input type="text" placeholder="Name" name="name" id="name" class="form-control">
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Email" class="form-control">
+                        <input type="email" placeholder="Email" name="email" id="email" class="form-control">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <input type="text" placeholder="Company Name" class="form-control">
                     </div>
                     <div class="form-group">
                         <select class="form-control">
                             <option value="">Country</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="form-group">
-                        <input type="text" placeholder="Phone" class="form-control">
+                        <input type="text" placeholder="Phone" name="phone" id="phone" class="form-control">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <input type="text" placeholder="Website" class="form-control">
+                    </div> -->
+                    <div class="form-group">
+                        <input type="text" placeholder="Address" name="address" id="address" class="form-control">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" placeholder="Your message"></textarea>
+                        <textarea class="form-control" name="message" id="message" placeholder="Your message"></textarea>
                     </div>
-                    <div class="form-group term_check">
+                    {{--<div class="form-group term_check">
                         <input type="checkbox" id="term">
                         <label for="term">I agree to receive emails, newsletters and promotional messages</label>
-                    </div>
+                    </div>--}}
                     <div class="form-group mb-0">
                         <button type="submit" class="btn puprple_btn">SEND MESSAGE</button>
                     </div>
