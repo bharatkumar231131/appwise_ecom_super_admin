@@ -153,7 +153,7 @@ class PackageController extends Controller
         // return "hello";
         $staticData = [
             'id' => 1,
-            'name' => 'gold',
+            'name' => 'gold Package title',
             'description' => 'Gold Package',
             'number_of_section' => 10,
             'number_of_category' => 5,
