@@ -365,8 +365,9 @@
                         </li>
                     </ul>
                     <div>
-                        <a data-bs-toggle="modal" data-bs-target="#buyNowModal-{{ $package->id }}" data-bs-focus="true"
-                            class="btn white_btn">BUY NOW</a>
+                        <a data-bs-toggle="modal" data-bs-target="#buyNowModal" class="btn white_btn buy-now-btn"
+                            data-route="{{ route('package.saveOwnerDetails', $package->id) }}" data-name="{{ $package['name'] }}">BUY
+                            NOW</a>
                     </div>
 
 
@@ -856,37 +857,32 @@
 </section>
 <!-- FAQ-Section end -->
 
-<div class="modal fade" id="buyNowModal-{{ $package->id }}" tabindex="-1"
-    aria-labelledby="buyNowModalLabel-{{ $package->id }}" aria-hidden="true">
+<div class="modal fade" id="buyNowModal" tabindex="-1" aria-labelledby="buyNowModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="buyNowModalLabel-{{ $package->id }}">Fill Owner
-                    Details</h5>
+                <h5 class="modal-title" id="buyNowModalLabel">Fill Owner Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('package.saveOwnerDetails', $package->id) }}" method="POST">
+                <form action="" method="POST" id="ownerDetailsForm">
                     @csrf
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="ownerName-{{ $package->id }}" class="form-label">Owner
-                                Name</label>
-                            <input type="text" class="form-control" id="ownerName-{{ $package->id }}" name="owner_name" required>
+                            <label for="ownerName" class="form-label">Owner Name</label>
+                            <input type="text" class="form-control" id="ownerName" name="owner_name" required>
                         </div>
                         <div class="mb-3">
-                            <label for="ownerShop-{{ $package->id }}" class="form-label">Shop
-                                Name</label>
-                            <input type="text" class="form-control" id="ownerShop-{{ $package->id }}" name="shop_name" required>
+                            <label for="ownerShop" class="form-label">Shop Name</label>
+                            <input type="text" class="form-control" id="ownerShop" name="shop_name" required>
                         </div>
                         <div class="mb-3">
-                            <label for="ownerDomain-{{ $package->id }}" class="form-label">Domain</label>
-                            <input type="text" class="form-control" id="ownerDomain-{{ $package->id }}" name="domain" required>
+                            <label for="ownerDomain" class="form-label">Domain</label>
+                            <input type="text" class="form-control" id="ownerDomain" name="domain" required>
                         </div>
                         <div class="mb-3">
-                            <label for="ownerAddress-{{ $package->id }}" class="form-label">Address</label>
-                            <textarea class="form-control" id="ownerAddress-{{ $package->id }}" name="address" rows="3"
-                                required></textarea>
+                            <label for="ownerAddress" class="form-label">Address</label>
+                            <textarea class="form-control" id="ownerAddress" name="address" rows="3" required></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -894,7 +890,6 @@
                         <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
@@ -920,8 +915,26 @@
     </div>
 </div>
 
-
-
-
 {{-- --}}
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('buyNowModal');
+        const form = document.getElementById('ownerDetailsForm');
+
+        document.querySelectorAll('.buy-now-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const route = this.getAttribute('data-route');
+                const packageName = this.getAttribute('data-name');
+                // Set the form action dynamically
+                form.action = route;
+
+                // Update modal title dynamically
+                modal.querySelector('.modal-title').textContent = `Fill Owner Details for ${packageName}`;
+            });
+        });
+    });
+</script>
+
 @endsection
