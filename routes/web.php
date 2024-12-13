@@ -30,18 +30,19 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
     Route::middleware(['admin'])->group(function () {
         Route::get('dashboard', 'AdminController@dashboard');
         Route::get('logout', 'AdminController@logout');
-
+        Route::match(['get', 'post'], 'update-admin-password', 'AdminController@updateAdminPassword'); // GET request to view the update password <form>, and a POST request to submit the update password <form>
+        Route::post('check-admin-password', 'AdminController@checkAdminPassword'); 
         //packages
         Route::get('packages', 'PackageController@packages');
-        Route::match(['get', 'post'], 'add-edit-package/{id?}', 'packagecontroller@addeditpackage')->name('admin.addeditpackage');
-        Route::post('change-package-status', 'packagecontroller@changePackageStatus')->name('packages.status');
+        Route::match(['get', 'post'], 'add-edit-package/{id?}', 'PackageController@addeditpackage')->name('admin.addeditpackage');
+        Route::post('change-package-status', 'PackageController@changePackageStatus')->name('packages.status');
 
         Route::get('package_buy', 'PackageController@packageBuy');
         Route::get('edit_package_buy/{id}', 'PackageController@editPackageBuy');
 
         Route::match(array('get', 'post'), 'delete/{type}/{id}', [AdminController::class, 'delete'])->name('admin.delete');
         Route::get('inquiries', 'InquiryController@index');
-        Route::any('inquiry_details/{id}', 'inquirycontroller@inquirydetails')->name('admin.returnorderdetail');
+        Route::any('inquiry_details/{id}', 'InquiryController@inquirydetails')->name('admin.returnorderdetail');
 
 
 
@@ -49,9 +50,9 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::match(['get', 'post'], 'shop-owners/{id?}', 'ShopOwnerController@createOrEdit');
         Route::post('change-owner-status', 'ShopOwnerController@changeOwnerStatus')->name('owners.status');
 
-        Route::get('shop-owners', 'shopownercontroller@index')->name('admin.shopOwners');
-        Route::match(['get', 'post'], 'add-edit-shop-owner/{id?}', 'shopownercontroller@addeditshopowner')->name('admin.addEditShopOwner');
-        Route::delete('delete-shop-owner/{id}', 'shopownercontroller@deleteshopowner')->name('admin.deleteShopOwner');
+        Route::get('shop-owners', 'ShopOwnerController@index')->name('admin.shopOwners');
+        Route::match(['get', 'post'], 'add-edit-shop-owner/{id?}', 'ShopOwnerController@addeditshopowner')->name('admin.addEditShopOwner');
+        Route::delete('delete-shop-owner/{id}', 'ShopOwnerController@deleteshopowner')->name('admin.deleteShopOwner');
 
         Route::match(['get', 'post'], 'shop-owners-details/{id}', 'ShopOwnerController@showShopOwner');
 

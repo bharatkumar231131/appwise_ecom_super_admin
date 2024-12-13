@@ -15,6 +15,7 @@ use App\Models\ShopOwner;
 use Carbon\Carbon;
 use PhpParser\Node\Stmt\Return_;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Intervention\Image\Facades\Image;
 
 
@@ -221,6 +222,51 @@ class AdminController extends Controller
         } else {
             $setting = Setting::where('id', '1')->first();
             return view('admin.setting.admin_logo', compact('setting'));
+        }
+    }
+    public function updateAdminPassword(Request $request)
+    {
+        // Correcting issues in the Skydash Admin Panel Sidebar using Session
+        Session::put('page', 'update_admin_password');
+        // Handling the update admin password <form> submission (POST request) in update_admin_password.blade.php
+        if ($request->isMethod('post')) {
+            $data = $request->all();
+            // dd($data);
+            // Check first if the entered admin current password is corret
+            if (Hash::check($data['current_password'], Auth::user()->password)) { 
+                // Check if the new password is matching with confirm password
+                if ($data['confirm_password'] == $data['new_password']) {
+                    User::where('id', Auth::user()->id)->update([ 
+                        'password' => bcrypt($data['new_password'])
+                    ]); 
+
+                    Auth::logout();
+                    return redirect('admin/login')->with('success_message', 'Admin Password has been updated successfully!');
+                    // return redirect()->back()->with('success_message', 'Admin Password has been updated successfully!');
+                } else { 
+                    return redirect()->back()->with('error_message', 'New Password and Confirm Password does not match!');
+                }
+            } else {
+                return redirect()->back()->with('error_message', 'Your current admin password is Incorrect!');
+            }
+        }
+
+
+        $adminDetails = User::where('email', Auth::user()->email)->first()->toArray(); // 'Admin' is the Admin.php model    // Auth::guard('admin') is the authenticated user using the 'admin' guard we created in auth.php    // https://laravel.com/docs/9.x/eloquent#retrieving-models    // Accessing Specific Guard Instances: https://laravel.com/docs/9.x/authentication#accessing-specific-guard-instances
+
+
+        return view('admin.setting.update_admin_password')->with(compact('adminDetails'));
+    }
+
+
+    public function checkAdminPassword(Request $request)
+    {
+        $data = $request->all();
+
+        if (Hash::check($data['current_password'], Auth::user()->password)) {
+            return 'true';
+        } else {
+            return 'false';
         }
     }
 }

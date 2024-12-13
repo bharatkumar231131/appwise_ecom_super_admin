@@ -100,8 +100,8 @@
     <script src="{{ asset('public/admin/vendor/nouislider/nouislider.min.js') }}"></script>
     <script src="{{ asset('public/admin/vendor/fullcalendar/main.min.js') }}"></script>
     <script src="{{ asset('public/admin/js/stroyka.js') }}"></script>
-    <script src="{{ asset('public/admin/js/custom.js') }}"></script>
-    <script src="{{ asset('public/admin/js/custom1.js') }}"></script>
+    {{-- <script src="{{ asset('public/admin/js/custom.js') }}"></script>
+    <script src="{{ asset('public/admin/js/custom1.js') }}"></script> --}}
     <script src="{{ asset('public/admin/js/calendar.js') }}"></script>
     <script src="{{ asset('public/admin/js/demo.js') }}"></script>
     <script src="{{asset('public/parsleyjs/parsley.min.js')}}"></script>

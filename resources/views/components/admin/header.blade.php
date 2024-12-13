@@ -140,6 +140,8 @@ ons__item-icon">
 
         <li><a class="dropdown-item" href="{{ url('admin/admin-details') }}">Settings</a></li>
         <li>
+          <li><a class="dropdown-item" href="{{ url('admin/update-admin-password') }}">Password Change</a></li>
+        <li>
           <hr class="dropdown-divider">
         </li>
         <li><a class="dropdown-item" href="{{ url('admin/logout') }}">Sign Out</a>
