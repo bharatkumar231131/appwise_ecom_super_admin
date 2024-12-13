@@ -59,7 +59,7 @@
                         <tr>
                             <td>{{ $package->id }}</td>
                             <td>
-                                <a href="{{url('admin/shop-owners-details/' . $package->shopowner->id)}}">
+                                <a class="text-black" href="{{url('admin/shop-owners-details/' . $package->shopowner->id)}}">
                                     {{ $package->shopowner->name }}
                                 </a>
                             </td>
@@ -71,10 +71,10 @@
                             <td>{{ $package->price }}</td>
                             <td>{{ $package->days }}</td>
                             <td>
-                                @if($package->status == 'Active')
+                                @if($package->status == 'active')
                                 <span class="badge bg-success @can('package_buy status') change-status @endcan" data-id="
                                     {{ $package->id }}" data-status="Active">Active</span>
-                                @elseif($package->status == 'Inactive')
+                                @elseif($package->status == 'inactive')
                                 <span class="badge bg-danger @can('package_buy status') change-status @endcan" data-id="
                                     {{ $package->id }}" data-status="Inactive">Inactive</span>
                                 @else
