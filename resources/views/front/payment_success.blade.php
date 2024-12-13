@@ -65,7 +65,6 @@
                         </clipPath>
                     </defs>
                 </svg>
-
                 <h1 class="text-center text-primary my-4">{{ $message }}</h1>
                 <a href="{{ url('/home') }}" class="btn btn-primary px-3 fw-semibold d-flex align-items-center gap-2 py-2"><svg
                         xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left"
