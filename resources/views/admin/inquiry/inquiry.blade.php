@@ -47,8 +47,9 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
+                            <th>Address</th>
                             <th>Message</th>
-                            <th>Status</th>
+                            <!-- <th>Status</th> -->
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -58,8 +59,9 @@
                             <td>{{ $inquiry->name }}</td>
                             <td>{{ $inquiry->email }}</td>
                             <td>{{ $inquiry->phone }}</td>
+                            <td>{{ $inquiry->address }}</td>
                             <td>{{ Str::limit($inquiry->message) }}</td>
-                            <td>
+                            <!-- <td>
                                 @if ($inquiry->status == 'in_progress')
                                 <span class="badge bg-warning">In Progress</span>
                                 @elseif ($inquiry->status == 'resolved')
@@ -67,7 +69,7 @@
                                 @else
                                 <span class="badge bg-info">New</span>
                                 @endif
-                            </td>
+                            </td> -->
                             <td>
                                 <div class="d-flex gap-3">
                                     <a href="{{ url('admin/inquiry_details/' . $inquiry->id) }}" class="actionbtn-tb actionbtn-edit"

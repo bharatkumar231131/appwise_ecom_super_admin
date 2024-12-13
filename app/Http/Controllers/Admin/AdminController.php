@@ -39,6 +39,8 @@ class AdminController extends Controller
 
             $request->validate($rules, $customMessages);
 
+            
+
             if (Auth::attempt(['email' => $data['email'], 'password' => $data['password']])) {
                 $user = Auth::user();
                 return redirect('/admin/dashboard');

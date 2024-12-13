@@ -63,7 +63,6 @@
                                     {{ $package->shopowner->name }}
                                 </a>
                             </td>
-
                             <td>{{ $package->package_name }}</td>
                             <td>{{ $package->number_of_section }}</td>
                             <td>{{ $package->number_of_category }}</td>
@@ -72,9 +71,11 @@
                             <td>{{ $package->days }}</td>
                             <td>
                                 @if($package->status == 'active')
-                                <span class="badge bg-success">Active</span>
+                                <span class="badge bg-success @can('package_buy status') change-status @endcan" data-id="
+                                    {{ $package->id }}" data-status="active">Active</span>
                                 @elseif($package->status == 'inactive')
-                                <span class="badge bg-danger">Inactive</span>
+                                <span class="badge bg-danger @can('package_buy status') change-status @endcan" data-id="
+                                    {{ $package->id }}" data-status="inactive">Inactive</span>
                                 @else
                                 <span class="badge bg-secondary">N/A</span>
                                 @endif
@@ -100,4 +101,44 @@
     </div>
 </div>
 
+@endsection
+
+
+@section('scripts')
+<script>
+    var packageId, currentStatus;
+
+    $(document).on('click', '.change-status', function() {
+        packageId = $(this).data('id');
+        currentStatus = $(this).data('status');
+        $('#statusChangeModal').modal('show');
+    });
+
+
+    $("#confirmStatusChange").click(function() {
+        var newStatus = currentStatus == "active" ? "inactive" : "active";
+        $.ajax({
+            url: "{{ url('admin/change-package_buy-status') }}",
+            type: "POST",
+            data: {
+                _token: "{{ csrf_token() }}",
+                package_id: packageId,
+                status: newStatus,
+            },
+            success: function(response) {
+                console.log("AJAX request successful");
+                if (response.success) {
+                    console.log("Status changed successfully");
+                    location.reload();
+                } else {
+                    console.log("Status change failed");
+                    alert("Something went wrong. Please try again.");
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log("AJAX request failed: " + error);
+            },
+        });
+    });
+</script>
 @endsection

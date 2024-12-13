@@ -36,7 +36,7 @@
 
 
 
-    <!-- Shop Owners Table -->
+    <!-- Shop Owners Table -->          
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -78,10 +78,10 @@
                                     <span class="badge bg-success @can('owner status') change-status @endcan"
                                         data-id="{{ $shopOwner->id }}" data-status="active">Active</span>
                                     @elseif ($shopOwner->status == 'inactive' && (!$shopOwner->end_date || now() <= $shopOwner->end_date))
-                                        <span class="badge bg-warning @can('owner status') change-status @endcan"
+                                        <span class="badge bg-danger @can('owner status') change-status @endcan"
                                             data-id="{{ $shopOwner->id }}" data-status="inactive">Inactive</span>
                                         @elseif ($shopOwner->end_date && now() > $shopOwner->end_date)
-                                        <span class="badge bg-danger">Suspended</span>
+                                        <span class="badge bg-dark">Suspended</span>
                                         @endif
                                         
                             </td>
