@@ -896,7 +896,7 @@
                 form.action = route;
 
                 // Update modal title dynamically
-                modal.querySelector('.modal-title').textContent = `Fill Owner Details for ${packageName}`;
+                // modal.querySelector('.modal-title').textContent = `Fill Owner Details for ${packageName}`;
             });
         });
     });
