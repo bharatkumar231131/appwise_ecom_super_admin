@@ -38,6 +38,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
         Route::get('package_buy', 'PackageController@packageBuy');
         Route::get('edit_package_buy/{id}', 'PackageController@editPackageBuy');
+        Route::post('change-package_buy-status', 'packagecontroller@changePackageBuyStatus')->name('package_buy.status');
 
         Route::match(array('get', 'post'), 'delete/{type}/{id}', [AdminController::class, 'delete'])->name('admin.delete');
         Route::get('inquiries', 'InquiryController@index');

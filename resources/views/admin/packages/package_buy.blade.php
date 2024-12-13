@@ -71,10 +71,12 @@
                             <td>{{ $package->price }}</td>
                             <td>{{ $package->days }}</td>
                             <td>
-                                @if($package->status == 'active')
-                                <span class="badge bg-success">Active</span>
-                                @elseif($package->status == 'inactive')
-                                <span class="badge bg-danger">Inactive</span>
+                                @if($package->status == 'Active')
+                                <span class="badge bg-success @can('package_buy status') change-status @endcan" data-id="
+                                    {{ $package->id }}" data-status="Active">Active</span>
+                                @elseif($package->status == 'Inactive')
+                                <span class="badge bg-danger @can('package_buy status') change-status @endcan" data-id="
+                                    {{ $package->id }}" data-status="Inactive">Inactive</span>
                                 @else
                                 <span class="badge bg-secondary">N/A</span>
                                 @endif
@@ -100,4 +102,44 @@
     </div>
 </div>
 
+@endsection
+
+
+@section('scripts')
+<script>
+    var packageId, currentStatus;
+
+    $(document).on('click', '.change-status', function() {
+        packageId = $(this).data('id');
+        currentStatus = $(this).data('status');
+        $('#statusChangeModal').modal('show');
+    });
+
+
+    $("#confirmStatusChange").click(function() {
+        var newStatus = currentStatus == "Active" ? "Inactive" : "Active";
+        $.ajax({
+            url: "{{ url('admin/change-package_buy-status') }}",
+            type: "POST",
+            data: {
+                _token: "{{ csrf_token() }}",
+                package_id: packageId,
+                status: newStatus,
+            },
+            success: function(response) {
+                console.log("AJAX request successful");
+                if (response.success) {
+                    console.log("Status changed successfully");
+                    location.reload();
+                } else {
+                    console.log("Status change failed");
+                    alert("Something went wrong. Please try again.");
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log("AJAX request failed: " + error);
+            },
+        });
+    });
+</script>
 @endsection

@@ -113,6 +113,16 @@ class PackageController extends Controller
         return response()->json(['success' => true]);
     }
 
+    public function changePackageBuyStatus(Request $request)
+    {
+
+        PackageBuy::where('id', $request->package_id)->update([
+            "status" => $request->status
+        ]);
+
+        return response()->json(['success' => true]);
+    }
+
     public function packageBuy()
     {
         $packageBuy = PackageBuy::with('shopOwner')->get();

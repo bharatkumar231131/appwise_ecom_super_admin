@@ -32,14 +32,12 @@
                 <ul class="app_btn">
                     <li>
                         <a href="#">
-                            <img class="blue_img" src="{{ asset('public/front/images/google_play.png') }}"
-                                alt="image">
+                            <img class="blue_img" src="{{ asset('public/front/images/google_play.png') }}" alt="image">
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img class="blue_img" src="{{ asset('public/front/images/app_store.png') }}"
-                                alt="image">
+                            <img class="blue_img" src="{{ asset('public/front/images/app_store.png') }}" alt="image">
                         </a>
                     </li>
                 </ul>
@@ -211,17 +209,13 @@
                 <!-- UI Image -->
                 <div class="ui_images" data-aos="fade-in" data-aos-duration="1500">
                     <div class="left_img">
-                        <img class="moving_position_animatin" src="{{ asset('public/front/images/modern01.png') }}"
-                            alt="image">
+                        <img class="moving_position_animatin" src="{{ asset('public/front/images/modern01.png') }}" alt="image">
                     </div>
                     <!-- UI Image -->
                     <div class="right_img">
-                        <img class="moving_position_animatin"
-                            src="{{ asset('public/front/images/secure_data.png') }}" alt="image">
-                        <img class="moving_position_animatin" src="{{ asset('public/front/images/modern02.png') }}"
-                            alt="image">
-                        <img class="moving_position_animatin" src="{{ asset('public/front/images/modern03.png') }}"
-                            alt="image">
+                        <img class="moving_position_animatin" src="{{ asset('public/front/images/secure_data.png') }}" alt="image">
+                        <img class="moving_position_animatin" src="{{ asset('public/front/images/modern02.png') }}" alt="image">
+                        <img class="moving_position_animatin" src="{{ asset('public/front/images/modern03.png') }}" alt="image">
                     </div>
                 </div>
             </div>
@@ -371,8 +365,8 @@
                         </li>
                     </ul>
                     <div>
-                        <a data-bs-toggle="modal" data-bs-target="#buyNowModal-{{ $package->id }}"
-                            data-bs-focus="true" class="btn white_btn">BUY NOW</a>
+                        <a data-bs-toggle="modal" data-bs-target="#buyNowModal-{{ $package->id }}" data-bs-focus="true"
+                            class="btn white_btn">BUY NOW</a>
                     </div>
 
 
@@ -649,14 +643,12 @@
                         <ul class="app_btn">
                             <li>
                                 <a href="#">
-                                    <img class="blue_img" src="{{ asset('public/front/images/google_play.png') }}"
-                                        alt="image">
+                                    <img class="blue_img" src="{{ asset('public/front/images/google_play.png') }}" alt="image">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img class="blue_img" src="{{ asset('public/front/images/app_store.png') }}"
-                                        alt="image">
+                                    <img class="blue_img" src="{{ asset('public/front/images/app_store.png') }}" alt="image">
                                 </a>
                             </li>
                         </ul>
@@ -667,8 +659,7 @@
                 <div class="col-md-6">
                     <div class="free_img">
                         <img src="{{ asset('public/front/images/download-screen01.png') }}" alt="image">
-                        <img class="mobile_mockup" src="{{ asset('public/front/images/download-screen02.png') }}"
-                            alt="image">
+                        <img class="mobile_mockup" src="{{ asset('public/front/images/download-screen02.png') }}" alt="image">
                     </div>
                 </div>
             </div>
@@ -721,12 +712,11 @@
                 </form>
             </div>
             <div class="contact_info">
-                <div class="icon"><img src="{{ asset('public/front/images/contact_message_icon.png') }}"
-                        alt="image"></div>
+                <div class="icon"><img src="{{ asset('public/front/images/contact_message_icon.png') }}" alt="image"></div>
                 <div class="section_title">
                     <h2>Have any <span>question?</span></h2>
-                    <p>If you have any question about our product, service, payment or company, Visit our <a
-                            href="faq.html">FAQs page.</a></p>
+                    <p>If you have any question about our product, service, payment or company, Visit our <a href="faq.html">FAQs
+                            page.</a></p>
                 </div>
                 <a href="faq.html" class="btn puprple_btn">READ FAQ</a>
                 <ul class="contact_info_list">
@@ -781,13 +771,11 @@
                 <div class="card" data-aos="fade-up" data-aos-duration="1500">
                     <div class="card-header" id="headingOne">
                         <h2 class="mb-0">
-                            <button type="button" class="btn btn-link active" data-toggle="collapse"
-                                data-target="#collapseOne">
+                            <button type="button" class="btn btn-link active" data-toggle="collapse" data-target="#collapseOne">
                                 <i class="icon_faq icofont-plus"></i></i> How can i pay ?</button>
                         </h2>
                     </div>
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                        data-parent="#accordionExample">
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum
                                 has. been the
@@ -802,13 +790,12 @@
                 <div class="card" data-aos="fade-up" data-aos-duration="1500">
                     <div class="card-header" id="headingTwo">
                         <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse"
-                                data-target="#collapseTwo"><i class="icon_faq icofont-plus"></i></i> How to setup
+                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"><i
+                                    class="icon_faq icofont-plus"></i></i> How to setup
                                 account ?</button>
                         </h2>
                     </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                        data-parent="#accordionExample">
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div class="card-body">
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum
                                 has. been the
@@ -829,8 +816,7 @@
                                 ?</button>
                         </h2>
                     </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                        data-parent="#accordionExample">
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                         <div class="card-body">
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum
                                 has. been the
@@ -845,14 +831,13 @@
                 <div class="card" data-aos="fade-up" data-aos-duration="1500">
                     <div class="card-header" id="headingFour">
                         <h2 class="mb-0">
-                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse"
-                                data-target="#collapseFour"><i class="icon_faq icofont-plus"></i></i>What is process
+                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"><i
+                                    class="icon_faq icofont-plus"></i></i>What is process
                                 to get refund
                                 ?</button>
                         </h2>
                     </div>
-                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
-                        data-parent="#accordionExample">
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                         <div class="card-body">
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum
                                 has. been the
@@ -887,23 +872,21 @@
                         <div class="mb-3">
                             <label for="ownerName-{{ $package->id }}" class="form-label">Owner
                                 Name</label>
-                            <input type="text" class="form-control" id="ownerName-{{ $package->id }}"
-                                name="owner_name" required>
+                            <input type="text" class="form-control" id="ownerName-{{ $package->id }}" name="owner_name" required>
                         </div>
                         <div class="mb-3">
                             <label for="ownerShop-{{ $package->id }}" class="form-label">Shop
                                 Name</label>
-                            <input type="text" class="form-control" id="ownerShop-{{ $package->id }}"
-                                name="shop_name" required>
+                            <input type="text" class="form-control" id="ownerShop-{{ $package->id }}" name="shop_name" required>
                         </div>
                         <div class="mb-3">
                             <label for="ownerDomain-{{ $package->id }}" class="form-label">Domain</label>
-                            <input type="text" class="form-control" id="ownerDomain-{{ $package->id }}"
-                                name="domain" required>
+                            <input type="text" class="form-control" id="ownerDomain-{{ $package->id }}" name="domain" required>
                         </div>
                         <div class="mb-3">
                             <label for="ownerAddress-{{ $package->id }}" class="form-label">Address</label>
-                            <textarea class="form-control" id="ownerAddress-{{ $package->id }}" name="address" rows="3" required></textarea>
+                            <textarea class="form-control" id="ownerAddress-{{ $package->id }}" name="address" rows="3"
+                                required></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
