@@ -18,51 +18,36 @@
         </div>
     </div>
 
-    <div class="row mb-5">
-        <div class="col-lg-8">
-            <div class="card mb-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-5 shadow-sm">
                 <div class="card-body">
-                    <div class="mb-5">
-                        <h2 class="mb-0 fs-exact-18">Owner Details</h2>
-                    </div>
+                    <h2 class="h5 mb-4">Owner Details</h2>
+                    <div class="list-unstyled">
+                        <div class="row mb-3">
+                            <dt class="col-lg-3">Name:</dt>
+                            <dd class="col-lg-9 text-muted"> {{ $shopOwnerDetails->name ?? 'N/A' }}
+                            </dd>
+                        </div>
+                        <div class="row mb-3">
+                            <dt class="col-lg-3">Shop-Name:</dt>
+                            <dd class="col-lg-9 text-muted">{{ $shopOwnerDetails->shop_name ?? 'N/A' }}</dd>
+                        </div>
+                        <div class="row mb-3">
+                            <dt class="col-lg-3">Domain:</dt>
+                            <dd class="col-lg-9 text-muted">{{ $shopOwnerDetails->domain ?? 'N/A' }}</dd>
+                        </div>
+                        <div class="row mb-3">
+                            <dt class="col-lg-3">Package Name:</dt>
+                            <dd class="col-lg-9 text-muted">{{ $shopOwnerDetails->package->name ?? 'N/A' }}</dd>
+                        </div>
+                        <div class="row mb-3">
+                            <dt class="col-lg-3">Status:</dt>
+                            <dd class="col-lg-9 text-muted">{{ $shopOwnerDetails->status ?? 'N/A' }}
+                            </dd>
+                        </div>
 
-                    <div class="list-unstyled row">
-                        <dt class="list-unstyled m-0 col-sm-3">Name: </dt>
-                        <dd class="fs-exact-13 text-muted mb-0 mt-1 col-sm-9">
-                            {{ $shopOwnerDetails->name ?? 'N/A' }}
-                        </dd>
                     </div>
-                    <!-- Check updateAdminPassword() method in AdminController.php -->
-                    <div class="list-unstyled row">
-                        <dt class="list-unstyled m-0 col-sm-3">Shop-Name: </dt>
-                        <dd class="fs-exact-13 text-muted mb-0 mt-1 col-sm-9">
-                            {{ $shopOwnerDetails->shop_name ?? 'N/A' }}
-                        </dd>
-                    </div>
-
-                    <div class="list-unstyled row">
-                        <dt class="list-unstyled m-0 col-sm-3">Domain: </dt>
-                        <dd class="fs-exact-13 text-muted mb-0 mt-1 col-sm-9">
-                            {{ $shopOwnerDetails->domain ?? 'N/A' }}
-                        </dd>
-                    </div>
-
-                    <div class="list-unstyled row">
-                        <dt class="list-unstyled m-0 col-sm-3">Package Name: </dt>
-                        <dd class="fs-exact-13 text-muted mb-0 mt-1 col-sm-9">
-                            {{ $shopOwnerDetails->package->name ?? 'N/A' }}
-                        </dd>
-                    </div>
-
-                    <div class="list-unstyled row">
-                        <dt class="list-unstyled m-0 col-sm-3">Status: </dt>
-                        <dd class="fs-exact-13 text-muted mb-0 mt-1 col-sm-9">
-                            {{ $shopOwnerDetails->status ?? 'N/A' }}
-                        </dd>
-                    </div>
-
-                   
-
                 </div>
             </div>
         </div>

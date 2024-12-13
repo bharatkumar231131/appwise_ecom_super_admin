@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Package;
 use App\Models\PackageBuy;
+use App\Models\PackageLog;
 use Illuminate\Support\Facades\Validator;
 // use Illuminate\Routing\Controllers\HasMiddleware;
 // use Illuminate\Routing\Controllers\Middleware;

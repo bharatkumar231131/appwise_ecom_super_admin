@@ -8,7 +8,7 @@
                     <h2>Leave a <span>message</span></h2>
                     <p>Fill up form below, our team will get back soon</p>
                 </div>
-                <form action="{{ url('save-inquiry') }}" method="post">
+                <form action="{{ url('inquiry-submit') }}" method="post">
                     @csrf
                     <div class="form-group">
                         <input type="text" placeholder="Name" name="name" id="name" class="form-control">
