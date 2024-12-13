@@ -11,12 +11,12 @@ class InquiryController extends Controller
 {
     //
 
-    public function inquiry()
+    public function inquiryForm()
     {
         return view('front.inquiry.inquiry');
     }
 
-    public function saveInquiry(Request $request)
+    public function inquirySubmit(Request $request)
     {
         if ($request->isMethod('post')) {
 

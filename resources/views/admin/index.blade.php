@@ -83,8 +83,9 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
+                                <th>Address</th>
                                 <th>Message</th>
-                                <th>Status</th>
+                                <!-- <th>Status</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -95,8 +96,8 @@
                                 <td>{{ $inquiry->email ?? 'N/A' }}</td>
                                 <td>{{ $inquiry->phone ?? 'N/A' }}</td>
                                 <td>{{ $inquiry->address ?? 'N/A' }}</td>
-                                <td>{{ $inquiry->message ?? 'N/A' }}</td>
-                                <td>
+                                <td>{{ Str::limit($inquiry->message ?? 'N/A') }}</td>
+                                <!-- <td>
                                     @if ($inquiry->status == 'in_progress')
                                     <span class="badge bg-warning">In Progress</span>
                                     @elseif ($inquiry->status == 'resolved')
@@ -104,7 +105,7 @@
                                     @else
                                     <span class="badge bg-info">New</span>
                                     @endif
-                                </td>
+                                </td> -->
                             </tr>
                             @endforeach
                         </tbody>
