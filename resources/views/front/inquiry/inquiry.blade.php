@@ -16,7 +16,7 @@
                 </div>
 
               
-                <form action="{{ url('inquiry-submit') }}" method="post">
+                <form action="" >
                     @csrf
                     <div class="form-group">
                         <input type="text" placeholder="Name" name="name" id="name" class="form-control">

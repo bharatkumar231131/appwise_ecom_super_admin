@@ -63,7 +63,6 @@
                                     {{ $package->shopowner->name }}
                                 </a>
                             </td>
-
                             <td>{{ $package->package_name }}</td>
                             <td>{{ $package->number_of_section }}</td>
                             <td>{{ $package->number_of_category }}</td>
@@ -73,10 +72,10 @@
                             <td>
                                 @if($package->status == 'active')
                                 <span class="badge bg-success @can('package_buy status') change-status @endcan" data-id="
-                                    {{ $package->id }}" data-status="Active">Active</span>
+                                    {{ $package->id }}" data-status="active">Active</span>
                                 @elseif($package->status == 'inactive')
                                 <span class="badge bg-danger @can('package_buy status') change-status @endcan" data-id="
-                                    {{ $package->id }}" data-status="Inactive">Inactive</span>
+                                    {{ $package->id }}" data-status="inactive">Inactive</span>
                                 @else
                                 <span class="badge bg-secondary">N/A</span>
                                 @endif
@@ -117,7 +116,7 @@
 
 
     $("#confirmStatusChange").click(function() {
-        var newStatus = currentStatus == "Active" ? "Inactive" : "Active";
+        var newStatus = currentStatus == "active" ? "inactive" : "active";
         $.ajax({
             url: "{{ url('admin/change-package_buy-status') }}",
             type: "POST",

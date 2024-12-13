@@ -20,7 +20,8 @@
                 <!-- footer link 1 -->
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="abt_side">
-                        <div class="logo"> <img src="{{ asset('public/front/images/logo.png') }}" alt="image">
+                        <div class="logo"> <img src="{{ asset('public/front/images/footer_logo.png') }}"
+                                alt="image">
                         </div>
                         <ul>
                             <li><a href="#">support@example.com</a></li>
@@ -75,12 +76,8 @@
         <div class="container">
             <!-- row start -->
             <div class="row">
-                <div class="col-md-6">
-                    <p>© Copyrights 2022. All rights reserved.</p>
-                </div>
-                <div class="col-md-6">
-                    <p class="developer_text">Design & developed by <a href="#" target="blank">Kalanidhi
-                            Themes</a></p>
+                <div class="col-md-12 text-center">
+                    <p>© Copyrights 2024. All rights reserved.</p>
                 </div>
             </div>
             <!-- row end -->

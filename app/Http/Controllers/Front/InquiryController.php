@@ -18,6 +18,7 @@ class InquiryController extends Controller
 
     public function inquirySubmit(Request $request)
     {
+        // return $request;
         if ($request->isMethod('post')) {
 
             $data = $request->all();
