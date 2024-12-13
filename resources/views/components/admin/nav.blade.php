@@ -49,10 +49,10 @@
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
                                                 <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span
                                                         class="sa-nav__icon"><svg xmlns="http://www.w3.org/2000/svg"
-                                                            width="24" height="24" fill="currentColor"
-                                                            viewBox="0 0 24 24">
+                                                            width="16" height="16" fill="currentColor"
+                                                            class="bi bi-box-seam" viewBox="0 0 16 16">
                                                             <path
-                                                                d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l7.45 3.72-2.92 1.47L12 6.04 7.47 7.37 4.55 5.9 12 4.18zM4 9.6v7.91l8 4 8-4V9.6l-8 4-8-4zm8 2.36l4.7 2.36-4.7 2.35-4.7-2.35 4.7-2.36z" />
+                                                                d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z" />
                                                         </svg></span><span class="sa-nav__title">Package
                                                         Management</span><span class="sa-nav__arrow"><svg
                                                             xmlns="http://www.w3.org/2000/svg" width="6"
@@ -84,10 +84,14 @@
                                                     data-sa-collapse-item="sa-nav__menu-item--open">
                                                     <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span
                                                             class="sa-nav__icon"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                width="24" height="24" fill="currentColor"
-                                                                viewBox="0 0 24 24">
+                                                                width="16" height="16" fill="currentColor"
+                                                                class="bi bi-device-hdd" viewBox="0 0 16 16">
                                                                 <path
-                                                                    d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l7.45 3.72-2.92 1.47L12 6.04 7.47 7.37 4.55 5.9 12 4.18zM4 9.6v7.91l8 4 8-4V9.6l-8 4-8-4zm8 2.36l4.7 2.36-4.7 2.35-4.7-2.35 4.7-2.36z" />
+                                                                    d="M12 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m-7.5.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1M5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M8 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                                                                <path
+                                                                    d="M12 7a4 4 0 0 1-3.937 4c-.537.813-1.02 1.515-1.181 1.677a1.102 1.102 0 0 1-1.56-1.559c.1-.098.396-.314.795-.588A4 4 0 0 1 8 3a4 4 0 0 1 4 4m-1 0a3 3 0 1 0-3.891 2.865c.667-.44 1.396-.91 1.955-1.268.224-.144.483.115.34.34l-.62.96A3 3 0 0 0 11 7" />
+                                                                <path
+                                                                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
                                                             </svg></span><span class="sa-nav__title">Inquiry
                                                             Management</span><span class="sa-nav__arrow"><svg
                                                                 xmlns="http://www.w3.org/2000/svg" width="6"
@@ -111,10 +115,10 @@
                                                     data-sa-collapse-item="sa-nav__menu-item--open">
                                                     <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span
                                                             class="sa-nav__icon"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                width="24" height="24" fill="currentColor"
-                                                                viewBox="0 0 24 24">
+                                                                width="16" height="16" fill="currentColor"
+                                                                class="bi bi-shop" viewBox="0 0 16 16">
                                                                 <path
-                                                                    d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l7.45 3.72-2.92 1.47L12 6.04 7.47 7.37 4.55 5.9 12 4.18zM4 9.6v7.91l8 4 8-4V9.6l-8 4-8-4zm8 2.36l4.7 2.36-4.7 2.35-4.7-2.35 4.7-2.36z" />
+                                                                    d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z" />
                                                             </svg></span><span class="sa-nav__title">ShopOwner
                                                             Management</span><span class="sa-nav__arrow"><svg
                                                                 xmlns="http://www.w3.org/2000/svg" width="6"
@@ -139,10 +143,12 @@
                                                     data-sa-collapse-item="sa-nav__menu-item--open">
                                                     <a href="#" class="sa-nav__link"
                                                         data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" fill="currentColor" viewBox="0 0 24 24">
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor"
+                                                                class="bi bi-ui-radios-grid" viewBox="0 0 16 16">
                                                                 <path
-                                                                    d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l7.45 3.72-2.92 1.47L12 6.04 7.47 7.37 4.55 5.9 12 4.18zM4 9.6v7.91l8 4 8-4V9.6l-8 4-8-4zm8 2.36l4.7 2.36-4.7 2.35-4.7-2.35 4.7-2.36z" />
+                                                                    d="M3.5 15a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m9-9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m0 9a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5M16 3.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-9 9a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m5.5 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m-9-11a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m0 2a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7">
+                                                                </path>
                                                             </svg></span><span class="sa-nav__title">CMS
                                                             Management</span><span class="sa-nav__arrow"><svg
                                                                 xmlns="http://www.w3.org/2000/svg" width="6"
@@ -166,10 +172,12 @@
                                                     data-sa-collapse-item="sa-nav__menu-item--open">
                                                     <a href="#" class="sa-nav__link"
                                                         data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" fill="currentColor" viewBox="0 0 24 24">
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor" class="bi bi-key"
+                                                                viewBox="0 0 16 16">
                                                                 <path
-                                                                    d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l7.45 3.72-2.92 1.47L12 6.04 7.47 7.37 4.55 5.9 12 4.18zM4 9.6v7.91l8 4 8-4V9.6l-8 4-8-4zm8 2.36l4.7 2.36-4.7 2.35-4.7-2.35 4.7-2.36z" />
+                                                                    d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8m4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5" />
+                                                                <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
                                                             </svg></span><span class="sa-nav__title">Permission
                                                             Management</span><span class="sa-nav__arrow"><svg
                                                                 xmlns="http://www.w3.org/2000/svg" width="6"
@@ -194,10 +202,11 @@
                                                     data-sa-collapse-item="sa-nav__menu-item--open">
                                                     <a href="#" class="sa-nav__link"
                                                         data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" fill="currentColor" viewBox="0 0 24 24">
-                                                                <path
-                                                                    d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l7.45 3.72-2.92 1.47L12 6.04 7.47 7.37 4.55 5.9 12 4.18zM4 9.6v7.91l8 4 8-4V9.6l-8 4-8-4zm8 2.36l4.7 2.36-4.7 2.35-4.7-2.35 4.7-2.36z" />
+                                                                xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                height="16" fill="currentColor"
+                                                                class="bi bi-diagram-3" viewBox="0 0 16 16">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5zM0 11.5A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
                                                             </svg></span><span class="sa-nav__title">Role
                                                             Management</span><span class="sa-nav__arrow"><svg
                                                                 xmlns="http://www.w3.org/2000/svg" width="6"
@@ -222,10 +231,13 @@
                                                     data-sa-collapse-item="sa-nav__menu-item--open">
                                                     <a href="#" class="sa-nav__link"
                                                         data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" fill="currentColor" viewBox="0 0 24 24">
-                                                                <path
-                                                                    d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l7.45 3.72-2.92 1.47L12 6.04 7.47 7.37 4.55 5.9 12 4.18zM4 9.6v7.91l8 4 8-4V9.6l-8 4-8-4zm8 2.36l4.7 2.36-4.7 2.35-4.7-2.35 4.7-2.36z" />
+                                                                class="svg-inline--fa fa-user fa-w-14" aria-hidden="true"
+                                                                focusable="false" data-prefix="far" data-icon="user"
+                                                                role="img" xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 448 512" data-fa-i2svg="">
+                                                                <path fill="currentColor"
+                                                                    d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z">
+                                                                </path>
                                                             </svg></span><span class="sa-nav__title">User
                                                             Management</span><span class="sa-nav__arrow"><svg
                                                                 xmlns="http://www.w3.org/2000/svg" width="6"
@@ -251,10 +263,11 @@
                                                     data-sa-collapse-item="sa-nav__menu-item--open">
                                                     <a href="#" class="sa-nav__link"
                                                         data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" fill="currentColor" viewBox="0 0 24 24">
+                                                                xmlns="http://www.w3.org/2000/svg" width="1em"
+                                                                height="1em" viewBox="0 0 16 16" fill="currentColor">
                                                                 <path
-                                                                    d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l7.45 3.72-2.92 1.47L12 6.04 7.47 7.37 4.55 5.9 12 4.18zM4 9.6v7.91l8 4 8-4V9.6l-8 4-8-4zm8 2.36l4.7 2.36-4.7 2.35-4.7-2.35 4.7-2.36z" />
+                                                                    d="M14,6.8l-0.2,0.1C14,7.3,14,7.6,14,8c0,0.4,0,0.7-0.1,1.1L14,9.2c1,0.6,1.4,1.9,0.8,3c-0.5,0.9-1.6,1.2-2.5,0.7l-0.5-0.3c-0.6,0.5-1.2,0.8-1.9,1.1v0.8c0,0.9-0.7,1.6-1.6,1.6H7.6C6.7,16,6,15.3,6,14.4v-0.8c-0.7-0.2-1.3-0.6-1.9-1.1l-0.5,0.3c-0.9,0.5-2,0.2-2.5-0.7c-0.6-1-0.3-2.4,0.8-3l0.2-0.1C2,8.7,2,8.4,2,8c0-0.4,0-0.7,0.1-1.1L2,6.8c-1.1-0.6-1.4-2-0.8-3C1.7,3,2.8,2.7,3.6,3.2l0.5,0.3C4.7,3,5.3,2.6,6,2.4V1.6C6,0.7,6.7,0,7.6,0h0.8C9.3,0,10,0.7,10,1.6v0.8c0.7,0.2,1.3,0.6,1.9,1.1l0.5-0.3c0.9-0.5,2-0.2,2.5,0.7C15.4,4.9,15.1,6.2,14,6.8z M8,5.5C6.6,5.5,5.5,6.6,5.5,8s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5S9.4,5.5,8,5.5z">
+                                                                </path>
                                                             </svg></span><span class="sa-nav__title">Setting
                                                             Management</span><span class="sa-nav__arrow"><svg
                                                                 xmlns="http://www.w3.org/2000/svg" width="6"
