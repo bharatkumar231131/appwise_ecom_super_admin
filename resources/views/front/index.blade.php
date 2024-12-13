@@ -22,24 +22,24 @@
                     <!-- banner text -->
                     <div class="banner_text">
                         <!-- h1 -->
-                        <h1>Best way to <span>manage your customers.</span></h1>
+                        <h1>Grow Your Business Effortlessly With <span>Our E-Commerce System</span></h1>
                         <!-- p -->
-                        <p>Lorem Ipsum is simply dummy text of the printing and setting indus orem Ipsum has been the
-                            industrys.
+                        <p>Take your business online with an easy, powerful solution built to simplify your operations,
+                            better the experience of your customer, and improve sales growth. From intuitive design to
+                            advanced analytics, all of it at one place is found in our e-commerce system.
+
                         </p>
                     </div>
                     <!-- app buttons -->
                     <ul class="app_btn">
                         <li>
                             <a href="#">
-                                <img class="blue_img" src="{{ asset('public/front/images/google_play.png') }}"
-                                    alt="image">
+                                <button class="btn btn-primary">Get a Free Demo</button>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img class="blue_img" src="{{ asset('public/front/images/app_store.png') }}"
-                                    alt="image">
+                                <button class="btn white_btn">Contact Us</button>
                             </a>
                         </li>
                     </ul>
@@ -60,11 +60,11 @@
                 <div class="col-lg-6 col-md-12" data-aos="fade-in" data-aos-duration="1500">
                     <div class="banner_slider">
                         <!-- <div class="left_icon">
-                                                                                                <img src="images/message_icon.png" alt="image">
-                                                                                              </div>
-                                                                                              <div class="right_icon">
-                                                                                                <img src="images/shield_icon.png" alt="image">
-                                                                                              </div> -->
+                                                                                                                                                                                                            <img src="images/message_icon.png" alt="image">
+                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                          <div class="right_icon">
+                                                                                                                                                                                                            <img src="images/shield_icon.png" alt="image">
+                                                                                                                                                                                                          </div> -->
                         <div id="frmae_slider" class="owl-carousel owl-theme">
                             <div class="item">
                                 <div class="slider_img">
@@ -102,10 +102,13 @@
         <div class="container">
             <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
                 <!-- h2 -->
-                <h2><span>Features</span> that makes app different!</h2>
+                <h2>Key Functionality of <span>Our Ecommerce App</span></h2>
                 <!-- p -->
-                <p>Lorem Ipsum is simply dummy text of the printing and typese tting <br> indus orem Ipsum has beenthe
-                    standard dummy.</p>
+                <p>
+                    Our eCommerce system gives you everything you need to create, manage, and grow your online store. It has
+                    powerful features and a user-friendly interface that make it easy for you to run your business and give
+                    your customers a seamless shopping experience.
+                </p>
             </div>
             <div class="feature_detail">
                 <!-- feature box left -->
@@ -123,8 +126,9 @@
                             <img src="{{ asset('public/front/images/secure_data.png') }}" alt="image">
                         </div>
                         <div class="text">
-                            <h4>Secure data</h4>
-                            <p>Lorem Ipsum is simply dummy text of the printing and type setting indus ideas.</p>
+                            <h4>Customizable storefront</h4>
+                            <p>You can easily create your online store and demonstrate your brand with easy tools and
+                                interactive designs.</p>
                         </div>
                     </div>
 
@@ -134,8 +138,9 @@
                             <img src="{{ asset('public/front/images/functional.png') }}" alt="image">
                         </div>
                         <div class="text">
-                            <h4>Fully functional</h4>
-                            <p>Simply dummy text of the printing and typesetting indus lorem Ipsum is dummy.</p>
+                            <h4>Seamless payment integration</h4>
+                            <p>This system offers your customers multiple payment options and an easy, safe checkout
+                                procedure.</p>
                         </div>
                     </div>
 
@@ -146,8 +151,9 @@
                             <img src="{{ asset('public/front/images/live-chat.png') }}" alt="image">
                         </div>
                         <div class="text">
-                            <h4>Live chat</h4>
-                            <p>Lorem Ipsum is simply dummy text of the printing and type setting indus ideas.</p>
+                            <h4>Inventory Control</h4>
+                            <p>We offer an intuitive dashboard from where one can track their inventory, manage his or her
+                                products, and update the inventory.</p>
                         </div>
                     </div>
 
@@ -157,8 +163,9 @@
                             <img src="{{ asset('public/front/images/support.png') }}" alt="image">
                         </div>
                         <div class="text">
-                            <h4>24-7 Support</h4>
-                            <p>Simply dummy text of the printing and typesetting indus lorem Ipsum is dummy.</p>
+                            <h4>Sales Analytics Overview</h4>
+                            <p>This system helps you understand your business performance and make the right decisions to
+                                boost your growth.</p>
                         </div>
                     </div>
 
@@ -179,30 +186,28 @@
                     <!-- UI content -->
                     <div class="ui_text">
                         <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
-                            <h2>Beautiful design with <span>modern UI</span></h2>
+                            <h2>Advantage of Our <span>E-Commerce System to Your Business</span></h2>
                             <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum has
-                                been the
-                                industrys standard dummy text ever since the when an unknown printer took a galley of type
-                                and.
+                                Our e-commerce system is designed to streamline activities, enhance customer experiences,
+                                and maximize sales. It provides you with the flexibility and tools to stay competitive in
+                                the ever-evolving online marketplace.
                             </p>
                         </div>
                         <ul class="design_block">
                             <li data-aos="fade-up" data-aos-duration="1500">
-                                <h4>Carefully designed</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing and type esetting industry lorem Ipsum
-                                    has.</p>
+                                <h4>Growth in sales and conversion</h4>
+                                <p>Our optimized features maximize chances of return customers and increase average order
+                                    value, which will help your store. </p>
                             </li>
                             <li data-aos="fade-up" data-aos-duration="1500">
-                                <h4>Seamless Sync</h4>
-                                <p>Simply dummy text of the printing and typesetting inustry lorem Ipsum has Lorem dollar
-                                    summit.</p>
+                                <h4>Cost Efficiency</h4>
+                                <p>You can automate the tracking of inventory, orders, and even reporting, so you have much
+                                    more time to really grow the business.</p>
                             </li>
                             <li data-aos="fade-up" data-aos-duration="1500">
-                                <h4>Access Drive</h4>
-                                <p>Printing and typesetting industry lorem Ipsum has been the industrys standard dummy text
-                                    of type
-                                    setting.</p>
+                                <h4>Enhance Customer Experience</h4>
+                                <p>It provides a rapid loading, secure payment, and specific suggestions for a smooth
+                                    purchase without hassle.</p>
                             </li>
                         </ul>
                     </div>
@@ -232,78 +237,6 @@
     </section>
     <!-- ModernUI-Section-end -->
 
-    <!-- How-It-Workes-Section-Start -->
-    <section class="row_am how_it_works" id="how_it_work">
-        <!-- container start -->
-        <div class="container">
-            <div class="how_it_inner">
-                <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
-                    <!-- h2 -->
-                    <h2><span>How it works</span> - 3 easy steps</h2>
-                    <!-- p -->
-                    <p>Lorem Ipsum is simply dummy text of the printing and typese tting <br> indus orem Ipsum has beenthe
-                        standard dummy.</p>
-                </div>
-                <div class="step_block">
-                    <!-- UL -->
-                    <ul>
-                        <!-- step -->
-                        <li>
-                            <div class="step_text" data-aos="fade-right" data-aos-duration="1500">
-                                <h4>Download app</h4>
-                                <div class="app_icon">
-                                    <a href="#"><i class="icofont-brand-android-robot"></i></a>
-                                    <a href="#"><i class="icofont-brand-apple"></i></a>
-                                    <a href="#"><i class="icofont-brand-windows"></i></a>
-                                </div>
-                                <p>Download App either for Windows, Mac or Android</p>
-                            </div>
-                            <div class="step_number">
-                                <h3>01</h3>
-                            </div>
-                            <div class="step_img" data-aos="fade-left" data-aos-duration="1500">
-                                <img src="{{ asset('public/front/images/download_app.jpg') }}" alt="image">
-                            </div>
-                        </li>
-
-                        <!-- step -->
-                        <li>
-                            <div class="step_text" data-aos="fade-left" data-aos-duration="1500">
-                                <h4>Create account</h4>
-                                <span>14 days free trial</span>
-                                <p>Sign up free for App account. One account for all devices.</p>
-                            </div>
-                            <div class="step_number">
-                                <h3>02</h3>
-                            </div>
-                            <div class="step_img" data-aos="fade-right" data-aos-duration="1500">
-                                <img src="{{ asset('public/front/images/create_account.jpg') }}" alt="image">
-                            </div>
-                        </li>
-
-                        <!-- step -->
-                        <li>
-                            <div class="step_text" data-aos="fade-right" data-aos-duration="1500">
-                                <h4>It’s done, enjoy the app</h4>
-                                <span>Have any questions check our <a href="#">FAQs</a></span>
-                                <p>Get most amazing app experience,Explore and share the app</p>
-                            </div>
-                            <div class="step_number">
-                                <h3>03</h3>
-                            </div>
-                            <div class="step_img" data-aos="fade-left" data-aos-duration="1500">
-                                <img src="{{ asset('public/front/images/enjoy_app.jpg') }}" alt="image">
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-
-        </div>
-        <!-- container end -->
-    </section>
-    <!-- How-It-Workes-Section-end -->
 
 
     <!-- Pricing-Section -->
@@ -312,10 +245,10 @@
         <div class="container">
             <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
                 <!-- h2 -->
-                <h2>Best & simple <span>pricing</span></h2>
+                <h2>Select the Perfect <span>Pricing Plan</span></h2>
                 <!-- p -->
-                <p>Lorem Ipsum is simply dummy text of the printing and typese tting <br> indus orem Ipsum has beenthe
-                    standard dummy.</p>
+                <p>you can choose a plan that works with your business needs and budget. They are flexible enough to allow
+                    you to grow up or scale easily.</p>
             </div>
             <!-- toggle button -->
             <div class="toggle_block" data-aos="fade-up" data-aos-duration="1500">
@@ -385,67 +318,67 @@
 
                     <!-- pricing box 2 -->
                     <!-- <div class="col-md-4">
-                                                                                                    <div class="pricing_block highlited_block">
-                                                                                                        <div class="icon">
-                                                                                                            <img src="{{ asset('public/front/images/unlimited.png') }}" alt="image">
-                                                                                                        </div>
-                                                                                                        <div class="pkg_name">
-                                                                                                            <h3>Unlimited</h3>
-                                                                                                            <span>For the professionals</span>
-                                                                                                        </div>
-                                                                                                        <span class="price">$99</span>
-                                                                                                        <ul class="benifits">
-                                                                                                            <li>
-                                                                                                                <p>Unlimited Website</p>
-                                                                                                            </li>
-                                                                                                            <li>
-                                                                                                                <p>200 GB disk space</p>
-                                                                                                            </li>
-                                                                                                            <li>
-                                                                                                                <p>20 Customize sub pages</p>
-                                                                                                            </li>
-                                                                                                            <li>
-                                                                                                                <p>10 Domains access</p>
-                                                                                                            </li>
-                                                                                                            <li>
-                                                                                                                <p>24/7 Customer support</p>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                        <a href="contact.html" class="btn white_btn">BUY NOW</a>
-                                                                                                    </div>
-                                                                                                </div> -->
+                                                                                                                                                                                                                <div class="pricing_block highlited_block">
+                                                                                                                                                                                                                    <div class="icon">
+                                                                                                                                                                                                                        <img src="{{ asset('public/front/images/unlimited.png') }}" alt="image">
+                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                    <div class="pkg_name">
+                                                                                                                                                                                                                        <h3>Unlimited</h3>
+                                                                                                                                                                                                                        <span>For the professionals</span>
+                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                    <span class="price">$99</span>
+                                                                                                                                                                                                                    <ul class="benifits">
+                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                            <p>Unlimited Website</p>
+                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                            <p>200 GB disk space</p>
+                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                            <p>20 Customize sub pages</p>
+                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                            <p>10 Domains access</p>
+                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                            <p>24/7 Customer support</p>
+                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                    </ul>
+                                                                                                                                                                                                                    <a href="contact.html" class="btn white_btn">BUY NOW</a>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                            </div> -->
 
                     <!-- pricing box 3 -->
                     <!-- <div class="col-md-4">
-                                                                                                    <div class="pricing_block">
-                                                                                                        <div class="icon">
-                                                                                                            <img src="{{ asset('public/front/images/premium.png') }}" alt="image">
-                                                                                                        </div>
-                                                                                                        <div class="pkg_name">
-                                                                                                            <h3>Premium</h3>
-                                                                                                            <span>For small team</span>
-                                                                                                        </div>
-                                                                                                        <span class="price">$55</span>
-                                                                                                        <ul class="benifits">
-                                                                                                            <li>
-                                                                                                                <p>Up to 10 Website</p>
-                                                                                                            </li>
-                                                                                                            <li>
-                                                                                                                <p>100 GB disk space</p>
-                                                                                                            </li>
-                                                                                                            <li>
-                                                                                                                <p>15 Customize sub pages</p>
-                                                                                                            </li>
-                                                                                                            <li>
-                                                                                                                <p>4 Domains access</p>
-                                                                                                            </li>
-                                                                                                            <li>
-                                                                                                                <p>24/7 Customer support</p>
-                                                                                                            </li>
-                                                                                                        </ul>
-                                                                                                        <a href="contact.html" class="btn white_btn">BUY NOW</a>
-                                                                                                    </div>
-                                                                                                </div> -->
+                                                                                                                                                                                                                <div class="pricing_block">
+                                                                                                                                                                                                                    <div class="icon">
+                                                                                                                                                                                                                        <img src="{{ asset('public/front/images/premium.png') }}" alt="image">
+                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                    <div class="pkg_name">
+                                                                                                                                                                                                                        <h3>Premium</h3>
+                                                                                                                                                                                                                        <span>For small team</span>
+                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                    <span class="price">$55</span>
+                                                                                                                                                                                                                    <ul class="benifits">
+                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                            <p>Up to 10 Website</p>
+                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                            <p>100 GB disk space</p>
+                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                            <p>15 Customize sub pages</p>
+                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                            <p>4 Domains access</p>
+                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                            <p>24/7 Customer support</p>
+                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                    </ul>
+                                                                                                                                                                                                                    <a href="contact.html" class="btn white_btn">BUY NOW</a>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                            </div> -->
                 </div>
                 <!-- row end -->
             </div>
@@ -568,12 +501,12 @@
         <div class="container-fluid">
             <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
                 <!-- h2 -->
-                <h2>Beautifull <span>interface</span></h2>
+                <h2>Beautiful Interface Designed for <span>Seamless Shopping</span></h2>
                 <!-- p -->
                 <p>
-                    Lorem Ipsum is simply dummy text of the printing and typese tting <br> indus orem Ipsum has beenthe
-                    standard
-                    dummy.
+                    With an interactive design and smooth navigation, your store will provide an exceptional shopping
+                    experience that keeps customers coming back for more. The interfaces allow smooth navigation through all
+                    levels of the journey.
                 </p>
             </div>
 
@@ -617,75 +550,89 @@
         <!-- container end -->
     </section>
     <!-- Beautifull-interface-Section end -->
-
-    <!-- Download-Free-App-section-Start  -->
-    <section class="row_am free_app_section" id="getstarted">
+    <!-- How-It-Workes-Section-Start -->
+    <section class="row_am how_it_works" id="how_it_work">
         <!-- container start -->
         <div class="container">
-            <div class="free_app_inner" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100">
-                <!-- vertical line animation -->
-                <div class="anim_line dark_bg">
-                    <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
-                    <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
-                    <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
-                    <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
-                    <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
-                    <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
-                    <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
-                    <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
-                    <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
+            <div class="how_it_inner">
+                <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+                    <!-- h2 -->
+                    <h2>How to Get Your <span>ECommerce Store</span></h2>
+                    <!-- p -->
+                    <p>Follow these simple steps to get started with your e-commerce store development. Our team will help
+                        you through this process to provide a perfect solution for your business.</p>
                 </div>
-                <!-- row start -->
-                <div class="row">
-                    <!-- content -->
-                    <div class="col-md-6">
-                        <div class="free_text">
-                            <div class="section_title">
-                                <h2>Let’s download free from apple and play store</h2>
-                                <p>Instant free download from apple and play store orem Ipsum is simply dummy text of the
-                                    printing.
-                                    and typese tting indus orem Ipsum has beenthe standard</p>
+                <div class="step_block">
+                    <!-- UL -->
+                    <ul>
+                        <!-- step -->
+                        <li>
+                            <div class="step_text" data-aos="fade-right" data-aos-duration="1500">
+                                <h4>Fill the Application Form</h4>
+                                <div class="app_icon">
+                                    <a href="#"><i class="icofont-brand-android-robot"></i></a>
+                                    <a href="#"><i class="icofont-brand-apple"></i></a>
+                                    <a href="#"><i class="icofont-brand-windows"></i></a>
+                                </div>
+                                <p>Please fill out the form below with basic details of you and your company as well as
+                                    queries you may have.</p>
                             </div>
-                            <ul class="app_btn">
-                                <li>
-                                    <a href="#">
-                                        <img class="blue_img" src="{{ asset('public/front/images/google_play.png') }}"
-                                            alt="image">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img class="blue_img" src="{{ asset('public/front/images/app_store.png') }}"
-                                            alt="image">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                            <div class="step_number">
+                                <h3>01</h3>
+                            </div>
+                            <div class="step_img" data-aos="fade-left" data-aos-duration="1500">
+                                <img src="{{ asset('public/front/images/download_app.jpg') }}" alt="image">
+                            </div>
+                        </li>
 
-                    <!-- images -->
-                    <div class="col-md-6">
-                        <div class="free_img">
-                            <img src="{{ asset('public/front/images/download-screen01.png') }}" alt="image">
-                            <img class="mobile_mockup" src="{{ asset('public/front/images/download-screen02.png') }}"
-                                alt="image">
-                        </div>
-                    </div>
+                        <!-- step -->
+                        <li>
+                            <div class="step_text" data-aos="fade-left" data-aos-duration="1500">
+                                <h4>Our Team Will Reach Out</h4>
+                                <p>Once we receive your form, our team will contact you in order to address your queries and
+                                    talk about how we can help you set up an ideal e-commerce system for your business.
+                                </p>
+                            </div>
+                            <div class="step_number">
+                                <h3>02</h3>
+                            </div>
+                            <div class="step_img" data-aos="fade-right" data-aos-duration="1500">
+                                <img src="{{ asset('public/front/images/create_account.jpg') }}" alt="image">
+                            </div>
+                        </li>
+
+                        <!-- step -->
+                        <li>
+                            <div class="step_text" data-aos="fade-right" data-aos-duration="1500">
+                                <h4>Meeting with Team</h4>
+                                <p>We will have a meeting with our team in order to discuss your needs, outline the
+                                    capabilities of our system, and tailor the best solution for your business.</p>
+                            </div>
+                            <div class="step_number">
+                                <h3>03</h3>
+                            </div>
+                            <div class="step_img" data-aos="fade-left" data-aos-duration="1500">
+                                <img src="{{ asset('public/front/images/enjoy_app.jpg') }}" alt="image">
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <!-- row end -->
             </div>
+
+
         </div>
         <!-- container end -->
     </section>
-    <!-- Download-Free-App-section-end  -->
+    <!-- How-It-Workes-Section-end -->
 
     <section class="contact_page_section">
         <div class="container">
             <div class="contact_inner">
                 <div class="contact_form">
                     <div class="section_title">
-                        <h2>Leave a <span>message</span></h2>
-                        <p>Fill up form below, our team will get back soon</p>
+                        <h2>Get Your <span>Online Store</span></h2>
+                        <p>Fill out the form below to share your details and queries. Our team will get in touch with you.
+                        </p>
                     </div>
                     <form action="#">
                         <div class="form-group">
@@ -724,9 +671,9 @@
                     <div class="icon"><img src="{{ asset('public/front/images/contact_message_icon.png') }}"
                             alt="image"></div>
                     <div class="section_title">
-                        <h2>Have any <span>question?</span></h2>
-                        <p>If you have any question about our product, service, payment or company, Visit our <a
-                                href="faq.html">FAQs page.</a></p>
+                        <h2>Have a <span>question?</span></h2>
+                        <p>We're here to help! Reach out to our team, and we'll provide the answers you need to get started
+                            with your e-commerce system.</p>
                     </div>
                     <a href="faq.html" class="btn puprple_btn">READ FAQ</a>
                     <ul class="contact_info_list">
@@ -772,8 +719,7 @@
                 <!-- h2 -->
                 <h2><span>FAQ</span> - Frequently Asked Questions</h2>
                 <!-- p -->
-                <p>Lorem Ipsum is simply dummy text of the printing and typese tting <br> indus orem Ipsum has beenthe
-                    standard dummy.</p>
+                <p></p>
             </div>
             <!-- faq data -->
             <div class="faq_panel">
@@ -783,19 +729,17 @@
                             <h2 class="mb-0">
                                 <button type="button" class="btn btn-link active" data-toggle="collapse"
                                     data-target="#collapseOne">
-                                    <i class="icon_faq icofont-plus"></i></i> How can i pay ?</button>
+                                    <i class="icon_faq icofont-plus"></i></i>What is an eCommerce system, and how can it
+                                    benefit my business?</button>
                             </h2>
                         </div>
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                             data-parent="#accordionExample">
                             <div class="card-body">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum
-                                    has. been the
-                                    industrys standard dummy text ever since the when an unknown printer took a galley of
-                                    type and
-                                    scrambled it to make a type specimen book. It has survived not only five cen turies but
-                                    also the
-                                    leap into electronic typesetting, remaining essentially unchanged.</p>
+                                <p>An eCommerce system enables an individual to build and then run an online shop and
+                                    simplify operations, track sales, and improve the quality of customer experiences. It
+                                    grows your business through the automation of processes and information accessibility.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -803,20 +747,16 @@
                         <div class="card-header" id="headingTwo">
                             <h2 class="mb-0">
                                 <button type="button" class="btn btn-link collapsed" data-toggle="collapse"
-                                    data-target="#collapseTwo"><i class="icon_faq icofont-plus"></i></i> How to setup
-                                    account ?</button>
+                                    data-target="#collapseTwo"><i class="icon_faq icofont-plus"></i></i> How long would it
+                                    take to build up my ecommerce store?</button>
                             </h2>
                         </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                             data-parent="#accordionExample">
                             <div class="card-body">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum
-                                    has. been the
-                                    industrys standard dummy text ever since the when an unknown printer took a galley of
-                                    type and
-                                    scrambled it to make a type specimen book. It has survived not only five cen turies but
-                                    also the
-                                    leap into electronic typesetting, remaining essentially unchanged.</p>
+                                <p>For most of the time, it will take a few days to a few weeks, depending on your needs. We
+                                    will guide you through the process for a smooth launch.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -824,21 +764,15 @@
                         <div class="card-header" id="headingThree">
                             <h2 class="mb-0">
                                 <button type="button" class="btn btn-link collapsed" data-toggle="collapse"
-                                    data-target="#collapseThree"><i class="icon_faq icofont-plus"></i></i>What is process
-                                    to get refund
-                                    ?</button>
+                                    data-target="#collapseThree"><i class="icon_faq icofont-plus"></i></i>Is the
+                                    e-commerce system customizable to fit my brand?</button>
                             </h2>
                         </div>
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                             data-parent="#accordionExample">
                             <div class="card-body">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum
-                                    has. been the
-                                    industrys standard dummy text ever since the when an unknown printer took a galley of
-                                    type and
-                                    scrambled it to make a type specimen book. It has survived not only five cen turies but
-                                    also the
-                                    leap into electronic typesetting, remaining essentially unchanged.</p>
+                                <p>Yes, our system provides themes and templates that can be customized for use as your own
+                                    company brand.</p>
                             </div>
                         </div>
                     </div>
@@ -846,21 +780,52 @@
                         <div class="card-header" id="headingFour">
                             <h2 class="mb-0">
                                 <button type="button" class="btn btn-link collapsed" data-toggle="collapse"
-                                    data-target="#collapseFour"><i class="icon_faq icofont-plus"></i></i>What is process
-                                    to get refund
-                                    ?</button>
+                                    data-target="#collapseFour"><i class="icon_faq icofont-plus"></i></i>Can I offer
+                                    different payment options using my website?</button>
                             </h2>
                         </div>
                         <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
                             data-parent="#accordionExample">
                             <div class="card-body">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum
-                                    has. been the
-                                    industrys standard dummy text ever since the when an unknown printer took a galley of
-                                    type and
-                                    scrambled it to make a type specimen book. It has survived not only five cen turies but
-                                    also the
-                                    leap into electronic typesetting, remaining essentially unchanged.</p>
+                                <p>Absolutely! Our eCommerce system supports a wide range of secure payment gateways to
+                                    ensure the best checkout experience for your customers.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-duration="1500">
+                        <div class="card-header" id="headingFive">
+                            <h2 class="mb-0">
+                                <button type="button" class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#collapseFive"><i class="icon_faq icofont-plus"></i></i> Do I need to be
+                                    technically knowledgeable to use the eCommerce system?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p>It has no technical knowledge, and it's user-friendly; plus, there is a team that can
+                                    help you manage your store with ease.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-duration="1500">
+                        <div class="card-header" id="headingSix">
+                            <h2 class="mb-0">
+                                <button type="button" class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#collapseSix"><i class="icon_faq icofont-plus"></i></i> Once my eCommerce
+                                    system has been launched, will there be continued support?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p>
+                                    We do provide support for continuous running of your store. Any technical issues or
+                                    updates, we are here to offer assistance.
+
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -908,7 +873,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button class="btn btn-primary" type="submit">Save</button>
                         </div>
                     </form>
 
