@@ -24,7 +24,7 @@
                         <a class="nav-link" href="#pricing">Pricing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link white_btn" href="contact.html">GET DEMO</a>
+                        <a class="nav-link white_btn" href="#">GET DEMO</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link dark_btn" href="#inquiry">GET STARTED</a>
