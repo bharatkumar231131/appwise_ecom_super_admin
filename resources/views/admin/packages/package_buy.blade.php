@@ -59,7 +59,7 @@
                         <tr>
                             <td>{{ $package->id }}</td>
                             <td>
-                                <a href="{{url('admin/shop-owners-details/' . $package->shopowner->id)}}">
+                                <a class="text-black" href="{{url('admin/shop-owners-details/' . $package->shopowner->id)}}">
                                     {{ $package->shopowner->name }}
                                 </a>
                             </td>
