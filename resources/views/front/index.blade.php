@@ -58,33 +58,8 @@
 
         <!-- banner slides start -->
         <div class="col-lg-6 col-md-12" data-aos="fade-in" data-aos-duration="1500">
-            <div class="banner_slider">
-                <!-- <div class="left_icon">
-                                                                                                                                                                                                            <img src="images/message_icon.png" alt="image">
-                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                          <div class="right_icon">
-                                                                                                                                                                                                            <img src="images/shield_icon.png" alt="image">
-                                                                                                                                                                                                          </div> -->
-                <div id="frmae_slider" class="owl-carousel owl-theme">
-                    <div class="item">
-                        <div class="slider_img">
-                            <img src="{{ asset('public/front/images/screen.png') }}" alt="image">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="slider_img">
-                            <img src="{{ asset('public/front/images/screen.png') }}" alt="image">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="slider_img">
-                            <img src="{{ asset('public/front/images/screen.png') }}" alt="image">
-                        </div>
-                    </div>
-                </div>
-                <div class="slider_frame">
-                    <img src="{{ asset('public/front/images/desktop_frame.png') }}" alt="image">
-                </div>
+            <div>
+                <img src="{{ asset('public/front/images/bannermain.png') }}" alt="image">
             </div>
         </div>
         <!-- banner slides end -->
@@ -122,9 +97,7 @@
 
                 <!-- feature box -->
                 <div class="data_block" data-aos="fade-right" data-aos-duration="1500">
-                    <div class="icon">
-                        <img src="{{ asset('public/front/images/secure_data.png') }}" alt="image">
-                    </div>
+
                     <div class="text">
                         <h4>Customizable storefront</h4>
                         <p>You can easily create your online store and demonstrate your brand with easy tools and
@@ -134,9 +107,7 @@
 
                 <!-- feature box -->
                 <div class="data_block" data-aos="fade-right" data-aos-duration="1500">
-                    <div class="icon">
-                        <img src="{{ asset('public/front/images/functional.png') }}" alt="image">
-                    </div>
+
                     <div class="text">
                         <h4>Seamless payment integration</h4>
                         <p>This system offers your customers multiple payment options and an easy, safe checkout
@@ -147,9 +118,7 @@
 
                 <!-- feature box -->
                 <div class="data_block" data-aos="fade-left" data-aos-duration="1500">
-                    <div class="icon">
-                        <img src="{{ asset('public/front/images/live-chat.png') }}" alt="image">
-                    </div>
+
                     <div class="text">
                         <h4>Inventory Control</h4>
                         <p>We offer an intuitive dashboard from where one can track their inventory, manage his or her
@@ -159,9 +128,7 @@
 
                 <!-- feature box -->
                 <div class="data_block" data-aos="fade-left" data-aos-duration="1500">
-                    <div class="icon">
-                        <img src="{{ asset('public/front/images/support.png') }}" alt="image">
-                    </div>
+
                     <div class="text">
                         <h4>Sales Analytics Overview</h4>
                         <p>This system helps you understand your business performance and make the right decisions to
@@ -250,10 +217,10 @@
         <div class="toggle_block" data-aos="fade-up" data-aos-duration="1500">
             <span class="month active">Monthly</span>
             <!-- <div class="tog_block">
-                <span class="tog_btn"></span>
-            </div>
-            <span class="years">Yearly</span>
-            <span class="offer">50% off</span> -->
+                                    <span class="tog_btn"></span>
+                                </div>
+                                <span class="years">Yearly</span>
+                                <span class="offer">50% off</span> -->
         </div>
 
         <!-- pricing box  monthly start -->
@@ -315,67 +282,67 @@
 
             <!-- pricing box 2 -->
             <!-- <div class="col-md-4">
-                                                                                                                                                                                                                <div class="pricing_block highlited_block">
-                                                                                                                                                                                                                    <div class="icon">
-                                                                                                                                                                                                                        <img src="{{ asset('public/front/images/unlimited.png') }}" alt="image">
-                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                    <div class="pkg_name">
-                                                                                                                                                                                                                        <h3>Unlimited</h3>
-                                                                                                                                                                                                                        <span>For the professionals</span>
-                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                    <span class="price">$99</span>
-                                                                                                                                                                                                                    <ul class="benifits">
-                                                                                                                                                                                                                        <li>
-                                                                                                                                                                                                                            <p>Unlimited Website</p>
-                                                                                                                                                                                                                        </li>
-                                                                                                                                                                                                                        <li>
-                                                                                                                                                                                                                            <p>200 GB disk space</p>
-                                                                                                                                                                                                                        </li>
-                                                                                                                                                                                                                        <li>
-                                                                                                                                                                                                                            <p>20 Customize sub pages</p>
-                                                                                                                                                                                                                        </li>
-                                                                                                                                                                                                                        <li>
-                                                                                                                                                                                                                            <p>10 Domains access</p>
-                                                                                                                                                                                                                        </li>
-                                                                                                                                                                                                                        <li>
-                                                                                                                                                                                                                            <p>24/7 Customer support</p>
-                                                                                                                                                                                                                        </li>
-                                                                                                                                                                                                                    </ul>
-                                                                                                                                                                                                                    <a href="contact.html" class="btn white_btn">BUY NOW</a>
-                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                            </div> -->
+                                                                                                                                                                                                                                    <div class="pricing_block highlited_block">
+                                                                                                                                                                                                                                        <div class="icon">
+                                                                                                                                                                                                                                            <img src="{{ asset('public/front/images/unlimited.png') }}" alt="image">
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                        <div class="pkg_name">
+                                                                                                                                                                                                                                            <h3>Unlimited</h3>
+                                                                                                                                                                                                                                            <span>For the professionals</span>
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                        <span class="price">$99</span>
+                                                                                                                                                                                                                                        <ul class="benifits">
+                                                                                                                                                                                                                                            <li>
+                                                                                                                                                                                                                                                <p>Unlimited Website</p>
+                                                                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                                            <li>
+                                                                                                                                                                                                                                                <p>200 GB disk space</p>
+                                                                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                                            <li>
+                                                                                                                                                                                                                                                <p>20 Customize sub pages</p>
+                                                                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                                            <li>
+                                                                                                                                                                                                                                                <p>10 Domains access</p>
+                                                                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                                            <li>
+                                                                                                                                                                                                                                                <p>24/7 Customer support</p>
+                                                                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                        <a href="contact.html" class="btn white_btn">BUY NOW</a>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div> -->
 
             <!-- pricing box 3 -->
             <!-- <div class="col-md-4">
-                                                                                                                                                                                                                <div class="pricing_block">
-                                                                                                                                                                                                                    <div class="icon">
-                                                                                                                                                                                                                        <img src="{{ asset('public/front/images/premium.png') }}" alt="image">
-                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                    <div class="pkg_name">
-                                                                                                                                                                                                                        <h3>Premium</h3>
-                                                                                                                                                                                                                        <span>For small team</span>
-                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                    <span class="price">$55</span>
-                                                                                                                                                                                                                    <ul class="benifits">
-                                                                                                                                                                                                                        <li>
-                                                                                                                                                                                                                            <p>Up to 10 Website</p>
-                                                                                                                                                                                                                        </li>
-                                                                                                                                                                                                                        <li>
-                                                                                                                                                                                                                            <p>100 GB disk space</p>
-                                                                                                                                                                                                                        </li>
-                                                                                                                                                                                                                        <li>
-                                                                                                                                                                                                                            <p>15 Customize sub pages</p>
-                                                                                                                                                                                                                        </li>
-                                                                                                                                                                                                                        <li>
-                                                                                                                                                                                                                            <p>4 Domains access</p>
-                                                                                                                                                                                                                        </li>
-                                                                                                                                                                                                                        <li>
-                                                                                                                                                                                                                            <p>24/7 Customer support</p>
-                                                                                                                                                                                                                        </li>
-                                                                                                                                                                                                                    </ul>
-                                                                                                                                                                                                                    <a href="contact.html" class="btn white_btn">BUY NOW</a>
-                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                            </div> -->
+                                                                                                                                                                                                                                    <div class="pricing_block">
+                                                                                                                                                                                                                                        <div class="icon">
+                                                                                                                                                                                                                                            <img src="{{ asset('public/front/images/premium.png') }}" alt="image">
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                        <div class="pkg_name">
+                                                                                                                                                                                                                                            <h3>Premium</h3>
+                                                                                                                                                                                                                                            <span>For small team</span>
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                        <span class="price">$55</span>
+                                                                                                                                                                                                                                        <ul class="benifits">
+                                                                                                                                                                                                                                            <li>
+                                                                                                                                                                                                                                                <p>Up to 10 Website</p>
+                                                                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                                            <li>
+                                                                                                                                                                                                                                                <p>100 GB disk space</p>
+                                                                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                                            <li>
+                                                                                                                                                                                                                                                <p>15 Customize sub pages</p>
+                                                                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                                            <li>
+                                                                                                                                                                                                                                                <p>4 Domains access</p>
+                                                                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                                            <li>
+                                                                                                                                                                                                                                                <p>24/7 Customer support</p>
+                                                                                                                                                                                                                                            </li>
+                                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                        <a href="contact.html" class="btn white_btn">BUY NOW</a>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div> -->
         </div>
         <!-- row end -->
     </div>
@@ -512,32 +479,32 @@
             <div id="screen_slider" class="owl-carousel owl-theme">
                 <div class="item">
                     <div class="screen_frame_img">
-                        <img src="{{ asset('public/front/images/screen-1.png') }}" alt="image">
+                        <img src="{{ asset('public/front/images/features_frame.png') }}" alt="image">
                     </div>
                 </div>
                 <div class="item">
                     <div class="screen_frame_img">
-                        <img src="{{ asset('public/front/images/screen-2.png') }}" alt="image">
+                        <img src="{{ asset('public/front/images/features_frame.png') }}" alt="image">
                     </div>
                 </div>
                 <div class="item">
                     <div class="screen_frame_img">
-                        <img src="{{ asset('public/front/images/screen-3.png') }}" alt="image">
+                        <img src="{{ asset('public/front/images/features_frame.png') }}" alt="image">
                     </div>
                 </div>
                 <div class="item">
                     <div class="screen_frame_img">
-                        <img src="{{ asset('public/front/images/screen-4.png') }}" alt="image">
+                        <img src="{{ asset('public/front/images/features_frame.png') }}" alt="image">
                     </div>
                 </div>
                 <div class="item">
                     <div class="screen_frame_img">
-                        <img src="{{ asset('public/front/images/screen-5.png') }}" alt="image">
+                        <img src="{{ asset('public/front/images/features_frame.png') }}" alt="image">
                     </div>
                 </div>
                 <div class="item">
                     <div class="screen_frame_img">
-                        <img src="{{ asset('public/front/images/screen-3.png') }}" alt="image">
+                        <img src="{{ asset('public/front/images/features_frame.png') }}" alt="image">
                     </div>
                 </div>
             </div>
@@ -597,23 +564,6 @@
                             <img src="{{ asset('public/front/images/create_account.jpg') }}" alt="image">
                         </div>
                     </li>
-
-                    <!-- step -->
-                    <li>
-                        <div class="step_text" data-aos="fade-left" data-aos-duration="1500">
-                            <h4>Our Team Will Reach Out</h4>
-                            <p>Once we receive your form, our team will contact you in order to address your queries and
-                                talk about how we can help you set up an ideal e-commerce system for your business.
-                            </p>
-                        </div>
-                        <div class="step_number">
-                            <h3>02</h3>
-                        </div>
-                        <div class="step_img" data-aos="fade-right" data-aos-duration="1500">
-                            <img src="{{ asset('public/front/images/create_account.jpg') }}" alt="image">
-                        </div>
-                    </li>
-
                     <!-- step -->
                     <li>
                         <div class="step_text" data-aos="fade-right" data-aos-duration="1500">
@@ -638,7 +588,7 @@
 </section>
 <!-- How-It-Workes-Section-end -->
 
-<section class="contact_page_section">
+<section class="contact_page_section" id="inquiry">
     <div class="container">
         <div class="contact_inner">
             <div class="contact_form">
@@ -666,13 +616,13 @@
                             data-parsley-type="email" data-parsley-trigger="change">
                     </div>
                     <!-- <div class="form-group">
-                            <input type="text" placeholder="Company Name" class="form-control">
-                        </div> -->
+                                                <input type="text" placeholder="Company Name" class="form-control">
+                                            </div> -->
                     <!-- <div class="form-group">
-                            <select class="form-control">
-                                <option value="">Country</option>
-                            </select>
-                        </div> -->
+                                                <select class="form-control">
+                                                    <option value="">Country</option>
+                                                </select>
+                                            </div> -->
                     <div class="form-group">
                         <input type="text" placeholder="Phone" class="form-control" name="phone" data-parsley-required="true"
                             data-parsley-type="digits" data-parsley-length="[10, 15]"
@@ -861,7 +811,7 @@
 <!-- FAQ-Section end -->
 
 <div class="modal fade" id="buyNowModal" tabindex="-1" aria-labelledby="buyNowModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="buyNowModalLabel">Fill Owner Details</h5>
@@ -870,35 +820,36 @@
             <div class="modal-body">
                 <form action="" method="POST" id="ownerDetailsForm" data-parsley-validate>
                     @csrf
-                    <div class="modal-body">
-                        <div class="mb-3">
+                    <div class="modal-body row">
+
+                        <div class="mb-3 col-6">
                             <label for="ownerName" class="form-label">Owner Name</label>
                             <input type="text" class="form-control" id="ownerName" name="owner_name" data-parsley-required="true"
                                 data-parsley-trigger="change">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 col-6">
                             <label for="ownerShop" class="form-label">Shop Name</label>
                             <input type="text" class="form-control" id="ownerShop" name="shop_name" data-parsley-required="true"
                                 data-parsley-trigger="change">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 col-6">
                             <label for="ownerEmail" class="form-label">Email</label>
                             <input type="email" class="form-control" id="ownerEmail" name="shop_email" data-parsley-required="true"
                                 data-parsley-type="email" data-parsley-trigger="change">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 col-6">
                             <label for="ownerPhone" class="form-label">Phone</label>
                             <input type="number" class="form-control" id="ownerPhone" name="shop_phone" data-parsley-required="true"
                                 data-parsley-type="digits" data-parsley-length="[10, 15]"
                                 data-parsley-length-message="Phone number must be between 10 to 15 digits"
                                 data-parsley-trigger="change">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 col-6">
                             <label for="ownerDomain" class="form-label">Domain</label>
                             <input type="url" class="form-control" id="ownerDomain" name="domain" data-parsley-required="true"
                                 data-parsley-trigger="change">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 col-6">
                             <label for="ownerAddress" class="form-label">Address</label>
                             <textarea class="form-control" id="ownerAddress" name="address" rows="3" data-parsley-required="true"
                                 data-parsley-trigger="change"></textarea>

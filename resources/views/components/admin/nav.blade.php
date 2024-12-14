@@ -2,11 +2,6 @@
 $setting = App\Models\Setting::where('id','1')->first();
 $admin_logo = $setting['admin_logo'] ?? 'default-logo.png'; 
 @endphp
-<style>
-    .active {
-        color: lightskyblue;
-    }
-</style>
 <div class="sa-app__sidebar">
     <div class="sa-sidebar">
         <div class="sa-sidebar__header">

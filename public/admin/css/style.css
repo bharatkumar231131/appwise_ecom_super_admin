@@ -9156,3 +9156,7 @@ input:checked+.sa-color-checkbox__box {
 /* .sa-nav--sidebar .sa-nav__title.active{
   color: #52b6ff;
 } */
+
+.active {
+  color: lightskyblue;
+}
