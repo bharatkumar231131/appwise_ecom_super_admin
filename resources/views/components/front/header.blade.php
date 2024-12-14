@@ -3,7 +3,7 @@
     <div class="container">
         <!-- navigation bar -->
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ url('home') }}">
                 <img src="{{ asset('public/front/images/logo.png') }}" alt="image">
             </a>
             <button class="navbar-toggler p-1" type="button" data-bs-toggle="collapse"

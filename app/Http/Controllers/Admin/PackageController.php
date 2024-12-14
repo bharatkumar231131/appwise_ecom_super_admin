@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Package;
 use App\Models\PackageBuy;
+use App\Models\PackageLog;
 use Illuminate\Support\Facades\Validator;
 // use Illuminate\Routing\Controllers\HasMiddleware;
 // use Illuminate\Routing\Controllers\Middleware;
+use App\Services\PackageLogicService;
 
 class PackageController extends Controller
 {
@@ -23,12 +25,15 @@ class PackageController extends Controller
     // }
     //
 
-    public function __construct()
+    protected $packageLogicService;
+
+    public function __construct(PackageLogicService $packageLogicService)
     {
         $this->middleware('permission:view packages')->only(['packages']);
         // $this->middleware('permission:edit package')->only(['edit']);
         // $this->middleware('permission:create package')->only(['create']);
         // $this->middleware('permission:delete permission')->only(['destroy']);
+        $this->packageLogicService = $packageLogicService;
     }
 
     public function packages()
@@ -108,9 +113,99 @@ class PackageController extends Controller
         return response()->json(['success' => true]);
     }
 
+    public function changePackageBuyStatus(Request $request)
+    {
+
+        PackageBuy::where('id', $request->package_id)->update([
+            "status" => $request->status
+        ]);
+
+        return response()->json(['success' => true]);
+    }
+
     public function packageBuy()
     {
-        $packageBuy = PackageBuy::all();
+        $packageBuy = PackageBuy::with('shopOwner')->get();
         return view('admin.packages.package_buy', compact('packageBuy'));
+    }
+
+    // public function upgradePackage(Request $request)
+    // {
+    //     // Validate the incoming request
+    //     $validatedData = $request->validate([
+    //         'package_id' => 'required|integer',
+    //         'name' => 'required|string',
+    //         'number_of_section' => 'required|integer',
+    //         'number_of_category' => 'required|integer',
+    //         'number_of_product' => 'required|integer',
+    //         'price' => 'required|numeric',
+    //     ]);
+
+    //     // Send data to API
+    //     $response = $this->packageLogicService->sendPackageUpgradeData($validatedData);
+
+    //     if (isset($response['error']) && $response['error']) {
+    //         return response()->json([
+    //             'message' => 'Failed to upgrade package.',
+    //             'details' => $response['message'],
+    //         ], 500);
+    //     }
+
+    //     return response()->json([
+    //         'message' => 'Package upgraded successfully!',
+    //         'response' => $response,
+    //     ]);
+    // }
+
+    public function upgradePackage(Request $request)
+    {
+        PackageBuy::where('id', $request->id)->update([
+            "package_name" => $request->name,
+            "number_of_section" => $request->number_of_section,
+            "number_of_category" => $request->number_of_category,
+            "number_of_product" => $request->number_of_product,
+            "price" => $request->price,
+            "days" => $request->days
+        ]);
+
+        $data = [
+            "package_id" => $request->id,
+            "name" => $request->name,
+            "number_of_section" => $request->number_of_section,
+            "number_of_category" => $request->number_of_category,
+            "number_of_product" => $request->number_of_product,
+            "price" => $request->price,
+            "days" => $request->days
+        ];
+
+        $data = json_encode($data);
+
+        PackageLog::create([
+            'logs' => $data
+        ]);
+
+        $domainUrl = 'http://localhost/appwise';
+        $response = $this->packageLogicService->sendPackageUpgradeData($domainUrl, $data);
+        $response = json_encode($response);
+
+        if (isset($response['error']) && $response['error']) {
+            return response()->json([
+                'message' => 'Failed to upgrade package.',
+                'details' => $response['message'],
+            ], 500);
+        }
+
+        return redirect()->back()->with('success_message', 'Package Upgrade Successfully');
+
+        // return response()->json([
+        //     'message' => 'Package upgraded successfully!',
+        //     'response' => $response,
+        // ]);
+    }
+
+    public function editPackageBuy($id)
+    {
+        $package = PackageBuy::where('id', $id)->first();
+        return view('admin.packages.edit_package_buy', compact('package'));
     }
 }

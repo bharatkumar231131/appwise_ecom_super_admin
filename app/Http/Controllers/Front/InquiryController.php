@@ -11,13 +11,14 @@ class InquiryController extends Controller
 {
     //
 
-    public function inquiry()
+    public function inquiryForm()
     {
         return view('front.inquiry.inquiry');
     }
 
-    public function saveInquiry(Request $request)
+    public function inquirySubmit(Request $request)
     {
+        // return $request;
         if ($request->isMethod('post')) {
 
             $data = $request->all();
@@ -56,7 +57,7 @@ class InquiryController extends Controller
                 'message' => $data['message']
             ]);
 
-            return redirect()->back()->with('success', 'Inquiry submitted successfully!');
+            return redirect()->back()->with('success_message', 'Inquiry submitted successfully!');
         } else {
             return view("front.inquiry.inquiry");
         }

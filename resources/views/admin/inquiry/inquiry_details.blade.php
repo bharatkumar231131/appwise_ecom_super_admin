@@ -69,13 +69,17 @@
                                 <dd class="col-lg-9 text-muted">{{ $inquiry_detail['phone'] ?? 'N/A' }}</dd>
                             </div>
                             <div class="row mb-3">
+                                <dt class="col-lg-3">Address:</dt>
+                                <dd class="col-lg-9 text-muted">{{ $inquiry_detail['address'] ?? 'N/A' }}</dd>
+                            </div>
+                            <div class="row mb-3">
                                 <dt class="col-lg-3">Message:</dt>
                                 <dd class="col-lg-9 text-muted">{{ $inquiry_detail['message'] ?? 'N/A' }}</dd>
                             </div>
-                            <div class="row mb-3">
+                            <!-- <div class="row mb-3">
                                 <dt class="col-lg-3">Status:</dt>
                                 <dd class="col-lg-9 text-muted">{{ $inquiry_detail['status'] ?? 'N/A' }}</dd>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>

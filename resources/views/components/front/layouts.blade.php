@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ asset('public/front/css/responsive.css') }}">
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('public/front/images/favicon.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{asset('public/parsleyjs/parsleycss.css')}}">
 
     @yield('styles')
 </head>
@@ -46,18 +47,15 @@
         @include('components.front.footer')
 
         <!-- VIDEO MODAL -->
-        <div class="modal fade youtube-video" id="myModal" tabindex="-1" role="dialog"
-            aria-labelledby="myModalLabel">
+        <div class="modal fade youtube-video" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <button id="close-video" type="button" class="button btn btn-default text-right"
-                        data-dismiss="modal">
+                    <button id="close-video" type="button" class="button btn btn-default text-right" data-dismiss="modal">
                         <i class="icofont-close-line-circled"></i>
                     </button>
                     <div class="modal-body">
                         <div id="video-container" class="video-container">
-                            <iframe id="youtubevideo" src="#" width="640" height="360" frameborder="0"
-                                allowfullscreen></iframe>
+                            <iframe id="youtubevideo" src="#" width="640" height="360" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -82,6 +80,8 @@
     <!-- main-js-Link -->
     <script src="{{ asset('public/front/js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('public/parsleyjs/parsley.min.js')}}"></script>
+
 
 </body>
 

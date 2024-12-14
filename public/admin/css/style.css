@@ -1003,7 +1003,13 @@ body {
   line-height: 1.625rem;
   min-height: var(--sa-button--min-size)
 }
-
+.dashcrds {
+  text-decoration: none !important;
+ 
+}
+.dashcrds:hover{
+   background: #f3f3f3;
+}
 .btn-group-lg>.btn.btn-sa-loading:before,
 .btn-group>.btn-lg.btn-sa-loading:before,
 .btn-lg.btn-sa-loading:before {
@@ -1410,16 +1416,6 @@ body {
   padding: var(--sa-input-padding-y) var(--sa-input-padding-x)
 }
 
-.infajk {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.infajk .ajrwba {
-  min-width: 90px;
-}
-
 [dir=rtl] .form-control::file-selector-button {
   margin-left: var(--sa-input-padding-x)
 }
@@ -1535,23 +1531,6 @@ body {
 }
 
 
-.eyebtn {
-  position: absolute;
-  cursor: pointer;
-  top: 35px;
-  right: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border: 0;
-  background: 0;
-}
-
-.eyebtn i {
-  font-size: 20px;
-  line-height: normal;
-}
 
 [dir=ltr] .form-select {
   background-position: right var(--sa-input-padding-x) center;
@@ -9155,3 +9134,25 @@ input:checked+.sa-color-checkbox__box {
   width: 100%;
   object-fit: contain;
 }
+
+
+.eyebtn {
+  position: absolute;
+  cursor: pointer;
+  top: 35px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: 0;
+}
+
+.eyebtn i {
+  font-size: 20px;
+  line-height: normal;
+}
+/* .sa-nav--sidebar .sa-nav__title.active{
+  color: #52b6ff;
+} */

@@ -2,6 +2,11 @@
     $setting = App\Models\Setting::where('id', '1')->first();
     $admin_logo = $setting['admin_logo'] ?? '';
 @endphp
+<style>
+    .active {
+        color: lightskyblue;
+    }
+</style>
 <div class="sa-app__sidebar">
     <div class="sa-sidebar">
         <div class="sa-sidebar__header">
@@ -32,7 +37,8 @@
                                             <span>Application</span>
                                         </div>
                                         <ul class="sa-nav__menu sa-nav__menu--root">
-                                            <li class="sa-nav__menu-item sa-nav__menu-item--has-icon active">
+                                            <li
+                                                class="sa-nav__menu-item sa-nav__menu-item--has-icon {{ request()->is('admin/dashboard') ? 'active' : '' }}">
                                                 <a href="{{ url('admin/dashboard') }}" class="sa-nav__link">
                                                     <span class="sa-nav__icon">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="1em"
@@ -45,40 +51,44 @@
                                                     <span class="sa-nav__title">Dashboard</span>
                                                 </a>
                                             </li>
-                                            <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
-                                                data-sa-collapse-item="sa-nav__menu-item--open">
-                                                <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span
-                                                        class="sa-nav__icon"><svg xmlns="http://www.w3.org/2000/svg"
-                                                            width="16" height="16" fill="currentColor"
-                                                            class="bi bi-box-seam" viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z" />
-                                                        </svg></span><span class="sa-nav__title">Package
-                                                        Management</span><span class="sa-nav__arrow"><svg
-                                                            xmlns="http://www.w3.org/2000/svg" width="6"
-                                                            height="9" viewBox="0 0 6 9" fill="currentColor">
-                                                            <path
-                                                                d="M5.605,0.213 C6.007,0.613 6.107,1.212 5.706,1.612 L2.696,4.511 L5.706,7.409 C6.107,7.809 6.107,8.509 5.605,8.808 C5.204,9.108 4.702,9.108 4.301,8.709 L-0.013,4.511 L4.401,0.313 C4.702,-0.087 5.304,-0.087 5.605,0.213 Z">
-                                                            </path>
-                                                        </svg></span></a>
-                                                <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
-                                                        <a href="{{ url('admin/packages') }}" class="sa-nav__link"><span
-                                                                class="sa-nav__menu-item-padding"></span><span
-                                                                class="sa-nav__title">Packages</span></a>
-                                                    </li>
-                                                </ul>
+                                            @can('view packages')
+                                                <li class="sa-nav__menu-item sa-nav__menu-item--has-icon "
+                                                    data-sa-collapse-item="sa-nav__menu-item--open">
+                                                    <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span
+                                                            class="sa-nav__icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                width="16" height="16" fill="currentColor"
+                                                                class="bi bi-box-seam" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z" />
+                                                            </svg></span><span class="sa-nav__title">Package
+                                                            Management</span><span class="sa-nav__arrow"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="6"
+                                                                height="9" viewBox="0 0 6 9" fill="currentColor">
+                                                                <path
+                                                                    d="M5.605,0.213 C6.007,0.613 6.107,1.212 5.706,1.612 L2.696,4.511 L5.706,7.409 C6.107,7.809 6.107,8.509 5.605,8.808 C5.204,9.108 4.702,9.108 4.301,8.709 L-0.013,4.511 L4.401,0.313 C4.702,-0.087 5.304,-0.087 5.605,0.213 Z">
+                                                                </path>
+                                                            </svg></span></a>
+                                                    <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
+                                                        <li
+                                                            class="sa-nav__menu-item {{ request()->is('admin/packages') ? 'active' : '' }}">
+                                                            <a href="{{ url('admin/packages') }}" class="sa-nav__link"><span
+                                                                    class="sa-nav__menu-item-padding"></span><span
+                                                                    class="sa-nav__title">Packages</span></a>
+                                                        </li>
+                                                    </ul>
 
-                                                <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
-                                                        <a href="{{ url('admin/package_buy') }}"
-                                                            class="sa-nav__link"><span
-                                                                class="sa-nav__menu-item-padding"></span><span
-                                                                class="sa-nav__title">Package
-                                                                Buy</span></a>
-                                                    </li>
-                                                </ul>
-                                            </li>
+                                                    <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
+                                                        <li
+                                                            class="sa-nav__menu-item {{ request()->is('admin/package_buy') ? 'active' : '' }}">
+                                                            <a href="{{ url('admin/package_buy') }}"
+                                                                class="sa-nav__link"><span
+                                                                    class="sa-nav__menu-item-padding"></span><span
+                                                                    class="sa-nav__title">Package
+                                                                    Buy</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            @endcan
                                             @can('view inquiries')
                                                 <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                     data-sa-collapse-item="sa-nav__menu-item--open">
@@ -167,6 +177,29 @@
                                                     </ul>
                                                 </li>
                                             @endcan
+                                            <!-- @can('view pages')
+    <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
+                                                    data-sa-collapse-item="sa-nav__menu-item--open">
+                                                    <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                                                viewBox="0 0 24 24">
+                                                                <path
+                                                                    d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l7.45 3.72-2.92 1.47L12 6.04 7.47 7.37 4.55 5.9 12 4.18zM4 9.6v7.91l8 4 8-4V9.6l-8 4-8-4zm8 2.36l4.7 2.36-4.7 2.35-4.7-2.35 4.7-2.36z" />
+                                                            </svg></span><span class="sa-nav__title">CMS
+                                                            Management</span><span class="sa-nav__arrow"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                width="6" height="9" viewBox="0 0 6 9" fill="currentColor">
+                                                                <path
+                                                                    d="M5.605,0.213 C6.007,0.613 6.107,1.212 5.706,1.612 L2.696,4.511 L5.706,7.409 C6.107,7.809 6.107,8.509 5.605,8.808 C5.204,9.108 4.702,9.108 4.301,8.709 L-0.013,4.511 L4.401,0.313 C4.702,-0.087 5.304,-0.087 5.605,0.213 Z">
+                                                                </path>
+                                                            </svg></span></a>
+                                                    <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
+                                                        <li class="sa-nav__menu-item {{ request()->is('admin/pages') ? 'active' : '' }}">
+                                                            <a href="{{ url('admin/pages') }}" class="sa-nav__link"><span
+                                                                    class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Pages</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+@endcan -->
                                             @can('view permissions')
                                                 <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                     data-sa-collapse-item="sa-nav__menu-item--open">

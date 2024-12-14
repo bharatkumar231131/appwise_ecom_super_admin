@@ -51,10 +51,12 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Shop Name</th>
+                            <th>Mobile</th>
+                            <th>Address</th>
                             <th>Domain</th>
                             <th>Package</th>
-                            <th>Start Date</th>
-                            <th>End Date </th>
+                            <!-- <th>Start Date</th>
+                            <th>End Date </th> -->
                             <th>Status</th>
                             @if (Gate::check('edit owner') || Gate::check('delete owner'))
                             <th>Actions</th>
@@ -68,21 +70,24 @@
                             <td>{{ $shopOwner->id ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->name ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->shop_name ?? 'N/A' }}</td>
+                            <td>{{ $shopOwner->phone ?? 'N/A' }}</td>
+                            <td>{{ $shopOwner->address ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->domain ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->package->name ?? 'No Package' }}</td>
-                            <td>{{ $shopOwner->start_date ?? 'N/A' }}</td>
-                            <td>{{ $shopOwner->end_date ?? 'N/A' }}</td>
+                            <!-- <td>{{ $shopOwner->start_date ?? 'N/A' }}</td>
+                            <td>{{ $shopOwner->end_date ?? 'N/A' }}</td> -->
 
                             <td>
                                 @if ($shopOwner->status == 'active' && (!$shopOwner->end_date || now() <= $shopOwner->end_date))
                                     <span class="badge bg-success @can('owner status') change-status @endcan"
                                         data-id="{{ $shopOwner->id }}" data-status="active">Active</span>
                                     @elseif ($shopOwner->status == 'inactive' && (!$shopOwner->end_date || now() <= $shopOwner->end_date))
-                                        <span class="badge bg-warning @can('owner status') change-status @endcan"
+                                        <span class="badge bg-danger @can('owner status') change-status @endcan"
                                             data-id="{{ $shopOwner->id }}" data-status="inactive">Inactive</span>
                                         @elseif ($shopOwner->end_date && now() > $shopOwner->end_date)
-                                        <span class="badge bg-danger">Suspended</span>
+                                        <span class="badge bg-dark">Suspended</span>
                                         @endif
+
                             </td>
                             @if (Gate::check('edit owner') || Gate::check('delete owner'))
                             <td>
@@ -100,6 +105,10 @@
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                     @endcan
+                                    <a href="{{ url('admin/shop-owners-details/' . $shopOwner->id) }}" class="actionbtn-tb actionbtn-edit"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="View">
+                                        <i class="far fa-eye text-white"></i>
+                                    </a>
                                 </div>
                             </td>
                             @endif

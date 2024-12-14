@@ -15,7 +15,6 @@ class IndexController extends Controller
     {
         $packages = Package::all();
         return view('front.index', compact('packages'));
-        return view('front.home', compact('packages'));
     }
 
     public function packageBuy($id)
@@ -25,6 +24,7 @@ class IndexController extends Controller
 
     public function saveOwnerDetails(Request $request, $id)
     {
+        // return $request;
         // $validated = $request->validate([
         //     'name' => 'required|string',
         //     // 'shop_name' => 'required|string',
@@ -40,8 +40,10 @@ class IndexController extends Controller
         $owner = ShopOwner::create([
             'name' => $request->owner_name,
             'shop_name' => $request->shop_name,
+            'email' => $request->shop_email,
+            'phone' => $request->shop_phone,
             'domain' => $request->domain,
-            // 'address' => 'required|string',
+            'address' => $request->address,
             'package_id' => $id,
             // 'price' => 'required|numeric',
             'status' => 'active'
@@ -61,37 +63,43 @@ class IndexController extends Controller
 
     public function processPayment(Request $request, $id)
     {
-        // return $request;
-        // $validated = $request->validate([
-        //     'owner_name' => 'required|string',
-        //     'shop_name' => 'required|string',
-        //     'domain' => 'required|string',
-        //     'address' => 'required|string',
-        //     'price' => 'required|numeric',
-        //     'payment_method' => 'required|in:cod,payfast',
-        // ]);
-        $package = Package::where('id', $id)->first();
-        // return $package;
-        if ($request->payment_method === 'cod') {
 
+        // Retrieve the package details
+        $package = Package::find($id);
+        $owner_id = $request->owner_id;
+        $price = $package->price; // Price dynamically fetched from the database
+
+        // Capture request data (useful for logging, debugging, etc.)
+        $requestData = $request->all();
+        \Log::info('Payment Request Data:', $requestData);
+
+        if ($request->payment_method === 'cod') {
+            // Handle Cash on Delivery (COD) payment
             PackageBuy::create([
                 'package_id' => $request->package_id,
-                'shop_owner_id' => $request->owner_id,
-                'package_name' => $package['name'],
-                'number_of_section' => $package['number_of_section'],
-                'number_of_category' => $package['number_of_category'],
-                'number_of_product' => $package['number_of_product'],
-                'price' => $package->price,
+                'shop_owner_id' => $owner_id,
+                'package_name' => $package->name,
+                'number_of_section' => $package->number_of_section,
+                'number_of_category' => $package->number_of_category,
+                'number_of_product' => $package->number_of_product,
+                'price' => $price,
                 'days' => $package->days,
             ]);
 
+            // Return success view for COD
             return view('front.payment_success', ['message' => 'Order placed successfully with Cash on Delivery!']);
         } elseif ($request->payment_method === 'payfast') {
-            // Handle PayFast Payment
-            // Redirect to PayFast or process payment here
-            return redirect()->route('payfast.gateway', ['id' => $id, 'price' => $request->price]);
+            // Redirect to PayFast with dynamic data
+            return redirect()->route('payfast', [
+                'package_id' => $package->id,
+                'owner_id' => $owner_id,
+                'price' => $price,
+                'payment_method' => 'payfast',
+                'package_name' => $package->name
+            ]);
         }
 
+        // Handle invalid payment method
         return back()->withErrors(['error' => 'Invalid payment method selected']);
     }
 }
