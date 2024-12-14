@@ -95,6 +95,11 @@
                                     <label for="ownerDomain-{{ $package->id }}" class="form-label">Domain</label>
                                     <input type="text" class="form-control" id="ownerDomain-{{ $package->id }}" name="domain" required>
                                 </div>
+
+                                <div class="mb-3">
+                                    <label for="ownerPhone-{{ $package->id }}" class="form-label">Phone</label>
+                                    <input type="text" class="form-control" id="ownerPhone-{{ $package->id }}" name="phone" required>
+                                </div>
                                 <div class="mb-3">
                                     <label for="ownerAddress-{{ $package->id }}" class="form-label">Address</label>
                                     <textarea class="form-control" id="ownerAddress-{{ $package->id }}" name="address" rows="3"
