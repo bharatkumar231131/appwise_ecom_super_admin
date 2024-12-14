@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Package;
 use App\Models\ShopOwner;
 use App\Models\PackageBuy;
+use App\Models\Page;
 
 class IndexController extends Controller
 {
@@ -105,11 +106,13 @@ class IndexController extends Controller
 
     public function termAndCondition()
     {
-        return view('front.pages.term_&_condition');
+        $page = Page::where('id', '2')->first();
+        return view('front.pages.term_&_condition', compact('page'));
     }
 
     public function privacyPolicy()
     {
-        return view('front.pages.privacy_policy');
+        $page = Page::where('id', '3')->first();
+        return view('front.pages.privacy_policy', compact('page'));
     }
 }
