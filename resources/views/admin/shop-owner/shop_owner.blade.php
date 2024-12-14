@@ -51,6 +51,7 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Shop Name</th>
+                            <th>Shop Email</th>
                             <th>Mobile</th>
                             <th>Address</th>
                             <th>Domain</th>
@@ -70,6 +71,7 @@
                             <td>{{ $shopOwner->id ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->name ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->shop_name ?? 'N/A' }}</td>
+                            <td>{{ $shopOwner->email ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->phone ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->address ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->domain ?? 'N/A' }}</td>

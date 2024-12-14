@@ -40,61 +40,95 @@
                         @endif
 
                         <!-- Form for Add/Edit Shop Owner -->
-                        <form action="{{ $shopOwner ? route('admin.addEditShopOwner', $shopOwner->id) : route('admin.addEditShopOwner') }}" method="POST">
+                        <form
+                            action="{{ $shopOwner ? route('admin.addEditShopOwner', $shopOwner->id) : route('admin.addEditShopOwner') }}"
+                            method="POST" data-parsley-validate>
                             @csrf
                             <div class="row">
                                 <!-- Left Column: Shop Owner Details -->
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label for="name" class="form-label">Shop Owner Name</label>
-                                        <input type="text" class="form-control" name="name" placeholder="Enter Shop Owner Name" value="{{ old('name', $shopOwner->name ?? '') }}" required>
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" name="name" placeholder="Enter Shop Owner Name"
+                                            value="{{ old('name', $shopOwner->name ?? '') }}" required>
                                     </div>
 
                                     <div class="mb-4">
                                         <label for="shop_name" class="form-label">Shop Name</label>
-                                        <input type="text" class="form-control" name="shop_name" placeholder="Enter Shop Name" value="{{ old('shop_name', $shopOwner->shop_name ?? '') }}" required>
+                                        <input type="text" class="form-control" name="shop_name" placeholder="Enter Shop Name"
+                                            value="{{ old('shop_name', $shopOwner->shop_name ?? '') }}" required>
                                     </div>
 
                                     <div class="mb-4">
-                                        <label for="domain" class="form-label">Domain</label>
-                                        <input type="text" class="form-control" name="domain" placeholder="Enter Domain Name" value="{{ old('domain', $shopOwner->domain ?? '') }}">
+                                        <label for="email" class="form-label">Shop Email</label>
+                                        <input type="email" class="form-control" name="email" placeholder="Enter Shop Email"
+                                            value="{{ old('email', $shopOwner->email ?? '') }}" required>
                                     </div>
+
+                                    <div class="mb-4">
+                                        <label for="address" class="form-label">Shop Address</label>
+                                        <input type="text" class="form-control" name="address" placeholder="Enter Shop Address"
+                                            value="{{ old('address', $shopOwner->address ?? '') }}" required>
+                                    </div>
+
                                 </div>
 
                                 <!-- Right Column: Package and Status Details -->
                                 <div class="col-md-6">
+
+                                    <div class="mb-4">
+                                        <label for="phone" class="form-label">Phone</label>
+                                        <input type="text" class="form-control" name="phone" placeholder="Enter Mobile Number"
+                                            value="{{ old('phone', $shopOwner->phone ?? '') }}" data-parsley-required="true"
+                                            data-parsley-type="digits" data-parsley-length="[10, 15]"
+                                            data-parsley-length-message="Phone number must be between 10 to 15 digits"
+                                            data-parsley-trigger="change">
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="domain" class="form-label">Domain</label>
+                                        <input type="url" class="form-control" name="domain" placeholder="Enter Domain Name"
+                                            value="{{ old('domain', $shopOwner->domain ?? '') }}" required>
+                                    </div>
                                     <div class="mb-4">
                                         <label for="package_id" class="form-label">Package</label>
                                         <select name="package_id" class="form-control" required>
                                             <option value="">Select Package</option>
                                             @foreach ($packages as $package)
-                                            <option value="{{ $package->id }}" {{ old('package_id', $shopOwner->package_id ?? '') == $package->id ? 'selected' : '' }}>
+                                            <option value="{{ $package->id }}"
+                                                {{ old('package_id', $shopOwner->package_id ?? '') == $package->id ? 'selected' : '' }}>
                                                 {{ $package->name }}
                                             </option>
                                             @endforeach
                                         </select>
                                     </div>
 
-                                    <div class="mb-4">
+                                    <div class="mb-4 d-none">
                                         <label for="status" class="form-label">Status</label>
                                         <select name="status" class="form-control" required>
-                                            <option value="active" {{ old('status', $shopOwner->status ?? '') == 'active' ? 'selected' : '' }}>Active</option>
-                                            <option value="inactive" {{ old('status', $shopOwner->status ?? '') == 'inactive' ? 'selected' : '' }}>Inactive</option>
-                                            <option value="suspended" {{ old('status', $shopOwner->status ?? '') == 'suspended' ? 'selected' : '' }}>Suspended</option>
+                                            <option value="active" selected
+                                                {{ old('status', $shopOwner->status ?? '') == 'active' ? 'selected' : '' }}>Active</option>
+                                            <option value="inactive"
+                                                {{ old('status', $shopOwner->status ?? '') == 'inactive' ? 'selected' : '' }}>Inactive</option>
+                                            <option value="suspended"
+                                                {{ old('status', $shopOwner->status ?? '') == 'suspended' ? 'selected' : '' }}>Suspended
+                                            </option>
                                         </select>
                                     </div>
 
-                                   <!-- Hidden Input Fields for Start Date and End Date -->
-<input type="hidden" name="start_date" value="{{ old('start_date', now()->toDateString()) }}">
-<input type="hidden" name="end_date" value="{{ old('end_date', $shopOwner->end_date ?? '') }}">
-
-
+                                    <!-- Hidden Input Fields for Start Date and End Date -->
+                                    <input type="hidden" name="start_date" value="{{ old('start_date', now()->toDateString()) }}">
+                                    <input type="hidden" name="end_date" value="{{ old('end_date', $shopOwner->end_date ?? '') }}">
 
                                 </div>
                             </div>
 
                             <!-- Submit Button -->
-                            <button type="submit" class="btn btn-primary">{{ $shopOwner ? 'Update' : 'Add' }} Shop Owner</button>
+                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+
+                            @if (empty($shopOwner->id))
+                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                            @endif
                         </form>
                     </div>
                 </div>
