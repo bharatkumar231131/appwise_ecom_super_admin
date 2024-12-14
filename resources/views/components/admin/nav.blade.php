@@ -77,7 +77,7 @@ $admin_logo = $setting['admin_logo'] ?? '';
                                                     <li class="sa-nav__menu-item {{ request()->is('admin/package_buy') ? 'active' : '' }}">
                                                         <a href="{{ url('admin/package_buy') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Package
-                                                                Buy</span></a>
+                                                                Purchase</span></a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -102,7 +102,7 @@ $admin_logo = $setting['admin_logo'] ?? '';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/inquiries') ? 'active' : '' }}">
                                                         <a href="{{ url('admin/inquiries') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Inquiry</span></a>
                                                     </li>
@@ -125,7 +125,7 @@ $admin_logo = $setting['admin_logo'] ?? '';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/shop-owners') ? 'active' : '' }}">
                                                         <a href="{{ url('admin/shop-owners') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span
                                                                 class="sa-nav__title">ShopOwner</span></a>
@@ -150,7 +150,7 @@ $admin_logo = $setting['admin_logo'] ?? '';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/pages') ? 'active' : '' }}">
                                                         <a href="{{ url('admin/pages') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Pages</span></a>
                                                     </li>
@@ -197,7 +197,7 @@ $admin_logo = $setting['admin_logo'] ?? '';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/permissions/index') ? 'active' : '' }}">
                                                         <a href="{{ route('permissions.index') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span
                                                                 class="sa-nav__title">Permissions</span></a>
@@ -221,7 +221,7 @@ $admin_logo = $setting['admin_logo'] ?? '';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/roles') ? 'active' : '' }}">
                                                         <a href="{{ route('roles.index') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Roles</span></a>
                                                     </li>
@@ -246,7 +246,7 @@ $admin_logo = $setting['admin_logo'] ?? '';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/users') ? 'active' : '' }}">
                                                         <a href="{{ route('users.index') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">users</span></a>
                                                     </li>
@@ -271,9 +271,14 @@ $admin_logo = $setting['admin_logo'] ?? '';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/logo') ? 'active' : '' }}">
                                                         <a href="{{ url('admin/logo') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Logo</span></a>
+                                                    </li>
+
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/admin-details') ? 'active' : '' }}">
+                                                        <a href="{{ url('admin/admin-details') }}" class="sa-nav__link"><span
+                                                                class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Update Setting</span></a>
                                                     </li>
                                                 </ul>
                                             </li>
