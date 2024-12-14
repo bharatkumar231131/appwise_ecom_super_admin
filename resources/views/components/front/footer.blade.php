@@ -1,3 +1,10 @@
+<?php
+
+$front_logo = App\Models\Setting::where('id', '1')->first();
+$front_logo = $front_logo->front_logo;
+
+?>
+
 <!-- Footer-Section start -->
 <footer>
     <div class="top_footer" id="contact">
@@ -20,8 +27,7 @@
                 <!-- footer link 1 -->
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="abt_side">
-                        <div class="logo"> <img src="{{ asset('public/front/images/footer_logo.png') }}"
-                                alt="image">
+                        <div class="logo"> <img src="{{ asset('public/front/images/logo/' . $front_logo) }}" alt="image">
                         </div>
                         <ul>
                             <li><a href="#">support@example.com</a></li>
