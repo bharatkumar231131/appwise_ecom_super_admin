@@ -8,11 +8,11 @@
                     <ol class="breadcrumb breadcrumb-sa-simple">
                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard')}}">Dashboard</a></li>
                         <span>&nbsp;/&nbsp;</span>
-                        <li class="breadcrumb-item active">Packages Buy</li>
+                        <li class="breadcrumb-item active">Packages Purchase</li>
                     </ol>
                 </nav>
                 <div class="d-flex justify-content-between">
-                    <h1 class="h3 m-0">Packages Buy</h1>
+                    <h1 class="h3 m-0">Packages Purchase</h1>
                 </div>
                 @if (Session::has('success_message'))
                 <!-- Check AdminController.php, updateAdminPassword() method -->
