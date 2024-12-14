@@ -21,7 +21,7 @@ $front_logo = $front_logo->front_logo;
             <span><img src="{{ asset('public/front/images/anim_line.png') }}" alt="anim_line"></span>
         </div>
         <!-- container start -->
-        <div class="container">
+        <div class="container z-1 position-relative ">
             <!-- row start -->
             <div class="row">
                 <!-- footer link 1 -->
@@ -34,10 +34,10 @@ $front_logo = $front_logo->front_logo;
                             <li><a href="#">+1-900-123 4567</a></li>
                         </ul>
                         <ul class="social_media">
-                            <li><a href="#"><i class="icofont-facebook"></i></a></li>
-                            <li><a href="#"><i class="icofont-twitter"></i></a></li>
-                            <li><a href="#"><i class="icofont-instagram"></i></a></li>
-                            <li><a href="#"><i class="icofont-pinterest"></i></a></li>
+                            <li><a class="d-flex justify-content-center align-items-center" href="#"><i class="icofont-facebook"></i></a></li>
+                            <li><a class="d-flex justify-content-center align-items-center" href="#"><i class="icofont-twitter"></i></a></li>
+                            <li><a class="d-flex justify-content-center align-items-center" href="#"><i class="icofont-instagram"></i></a></li>
+                            <li><a class="d-flex justify-content-center align-items-center" href="#"><i class="icofont-pinterest"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -64,8 +64,8 @@ $front_logo = $front_logo->front_logo;
                             <li><a href="#">FAQs</a></li>
                             <li><a href="#">Support</a></li>
                             <li><a href="#">How it works</a></li>
-                            <li><a href="{{ url('term_&_condition') }}">Terms & conditions</a></li>
-                            <li><a href="{{ url('privacy_policy') }}">Privacy policy</a></li>
+                            <li><a href="{{ url('/term_&_condition') }}">Terms & conditions</a></li>
+                            <li><a href="{{ url('/privacy_policy') }}">Privacy policy</a></li>
                         </ul>
                     </div>
                 </div>
