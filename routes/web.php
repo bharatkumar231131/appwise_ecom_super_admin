@@ -116,5 +116,6 @@ Route::namespace('App\Http\Controllers\Front')->group(function () {
     Route::get('payfastcancel', [PayfastController::class, 'payFastCancel'])->name('payfastcancel');
     Route::post('payfastnotify', [PayfastController::class, 'payFastNotify'])->name('payfastnotify');
 
-  
+    Route::get('/term_&_condition', 'IndexController@termAndCondition');
+    Route::get('/privacy_policy', 'IndexController@privacyPolicy');
 });
