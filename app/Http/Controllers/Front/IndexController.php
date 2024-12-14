@@ -53,7 +53,7 @@ class IndexController extends Controller
         // Redirect to the payment page
         return redirect()->route('package.payment', ['id' => $id, 'owner_id' => $owner_id]);
     }
-
+    
     public function paymentPage($id, Request $request)
     {
         $package = Package::findOrFail($id);
