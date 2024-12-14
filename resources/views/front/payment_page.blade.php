@@ -66,14 +66,13 @@
                     <!-- Payment Method Selection -->
                     <div class="mb-4">
                         <h5>Select Payment Method</h5>
-                        <div class="form-check">
+                        {{--<div class="form-check">
                             <input class="form-check-input" type="radio" name="payment_method" id="cod"
                                 value="cod" required>
                             <label class="form-check-label" for="cod">Cash on Delivery</label>
-                        </div>
+                        </div>--}}
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="payment_method" id="payfast"
-                                value="payfast" required>
+                            <input class="form-check-input" type="radio" name="payment_method" id="payfast" value="payfast" required>
                             <label class="form-check-label" for="payfast">Pay with PayFast</label>
                         </div>
                     </div>

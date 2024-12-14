@@ -11,15 +11,17 @@ class ShopOwner extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'shop_name',
-        'domain',
-        'package_id',
-        'status',
-        'start_date',
-        'end_date',
-    ];
+    // protected $fillable = [
+    //     'name',
+    //     'shop_name',
+    //     'domain',
+    //     'package_id',
+    //     'status',
+    //     'start_date',
+    //     'end_date',
+    // ];
+
+    protected $guarded = [];
 
     public function package()
     {

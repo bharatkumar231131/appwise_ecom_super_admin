@@ -598,136 +598,37 @@
                         </div>
                     </li>
 
-                        <!-- step -->
-                        <li>
-                            <div class="step_text" data-aos="fade-left" data-aos-duration="1500">
-                                <h4>Our Team Will Reach Out</h4>
-                                <p>Once we receive your form, our team will contact you in order to address your queries and
-                                    talk about how we can help you set up an ideal e-commerce system for your business.
-                                </p>
-                            </div>
-                            <div class="step_number">
-                                <h3>02</h3>
-                            </div>
-                            <div class="step_img" data-aos="fade-right" data-aos-duration="1500">
-                                <img src="{{ asset('public/front/images/create_account.jpg') }}" alt="image">
-                            </div>
-                        </li>
+                    <!-- step -->
+                    <li>
+                        <div class="step_text" data-aos="fade-left" data-aos-duration="1500">
+                            <h4>Our Team Will Reach Out</h4>
+                            <p>Once we receive your form, our team will contact you in order to address your queries and
+                                talk about how we can help you set up an ideal e-commerce system for your business.
+                            </p>
+                        </div>
+                        <div class="step_number">
+                            <h3>02</h3>
+                        </div>
+                        <div class="step_img" data-aos="fade-right" data-aos-duration="1500">
+                            <img src="{{ asset('public/front/images/create_account.jpg') }}" alt="image">
+                        </div>
+                    </li>
 
-                        <!-- step -->
-                        <li>
-                            <div class="step_text" data-aos="fade-right" data-aos-duration="1500">
-                                <h4>Meeting with Team</h4>
-                                <p>We will have a meeting with our team in order to discuss your needs, outline the
-                                    capabilities of our system, and tailor the best solution for your business.</p>
-                            </div>
-                            <div class="step_number">
-                                <h3>03</h3>
-                            </div>
-                            <div class="step_img" data-aos="fade-left" data-aos-duration="1500">
-                                <img src="{{ asset('public/front/images/enjoy_app.jpg') }}" alt="image">
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-
-        </div>
-        <!-- container end -->
-    </section>
-    <!-- How-It-Workes-Section-end -->
-
-    <section class="contact_page_section" id="inquiry">
-        <div class="container">
-            <div class="contact_inner">
-                <div class="contact_form">
-                @if (Session::has('success_message'))
-               <div class="landing-successmsg">
-               <div class="alert alert-success alert-dismissible fade show mt-3" role="alert" id="successMessage">
-                    <strong>Success:</strong> {{ Session::get('success_message') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-               </div>
-                @endif
-                    <div class="section_title">
-                        <h2>Get Your <span>Online Store</span></h2>
-                        <p>Fill out the form below to share your details and queries. Our team will get in touch with you.
-                        </p>
-                    </div>
-                    <form action="{{ url('inquiry-submit') }}" method="POST">
-                        @csrf
-                        <div class="form-group">
-                            <input type="text" placeholder="Name" class="form-control" name="name">
+                    <!-- step -->
+                    <li>
+                        <div class="step_text" data-aos="fade-right" data-aos-duration="1500">
+                            <h4>Meeting with Team</h4>
+                            <p>We will have a meeting with our team in order to discuss your needs, outline the
+                                capabilities of our system, and tailor the best solution for your business.</p>
                         </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Email" class="form-control" name="email">
+                        <div class="step_number">
+                            <h3>03</h3>
                         </div>
-                        <!-- <div class="form-group">
-                            <input type="text" placeholder="Company Name" class="form-control">
-                        </div> -->
-                        <!-- <div class="form-group">
-                            <select class="form-control">
-                                <option value="">Country</option>
-                            </select>
-                        </div> -->
-                        <div class="form-group">
-                            <input type="text" placeholder="Phone" class="form-control" name="phone">
+                        <div class="step_img" data-aos="fade-left" data-aos-duration="1500">
+                            <img src="{{ asset('public/front/images/enjoy_app.jpg') }}" alt="image">
                         </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Address" class="form-control" name="address">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Your message" name="message"></textarea>
-                        </div>
-                        <div class="form-group term_check">
-                            <input type="checkbox" id="term">
-                            <label for="term">I agree to receive emails, newsletters and promotional messages</label>
-                        </div>
-                        <div class="form-group mb-0 text-center">
-                            <button type="submit" class="btn puprple_btn">SEND MESSAGE</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="contact_info">
-                    <div class="icon"><img src="{{ asset('public/front/images/contact_message_icon.png') }}"
-                            alt="image"></div>
-                    <div class="section_title">
-                        <h2>Have a <span>question?</span></h2>
-                        <p>We're here to help! Reach out to our team, and we'll provide the answers you need to get started
-                            with your e-commerce system.</p>
-                    </div>
-                    <a href="faq.html" class="btn puprple_btn">READ FAQ</a>
-                    <ul class="contact_info_list">
-                        <li>
-                            <div class="img">
-                                <img src="{{ asset('public/front/images/mail_icon.png') }}" alt="image">
-                            </div>
-                            <div class="text">
-                                <span>Email Us</span>
-                                <a href="mailto:example@gmail.com">example@gmail.com</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img">
-                                <img src="{{ asset('public/front/images/call_icon.png') }}" alt="image">
-                            </div>
-                            <div class="text">
-                                <span>Call Us</span>
-                                <a href="tel:+1(888)553-46-11">+1 (888) 553-46-11</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img">
-                                <img src="{{ asset('public/front/images/location_icon.png') }}" alt="image">
-                            </div>
-                            <div class="text">
-                                <span>Visit Us</span>
-                                <p>5687, Business Avenue, New York, USA 5687</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -737,8 +638,109 @@
 </section>
 <!-- How-It-Workes-Section-end -->
 
+<section class="contact_page_section">
+    <div class="container">
+        <div class="contact_inner">
+            <div class="contact_form">
+                @if (Session::has('success_message'))
+                <div class="landing-successmsg">
+                    <div class="alert alert-success alert-dismissible fade show mt-3" role="alert" id="successMessage">
+                        <strong>Success:</strong> {{ Session::get('success_message') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+                @endif
+                <div class="section_title">
+                    <h2>Get Your <span>Online Store</span></h2>
+                    <p>Fill out the form below to share your details and queries. Our team will get in touch with you.
+                    </p>
+                </div>
+                <form action="{{ url('inquiry-submit') }}" method="POST" data-parsley-validate>
+                    @csrf
+                    <div class="form-group">
+                        <input type="text" placeholder="Name" class="form-control" name="name" data-parsley-required="true"
+                            data-parsley-trigger="change">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" class="form-control" name="email" data-parsley-required="true"
+                            data-parsley-type="email" data-parsley-trigger="change">
+                    </div>
+                    <!-- <div class="form-group">
+                            <input type="text" placeholder="Company Name" class="form-control">
+                        </div> -->
+                    <!-- <div class="form-group">
+                            <select class="form-control">
+                                <option value="">Country</option>
+                            </select>
+                        </div> -->
+                    <div class="form-group">
+                        <input type="text" placeholder="Phone" class="form-control" name="phone" data-parsley-required="true"
+                            data-parsley-type="digits" data-parsley-length="[10, 15]"
+                            data-parsley-length-message="Phone number must be between 10 to 15 digits" data-parsley-trigger="change">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Address" class="form-control" name="address" data-parsley-required="true"
+                            data-parsley-trigger="change">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Your message" name="message" data-parsley-required="true"
+                            data-parsley-trigger="change"></textarea>
+                    </div>
+                    <div class="form-group term_check">
+                        <input type="checkbox" id="term">
+                        <label for="term">I agree to receive emails, newsletters and promotional messages</label>
+                    </div>
+                    <div class="form-group mb-0 text-center">
+                        <button type="submit" class="btn puprple_btn">SEND MESSAGE</button>
+                    </div>
+                </form>
+            </div>
+            <div class="contact_info">
+                <div class="icon"><img src="{{ asset('public/front/images/contact_message_icon.png') }}" alt="image"></div>
+                <div class="section_title">
+                    <h2>Have a <span>question?</span></h2>
+                    <p>We're here to help! Reach out to our team, and we'll provide the answers you need to get started
+                        with your e-commerce system.</p>
+                </div>
+                <a href="faq.html" class="btn puprple_btn">READ FAQ</a>
+                <ul class="contact_info_list">
+                    <li>
+                        <div class="img">
+                            <img src="{{ asset('public/front/images/mail_icon.png') }}" alt="image">
+                        </div>
+                        <div class="text">
+                            <span>Email Us</span>
+                            <a href="mailto:example@gmail.com">example@gmail.com</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img">
+                            <img src="{{ asset('public/front/images/call_icon.png') }}" alt="image">
+                        </div>
+                        <div class="text">
+                            <span>Call Us</span>
+                            <a href="tel:+1(888)553-46-11">+1 (888) 553-46-11</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img">
+                            <img src="{{ asset('public/front/images/location_icon.png') }}" alt="image">
+                        </div>
+                        <div class="text">
+                            <span>Visit Us</span>
+                            <p>5687, Business Avenue, New York, USA 5687</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
 
+    </div>
+    <!-- container end -->
+</section>
+<!-- How-It-Workes-Section-end -->
 
 <!-- FAQ-Section start -->
 <section class="row_am faq_section">
@@ -866,24 +868,40 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="" method="POST" id="ownerDetailsForm">
+                <form action="" method="POST" id="ownerDetailsForm" data-parsley-validate>
                     @csrf
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="ownerName" class="form-label">Owner Name</label>
-                            <input type="text" class="form-control" id="ownerName" name="owner_name" required>
+                            <input type="text" class="form-control" id="ownerName" name="owner_name" data-parsley-required="true"
+                                data-parsley-trigger="change">
                         </div>
                         <div class="mb-3">
                             <label for="ownerShop" class="form-label">Shop Name</label>
-                            <input type="text" class="form-control" id="ownerShop" name="shop_name" required>
+                            <input type="text" class="form-control" id="ownerShop" name="shop_name" data-parsley-required="true"
+                                data-parsley-trigger="change">
+                        </div>
+                        <div class="mb-3">
+                            <label for="ownerEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="ownerEmail" name="shop_email" data-parsley-required="true"
+                                data-parsley-type="email" data-parsley-trigger="change">
+                        </div>
+                        <div class="mb-3">
+                            <label for="ownerPhone" class="form-label">Phone</label>
+                            <input type="number" class="form-control" id="ownerPhone" name="shop_phone" data-parsley-required="true"
+                                data-parsley-type="digits" data-parsley-length="[10, 15]"
+                                data-parsley-length-message="Phone number must be between 10 to 15 digits"
+                                data-parsley-trigger="change">
                         </div>
                         <div class="mb-3">
                             <label for="ownerDomain" class="form-label">Domain</label>
-                            <input type="text" class="form-control" id="ownerDomain" name="domain" required>
+                            <input type="url" class="form-control" id="ownerDomain" name="domain" data-parsley-required="true"
+                                data-parsley-trigger="change">
                         </div>
                         <div class="mb-3">
                             <label for="ownerAddress" class="form-label">Address</label>
-                            <textarea class="form-control" id="ownerAddress" name="address" rows="3" required></textarea>
+                            <textarea class="form-control" id="ownerAddress" name="address" rows="3" data-parsley-required="true"
+                                data-parsley-trigger="change"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -929,7 +947,7 @@
                 form.action = route;
 
                 // Update modal title dynamically
-                modal.querySelector('.modal-title').textContent = `Fill Owner Details for ${packageName}`;
+                // modal.querySelector('.modal-title').textContent = `Fill Owner Details for ${packageName}`;
             });
         });
     });

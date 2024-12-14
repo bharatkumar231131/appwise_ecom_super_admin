@@ -24,6 +24,7 @@ class IndexController extends Controller
 
     public function saveOwnerDetails(Request $request, $id)
     {
+        // return $request;
         // $validated = $request->validate([
         //     'name' => 'required|string',
         //     // 'shop_name' => 'required|string',
@@ -39,9 +40,10 @@ class IndexController extends Controller
         $owner = ShopOwner::create([
             'name' => $request->owner_name,
             'shop_name' => $request->shop_name,
+            'email' => $request->shop_email,
+            'phone' => $request->shop_phone,
             'domain' => $request->domain,
-            'phone' => $request->phone,
-            // 'address' => 'required|string',
+            'address' => $request->address,
             'package_id' => $id,
             // 'price' => 'required|numeric',
             'status' => 'active'
@@ -61,16 +63,16 @@ class IndexController extends Controller
 
     public function processPayment(Request $request, $id)
     {
-        
+
         // Retrieve the package details
         $package = Package::find($id);
         $owner_id = $request->owner_id;
         $price = $package->price; // Price dynamically fetched from the database
-    
+
         // Capture request data (useful for logging, debugging, etc.)
         $requestData = $request->all();
         \Log::info('Payment Request Data:', $requestData);
-    
+
         if ($request->payment_method === 'cod') {
             // Handle Cash on Delivery (COD) payment
             PackageBuy::create([
@@ -83,7 +85,7 @@ class IndexController extends Controller
                 'price' => $price,
                 'days' => $package->days,
             ]);
-    
+
             // Return success view for COD
             return view('front.payment_success', ['message' => 'Order placed successfully with Cash on Delivery!']);
         } elseif ($request->payment_method === 'payfast') {
@@ -96,9 +98,8 @@ class IndexController extends Controller
                 'package_name' => $package->name
             ]);
         }
-    
+
         // Handle invalid payment method
         return back()->withErrors(['error' => 'Invalid payment method selected']);
     }
-    
 }

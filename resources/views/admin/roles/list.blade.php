@@ -52,6 +52,7 @@
                     <tbody>
 
                         @forelse ($roles as $role)
+                        @if($role['name'] != "superadmin")
                         <tr>
                             <td>{{ $role['id'] ?? "N/A"}}</td>
                             <td>{{ $role['name'] ?? "N/A"}}</td>
@@ -70,6 +71,7 @@
                                 </div>
                             </td>
                         </tr>
+                        @endif
                         @empty
                         @endforelse
 
