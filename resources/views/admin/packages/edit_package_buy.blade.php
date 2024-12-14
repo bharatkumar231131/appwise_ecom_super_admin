@@ -44,6 +44,7 @@
                             @csrf
                             <div class="row">
                                 <input type="hidden" name="id" value="{{ $package['id'] }}">
+                                <input type="hidden" name="owner_id" value="{{ $package['shop_owner_id'] }}">
                                 <div class="col-md-6">
                                     <div class="mb-4">
                                         <label class="form-label" for="name">Package Name</label>
@@ -116,7 +117,7 @@
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
-                </div>                                                                                                                                          
+                </div>
             </div>
         </div>
     </div>
