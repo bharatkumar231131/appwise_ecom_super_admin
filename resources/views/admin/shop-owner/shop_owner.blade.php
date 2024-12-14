@@ -36,7 +36,7 @@
 
 
 
-    <!-- Shop Owners Table -->          
+    <!-- Shop Owners Table -->
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -51,6 +51,8 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Shop Name</th>
+                            <th>Mobile</th>
+                            <th>Address</th>
                             <th>Domain</th>
                             <th>Package</th>
                             <!-- <th>Start Date</th>
@@ -68,6 +70,8 @@
                             <td>{{ $shopOwner->id ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->name ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->shop_name ?? 'N/A' }}</td>
+                            <td>{{ $shopOwner->phone ?? 'N/A' }}</td>
+                            <td>{{ $shopOwner->address ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->domain ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->package->name ?? 'No Package' }}</td>
                             <!-- <td>{{ $shopOwner->start_date ?? 'N/A' }}</td>
@@ -83,7 +87,7 @@
                                         @elseif ($shopOwner->end_date && now() > $shopOwner->end_date)
                                         <span class="badge bg-dark">Suspended</span>
                                         @endif
-                                        
+
                             </td>
                             @if (Gate::check('edit owner') || Gate::check('delete owner'))
                             <td>

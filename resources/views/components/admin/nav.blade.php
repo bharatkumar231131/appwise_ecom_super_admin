@@ -37,7 +37,8 @@ $admin_logo = $setting['admin_logo'] ?? '';
                                             <span>Application</span>
                                         </div>
                                         <ul class="sa-nav__menu sa-nav__menu--root">
-                                            <li class="sa-nav__menu-item sa-nav__menu-item--has-icon {{ request()->is('admin/dashboard') ? 'active' : '' }}">
+                                            <li
+                                                class="sa-nav__menu-item sa-nav__menu-item--has-icon {{ request()->is('admin/dashboard') ? 'active' : '' }}">
                                                 <a href="{{ url('admin/dashboard') }}" class="sa-nav__link">
                                                     <span class="sa-nav__icon">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"
@@ -97,8 +98,8 @@ $admin_logo = $setting['admin_logo'] ?? '';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item {{ request()->is('admin/inquiries') ? 'active' : '' }}" >
-                                                        <a href="{{ url('admin/inquiries') }}" class="sa-nav__link" ><span
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/inquiries') ? 'active' : '' }}">
+                                                        <a href="{{ url('admin/inquiries') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Inquiry</span></a>
                                                     </li>
                                                 </ul>
@@ -263,5 +264,6 @@ $admin_logo = $setting['admin_logo'] ?? '';
         </div>
     </div>
     <div class="sa-app__sidebar-shadow"></div>
-    <d i v="" class="sa-app__sidebar-backdrop" data-sa-close-sidebar=""></d>
+    <d i
+        v="" class="sa-app__sidebar-backdrop" data-sa-close-sidebar=""></d>
 </div>

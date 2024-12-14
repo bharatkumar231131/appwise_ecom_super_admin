@@ -4,11 +4,19 @@
     <div class="container">
         <div class="contact_inner">
             <div class="contact_form">
+            @if (Session::has('success_message'))
+                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                    <strong>Success:</strong> {{ Session::get('success_message') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
                 <div class="section_title">
                     <h2>Leave a <span>message</span></h2>
                     <p>Fill up form below, our team will get back soon</p>
                 </div>
-                <form action="{{ url('inquiry-submit') }}" method="post">
+
+              
+                <form action="" >
                     @csrf
                     <div class="form-group">
                         <input type="text" placeholder="Name" name="name" id="name" class="form-control">
@@ -46,7 +54,7 @@
                 </form>
             </div>
             <div class="contact_info">
-                <div class="icon"><img src="images/contact_message_icon.png" alt="image"></div>
+                <div class="icon"><img src="http://localhost/appwise_ecom_super_admin/public/front/images/contact_message_icon.png" alt="image"></div>
                 <div class="section_title">
                     <h2>Have any <span>question?</span></h2>
                     <p>If you have any question about our product, service, payment or company, Visit our <a href="faq.html">FAQs
@@ -56,7 +64,7 @@
                 <ul class="contact_info_list">
                     <li>
                         <div class="img">
-                            <img src="images/mail_icon.png" alt="image">
+                            <img src="http://localhost/appwise_ecom_super_admin/public/front/images/mail_icon.png" alt="image">
                         </div>
                         <div class="text">
                             <span>Email Us</span>
@@ -65,7 +73,7 @@
                     </li>
                     <li>
                         <div class="img">
-                            <img src="images/call_icon.png" alt="image">
+                            <img src="http://localhost/appwise_ecom_super_admin/public/front/images/call_icon.png" alt="image">
                         </div>
                         <div class="text">
                             <span>Call Us</span>
@@ -74,7 +82,7 @@
                     </li>
                     <li>
                         <div class="img">
-                            <img src="images/location_icon.png" alt="image">
+                            <img src="http://localhost/appwise_ecom_super_admin/public/front/images/location_icon.png" alt="image">
                         </div>
                         <div class="text">
                             <span>Visit Us</span>
