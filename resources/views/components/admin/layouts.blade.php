@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="{{asset('parsleyjs/parsleycss.css')}}">
+    <link rel="stylesheet" href="{{asset('public/parsleyjs/parsleycss.css')}}">
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-97489509-8"></script>
 
     <script>
