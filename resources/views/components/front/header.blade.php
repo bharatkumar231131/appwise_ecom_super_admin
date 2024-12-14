@@ -27,7 +27,7 @@
                         <a class="nav-link white_btn" href="contact.html">GET DEMO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link dark_btn" href="contact.html">GET STARTED</a>
+                        <a class="nav-link dark_btn" href="#inquiry">GET STARTED</a>
                     </li>
                 </ul>
             </div>

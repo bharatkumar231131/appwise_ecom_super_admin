@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Inquiry;
+use App\Models\ShopOwner;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class InquiryController extends Controller
 {
@@ -62,4 +65,9 @@ class InquiryController extends Controller
             return view("front.inquiry.inquiry");
         }
     }
+
+
+
+  
+    
 }

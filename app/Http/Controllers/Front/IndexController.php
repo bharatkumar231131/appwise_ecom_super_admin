@@ -40,6 +40,7 @@ class IndexController extends Controller
             'name' => $request->owner_name,
             'shop_name' => $request->shop_name,
             'domain' => $request->domain,
+            'phone' => $request->phone,
             // 'address' => 'required|string',
             'package_id' => $id,
             // 'price' => 'required|numeric',
@@ -50,7 +51,7 @@ class IndexController extends Controller
         // Redirect to the payment page
         return redirect()->route('package.payment', ['id' => $id, 'owner_id' => $owner_id]);
     }
-
+    
     public function paymentPage($id, Request $request)
     {
         $package = Package::findOrFail($id);
