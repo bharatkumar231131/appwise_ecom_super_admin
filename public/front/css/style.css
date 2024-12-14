@@ -743,7 +743,7 @@ header.fixed .navbar {
 .banner_section::after {
     content: "";
     display: block;
-    background-image: url(../images/banner-shape.svg);
+    /* background-image: url(../images/banner-shape.svg); */
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
