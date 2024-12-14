@@ -53,6 +53,7 @@
                                             value="{{ old('name', $shopOwner->name ?? '') }}" required>
                                     </div>
 
+
                                     <div class="mb-4">
                                         <label for="shop_name" class="form-label">Shop Name</label>
                                         <input type="text" class="form-control" name="shop_name" placeholder="Enter Shop Name"
