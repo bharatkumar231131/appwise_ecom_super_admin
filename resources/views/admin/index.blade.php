@@ -115,12 +115,7 @@
             </div>
         </div>
 
-<<<<<<< HEAD
         <!-- <div class="col-12 col-xxl-12 d-flex">
-=======
-        <div class="col-12 col-xxl-12 d-flex">
-            {{--
->>>>>>> c28dbd2c9f525bed77f1f13c7cfeaab44a2b7247
     <div class="card flex-grow-1 saw-table">
         <div class="sa-widget-header saw-table__header">
             <h2 class="sa-widget-header__title">Sales Report</h2>
