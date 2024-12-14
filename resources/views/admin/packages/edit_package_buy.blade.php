@@ -16,6 +16,11 @@
                 </nav>
                 <h1 class="h3 m-0">Edit User Package</h1>
             </div>
+            <div class="col-12">
+                <a class="btn btn-secondary backbtn" href="{{ url()->previous() }}">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -44,6 +49,7 @@
                             @csrf
                             <div class="row">
                                 <input type="hidden" name="id" value="{{ $package['id'] }}">
+                                <input type="hidden" name="owner_id" value="{{ $package['shop_owner_id'] }}">
                                 <div class="col-md-6">
                                     <div class="mb-4">
                                         <label class="form-label" for="name">Package Name</label>
@@ -116,7 +122,7 @@
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
-                </div>                                                                                                                                          
+                </div>
             </div>
         </div>
     </div>

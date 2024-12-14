@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Package;
 use App\Models\PackageBuy;
 use App\Models\PackageLog;
+use App\Models\ShopOwner;
 use Illuminate\Support\Facades\Validator;
 // use Illuminate\Routing\Controllers\HasMiddleware;
 // use Illuminate\Routing\Controllers\Middleware;
@@ -159,6 +160,8 @@ class PackageController extends Controller
 
     public function upgradePackage(Request $request)
     {
+        $shopOwner = ShopOwner::where('id', $request->owner_id)->first();
+
         PackageBuy::where('id', $request->id)->update([
             "package_name" => $request->name,
             "number_of_section" => $request->number_of_section,
@@ -184,7 +187,8 @@ class PackageController extends Controller
             'logs' => $data
         ]);
 
-        $domainUrl = 'http://localhost/appwise';
+        // $domainUrl = 'http://localhost/appwise';
+        $domainUrl = $shopOwner['domain'];
         $response = $this->packageLogicService->sendPackageUpgradeData($domainUrl, $data);
         $response = json_encode($response);
 

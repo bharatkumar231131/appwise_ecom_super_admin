@@ -101,7 +101,7 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                 </ul>
                                             </li>
                                             @endcan
-                                            @can('view inquiries')
+                                             @can('view inquiries')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
                                                 <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
@@ -176,7 +176,7 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
 
                                                     <li class="sa-nav__menu-item {{ request()->is('admin/admin-details') ? 'active' : '' }}">
                                                         <a href="{{ url('admin/admin-details') }}" class="sa-nav__link"><span
-                                                                class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Update Setting</span></a>
+                                                                class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Update Admin Setting</span></a>
                                                     </li>
                                                 </ul>
                                             </li>

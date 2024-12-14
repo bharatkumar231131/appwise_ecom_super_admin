@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Package;
 use App\Models\ShopOwner;
 use App\Models\PackageBuy;
+use App\Models\Page;
 
 class IndexController extends Controller
 {
@@ -53,7 +54,7 @@ class IndexController extends Controller
         // Redirect to the payment page
         return redirect()->route('package.payment', ['id' => $id, 'owner_id' => $owner_id]);
     }
-    
+
     public function paymentPage($id, Request $request)
     {
         $package = Package::findOrFail($id);
@@ -101,5 +102,17 @@ class IndexController extends Controller
 
         // Handle invalid payment method
         return back()->withErrors(['error' => 'Invalid payment method selected']);
+    }
+
+    public function termAndCondition()
+    {
+        $page = Page::where('id', '2')->first();
+        return view('front.pages.term_&_condition', compact('page'));
+    }
+
+    public function privacyPolicy()
+    {
+        $page = Page::where('id', '3')->first();
+        return view('front.pages.privacy_policy', compact('page'));
     }
 }

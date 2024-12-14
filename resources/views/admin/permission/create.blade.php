@@ -3,11 +3,14 @@
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-center">
+        
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header bg-primary text-white text-center">
                     <h4>Create Permission</h4>
                 </div>
+                
+                
                 <div class="card-body">
                     <form action="{{ route('permissions.store') }}" method="post">
 @csrf
@@ -48,7 +51,20 @@
                         <li class="breadcrumb-item active">Create Permission</li>
                     </ol>
                 </nav>
-                <h1 class="h3 m-0">Create Permission</h1>
+                <div class="mb-3">
+                    <h1 class="h3 m-0">Create Permission</h1>
+                </div>
+
+                <div class="col-12">
+                    <a class="btn btn-secondary backbtn" href="{{ url()->previous() }}">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12">
+                <a class="btn btn-secondary backbtn" href="{{ url()->previous() }}">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
     </div>
