@@ -53,7 +53,6 @@
                                             value="{{ old('name', $shopOwner->name ?? '') }}" required>
                                     </div>
 
-
                                     <div class="mb-4">
                                         <label for="shop_name" class="form-label">Shop Name</label>
                                         <input type="text" class="form-control" name="shop_name" placeholder="Enter Shop Name"
@@ -61,9 +60,15 @@
                                     </div>
 
                                     <div class="mb-4">
-                                        <label for="shop_address" class="form-label">Shop Address</label>
-                                        <input type="text" class="form-control" name="shop_address" placeholder="Enter Shop Address"
-                                            value="{{ old('shop_address', $shopOwner->shop_address ?? '') }}" required>
+                                        <label for="email" class="form-label">Shop Email</label>
+                                        <input type="email" class="form-control" name="email" placeholder="Enter Shop Email"
+                                            value="{{ old('email', $shopOwner->email ?? '') }}" required>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="address" class="form-label">Shop Address</label>
+                                        <input type="text" class="form-control" name="address" placeholder="Enter Shop Address"
+                                            value="{{ old('address', $shopOwner->address ?? '') }}" required>
                                     </div>
 
                                 </div>
@@ -72,9 +77,12 @@
                                 <div class="col-md-6">
 
                                     <div class="mb-4">
-                                        <label for="shop_phone" class="form-label">Phone</label>
-                                        <input type="text" class="form-control" name="shop_phone" placeholder="Enter Mobile Number"
-                                            value="{{ old('shop_phone', $shopOwner->shop_phone ?? '') }}" required>
+                                        <label for="phone" class="form-label">Phone</label>
+                                        <input type="text" class="form-control" name="phone" placeholder="Enter Mobile Number"
+                                            value="{{ old('phone', $shopOwner->phone ?? '') }}" data-parsley-required="true"
+                                            data-parsley-type="digits" data-parsley-length="[10, 15]"
+                                            data-parsley-length-message="Phone number must be between 10 to 15 digits"
+                                            data-parsley-trigger="change">
                                     </div>
 
                                     <div class="mb-4">
@@ -95,10 +103,10 @@
                                         </select>
                                     </div>
 
-                                    <div class="mb-4">
+                                    <div class="mb-4 d-none">
                                         <label for="status" class="form-label">Status</label>
                                         <select name="status" class="form-control" required>
-                                            <option value="active"
+                                            <option value="active" selected
                                                 {{ old('status', $shopOwner->status ?? '') == 'active' ? 'selected' : '' }}>Active</option>
                                             <option value="inactive"
                                                 {{ old('status', $shopOwner->status ?? '') == 'inactive' ? 'selected' : '' }}>Inactive</option>
