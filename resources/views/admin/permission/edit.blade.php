@@ -48,7 +48,15 @@
                         <li class="breadcrumb-item active">Edit Permission</li>
                     </ol>
                 </nav>
-                <h1 class="h3 m-0">Edit Permission</h1>
+                <div class="mb-3">
+                    <h1 class="h3 m-0">Edit Permission</h1>
+                </div>
+
+                <div class="col-12">
+                    <a class="btn btn-secondary backbtn" href="{{ url()->previous() }}">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -89,7 +97,6 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <a href="{{ route('permissions.index') }}" class="btn btn-secondary">Cancel</a>
                         </form>
                     </div>
                 </div>

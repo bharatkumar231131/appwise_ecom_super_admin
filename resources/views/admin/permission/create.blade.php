@@ -85,7 +85,7 @@
                                 @enderror
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <a href="{{ route('permissions.index') }}" class="btn btn-secondary">Cancel</a>
+                            <button type="reset" class="btn btn-secondary">Cancel</button>
                         </form>
                     </div>
                 </div>

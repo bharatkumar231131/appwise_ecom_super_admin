@@ -904,9 +904,6 @@
     });
 </script>
 
-
-
-
 {{-- --}}
 @endsection
 
@@ -917,7 +914,5 @@
             var closeButton = alert.querySelector('.btn-close');
             closeButton.click();
         }
-
     }, 3000);
 </script>
-    
