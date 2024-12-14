@@ -2546,7 +2546,7 @@ header.fix_style.white_header {
 
 /* Bredcrumb Css Start */
 .bred_crumb {
-    background-image: url(../images/bread_crumb_bg.png);
+    /* background-image: url(../images/bread_crumb_bg.png); */
     /*background: var(--primaryclr);*/
     background-repeat: no-repeat;
     background-size: cover;
@@ -2561,7 +2561,7 @@ header.fix_style.white_header {
 
 .bred_crumb::after {
     content: "";
-    background-image: url(../images/inner_page_banner_overlay.svg);
+    /* background-image: url(../images/inner_page_banner_overlay.svg); */
     position: absolute;
     bottom: -1px;
     left: 0;
@@ -2579,14 +2579,18 @@ header.fix_style.white_header {
 }
 
 .bred_crumb .bred_text h1 {
-    color: var(--text-white);
+    color: #00b0ff;
     font-size: 55px;
     font-weight: 700;
 }
 
 .bred_crumb .bred_text h1+p {
-    color: var(--text-white);
+    color: #00b0ff;
     margin-top: -5px;
+}
+
+.blog_detail_section h2 {
+    color: #00b0ff;
 }
 
 .bred_crumb .bred_text ul {

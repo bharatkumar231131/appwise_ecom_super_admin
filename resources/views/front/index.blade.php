@@ -182,19 +182,8 @@
                 <div class="col-lg-6">
                     <!-- UI Image -->
                     <div class="ui_images" data-aos="fade-in" data-aos-duration="1500">
-                        <div class="left_img">
-                            <img class="moving_position_animatin" src="{{ asset('public/front/images/modern01.png') }}"
-                                alt="image">
-                        </div>
-                        <!-- UI Image -->
-                        <div class="right_img">
-                            <img class="moving_position_animatin" src="{{ asset('public/front/images/secure_data.png') }}"
-                                alt="image">
-                            <img class="moving_position_animatin" src="{{ asset('public/front/images/modern02.png') }}"
-                                alt="image">
-                            <img class="moving_position_animatin" src="{{ asset('public/front/images/modern03.png') }}"
-                                alt="image">
-                        </div>
+                        <img class="moving_position_animatin" src="{{ asset('public/front/images/advantageimg.png') }}"
+                            alt="image">
                     </div>
                 </div>
             </div>
@@ -221,10 +210,10 @@
             <div class="toggle_block" data-aos="fade-up" data-aos-duration="1500">
                 <span class="month active">Monthly</span>
                 <!-- <div class="tog_block">
-                                    <span class="tog_btn"></span>
-                                </div>
-                                <span class="years">Yearly</span>
-                                <span class="offer">50% off</span> -->
+                                                                <span class="tog_btn"></span>
+                                                            </div>
+                                                            <span class="years">Yearly</span>
+                                                            <span class="offer">50% off</span> -->
             </div>
 
             <!-- pricing box  monthly start -->
@@ -288,67 +277,67 @@
 
                     <!-- pricing box 2 -->
                     <!-- <div class="col-md-4">
-                                                                                                                                                                                                                                    <div class="pricing_block highlited_block">
-                                                                                                                                                                                                                                        <div class="icon">
-                                                                                                                                                                                                                                            <img src="{{ asset('public/front/images/unlimited.png') }}" alt="image">
-                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                        <div class="pkg_name">
-                                                                                                                                                                                                                                            <h3>Unlimited</h3>
-                                                                                                                                                                                                                                            <span>For the professionals</span>
-                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                        <span class="price">$99</span>
-                                                                                                                                                                                                                                        <ul class="benifits">
-                                                                                                                                                                                                                                            <li>
-                                                                                                                                                                                                                                                <p>Unlimited Website</p>
-                                                                                                                                                                                                                                            </li>
-                                                                                                                                                                                                                                            <li>
-                                                                                                                                                                                                                                                <p>200 GB disk space</p>
-                                                                                                                                                                                                                                            </li>
-                                                                                                                                                                                                                                            <li>
-                                                                                                                                                                                                                                                <p>20 Customize sub pages</p>
-                                                                                                                                                                                                                                            </li>
-                                                                                                                                                                                                                                            <li>
-                                                                                                                                                                                                                                                <p>10 Domains access</p>
-                                                                                                                                                                                                                                            </li>
-                                                                                                                                                                                                                                            <li>
-                                                                                                                                                                                                                                                <p>24/7 Customer support</p>
-                                                                                                                                                                                                                                            </li>
-                                                                                                                                                                                                                                        </ul>
-                                                                                                                                                                                                                                        <a href="contact.html" class="btn white_btn">BUY NOW</a>
-                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                <div class="pricing_block highlited_block">
+                                                                                                                                                                                                                                                                    <div class="icon">
+                                                                                                                                                                                                                                                                        <img src="{{ asset('public/front/images/unlimited.png') }}" alt="image">
+                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                    <div class="pkg_name">
+                                                                                                                                                                                                                                                                        <h3>Unlimited</h3>
+                                                                                                                                                                                                                                                                        <span>For the professionals</span>
+                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                    <span class="price">$99</span>
+                                                                                                                                                                                                                                                                    <ul class="benifits">
+                                                                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                                                                            <p>Unlimited Website</p>
+                                                                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                                                                            <p>200 GB disk space</p>
+                                                                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                                                                            <p>20 Customize sub pages</p>
+                                                                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                                                                            <p>10 Domains access</p>
+                                                                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                                                                            <p>24/7 Customer support</p>
+                                                                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                                                                    </ul>
+                                                                                                                                                                                                                                                                    <a href="contact.html" class="btn white_btn">BUY NOW</a>
+                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                            </div> -->
 
                     <!-- pricing box 3 -->
                     <!-- <div class="col-md-4">
-                                                                                                                                                                                                                                    <div class="pricing_block">
-                                                                                                                                                                                                                                        <div class="icon">
-                                                                                                                                                                                                                                            <img src="{{ asset('public/front/images/premium.png') }}" alt="image">
-                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                        <div class="pkg_name">
-                                                                                                                                                                                                                                            <h3>Premium</h3>
-                                                                                                                                                                                                                                            <span>For small team</span>
-                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                        <span class="price">$55</span>
-                                                                                                                                                                                                                                        <ul class="benifits">
-                                                                                                                                                                                                                                            <li>
-                                                                                                                                                                                                                                                <p>Up to 10 Website</p>
-                                                                                                                                                                                                                                            </li>
-                                                                                                                                                                                                                                            <li>
-                                                                                                                                                                                                                                                <p>100 GB disk space</p>
-                                                                                                                                                                                                                                            </li>
-                                                                                                                                                                                                                                            <li>
-                                                                                                                                                                                                                                                <p>15 Customize sub pages</p>
-                                                                                                                                                                                                                                            </li>
-                                                                                                                                                                                                                                            <li>
-                                                                                                                                                                                                                                                <p>4 Domains access</p>
-                                                                                                                                                                                                                                            </li>
-                                                                                                                                                                                                                                            <li>
-                                                                                                                                                                                                                                                <p>24/7 Customer support</p>
-                                                                                                                                                                                                                                            </li>
-                                                                                                                                                                                                                                        </ul>
-                                                                                                                                                                                                                                        <a href="contact.html" class="btn white_btn">BUY NOW</a>
-                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                <div class="pricing_block">
+                                                                                                                                                                                                                                                                    <div class="icon">
+                                                                                                                                                                                                                                                                        <img src="{{ asset('public/front/images/premium.png') }}" alt="image">
+                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                    <div class="pkg_name">
+                                                                                                                                                                                                                                                                        <h3>Premium</h3>
+                                                                                                                                                                                                                                                                        <span>For small team</span>
+                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                    <span class="price">$55</span>
+                                                                                                                                                                                                                                                                    <ul class="benifits">
+                                                                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                                                                            <p>Up to 10 Website</p>
+                                                                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                                                                            <p>100 GB disk space</p>
+                                                                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                                                                            <p>15 Customize sub pages</p>
+                                                                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                                                                            <p>4 Domains access</p>
+                                                                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                                                                        <li>
+                                                                                                                                                                                                                                                                            <p>24/7 Customer support</p>
+                                                                                                                                                                                                                                                                        </li>
+                                                                                                                                                                                                                                                                    </ul>
+                                                                                                                                                                                                                                                                    <a href="contact.html" class="btn white_btn">BUY NOW</a>
+                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                            </div> -->
                 </div>
                 <!-- row end -->
             </div>
@@ -624,13 +613,13 @@
                                 data-parsley-required="true" data-parsley-type="email" data-parsley-trigger="change">
                         </div>
                         <!-- <div class="form-group">
-                                                <input type="text" placeholder="Company Name" class="form-control">
-                                            </div> -->
+                                                                            <input type="text" placeholder="Company Name" class="form-control">
+                                                                        </div> -->
                         <!-- <div class="form-group">
-                                                <select class="form-control">
-                                                    <option value="">Country</option>
-                                                </select>
-                                            </div> -->
+                                                                            <select class="form-control">
+                                                                                <option value="">Country</option>
+                                                                            </select>
+                                                                        </div> -->
                         <div class="form-group">
                             <input type="text" placeholder="Phone" class="form-control" name="phone"
                                 data-parsley-required="true" data-parsley-type="digits" data-parsley-length="[10, 15]"
@@ -826,6 +815,357 @@
         <!-- container end -->
     </section>
     <!-- FAQ-Section end -->
+
+
+    {{-- privacy policy start --}}
+    <div class="bred_crumb blog_detail_bredcrumb d-none">
+        <div class="container">
+            <div class="bred_text">
+                <h1>Privacy policy</h1>
+            </div>
+        </div>
+    </div>
+    <section class="blog_detail_section d-none">
+        <div class="container">
+            <div class="blog_inner_pannel">
+                <div class="review">
+                    <span>Effective Date: </span>
+                    <span>12 December, 2024</span>
+                </div>
+                <div class="section_title">
+                    <h2>Introduction</h2>
+                </div>
+                <div class="container">
+                    <p>My Bilty, operated by Dizixpert Techno Services Pvt. Ltd., is committed to protecting the privacy
+                        of its
+                        users. This Privacy Policy outlines how we collect, use, store, and safeguard the personal and
+                        business
+                        information provided by users of the My Bilty Lorry Receipt Management System. By using My
+                        Bilty, you
+                        agree to the collection and use of your data as described in this policy.</p>
+
+                    <h2>1. Information We Collect</h2>
+                    <p>We collect different types of information from users of the My Bilty platform, including:</p>
+                    <ul>
+                        <li><strong>Personal Information:</strong>
+                            <ul>
+                                <li>Full Name</li>
+                                <li>Contact Information (Email address, Phone number)</li>
+                                <li>User Role (Super Admin, Transporter Admin, Driver)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Business Information:</strong>
+                            <ul>
+                                <li>Company Name</li>
+                                <li>Address and Contact Information</li>
+                                <li>Business Identification Numbers (e.g., GST number)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Transactional Information:</strong>
+                            <ul>
+                                <li>Details of Lorry Receipts (Bilty) issued or received</li>
+                                <li>Payment and Invoicing Information</li>
+                                <li>Account Management details</li>
+                            </ul>
+                        </li>
+                        <li><strong>Device and Usage Information:</strong>
+                            <ul>
+                                <li>IP Address</li>
+                                <li>Browser type and version</li>
+                                <li>Device type and operating system</li>
+                                <li>Location data (based on device settings)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Communications:</strong>
+                            <ul>
+                                <li>Messages and other communications sent via the platform between Super Admins,
+                                    Transporter Admins,
+                                    and Drivers</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h2>2. How We Use Your Information</h2>
+                    <p>We use the collected information for the following purposes:</p>
+                    <ul class="mb-3">
+                        <li>To provide and manage the My Bilty platform</li>
+                        <li>To process transactions</li>
+                        <li>To personalize your experience</li>
+                        <li>To communicate with you</li>
+                        <li>To ensure security</li>
+                    </ul>
+
+                    <h2>3. How We Protect Your Information</h2>
+                    <p>We take the security of your personal and business information seriously. Measures include
+                        encryption,
+                        access controls, and regular audits.</p>
+
+                    <h2>4. Data Retention</h2>
+                    <p>We retain your information as long as necessary for the purposes described in this policy and to
+                        fulfill
+                        legal obligations.</p>
+
+                    <h2>5. Sharing Your Information</h2>
+                    <p>We do not sell or rent your data. Information may be shared with service providers, legal
+                        authorities, or
+                        in business transfers as necessary.</p>
+
+                    <h2>6. Your Data Rights</h2>
+                    <ul class="mb-3">
+                        <li>Access</li>
+                        <li>Correction</li>
+                        <li>Deletion</li>
+                        <li>Opt-Out</li>
+                    </ul>
+
+                    <h2>7. Third-Party Links</h2>
+                    <p>We are not responsible for the privacy practices of third-party websites linked from My Bilty.
+                    </p>
+
+                    <h2>8. Children's Privacy</h2>
+                    <p>My Bilty is not intended for individuals under eighteen. If such data is collected, it will be
+                        deleted
+                        promptly.</p>
+
+                    <h2>9. Changes to This Privacy Policy</h2>
+                    <p>We may update this Privacy Policy. Continued use of the platform indicates acceptance of changes.
+                    </p>
+
+                    <h2>10. Contact Us</h2>
+                    <p class="mb-0">If you have any questions, please contact us at:</p>
+                    <p class="mb-0">
+                        Dizixpert Techno Services Pvt. Ltd.</p>
+                    <p class="mb-0">Email: <a href="mailto:support@dizixpert.com">support@dizixpert.com</a></p>
+                    <p class="mb-0">Phone: +91 9413389140</p>
+                    <p class="mb-0">Address: Dizixpert Techno Services Pvt. Ltd., Sri Ganganagar Road, Jaipur Jodhpur
+                        By-Pass,
+                        Bikaner (Raj.)
+                        - 334001</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- privacy policy end --}}
+
+    {{-- Terms and conditions start --}}
+    <div class="bred_crumb blog_detail_bredcrumb d-none">
+        <div class="container">
+            <div class="bred_text">
+                <h1>Terms &amp; Conditions</h1>
+            </div>
+        </div>
+    </div>
+    <section class="blog_detail_section d-none">
+        <div class="container">
+            <div class="blog_inner_pannel">
+                <div class="review">
+                    <span>Last Updated: </span>
+                    <span>12 December, 2024</span>
+                </div>
+                <div class="section_title">
+                    <h2>Introduction</h2>
+                </div>
+                <div class="container">
+                    <p><strong></strong></p>
+
+                    <h2>Welcome to MyBilty!</h2>
+                    <p>These Terms and Conditions govern your use of MyBilty, including the web platform, mobile
+                        applications,
+                        and
+                        services provided by MyBilty. By accessing or using our platform, you agree to be bound by these
+                        terms.
+                        Please
+                        read them carefully.</p>
+                    <p>If you do not agree to any part of these Terms and Conditions, you must discontinue using our
+                        platform
+                        and
+                        services immediately.</p>
+
+                    <h2>1. Definitions</h2>
+                    <ul>
+                        <li><strong>Platform:</strong> Refers to the MyBilty system, including the web portal and mobile
+                            applications
+                            (Transporter Admin App and Driver App).</li>
+                        <li><strong>We, Us, Our:</strong> Refers to MyBilty Tech, the service provider and operator of the
+                            MyBilty
+                            platform.</li>
+                        <li><strong>User, You, Your:</strong> Refers to anyone accessing or using the platform, including
+                            Super
+                            Admin,
+                            Transporter Admin, Drivers, and other authorized personnel.</li>
+                        <li><strong>Subscription:</strong> Refers to paid plans for accessing specific features of the
+                            MyBilty
+                            platform.</li>
+                        <li><strong>Free Trial:</strong> Refers to the initial one-month trial access with limited
+                            functionalities.
+                        </li>
+                    </ul>
+
+                    <h2>2. Acceptance of Terms</h2>
+                    <ul>
+                        <li>You confirm that you are at least eighteen years of age.</li>
+                        <li>You can bind yourself or your organization to these Terms and Conditions.</li>
+                        <li>You agree to comply with all terms stated herein and applicable local, national, and
+                            international
+                            laws.
+                        </li>
+                    </ul>
+
+                    <h2>3. User Roles and Responsibilities</h2>
+                    <h3>3.1 Super Admin</h3>
+                    <ul>
+                        <li>Full access to all platform functionalities.</li>
+                        <li>Responsible for creating and managing subscription plans.</li>
+                        <li>Monitors transactions and generates system-wide reports.</li>
+                        <li>Handles user support tickets and platform settings.</li>
+                    </ul>
+
+                    <h3>3.2 Transporter Admin</h3>
+                    <ul>
+                        <li>Manages transporter-specific operations, including:</li>
+                        <ul>
+                            <li>Bilty/lorry receipt management.</li>
+                            <li>Master data (party, vehicle, driver, and material details).</li>
+                            <li>Financial accounts, including invoices, loading slips, and ledgers.</li>
+                        </ul>
+                    </ul>
+
+                    <h3>3.3 Drivers</h3>
+                    <ul>
+                        <li>Limited access to the Driver App for tasks, including:</li>
+                        <ul>
+                            <li>Updating assignments (loading, bilty, deliveries).</li>
+                            <li>Uploading delivery documents and reporting issues.</li>
+                            <li>GPS navigation and real-time updates.</li>
+                        </ul>
+                    </ul>
+
+                    <h2>4. Account Registration</h2>
+                    <ul>
+                        <li>Users must provide accurate, complete, and updated registration details, including valid contact
+                            and
+                            identity information.</li>
+                        <li>You are responsible for maintaining the confidentiality of your login credentials.</li>
+                        <li>Notify us immediately if you suspect any unauthorized access or misuse of your account.</li>
+                    </ul>
+
+                    <h2>5. Subscription Plans and Payments</h2>
+                    <h3>5.1 Free Trial</h3>
+                    <p>New users are eligible for a one-month free trial with limited functionalities. Access will be
+                        restricted
+                        at
+                        the end of the trial unless you subscribe to a paid plan.</p>
+
+                    <h3>5.2 Subscription Plans</h3>
+                    <ul>
+                        <li>Plan Options: Monthly and yearly subscription plans based on:</li>
+                        <ul>
+                            <li>Feature sets</li>
+                            <li>Number of bilty/lorry receipts created</li>
+                        </ul>
+                        <li>Payments must be made via our integrated payment gateway.</li>
+                        <li>Subscriptions will auto-renew unless canceled before the renewal date.</li>
+                    </ul>
+
+                    <h3>5.3 Late or Failed Payments</h3>
+                    <ul>
+                        <li>Non-payment or failed transactions may result in account suspension or access restriction.</li>
+                        <li>Users will be notified before any such action.</li>
+                    </ul>
+
+                    <h2>6. Platform Usage</h2>
+                    <h3>6.1 Permitted Use</h3>
+                    <ul>
+                        <li>You agree to use the platform only for legal and authorized purposes related to transportation
+                            management.
+                        </li>
+                        <li>Accurate and up-to-date information must be entered for all platform functionalities, including
+                            bilty/lorry receipts, invoices, and financial records.</li>
+                    </ul>
+
+                    <h3>6.2 Prohibited Use</h3>
+                    <ul>
+                        <li>Use the platform for fraudulent, illegal, or unauthorized purposes.</li>
+                        <li>Share login credentials or unauthorized access with third parties.</li>
+                        <li>Modify, reverse-engineer, or attempt to hack the platform.</li>
+                        <li>Upload harmful content, including malware, viruses, or illegal materials.</li>
+                    </ul>
+
+                    <h2>7. Data Management and Security</h2>
+                    <p>We implement strict security measures to protect user data. While we take reasonable precautions, we
+                        cannot
+                        guarantee complete protection against data breaches.</p>
+
+                    <h2>8. Service Availability and Maintenance</h2>
+                    <p>Services may occasionally be unavailable due to maintenance, updates, or unforeseen issues. We are
+                        not
+                        liable
+                        for any loss or inconvenience caused by downtime.</p>
+
+                    <h2>9. Termination of Access</h2>
+                    <ul>
+                        <li>You may terminate your account at any time by contacting our support team.</li>
+                        <li>We reserve the right to suspend or terminate your account if you violate these Terms or fail to
+                            complete
+                            subscription payments.</li>
+                    </ul>
+
+                    <h2>10. Intellectual Property</h2>
+                    <p>All intellectual property, including trademarks, software code, platform designs, and content, is
+                        owned
+                        by
+                        MyBilty. Users are prohibited from reproducing or redistributing platform elements without
+                        permission.</p>
+
+                    <h2>11. Limitation of Liability</h2>
+                    <p>To the fullest extent permitted by law, MyBilty and its operators shall not be liable for any
+                        indirect,
+                        incidental, or consequential damages, including lost profits, arising from the use or inability to
+                        use the
+                        platform.</p>
+
+                    <h2>12. Indemnification</h2>
+                    <p>You agree to indemnify and hold MyBilty harmless from any claims, losses, damages, or expenses
+                        arising
+                        from
+                        your violation of these Terms or misuse of the platform.</p>
+
+                    <h2>13. Governing Law and Jurisdiction</h2>
+                    <p>These Terms are governed by the laws of India. Disputes shall be subject to the jurisdiction of
+                        courts in
+                        Rajasthan.</p>
+
+                    <h2>14. Amendments to Terms</h2>
+                    <p>We reserve the right to update these Terms at any time. Continued use of the platform constitutes
+                        acceptance
+                        of updated Terms.</p>
+
+                    <h2>15. Contact Information</h2>
+                    <p>If you have any queries, please contact us:</p>
+                    <p>
+                        Email: <a href="mailto:support@dizixpert.com">support@dizixpert.com</a><br>
+                        Phone: +91 9413389140<br>
+                        Address: Dizixpert Techno Services Pvt. Ltd., Sri Ganganagar Road, Jaipur Jodhpur By-Pass, Bikaner
+                        (Raj.)
+                        -
+                        334001
+                    </p>
+
+                    <h2>16. Acknowledgement</h2>
+                    <p>By using the MyBilty platform, you acknowledge that you have read, understood, and agreed to these
+                        Terms
+                        and
+                        Conditions.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+    {{-- Terms and conditions end --}}
+
+
 
     <div class="modal fade" id="buyNowModal" tabindex="-1" aria-labelledby="buyNowModalLabel" aria-hidden="true">
         <div class="modal-dialog">
