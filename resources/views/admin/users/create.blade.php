@@ -39,7 +39,7 @@
                         </div>
                         @endif
 
-                        <form action="{{ route('users.store') }}" method="post">
+                        <form action="{{ route('users.store') }}" method="post" data-parsley-validate>
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
