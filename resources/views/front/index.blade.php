@@ -904,18 +904,15 @@
     });
 </script>
 
-
-
-
-    {{--  --}}
+{{-- --}}
 @endsection
 
 <script>
-setTimeout(function() {
-          var alert = document.getElementById('successMessage');
-          if (alert) {
-              var closeButton = alert.querySelector('.btn-close');
-              closeButton.click();
-          }
-      }, 3000); 
-   </script>
+    setTimeout(function() {
+        var alert = document.getElementById('successMessage');
+        if (alert) {
+            var closeButton = alert.querySelector('.btn-close');
+            closeButton.click();
+        }
+    }, 3000);
+</script>

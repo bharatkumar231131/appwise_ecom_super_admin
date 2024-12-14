@@ -49,7 +49,7 @@
             </a>
         </div>
 
-       
+
 
 
         <!-- Monthly Packages Bought Chart -->
@@ -116,6 +116,7 @@
         </div>
 
         <div class="col-12 col-xxl-12 d-flex">
+            {{--
     <div class="card flex-grow-1 saw-table">
         <div class="sa-widget-header saw-table__header">
             <h2 class="sa-widget-header__title">Sales Report</h2>
@@ -130,14 +131,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
-                   
+
+
                 </tbody>
             </table>
         </div>
     </div>
-</div>
-      
+    --}}
+        </div>
+
 
     </div>
 </div>

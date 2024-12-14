@@ -60,10 +60,7 @@ class ShopOwnerController extends Controller
     public function deleteShopOwner($id)
     {
         $shopOwner = ShopOwner::findOrFail($id);
-        return $shopOwner;
-        $packageBuy = PackageBuy::where('shop_owner_id' , $shopOwner)->get();
         $shopOwner->delete();
-        $packageBuy->delete();
         return redirect()->route('admin.shopOwners')->with('success_message', 'Shop Owner deleted successfully.');
     }
 

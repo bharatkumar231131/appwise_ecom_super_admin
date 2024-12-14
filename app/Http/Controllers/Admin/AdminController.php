@@ -101,6 +101,8 @@ class AdminController extends Controller
             return redirect()->back()->with('success_message', "Package delete succesfully");
         } elseif ($type === "owner") {
             $owner = ShopOwner::findOrFail($id);
+        $packageBuy = PackageBuy::where('shop_owner_id' , $owner->id)->get();
+                $packageBuy[0]->delete();
             $owner->delete();
             return redirect()->back()->with('success_message', "ShopOwner delete succesfully");
         } elseif ($type === "user") {
