@@ -64,8 +64,8 @@ $front_logo = $front_logo->front_logo;
                             <li><a href="#">FAQs</a></li>
                             <li><a href="#">Support</a></li>
                             <li><a href="#">How it works</a></li>
-                            <li><a href="#">Terms & conditions</a></li>
-                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="{{ url('term_&_condition') }}">Terms & conditions</a></li>
+                            <li><a href="{{ url('privacy_policy') }}">Privacy policy</a></li>
                         </ul>
                     </div>
                 </div>
