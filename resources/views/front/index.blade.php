@@ -861,7 +861,7 @@
 <!-- FAQ-Section end -->
 
 <div class="modal fade" id="buyNowModal" tabindex="-1" aria-labelledby="buyNowModalLabel" aria-hidden="true">
-    <div class="modal-dialog model-xl" >
+    <div class="modal-dialog modal-xl" >
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="buyNowModalLabel">Fill Owner Details</h5>
@@ -870,35 +870,36 @@
             <div class="modal-body">
                 <form action="" method="POST" id="ownerDetailsForm" data-parsley-validate>
                     @csrf
-                    <div class="modal-body">
-                        <div class="mb-3">
+                    <!-- <div class="row"></div> -->
+                    <div class="modal-body row">
+                        <div class="mb-3 col-6">
                             <label for="ownerName" class="form-label">Owner Name</label>
                             <input type="text" class="form-control" id="ownerName" name="owner_name" data-parsley-required="true"
                                 data-parsley-trigger="change">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 col-6">
                             <label for="ownerShop" class="form-label">Shop Name</label>
                             <input type="text" class="form-control" id="ownerShop" name="shop_name" data-parsley-required="true"
                                 data-parsley-trigger="change">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 col-6">
                             <label for="ownerEmail" class="form-label">Email</label>
                             <input type="email" class="form-control" id="ownerEmail" name="shop_email" data-parsley-required="true"
                                 data-parsley-type="email" data-parsley-trigger="change">
-                        </div>
-                        <div class="mb-3">
+                        </div> 
+                        <div class="mb-3 col-6">
                             <label for="ownerPhone" class="form-label">Phone</label>
                             <input type="number" class="form-control" id="ownerPhone" name="shop_phone" data-parsley-required="true"
                                 data-parsley-type="digits" data-parsley-length="[10, 15]"
                                 data-parsley-length-message="Phone number must be between 10 to 15 digits"
                                 data-parsley-trigger="change">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 col-6">
                             <label for="ownerDomain" class="form-label">Domain</label>
                             <input type="url" class="form-control" id="ownerDomain" name="domain" data-parsley-required="true"
                                 data-parsley-trigger="change">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 col-6">
                             <label for="ownerAddress" class="form-label">Address</label>
                             <textarea class="form-control" id="ownerAddress" name="address" rows="3" data-parsley-required="true"
                                 data-parsley-trigger="change"></textarea>
