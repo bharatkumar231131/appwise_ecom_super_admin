@@ -24,6 +24,11 @@
                     </a>
                 </div>
             </div>
+            <div class="col-12">
+                <a class="btn btn-secondary backbtn" href="{{ url()->previous() }}">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
     </div>
 
