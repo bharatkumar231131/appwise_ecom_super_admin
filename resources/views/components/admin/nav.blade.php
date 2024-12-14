@@ -264,6 +264,5 @@ $admin_logo = $setting['admin_logo'] ?? '';
         </div>
     </div>
     <div class="sa-app__sidebar-shadow"></div>
-    <d i
-        v="" class="sa-app__sidebar-backdrop" data-sa-close-sidebar=""></d>
+    <d i v="" class="sa-app__sidebar-backdrop" data-sa-close-sidebar=""></d>
 </div>
