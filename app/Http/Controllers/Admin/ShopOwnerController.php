@@ -89,6 +89,9 @@ class ShopOwnerController extends Controller
             "status" => $request->status
         ]);
 
+        PackageBuy::where('shop_owner_id', $request->owner_id)->update([
+            "status" => $request->status
+        ]);
         return response()->json(['success' => true]);
     }
 

@@ -67,7 +67,6 @@
                             <dd class="col-lg-9 text-muted">{{ $shopOwnerDetails->status ?? 'N/A' }}
                             </dd>
                         </div>
-
                     </div>
                 </div>
             </div>
