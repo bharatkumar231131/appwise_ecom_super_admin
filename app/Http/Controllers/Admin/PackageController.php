@@ -189,6 +189,7 @@ class PackageController extends Controller
 
         // $domainUrl = 'http://localhost/appwise';
         $domainUrl = $shopOwner['domain'];
+        // return $domainUrl;
         $response = $this->packageLogicService->sendPackageUpgradeData($domainUrl, $data);
         $response = json_encode($response);
 
@@ -201,10 +202,10 @@ class PackageController extends Controller
 
         return redirect()->back()->with('success_message', 'Package Upgrade Successfully');
 
-        // return response()->json([
-        //     'message' => 'Package upgraded successfully!',
-        //     'response' => $response,
-        // ]);
+        return response()->json([
+            'message' => 'Package upgraded successfully!',
+            'response' => $response,
+        ]);
     }
 
     public function editPackageBuy($id)

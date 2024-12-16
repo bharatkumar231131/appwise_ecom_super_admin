@@ -31,7 +31,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::get('dashboard', 'AdminController@dashboard');
         Route::get('logout', 'AdminController@logout');
         Route::match(['get', 'post'], 'update-admin-password', 'AdminController@updateAdminPassword'); // GET request to view the update password <form>, and a POST request to submit the update password <form>
-        Route::post('check-admin-password', 'AdminController@checkAdminPassword'); 
+        Route::post('check-admin-password', 'AdminController@checkAdminPassword');
         //packages
         Route::get('packages', 'PackageController@packages');
         Route::match(['get', 'post'], 'add-edit-package/{id?}', 'PackageController@addeditpackage')->name('admin.addeditpackage');
@@ -101,7 +101,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
 
 Route::namespace('App\Http\Controllers\Front')->group(function () {
-    Route::get('/', 'IndexController@index')->name('home');
+    // Route::get('/', 'IndexController@index')->name('home');
     Route::get('/home', 'IndexController@index')->name('home');
     Route::any('/package/buy/{id}', 'IndexController@PackageBuy')->name('package.buy');
     Route::any('/save_owner_details/{id}', 'IndexController@saveOwnerDetails')->name('package.saveOwnerDetails');
