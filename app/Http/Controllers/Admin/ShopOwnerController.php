@@ -33,9 +33,12 @@ class ShopOwnerController extends Controller
                 'status' => 'required|in:active,inactive,suspended',
                 'start_date' => 'required|date',
                 'end_date' => 'nullable|date',
+                'email' => 'required|email',
+                'phone' => 'required',
+                'address' => 'required'
             ]);
 
-            $package = Package::find($validated['package_id']);
+            $package = Package::find($validated['package_id']);   
 
             $days = $package->days ?? 0;
             $startDate = $validated['start_date'] ?? now()->toDateString();
@@ -46,8 +49,20 @@ class ShopOwnerController extends Controller
                 $shopOwner->update($validated);
                 $message = 'Shop Owner updated successfully.';
             } else {
-                ShopOwner::create($validated);
+                $shopOwner = ShopOwner::create($validated);
                 $message = 'Shop Owner added successfully.';
+
+                PackageBuy::create([
+                    'package_id' => $package->id,
+                    'shop_owner_id' => $shopOwner->id,
+                    'package_name' => $package->name,
+                    'number_of_section' => $package->number_of_section,
+                    'number_of_category' => $package->number_of_category,
+                    'number_of_product' => $package->number_of_product,
+                    'price' => $package->price,
+                    'days' => $package->days,
+                    'status' => $shopOwner->status,
+                ]);
             }
             return redirect()->route('admin.shopOwners')->with('success_message', $message);
         }
@@ -85,6 +100,8 @@ class ShopOwnerController extends Controller
         ShopOwner::where('id', $request->owner_id)->update([
             "status" => $request->status
         ]);
+
+        
 
         return response()->json(['success' => true]);
     }

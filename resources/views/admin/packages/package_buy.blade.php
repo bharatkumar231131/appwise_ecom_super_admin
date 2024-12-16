@@ -71,26 +71,19 @@
                             <td>{{ $package->days }}</td>
                             <td>
                                 @if($package->status == 'active')
-                                <span class="badge bg-success @can('package_buy status') change-status @endcan" data-id="
+                                <span class="badge bg-success " data-id="
                                     {{ $package->id }}" data-status="active">Active</span>
                                 @elseif($package->status == 'inactive')
-                                <span class="badge bg-danger @can('package_buy status') change-status @endcan" data-id="
+                                <span class="badge bg-danger " data-id="
                                     {{ $package->id }}" data-status="inactive">Inactive</span>
                                 @else
                                 <span class="badge bg-secondary">N/A</span>
                                 @endif
                             </td>
                             <td>
-                                <div class="d-flex gap-3">
                                     <a href="{{ url('admin/edit_package_buy/' . $package->id) }}" class="actionbtn-tb actionbtn-edit"
                                         data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Edit"><i
                                             class="far fa-edit text-white"></i></a>
-                                    <a href="#" data-url="{{ route('admin.delete', ['type' => 'package_buy', 'id' => $package->id]) }}"
-                                        class="actionbtn-tb actionbtn-remove delete-btn" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-original-title="Delete">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </a>
-                                </div>
                             </td>
                         </tr>
                         @endforeach

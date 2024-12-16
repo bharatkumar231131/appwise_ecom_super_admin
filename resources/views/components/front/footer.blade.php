@@ -3,6 +3,9 @@
 $front_logo = App\Models\Setting::where('id', '1')->first();
 $front_logo = $front_logo->front_logo;
 
+$admin = App\Models\User::where('id' , 2)->first();
+$adminEmail = $admin->email;
+$adminPhone = $admin->mobile;
 ?>
 
 <!-- Footer-Section start -->
@@ -30,8 +33,8 @@ $front_logo = $front_logo->front_logo;
                         <div class="logo"> <img src="{{ asset('public/front/images/logo/' . $front_logo) }}" alt="image">
                         </div>
                         <ul>
-                            <li><a href="#">support@example.com</a></li>
-                            <li><a href="#">+1-900-123 4567</a></li>
+                            <li><a href="#">{{$adminEmail}}</a></li>
+                            <li><a href="#"> {{$adminPhone}}</a></li>
                         </ul>
                         <ul class="social_media">
                             <li><a class="d-flex justify-content-center align-items-center" href="#"><i class="icofont-facebook"></i></a></li>

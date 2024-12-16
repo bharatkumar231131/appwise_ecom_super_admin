@@ -38,8 +38,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <button class="btn white_btn">Contact Us</button>
+                        <a href="#inquiry">
+                            <button class="btn white_btn">Get Quit</button>
                         </a>
                     </li>
                 </ul>
@@ -453,7 +453,7 @@
     <!-- pricing box yearly end -->
 
     <p class="contact_text" data-aos="fade-up" data-aos-duration="1500">Not sure what to choose ? <a
-            href="contact.html">contact us</a> for custom packages</p>
+            href="#inquiry">Get Quit </a> for custom packages</p>
     </div>
     <!-- container start end -->
 </section>
