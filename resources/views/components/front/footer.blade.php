@@ -55,7 +55,7 @@ $adminPhone = $admin->mobile;
                             <li><a href="#">About us</a></li>
                             <li><a href="#">Services</a></li>
                             <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#inquiry">Get Quote</a></li>
                         </ul>
                     </div>
                 </div>
