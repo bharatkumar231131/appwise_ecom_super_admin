@@ -49,8 +49,20 @@ class ShopOwnerController extends Controller
                 $shopOwner->update($validated);
                 $message = 'Shop Owner updated successfully.';
             } else {
-                ShopOwner::create($validated);
+                $shopOwner = ShopOwner::create($validated);
                 $message = 'Shop Owner added successfully.';
+
+                PackageBuy::create([
+                    'package_id' => $package->id,
+                    'shop_owner_id' => $shopOwner->id,
+                    'package_name' => $package->name,
+                    'number_of_section' => $package->number_of_section,
+                    'number_of_category' => $package->number_of_category,
+                    'number_of_product' => $package->number_of_product,
+                    'price' => $package->price,
+                    'days' => $package->days,
+                    'status' => $shopOwner->status,
+                ]);
             }
             return redirect()->route('admin.shopOwners')->with('success_message', $message);
         }
