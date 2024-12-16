@@ -3,6 +3,10 @@
 $front_logo = App\Models\Setting::where('id', '1')->first();
 $front_logo = $front_logo->front_logo;
 
+$admin = App\Models\User::where('id' , '1')->first();
+$adminEmail = $admin->email;
+$adminPhone = $admin->mobile;
+
 ?>
 
 <!-- Footer-Section start -->
@@ -30,8 +34,8 @@ $front_logo = $front_logo->front_logo;
                         <div class="logo"> <img src="{{ asset('public/front/images/logo/' . $front_logo) }}" alt="image">
                         </div>
                         <ul>
-                            <li><a href="#">support@example.com</a></li>
-                            <li><a href="#">+1-900-123 4567</a></li>
+                            <li><a href="#">{{$adminEmail}}</a></li>
+                            <li><a href="#">{{ $adminPhone }}</a></li>
                         </ul>
                         <ul class="social_media">
                             <li><a class="d-flex justify-content-center align-items-center" href="#"><i class="icofont-facebook"></i></a></li>
@@ -63,7 +67,7 @@ $front_logo = $front_logo->front_logo;
                         <ul>
                             <li><a href="#">FAQs</a></li>
                             <li><a href="#">Support</a></li>
-                            <li><a href="#">How it works</a></li>
+                            <li><a href="#how_it_work">How it works</a></li>
                             <li><a href="{{ url('/term_&_condition') }}">Terms & conditions</a></li>
                             <li><a href="{{ url('/privacy_policy') }}">Privacy policy</a></li>
                         </ul>
@@ -83,7 +87,7 @@ $front_logo = $front_logo->front_logo;
             <!-- row start -->
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <p>© Copyrights 2024. All rights reserved.</p>
+                    <p>E-commerce Solution by Appwise All rights reserved © 2024</p>
                 </div>
             </div>
             <!-- row end -->

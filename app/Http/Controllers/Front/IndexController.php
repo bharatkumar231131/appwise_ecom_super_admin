@@ -8,6 +8,7 @@ use App\Models\Package;
 use App\Models\ShopOwner;
 use App\Models\PackageBuy;
 use App\Models\Page;
+use App\Models\User;
 
 class IndexController extends Controller
 {
@@ -15,7 +16,8 @@ class IndexController extends Controller
     public function index()
     {
         $packages = Package::all();
-        return view('front.index', compact('packages'));
+        $users = User::where('id', '1')->get();
+        return view('front.index', compact('packages','users'));
     }
 
     public function packageBuy($id)
