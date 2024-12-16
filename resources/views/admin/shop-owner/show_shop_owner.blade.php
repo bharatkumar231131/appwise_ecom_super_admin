@@ -39,6 +39,22 @@
                             <dd class="col-lg-9 text-muted">{{ $shopOwnerDetails->shop_name ?? 'N/A' }}</dd>
                         </div>
                         <div class="row mb-3">
+                            <dt class="col-lg-3">Shop-Email:</dt>
+                            <dd class="col-lg-9 text-muted">{{ $shopOwnerDetails->email ?? 'N/A' }}</dd>
+                        </div>
+                        <div class="row mb-3">
+                            <dt class="col-lg-3">Shop-Address:</dt>
+                            <dd class="col-lg-9 text-muted">{{ $shopOwnerDetails->address ?? 'N/A' }}</dd>
+                        </div>
+                        <div class="row mb-3">
+                            <dt class="col-lg-3">Shop-Phone:</dt>
+                            <dd class="col-lg-9 text-muted">{{ $shopOwnerDetails->phone ?? 'N/A' }}</dd>
+                        </div>
+                        <div class="row mb-3">
+                            <dt class="col-lg-3">Shop-Name:</dt>
+                            <dd class="col-lg-9 text-muted">{{ $shopOwnerDetails->shop_name ?? 'N/A' }}</dd>
+                        </div>
+                        <div class="row mb-3">
                             <dt class="col-lg-3">Domain:</dt>
                             <dd class="col-lg-9 text-muted">{{ $shopOwnerDetails->domain ?? 'N/A' }}</dd>
                         </div>

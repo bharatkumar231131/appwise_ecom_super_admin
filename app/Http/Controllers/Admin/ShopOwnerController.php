@@ -33,6 +33,9 @@ class ShopOwnerController extends Controller
                 'status' => 'required|in:active,inactive,suspended',
                 'start_date' => 'required|date',
                 'end_date' => 'nullable|date',
+                'email' => 'required|email',
+                'phone' => 'required',
+                'address' => 'required'
             ]);
 
             $package = Package::find($validated['package_id']);
@@ -90,11 +93,9 @@ class ShopOwnerController extends Controller
     }
 
 
-    public function showShopOwner($id){
+    public function showShopOwner($id)
+    {
         $shopOwnerDetails = ShopOwner::with('package')->find($id);
-        return view('admin.shop-owner.show_shop_owner' , compact('shopOwnerDetails'));
+        return view('admin.shop-owner.show_shop_owner', compact('shopOwnerDetails'));
     }
-
-   
-
 }

@@ -54,11 +54,14 @@
 
                         @forelse ($users as $user)
                         <tr>
+
                             <td>{{ $user['id'] ?? "N/A"}}</td>
                             <td>{{ $user['name'] ?? "N/A"}}</td>
                             <td>{{ $user['email'] }}</td>
                             <td>{{ $user->roles->pluck('name')->implode(', ') ?? "N/A"}}</td>
                             <td>
+                                @if($user->roles->pluck('name')->implode(', ') != 'superadmin')
+
                                 <div class="d-flex gap-3">
                                     <a href="{{ route('users.edit', $user['id']) }}" class="actionbtn-tb
                                 actionbtn-edit" data-bs-toggle="tooltip" data-bs-placement="top"
@@ -70,17 +73,15 @@
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                 </div>
+                                @endif
                             </td>
                         </tr>
                         @empty
                         @endforelse
-
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
-
-
 @endsection
