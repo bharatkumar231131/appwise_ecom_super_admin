@@ -652,7 +652,7 @@
                     <p>We're here to help! Reach out to our team, and we'll provide the answers you need to get started
                         with your e-commerce system.</p>
                 </div>
-                <a href="faq.html" class="btn puprple_btn">READ FAQ</a>
+                <a href="#faq" class="btn puprple_btn">READ FAQ</a>
                 <ul class="contact_info_list">
                     <li>
                         <div class="img">
@@ -693,7 +693,7 @@
 <!-- How-It-Workes-Section-end -->
 
 <!-- FAQ-Section start -->
-<section class="row_am faq_section">
+<section class="row_am faq_section" id="faq">
     <!-- container start -->
     <div class="container">
         <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
