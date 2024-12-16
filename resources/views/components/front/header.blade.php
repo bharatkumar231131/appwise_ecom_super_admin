@@ -33,7 +33,7 @@ $front_logo = $front_logo->front_logo;
                         <a class="nav-link white_btn" href="https://123ecommerce.co.za/">GET DEMO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link dark_btn" href="#inquiry">GET Quit</a>
+                        <a class="nav-link dark_btn" href="#inquiry">GET Quote</a>
                     </li>
                 </ul>
             </div>

@@ -55,7 +55,7 @@ $adminPhone = $admin->mobile;
                             <li><a href="#">About us</a></li>
                             <li><a href="#">Services</a></li>
                             <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#inquiry">Get Quote</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,8 +65,8 @@ $adminPhone = $admin->mobile;
                     <div class="links">
                         <h3>Help & Suport</h3>
                         <ul>
-                            <li><a href="#">FAQs</a></li>
-                            <li><a href="#">Support</a></li>
+                            <li><a href="#faq">FAQs</a></li>
+                            <li><a href="#inquiry">Support</a></li>
                             <li><a href="#how_it_work">How it works</a></li>
                             <li><a href="{{ url('/term_&_condition') }}">Terms & conditions</a></li>
                             <li><a href="{{ url('/privacy_policy') }}">Privacy policy</a></li>

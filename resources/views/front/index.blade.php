@@ -39,7 +39,7 @@
                         </li>
                         <li>
                             <a href="#inquiry">
-                                <button class="btn white_btn">Get Quit</button>
+                                <button class="btn white_btn">Get Quote</button>
                             </a>
                         </li>
                     </ul>
@@ -457,7 +457,7 @@
 
             <p class="contact_text" data-aos="fade-up" data-aos-duration="1500">Not sure what to choose ? <a
                     href="#inquiry">Get
-                    Quit </a> for custom packages</p>
+                    Quote </a> for custom packages</p>
         </div>
         <!-- container start end -->
     </section>
