@@ -466,7 +466,7 @@
     <!-- Beautifull-interface-Section start -->
     <section class="row_am interface_section">
         <!-- container start -->
-        <div class="container-fluid">
+        <div class="container">
             <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
                 <!-- h2 -->
                 <h2>Beautiful Interface Designed for <span>Seamless Shopping</span></h2>
@@ -477,7 +477,8 @@
                     levels of the journey.
                 </p>
             </div>
-
+        </div>
+        <div class="container-fluid">
             <!-- screen slider start -->
             <div class="screen_slider">
                 <div id="screen_slider" class="owl-carousel owl-theme">
