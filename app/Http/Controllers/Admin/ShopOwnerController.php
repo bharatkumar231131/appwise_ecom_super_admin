@@ -33,6 +33,9 @@ class ShopOwnerController extends Controller
                 'status' => 'required|in:active,inactive,suspended',
                 'start_date' => 'required|date',
                 'end_date' => 'nullable|date',
+                'email' => 'required|email',
+                'phone' => 'required',
+                'address' => 'required'
             ]);
 
             $package = Package::find($validated['package_id']);
