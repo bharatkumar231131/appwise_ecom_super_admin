@@ -652,7 +652,7 @@
                     <p>We're here to help! Reach out to our team, and we'll provide the answers you need to get started
                         with your e-commerce system.</p>
                 </div>
-                <a href="faq.html" class="btn puprple_btn">READ FAQ</a>
+                <a href="#faq" class="btn puprple_btn">READ FAQ</a>
                 <ul class="contact_info_list">
                     <li>
                         <div class="img">
@@ -660,7 +660,7 @@
                         </div>
                         <div class="text">
                             <span>Email Us</span>
-                            <a href="mailto:example@gmail.com">example@gmail.com</a>
+                            <a href="#">{{$users[0]->email}}</a>
                         </div>
                     </li>
                     <li>
@@ -669,7 +669,7 @@
                         </div>
                         <div class="text">
                             <span>Call Us</span>
-                            <a href="tel:+1(888)553-46-11">+1 (888) 553-46-11</a>
+                            <a href="#">{{$users[0]->mobile}}</a>
                         </div>
                     </li>
                     <li>
@@ -678,7 +678,7 @@
                         </div>
                         <div class="text">
                             <span>Visit Us</span>
-                            <p>5687, Business Avenue, New York, USA 5687</p>
+                            <p>{{$users[0]->address}}</p>
                         </div>
                     </li>
                 </ul>
@@ -693,7 +693,7 @@
 <!-- How-It-Workes-Section-end -->
 
 <!-- FAQ-Section start -->
-<section class="row_am faq_section">
+<section class="row_am faq_section" id="faq">
     <!-- container start -->
     <div class="container">
         <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">

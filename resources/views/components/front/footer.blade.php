@@ -3,9 +3,10 @@
 $front_logo = App\Models\Setting::where('id', '1')->first();
 $front_logo = $front_logo->front_logo;
 
-$admin = App\Models\User::where('id' , 2)->first();
+$admin = App\Models\User::where('id' , '1')->first();
 $adminEmail = $admin->email;
 $adminPhone = $admin->mobile;
+
 ?>
 
 <!-- Footer-Section start -->
@@ -34,7 +35,7 @@ $adminPhone = $admin->mobile;
                         </div>
                         <ul>
                             <li><a href="#">{{$adminEmail}}</a></li>
-                            <li><a href="#"> {{$adminPhone}}</a></li>
+                            <li><a href="#">{{ $adminPhone }}</a></li>
                         </ul>
                         <ul class="social_media">
                             <li><a class="d-flex justify-content-center align-items-center" href="#"><i class="icofont-facebook"></i></a></li>
@@ -66,7 +67,7 @@ $adminPhone = $admin->mobile;
                         <ul>
                             <li><a href="#">FAQs</a></li>
                             <li><a href="#">Support</a></li>
-                            <li><a href="#">How it works</a></li>
+                            <li><a href="#how_it_work">How it works</a></li>
                             <li><a href="{{ url('/term_&_condition') }}">Terms & conditions</a></li>
                             <li><a href="{{ url('/privacy_policy') }}">Privacy policy</a></li>
                         </ul>
@@ -86,7 +87,7 @@ $adminPhone = $admin->mobile;
             <!-- row start -->
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <p>© Copyrights 2024. All rights reserved.</p>
+                    <p>E-commerce Solution by Appwise All rights reserved © 2024</p>
                 </div>
             </div>
             <!-- row end -->

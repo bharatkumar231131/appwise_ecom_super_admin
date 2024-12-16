@@ -107,11 +107,9 @@ class ShopOwnerController extends Controller
     }
 
 
-    public function showShopOwner($id){
+    public function showShopOwner($id)
+    {
         $shopOwnerDetails = ShopOwner::with('package')->find($id);
-        return view('admin.shop-owner.show_shop_owner' , compact('shopOwnerDetails'));
+        return view('admin.shop-owner.show_shop_owner', compact('shopOwnerDetails'));
     }
-
-   
-
 }
