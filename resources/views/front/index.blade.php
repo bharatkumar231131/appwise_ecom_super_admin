@@ -182,15 +182,15 @@
             <div class="col-lg-6">
                 <!-- UI Image -->
                 <div class="ui_images" data-aos="fade-in" data-aos-duration="1500">
-                    <div class="left_img">
-                        <img class="moving_position_animatin" src="{{ asset('public/front/images/modern01.png') }}" alt="image">
-                    </div>
+                    {{-- <div class="left_img"> --}}
+                        <img class="moving_position_animatin" src="{{ asset('public/front/images/advantageimg.png') }}" alt="image">
+                    {{-- </div> --}}
                     <!-- UI Image -->
-                    <div class="right_img">
+                    {{-- <div class="right_img">
                         <img class="moving_position_animatin" src="{{ asset('public/front/images/secure_data.png') }}" alt="image">
                         <img class="moving_position_animatin" src="{{ asset('public/front/images/modern02.png') }}" alt="image">
                         <img class="moving_position_animatin" src="{{ asset('public/front/images/modern03.png') }}" alt="image">
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
