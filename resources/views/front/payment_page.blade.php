@@ -73,7 +73,7 @@
                         </div>--}}
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="payment_method" id="payfast" value="payfast" required>
-                            <label class="form-check-label" for="payfast">Pay with PayFast</label>
+                            <label class="form-check-label" for="payfast">Online Payment</label>
                         </div>
                     </div>
 

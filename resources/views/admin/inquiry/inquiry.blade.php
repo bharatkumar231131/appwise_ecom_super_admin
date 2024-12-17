@@ -44,6 +44,7 @@
                 <table class="sa-datatables-init" data-order="[[ 0, &quot;desc&quot; ]]" data-sa-search-input="#table-search">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
@@ -56,6 +57,7 @@
                     <tbody>
                         @foreach ($inquiries as $inquiry)
                         <tr>
+                            <td>{{ $inquiry->id }}</td>
                             <td>{{ $inquiry->name }}</td>
                             <td>{{ $inquiry->email }}</td>
                             <td>{{ $inquiry->phone }}</td>

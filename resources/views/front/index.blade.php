@@ -828,36 +828,42 @@
                     <div class="modal-body row">
 
                         <div class="mb-3 col-6">
-                            <label for="ownerName" class="form-label">Owner Name</label>
-                            <input type="text" class="form-control" id="ownerName" name="owner_name" data-parsley-required="true"
-                                data-parsley-trigger="change">
+                            <label for="ownerName" class="form-label">Owner Name <span class="text-danger">
+                                    *</span></label>
+                            <input type="text" class="form-control" id="ownerName" name="owner_name" placeholder="Enter Name"
+                                data-parsley-required="true" data-parsley-trigger="change">
                         </div>
                         <div class="mb-3 col-6">
-                            <label for="ownerShop" class="form-label">Shop Name</label>
-                            <input type="text" class="form-control" id="ownerShop" name="shop_name" data-parsley-required="true"
-                                data-parsley-trigger="change">
+                            <label for="ownerShop" class="form-label">Shop Name <span class="text-danger">
+                                    *</span></label>
+                            <input type="text" class="form-control" id="ownerShop" name="shop_name" placeholder="Enter Shop Name"
+                                data-parsley-required="true" data-parsley-trigger="change">
                         </div>
                         <div class="mb-3 col-6">
-                            <label for="ownerEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="ownerEmail" name="shop_email" data-parsley-required="true"
-                                data-parsley-type="email" data-parsley-trigger="change">
+                            <label for="ownerEmail" class="form-label">Email <span class="text-danger">
+                                    *</span></label>
+                            <input type="email" class="form-control" id="ownerEmail" name="shop_email" placeholder="Enter Email"
+                                data-parsley-required="true" data-parsley-type="email" data-parsley-trigger="change">
                         </div>
                         <div class="mb-3 col-6">
-                            <label for="ownerPhone" class="form-label">Phone</label>
+                            <label for="ownerPhone" class="form-label">Phone <span class="text-danger">
+                                    *</span></label>
                             <input type="number" class="form-control" id="ownerPhone" name="shop_phone" data-parsley-required="true"
-                                data-parsley-type="digits" data-parsley-length="[10, 15]"
+                                data-parsley-type="digits" placeholder="Enter Phone Number" data-parsley-length="[10, 15]"
                                 data-parsley-length-message="Phone number must be between 10 to 15 digits"
                                 data-parsley-trigger="change">
                         </div>
                         <div class="mb-3 col-6">
-                            <label for="ownerDomain" class="form-label">Domain</label>
-                            <input type="url" class="form-control" id="ownerDomain" name="domain" data-parsley-required="true"
-                                data-parsley-trigger="change">
+                            <label for="ownerDomain" class="form-label">Domain <span class="text-danger">
+                                    *</span> </label>
+                            <input type="url" class="form-control" id="ownerDomain" name="domain" placeholder="https://example.co.za"
+                                data-parsley-required="true" data-parsley-trigger="change">
                         </div>
                         <div class="mb-3 col-6">
-                            <label for="ownerAddress" class="form-label">Address</label>
-                            <textarea class="form-control" id="ownerAddress" name="address" rows="3" data-parsley-required="true"
-                                data-parsley-trigger="change"></textarea>
+                            <label for="ownerAddress" class="form-label">Address <span class="text-danger">
+                                    *</span></label>
+                            <textarea class="form-control" placeholder="Enter Address" id="ownerAddress" name="address" rows="3"
+                                data-parsley-required="true" data-parsley-trigger="change"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
