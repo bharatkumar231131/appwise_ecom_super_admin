@@ -134,7 +134,7 @@ class ShopOwnerController extends Controller
             "id" => '1'
         ];
 
-        $domainUrl = 'http://localhost/appwise';
+        $domainUrl = 'http://localhost/appwise-ecom';
         // $domainUrl = $shopOwner['domain'];
 
         $response = $this->packageLogicService->saleReports($domainUrl, $data);
