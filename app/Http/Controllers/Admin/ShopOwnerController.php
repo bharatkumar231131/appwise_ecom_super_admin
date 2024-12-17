@@ -147,11 +147,17 @@ class ShopOwnerController extends Controller
             ], 500);
         }
 
+        $salesData = $response['package'] ?? ['labels' => [], 'data' => []];
+
+        return view('admin.sales.sales-report', [
+            'salesData' => $salesData
+        ]);
+
         // return redirect()->back()->with('success_message', 'Package Upgrade Successfully');
 
-        return response()->json([
-            'message' => 'Sales Reports!',
-            'response' => $response,
-        ]);
+        // return response()->json([
+        //     'message' => 'Sales Reports!',
+        //     'response' => $response,
+        // ]);
     }
 }
