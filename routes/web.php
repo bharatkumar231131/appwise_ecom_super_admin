@@ -96,6 +96,10 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         // Route::get('/shop/upgrade-package', 'PackageController@upgradePackage');
         Route::post('/test-package-upgrade', 'PackageController@upgradePackage')->name('testpackage');
     });
+
+    // Route::fallback(function () {
+    //     return view('admin-error.404');
+    // });
 });
 
 
@@ -119,4 +123,8 @@ Route::namespace('App\Http\Controllers\Front')->group(function () {
 
     Route::get('/term_&_condition', 'IndexController@termAndCondition');
     Route::get('/privacy_policy', 'IndexController@privacyPolicy');
+
+    // Route::fallback(function () {
+    //     return view('front-error.404');
+    // });
 });
