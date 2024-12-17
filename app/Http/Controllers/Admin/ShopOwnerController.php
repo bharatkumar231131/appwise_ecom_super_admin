@@ -9,10 +9,17 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\PackageBuy;
 use Carbon\Carbon;
-
+use App\Services\PackageLogicService;
 
 class ShopOwnerController extends Controller
 {
+    protected $packageLogicService;
+
+    public function __construct(PackageLogicService $packageLogicService)
+    {
+        $this->packageLogicService = $packageLogicService;
+    }
+
     public function index()
     {
         $shopOwners = ShopOwner::all();
@@ -112,5 +119,39 @@ class ShopOwnerController extends Controller
     {
         $shopOwnerDetails = ShopOwner::with('package')->find($id);
         return view('admin.shop-owner.show_shop_owner', compact('shopOwnerDetails'));
+    }
+
+    public function salesReport()
+    {
+        $shopOwners = ShopOwner::all();
+        return view('admin.sales.shop_owners', compact('shopOwners'));
+        // return "hello";
+    }
+
+    public function shopSaleReports(Request $request)
+    {
+        $data = [
+            "id" => '1'
+        ];
+
+        $domainUrl = 'http://localhost/appwise';
+        // $domainUrl = $shopOwner['domain'];
+
+        $response = $this->packageLogicService->saleReports($domainUrl, $data);
+        $response = json_encode($response);
+
+        if (isset($response['error']) && $response['error']) {
+            return response()->json([
+                'message' => 'Failed to upgrade package.',
+                'details' => $response['message'],
+            ], 500);
+        }
+
+        // return redirect()->back()->with('success_message', 'Package Upgrade Successfully');
+
+        return response()->json([
+            'message' => 'Sales Reports!',
+            'response' => $response,
+        ]);
     }
 }
