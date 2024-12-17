@@ -14,9 +14,6 @@
                 </nav>
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 m-0">Shop Owners</h1>
-                    @can('create owner')
-                    <a href="{{ route('admin.addEditShopOwner') }}" class="btn btn-primary">Export</a>
-                    @endcan
                 </div>
 
                 @if (Session::has('success_message'))

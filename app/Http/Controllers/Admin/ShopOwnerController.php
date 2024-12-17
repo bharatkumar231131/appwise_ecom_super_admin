@@ -127,33 +127,58 @@ class ShopOwnerController extends Controller
         return view('admin.sales.shop_owners', compact('shopOwners'));
         // return "hello";
     }
-
     public function shopSaleReports(Request $request)
     {
         $data = [
             "id" => '1'
         ];
-
-        $domainUrl = 'http://localhost/appwise-ecom';
-        // $domainUrl = $shopOwner['domain'];
-
+    
+        $domainUrl = 'http://localhost/appwise-ecom'; // Example URL
+    
+        // Get the sales report response (which is already an array)
         $response = $this->packageLogicService->saleReports($domainUrl, $data);
-        $response = json_encode($response);
-
+    
+        // Access the 'order' array directly from the response
+        $salesData = $response['order']; // This contains the list of orders
+    
+        // Check for any error in the response (optional, as a good practice)
         if (isset($response['error']) && $response['error']) {
             return response()->json([
                 'message' => 'Failed to upgrade package.',
                 'details' => $response['message'],
             ], 500);
         }
-
-        // return redirect()->back()->with('success_message', 'Package Upgrade Successfully');
-
-        $data = response()->json([
-            'message' => 'Sales Reports!',
-            'response' => $response,
+    
+        // Get filter values from request
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
+        $orderStatus = $request->input('order_status');
+    
+        // Apply filters if set
+        if ($startDate) {
+            $salesData = array_filter($salesData, function($sale) use ($startDate) {
+                return \Carbon\Carbon::parse($sale['created_at'])->gte(\Carbon\Carbon::parse($startDate));
+            });
+        }
+    
+        if ($endDate) {
+            $salesData = array_filter($salesData, function($sale) use ($endDate) {
+                return \Carbon\Carbon::parse($sale['created_at'])->lte(\Carbon\Carbon::parse($endDate));
+            });
+        }
+    
+        if ($orderStatus && $orderStatus !== 'Choose Order Status') {
+            $salesData = array_filter($salesData, function($sale) use ($orderStatus) {
+                return $sale['order_status'] === $orderStatus;
+            });
+        }
+    
+        // Return the filtered sales data to the view
+        return view('admin.sales.sales-report', [
+            'salesData' => $salesData
         ]);
-        return $data;
-
     }
+    
+
+
 }
