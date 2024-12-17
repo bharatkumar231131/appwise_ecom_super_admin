@@ -57,6 +57,9 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
         Route::match(['get', 'post'], 'shop-owners-details/{id}', 'ShopOwnerController@showShopOwner');
 
+        Route::get('sales-reports', 'ShopOwnerController@salesReport');
+        Route::match(['get', 'post'], 'shop-sales-report/{id}', 'ShopOwnerController@shopSaleReports');
+
 
         Route::match(['get', 'post'], 'admin-details', 'AdminController@adminDetails');
         Route::match(['get', 'post'], 'update-admin-detail', 'AdminController@updateAdminDetails');
@@ -95,7 +98,6 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
         // Route::get('/shop/upgrade-package', 'PackageController@upgradePackage');
         Route::post('/test-package-upgrade', 'PackageController@upgradePackage')->name('testpackage');
-        Route::get('/sale-reports', 'PackageController@saleReports')->name('sale_reports');
     });
 
     // Route::fallback(function () {
@@ -106,7 +108,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
 
 Route::namespace('App\Http\Controllers\Front')->group(function () {
-    Route::get('/', 'IndexController@index')->name('home');
+    // Route::get('/', 'IndexController@index')->name('home');
     Route::get('/home', 'IndexController@index')->name('home');
     Route::any('/package/buy/{id}', 'IndexController@PackageBuy')->name('package.buy');
     Route::any('/save_owner_details/{id}', 'IndexController@saveOwnerDetails')->name('package.saveOwnerDetails');

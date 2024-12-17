@@ -208,60 +208,6 @@ class PackageController extends Controller
         ]);
     }
 
-    public function saleReports(Request $request)
-    {
-        // $shopOwner = ShopOwner::where('id', $request->owner_id)->first();
-
-        // PackageBuy::where('id', $request->id)->update([
-        //     "package_name" => $request->name,
-        //     "number_of_section" => $request->number_of_section,
-        //     "number_of_category" => $request->number_of_category,
-        //     "number_of_product" => $request->number_of_product,
-        //     "price" => $request->price,
-        //     "days" => $request->days
-        // ]);
-
-        // $data = [
-        //     "package_id" => $request->id,
-        //     "name" => $request->name,
-        //     "number_of_section" => $request->number_of_section,
-        //     "number_of_category" => $request->number_of_category,
-        //     "number_of_product" => $request->number_of_product,
-        //     "price" => $request->price,
-        //     "days" => $request->days
-        // ];
-
-        $data = [
-            "id" => '1'
-        ];
-
-        // $data = json_encode($data);
-
-        // PackageLog::create([
-        //     'logs' => $data
-        // ]);
-
-        $domainUrl = 'http://localhost/appwise-ecom';
-        // $domainUrl = $shopOwner['domain'];
-        // return $domainUrl;
-        $response = $this->packageLogicService->saleReports($domainUrl, $data);
-        $response = json_encode($response);
-
-        if (isset($response['error']) && $response['error']) {
-            return response()->json([
-                'message' => 'Failed to upgrade package.',
-                'details' => $response['message'],
-            ], 500);
-        }
-
-        // return redirect()->back()->with('success_message', 'Package Upgrade Successfully');
-
-        return response()->json([
-            'message' => 'Package upgraded successfully!',
-            'response' => $response,
-        ]);
-    }
-
     public function editPackageBuy($id)
     {
         $package = PackageBuy::where('id', $id)->first();
