@@ -95,13 +95,14 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
         // Route::get('/shop/upgrade-package', 'PackageController@upgradePackage');
         Route::post('/test-package-upgrade', 'PackageController@upgradePackage')->name('testpackage');
+        Route::get('/sale-reports', 'PackageController@saleReports')->name('sale_reports');
     });
 });
 
 
 
 Route::namespace('App\Http\Controllers\Front')->group(function () {
-    // Route::get('/', 'IndexController@index')->name('home');
+    Route::get('/', 'IndexController@index')->name('home');
     Route::get('/home', 'IndexController@index')->name('home');
     Route::any('/package/buy/{id}', 'IndexController@PackageBuy')->name('package.buy');
     Route::any('/save_owner_details/{id}', 'IndexController@saveOwnerDetails')->name('package.saveOwnerDetails');

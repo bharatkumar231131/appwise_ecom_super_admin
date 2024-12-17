@@ -90,6 +90,35 @@ class PackageLogicService
 
 
 
+    public function saleReports($domainUrl, $queryParams)
+    {
+        // $url = "http://localhost/appwise/api/shop-owner/update-package";
+        $endpoint = "/api/shop-owner/sales-reports";
+        $mainUrl = $domainUrl . $endpoint;
 
-    
+        $curlHandle = curl_init($mainUrl);
+        curl_setopt($curlHandle, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+        curl_setopt($curlHandle, CURLOPT_POST, true);
+        curl_setopt($curlHandle, CURLOPT_POSTFIELDS, $queryParams);
+        curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
+
+        $curlResponse = curl_exec($curlHandle);
+
+        curl_close($curlHandle);
+
+        // print_r($curlResponse); die;
+
+        // return ['error' => 'Failed to retrieve shipping charge'];
+
+        if ($curlResponse === false) {
+            return ['error' => true, 'message' => 'Failed to retrieve shipping charge'];
+        }
+
+        return json_decode($curlResponse, true);
+        // }
+        //  catch (RequestException $e) {
+        //     // Handle request errors
+        //     return ['error' => $e->getMessage()];
+        // }
+    }
 }

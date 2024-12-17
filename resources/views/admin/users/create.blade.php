@@ -3,7 +3,7 @@
 <div class="container">
     <div class="py-5">
         <div class="row g-4 align-items-center">
-            <div class="col">
+            <div class="col-12">
                 <nav class="mb-2" aria-label="breadcrumb">
                     <ol class="breadcrumb breadcrumb-sa-simple">
                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
@@ -18,11 +18,6 @@
                     <h1 class="h3 m-0">Create User</h1>
                 </div>
 
-                <div class="col-12">
-                    <a class="btn btn-secondary backbtn" href="{{ url()->previous() }}">
-                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                    </a>
-                </div>
             </div>
             <div class="col-12">
                 <a class="btn btn-secondary backbtn" href="{{ url()->previous() }}">
