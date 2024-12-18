@@ -9,11 +9,11 @@
           <ol class="breadcrumb breadcrumb-sa-simple">
             <li class="breadcrumb-item"><a href="{{ url('admin/dashboard')}}">Dashboard</a></li>
             <span>&nbsp;/&nbsp;</span>
-            <li class="breadcrumb-item active">Inquiry Details</li>
+            <li class="breadcrumb-item active">Inquiries</li>
           </ol>
         </nav>
                     
-                    <h1 class="h3 m-0">Inquiry Details</h1>
+                    <h1 class="h3 m-0">Inquiries</h1>
                 </div>
                 <div class="col-12">
                     <a class="btn btn-secondary backbtn" href="{{ url()->previous() }}">

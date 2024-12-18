@@ -105,7 +105,7 @@
                         class="form-control form-control--search mx-auto" id="table-search" />
                 </div>
                 <div class="sa-divider"></div>
-                <table class="sa-datatables-init" data-order="[[ 0, &quot;desc&quot; ]]" data-sa-search-input="#table-search">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Order Id</th>
@@ -117,24 +117,38 @@
                             <th>Payment Method</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="sales-data">
+                        @php
+                            $totalAmount = 0;
+                        @endphp
                         @foreach($salesData as $sale)
-                        <tr>
-                            <td>{{ $sale['id'] }}</td>
-                            <td>{{ \Carbon\Carbon::parse($sale['created_at'])->format('d-m-Y') }}</td>
-                            <td>{{ $sale['name'] }}</td>
-                            <td>{{ $sale['email'] }}</td>
-                            <td>{{ $sale['grand_total'] }}</td>
-                            <td>{{ $sale['order_status'] }}</td>
-                            <td>{{ $sale['payment_method'] }}</td>
-                        </tr>
+                            @php
+                                $totalAmount += $sale['grand_total'];
+                            @endphp
+                            <tr>
+                                <td>{{ $sale['id'] }}</td>
+                                <td>{{ \Carbon\Carbon::parse($sale['created_at'])->format('d-m-Y') }}</td>
+                                <td>{{ $sale['name'] }}</td>
+                                <td>{{ $sale['email'] }}</td>
+                                <td>{{ $sale['grand_total'] }}</td>
+                                <td>{{ $sale['order_status'] }}</td>
+                                <td>{{ $sale['payment_method'] }}</td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
+
+                <!-- Total Amount Row -->
+                <div class="card-footer">
+                    <div class="d-flex justify-content-between">
+                        <h4>Total Sales Amount:</h4>
+                        <h4>R {{ number_format($totalAmount, 2) }}</h4>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-    <br><br>
 </div>
 
 

@@ -9,13 +9,11 @@
                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
                         <span>&nbsp;/&nbsp;</span>
                         <li class="breadcrumb-item"><a href="{{ route('users.index') }}">Users</a></li>
-                        <span>&nbsp;/&nbsp;</span>
-                        <li class="breadcrumb-item active">Edit User</li>
-                    </ol>
+                        </ol>
                 </nav>
 
                 <div class="mb-3">
-                    <h1 class="h3 m-0">Edit User</h1>
+                    <h1 class="h3 m-0">User</h1>
                 </div>
 
                 <div class="col-12">

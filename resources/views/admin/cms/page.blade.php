@@ -14,7 +14,7 @@
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 m-0">Pages</h1>
                     @can('create page')
-                    <a href="{{ url('admin/add-edit-page') }}" class="btn btn-primary">New Page Add</a>
+                    <a href="{{ url('admin/add-edit-page') }}" class="btn btn-primary">New Create</a>
                     @endcan
                 </div>
                 @if (Session::has('success_message'))

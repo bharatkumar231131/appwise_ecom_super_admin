@@ -8,6 +8,9 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Front\PayfastController;
+use App\Exports\SalesReportExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 
 
@@ -58,6 +61,15 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::match(['get', 'post'], 'shop-owners-details/{id}', 'ShopOwnerController@showShopOwner');
 
         Route::get('sales-reports', 'ShopOwnerController@salesReport');
+        Route::match(['get', 'post'], 'shop-sales-report/{id}', 'ShopOwnerController@shopSaleReports')->name('admin.shopSaleReports');
+
+
+
+// Route::get('admin/sales-report/export', function () {
+//     return Excel::download(new SalesReportExport, 'sales_report.xlsx');
+// })->name('admin.sales.report.export');
+
+
         Route::match(['get', 'post'], 'shop-sales-report', 'ShopOwnerController@shopSaleReports')->name('admin.sales_report');
         Route::post('orders', 'ShopOwnerController@orders')->name('admin.orders');
 

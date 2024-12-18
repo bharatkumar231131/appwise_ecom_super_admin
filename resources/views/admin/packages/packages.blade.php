@@ -14,7 +14,7 @@
                 @can('create package')
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 m-0">Packages</h1>
-                    <a href="{{ url('admin/add-edit-package') }}" class="btn btn-primary">New Package Add</a>
+                    <a href="{{ url('admin/add-edit-package') }}" class="btn btn-primary">New Create</a>
                 </div>
                 @endcan
                 @if (Session::has('success_message'))

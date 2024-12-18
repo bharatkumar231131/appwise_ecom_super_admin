@@ -44,12 +44,10 @@
                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
                         <span>&nbsp;/&nbsp;</span>
                         <li class="breadcrumb-item"><a href="{{ route('permissions.index') }}">Permissions</a></li>
-                        <span>&nbsp;/&nbsp;</span>
-                        <li class="breadcrumb-item active">Edit Permission</li>
                     </ol>
                 </nav>
                 <div class="mb-3">
-                    <h1 class="h3 m-0">Edit Permission</h1>
+                    <h1 class="h3 m-0">Permission</h1>
                 </div>
 
                 <div class="col-12">

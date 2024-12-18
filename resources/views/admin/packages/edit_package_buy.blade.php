@@ -8,13 +8,11 @@
                     <ol class="breadcrumb breadcrumb-sa-simple">
                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
                         <span>&nbsp;/&nbsp;</span>
-                        <li class="breadcrumb-item"><a href="#">User Package</a>
+                        <li class="breadcrumb-item"><a href="#">Package Purchase</a>
                         </li>
-                        <span>&nbsp;/&nbsp;</span>
-                        <li class="breadcrumb-item active">Edit User Package</li>
                     </ol>
                 </nav>
-                <h1 class="h3 m-0">Edit User Package</h1>
+                <h1 class="h3 m-0">Package Purchase</h1>
             </div>
             @if (Session::has('error_message'))
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -54,7 +52,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-4">
                                         <label class="form-label" for="name">Package Name</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Enter Package Name" name="name"
+                                        <input type="text" class="form-control" id="name" placeholder="Enter Your Package Name" name="name"
                                             value="{{ $package['package_name'] }}" required>
                                         @error('name')
                                         <div class="text-danger">{{ $message }}</div>

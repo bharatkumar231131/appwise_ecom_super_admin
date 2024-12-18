@@ -127,6 +127,7 @@ class ShopOwnerController extends Controller
         return view('admin.sales.shop_owners', compact('shopOwners'));
         // return "hello";
     }
+
     public function shopSaleReports(Request $request)
     {
         if ($request->isMethod('post')) {
@@ -138,7 +139,7 @@ class ShopOwnerController extends Controller
             ];
 
             $data = json_encode($data);
-            $domainUrl = 'http://localhost/appwise'; // Example URL
+            $domainUrl = 'http://localhost/appwise-ecom'; // Example URL
 
             // Get the sales report response (which is already an array)
             $response = $this->packageLogicService->saleReports($domainUrl, $data);
@@ -167,11 +168,12 @@ class ShopOwnerController extends Controller
             $data = [
                 "id" => '1'
             ];
-            $data = json_encode($data);
-            $domainUrl = 'http://localhost/appwise'; // Example URL
+
+            $domainUrl = 'http://localhost/appwise-ecom'; // Example URL
 
             // Get the sales report response (which is already an array)
             $response = $this->packageLogicService->saleReports($domainUrl, $data);
+
             // Access the 'order' array directly from the response
             $salesData = $response['order']; // This contains the list of orders
 

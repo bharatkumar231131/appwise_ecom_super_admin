@@ -65,12 +65,10 @@
                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
                         <span>&nbsp;/&nbsp;</span>
                         <li class="breadcrumb-item"><a href="{{ route('roles.index') }}">Roles</a></li>
-                        <span>&nbsp;/&nbsp;</span>
-                        <li class="breadcrumb-item active">Edit Role</li>
-                    </ol>
+                        </ol>
                 </nav>
                 <div class="mb-3">
-                    <h1 class="h3 m-0">Edit Role</h1>
+                    <h1 class="h3 m-0">Role</h1>
                 </div>
 
                 <div class="col-12">
