@@ -15,7 +15,7 @@
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 m-0">Sales Report</h1>
                     @can('create owner')
-                    <a href="" class="btn btn-primary">Export</a>
+                    <a href="{{ route('admin.sales.report.export') }}" class="btn btn-primary">Export</a>
                     @endcan
                 </div>
 
@@ -34,7 +34,6 @@
         </div>
     </div>
 
-    <!-- Filter Section -->
     <div class="row g-4 align-items-center">
         <div class="col-lg-4">
             <div class="d-flex">
@@ -59,7 +58,7 @@
         </div>
     </div>
 
-    <!-- Sales Table -->
+    <!-- Sales Report Table -->
     <div class="row mt-4">
         <div class="col-lg-12">
             <div class="card">
@@ -67,7 +66,7 @@
                     <input type="text" placeholder="Start typing to search for Shop Owners" class="form-control form-control--search mx-auto" id="table-search" />
                 </div>
                 <div class="sa-divider"></div>
-                <table class="sa-datatables-init" data-order="[[ 0, &quot;desc&quot; ]]" data-sa-search-input="#table-search">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Order Id</th>
@@ -79,8 +78,14 @@
                             <th>Payment Method</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="sales-data">
+                        @php
+                            $totalAmount = 0;
+                        @endphp
                         @foreach($salesData as $sale)
+                            @php
+                                $totalAmount += $sale['grand_total'];
+                            @endphp
                             <tr>
                                 <td>{{ $sale['id'] }}</td>
                                 <td>{{ \Carbon\Carbon::parse($sale['created_at'])->format('d-m-Y') }}</td>
@@ -93,28 +98,17 @@
                         @endforeach
                     </tbody>
                 </table>
+
+                <!-- Total Amount Row -->
+                <div class="card-footer">
+                    <div class="d-flex justify-content-between">
+                        <h4>Total Sales Amount:</h4>
+                        <h4>R {{ number_format($totalAmount, 2) }}</h4>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-    <br><br>
 </div>
-
 @endsection
-
-<script>
-    document.getElementById('filter-btn').addEventListener('click', function() {
-        var startDate = document.getElementById('start-date').value;
-        var endDate = document.getElementById('end-date').value;
-        var orderStatus = document.getElementById('order-status').value;
-
-        var url = '{{ route('admin.shopSaleReports') }}' + '?start_date=' + startDate + '&end_date=' + endDate + '&order_status=' + orderStatus;
-
-        // Send the request with the filters applied
-        fetch(url)
-            .then(response => response.text())
-            .then(html => {
-                // Replace the content of the table with the filtered results
-                document.querySelector('tbody').innerHTML = html;
-            });
-    });
-</script>

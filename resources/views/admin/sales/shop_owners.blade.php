@@ -69,10 +69,11 @@
                             <td>
                                 <div class="d-flex gap-3">
                                     <a href="{{ url('admin/shop-sales-report/' . $shopOwner->id) }}" class="actionbtn-tb actionbtn-edit"
-                                        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="View">
-                                        <i class="far fa-eye text-white"></i>
+                                        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="View Report">
+                                        <i class="far fa-file-alt text-white"></i> <!-- Report icon -->
                                     </a>
                                 </div>
+
                             </td>
                         </tr>
                         @endforeach
