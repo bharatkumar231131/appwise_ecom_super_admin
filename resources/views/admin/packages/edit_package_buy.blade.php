@@ -51,7 +51,8 @@
                                 <input type="hidden" name="owner_id" value="{{ $package['shop_owner_id'] }}">
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label class="form-label" for="name">Package Name</label>
+                                        <label class="form-label" for="name">Package Name <span class="text-danger">
+                                        *</span></label>
                                         <input type="text" class="form-control" id="name" placeholder="Enter Your Package Name" name="name"
                                             value="{{ $package['package_name'] }}" required>
                                         @error('name')
@@ -61,7 +62,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label class="form-label" for="number_of_section">Number Of Section</label>
+                                        <label class="form-label" for="number_of_section">Number Of Section <span class="text-danger">
+                                        *</span></label>
                                         <input type="number" class="form-control" id="number_of_section"
                                             placeholder="Enter Number Of Section" name="number_of_section"
                                             value="{{ $package['number_of_section'] }}" required>
@@ -74,7 +76,8 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label class="form-label" for="number_of_category">Number Of Category</label>
+                                        <label class="form-label" for="number_of_category">Number Of Category <span class="text-danger">
+                                        *</span></label>
                                         <input type="number" class="form-control" id="number_of_category"
                                             placeholder="Enter Number Of Category" name="number_of_category"
                                             value="{{ $package['number_of_category'] }}" required>
@@ -85,7 +88,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label class="form-label" for="number_of_product">Number Of Product</label>
+                                        <label class="form-label" for="number_of_product">Number Of Product <span class="text-danger">
+                                        *</span></label>
                                         <input type="number" class="form-control" id="number_of_product"
                                             placeholder="Enter Number Of Product" name="number_of_product"
                                             value="{{ $package['number_of_product'] }}" required>
@@ -99,7 +103,8 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label class="form-label" for="price">Price</label>
+                                        <label class="form-label" for="price">Price <span class="text-danger">
+                                        *</span></label>
                                         <input type="number" class="form-control" id="price" placeholder="Enter Price" name="price"
                                             value="{{ $package['price'] }}" required>
                                         @error('price')
@@ -109,7 +114,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label class="form-label" for="days">Days</label>
+                                        <label class="form-label" for="days">Days <span class="text-danger">
+                                        *</span></label>
                                         <input type="number" class="form-control" id="days" placeholder="Enter Days" name="days"
                                             value="{{ $package['days'] }}" required>
                                         @error('days')

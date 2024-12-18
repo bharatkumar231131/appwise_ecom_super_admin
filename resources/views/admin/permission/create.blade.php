@@ -50,7 +50,8 @@
             <form action="{{ route('permissions.store') }}" method="post" data-parsley-validate>
               @csrf
               <div class="mb-4">
-                <label class="form-label" for="name">Permission Name</label>
+                <label class="form-label" for="name">Permission Name <span class="text-danger">
+                *</span></label>
                 <input type="text" class="form-control" id="name" placeholder="Enter Permission Name" name="name"
                   value="{{ old('name') }}" required>
                 @error('name')
