@@ -51,7 +51,8 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label class="form-label" for="name">User Name</label>
+                                        <label class="form-label" for="name">User Name <span class="text-danger">
+                                        *</span></label>
                                         <input type="text" class="form-control" id="name" placeholder="Enter User Name" name="name"
                                             value="{{ old('name') }}" required>
                                         @error('name')
@@ -61,7 +62,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label class="form-label" for="email">User Email</label>
+                                        <label class="form-label" for="email">User Email <span class="text-danger">
+                                        *</span></label>
                                         <input type="email" class="form-control" id="email" placeholder="Enter User Email" name="email"
                                             value="{{ old('email') }}" required>
                                         @error('email')

@@ -830,26 +830,26 @@
                         <div class="mb-3 col-6">
                             <label for="ownerName" class="form-label">Owner Name <span class="text-danger">
                                     *</span></label>
-                            <input type="text" class="form-control" id="ownerName" name="owner_name" placeholder="Enter Name"
+                            <input type="text" class="form-control" id="ownerName" name="owner_name" placeholder="Enter Your Name"
                                 data-parsley-required="true" data-parsley-trigger="change">
                         </div>
                         <div class="mb-3 col-6">
                             <label for="ownerShop" class="form-label">Shop Name <span class="text-danger">
                                     *</span></label>
-                            <input type="text" class="form-control" id="ownerShop" name="shop_name" placeholder="Enter Shop Name"
+                            <input type="text" class="form-control" id="ownerShop" name="shop_name" placeholder="Enter Your Shop Name"
                                 data-parsley-required="true" data-parsley-trigger="change">
                         </div>
                         <div class="mb-3 col-6">
                             <label for="ownerEmail" class="form-label">Email <span class="text-danger">
                                     *</span></label>
-                            <input type="email" class="form-control" id="ownerEmail" name="shop_email" placeholder="Enter Email"
+                            <input type="email" class="form-control" id="ownerEmail" name="shop_email" placeholder="Enter Your Email"
                                 data-parsley-required="true" data-parsley-type="email" data-parsley-trigger="change">
                         </div>
                         <div class="mb-3 col-6">
                             <label for="ownerPhone" class="form-label">Phone <span class="text-danger">
                                     *</span></label>
                             <input type="number" class="form-control" id="ownerPhone" name="shop_phone" data-parsley-required="true"
-                                data-parsley-type="digits" placeholder="Enter Phone Number" data-parsley-length="[10, 15]"
+                                data-parsley-type="digits" placeholder="Enter Your Phone Number" data-parsley-length="[10, 15]"
                                 data-parsley-length-message="Phone number must be between 10 to 15 digits"
                                 data-parsley-trigger="change">
                         </div>
@@ -862,7 +862,7 @@
                         <div class="mb-3 col-6">
                             <label for="ownerAddress" class="form-label">Address <span class="text-danger">
                                     *</span></label>
-                            <textarea class="form-control" placeholder="Enter Address" id="ownerAddress" name="address" rows="3"
+                            <textarea class="form-control" placeholder="Enter Your Address" id="ownerAddress" name="address" rows="3"
                                 data-parsley-required="true" data-parsley-trigger="change"></textarea>
                         </div>
                     </div>
