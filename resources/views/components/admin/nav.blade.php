@@ -116,7 +116,7 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                             </path>
                                                         </svg></span></a>
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
-                                                    <li class="sa-nav__menu-item">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/sales-reports') ? 'active' : '' }}">
                                                         <a href="{{ url('admin/sales-reports') }}" class="sa-nav__link"><span
                                                                 class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Sales
                                                                 Report</span></a>

@@ -139,15 +139,12 @@ class ShopOwnerController extends Controller
             ];
 
             $data = json_encode($data);
-            $domainUrl = 'http://localhost/appwise'; // Example URL
+            $domainUrl = 'http://localhost/appwise-ecom'; 
 
-            // Get the sales report response (which is already an array)
             $response = $this->packageLogicService->saleReports($domainUrl, $data);
 
-            // Access the 'order' array directly from the response
-            $salesData = $response['order']; // This contains the list of orders
+            $salesData = $response['order']; 
 
-            // Check for any error in the response (optional, as a good practice)
             if (isset($response['error']) && $response['error']) {
                 return response()->json([
                     'message' => 'Failed to upgrade package.',
@@ -155,12 +152,6 @@ class ShopOwnerController extends Controller
                 ], 500);
             }
 
-            // return response()->json([
-            //     'message' => 'upgraded successfully!',
-            //     'response' => $response,
-            // ]);
-
-            // Return the filtered sales data to the view
             return view('admin.sales.sales-report', [
                 'salesData' => $salesData
             ]);
@@ -169,15 +160,12 @@ class ShopOwnerController extends Controller
                 "id" => '1'
             ];
 
-            $domainUrl = 'http://localhost/appwise'; // Example URL
+            $domainUrl = 'http://localhost/appwise-ecom'; 
 
-            // Get the sales report response (which is already an array)
             $response = $this->packageLogicService->saleReports($domainUrl, $data);
 
-            // Access the 'order' array directly from the response
-            $salesData = $response['order']; // This contains the list of orders
+            $salesData = $response['order']; 
 
-            // Check for any error in the response (optional, as a good practice)
             if (isset($response['error']) && $response['error']) {
                 return response()->json([
                     'message' => 'Failed to upgrade package.',
@@ -185,7 +173,6 @@ class ShopOwnerController extends Controller
                 ], 500);
             }
 
-            // Return the filtered sales data to the view
             return view('admin.sales.sales-report', [
                 'salesData' => $salesData
             ]);
