@@ -40,7 +40,7 @@
                 </div>
                 <div class="sa-divider"></div>
                 <table class="sa-datatables-init" data-order="[[ 0, &quot;desc&quot; ]]" data-sa-search-input="#table-search">
-                    <thead>
+                    <thead class="sticky-header">
                         <tr>
                             <th>ID</th>
                             <th>Shop-Owner Name</th>

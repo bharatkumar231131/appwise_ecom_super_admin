@@ -9160,3 +9160,10 @@ input:checked+.sa-color-checkbox__box {
 .active {
   color: lightskyblue;
 }
+
+.sticky-header{
+  position: sticky;
+  top: 0;
+  background-color: #fff; 
+  z-index: 10; 
+}
