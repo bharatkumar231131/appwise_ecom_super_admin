@@ -9,15 +9,14 @@
                     <ol class="breadcrumb breadcrumb-sa-simple">
                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
                         <span>&nbsp;/&nbsp;</span>
-                        <li class="breadcrumb-item active">Sales Report</li>
+                        <li class="breadcrumb-item active">Business Owner Sales Report</li>
                     </ol>
                 </nav>
                 <div class="d-flex justify-content-between">
-                    <h1 class="h3 m-0">Sales Report</h1>
+                    <h1 class="h3 m-0">Business Owner Sales Report</h1>
                     <!-- <a href="" class="btn btn-primary">Export</a> -->
 
                     {{--<a href="{{ url('admin/sales_report/export', $salesData ) }}" class="btn btn-primary">Export</a>--}}
-
                 </div>
 
                 @if (Session::has('success_message'))
@@ -119,21 +118,21 @@
                     </thead>
                     <tbody id="sales-data">
                         @php
-                            $totalAmount = 0;
+                        $totalAmount = 0;
                         @endphp
                         @foreach($salesData as $sale)
-                            @php
-                                $totalAmount += $sale['grand_total'];
-                            @endphp
-                            <tr>
-                                <td>{{ $sale['id'] }}</td>
-                                <td>{{ \Carbon\Carbon::parse($sale['created_at'])->format('d-m-Y') }}</td>
-                                <td>{{ $sale['name'] }}</td>
-                                <td>{{ $sale['email'] }}</td>
-                                <td>{{ $sale['grand_total'] }}</td>
-                                <td>{{ $sale['order_status'] }}</td>
-                                <td>{{ $sale['payment_method'] }}</td>
-                            </tr>
+                        @php
+                        $totalAmount += $sale['grand_total'];
+                        @endphp
+                        <tr>
+                            <td>{{ $sale['id'] }}</td>
+                            <td>{{ \Carbon\Carbon::parse($sale['created_at'])->format('d-m-Y') }}</td>
+                            <td>{{ $sale['name'] }}</td>
+                            <td>{{ $sale['email'] }}</td>
+                            <td>{{ $sale['grand_total'] }}</td>
+                            <td>{{ $sale['order_status'] }}</td>
+                            <td>{{ $sale['payment_method'] }}</td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>
@@ -141,8 +140,8 @@
                 <!-- Total Amount Row -->
                 <div class="card-footer">
                     <div class="d-flex justify-content-between">
-                        <h4>Total Sales Amount:</h4>
-                        <h4>R {{ number_format($totalAmount, 2) }}</h4>
+                        <h5>Total Sales Amount:</h5>
+                        <h5>R {{ number_format($totalAmount, 2) }}</h5>
                     </div>
                 </div>
 

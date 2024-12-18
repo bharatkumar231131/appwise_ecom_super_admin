@@ -9,11 +9,11 @@
                     <ol class="breadcrumb breadcrumb-sa-simple">
                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
                         <span>&nbsp;/&nbsp;</span>
-                        <li class="breadcrumb-item active">Shop Owners</li>
+                        <li class="breadcrumb-item active">Business Owners</li>
                     </ol>
                 </nav>
                 <div class="d-flex justify-content-between">
-                    <h1 class="h3 m-0">Shop Owners</h1>
+                    <h1 class="h3 m-0">Business Owners</h1>
                     @can('create owner')
                     <a href="{{ route('admin.addEditShopOwner') }}" class="btn btn-primary">New Create</a>
                     @endcan
