@@ -35,7 +35,7 @@
     </div>
 
     <!-- Filter Section -->
-    <div class="row g-4 align-items-center">
+    <!-- <div class="row g-4 align-items-center">
         <div class="col-lg-4">
             <div class="d-flex">
                 <input type="date" class="form-control" id="start-date" placeholder="Start Date">
@@ -57,14 +57,43 @@
         <div class="col-lg-2">
             <button class="btn btn-info" id="filter-btn">Apply Filters</button>
         </div>
+    </div> -->
+
+    <div class="p-4">
+        <form action="{{ route('admin.sales_report') }}" method="post" class="row g-3">
+            @csrf
+            <div class="col-md-4">
+                <input type="date" name="start_date" class="form-control" placeholder="Start Date"
+                    value="{{ request('start_date') }}">
+            </div>
+            <div class="col-md-4">
+                <input type="date" name="end_date" class="form-control" placeholder="End Date"
+                    value="{{ request('end_date') }}">
+            </div>
+            <div class="col-md-3">
+                <select name="status" class="form-select" aria-label="Order Status">
+                    <option value="" selected>Choose Order Status</option>
+                    <option value="new" {{ request('status') == 'new' ? 'selected' : '' }}>New</option>
+                    <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Pending</option>
+                    <option value="canceled" {{ request('status') == 'canceled' ? 'selected' : '' }}>Canceled</option>
+                    <option value="shipped" {{ request('status') == 'shipped' ? 'selected' : '' }}>Shipped</option>
+                    <option value="delivered" {{ request('status') == 'delivered' ? 'selected' : '' }}>Delivered</option>
+                </select>
+            </div>
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-primary w-100">Filter</button>
+            </div>
+        </form>
     </div>
+
 
     <!-- Sales Table -->
     <div class="row mt-4">
         <div class="col-lg-12">
             <div class="card">
                 <div class="p-4">
-                    <input type="text" placeholder="Start typing to search for Shop Owners" class="form-control form-control--search mx-auto" id="table-search" />
+                    <input type="text" placeholder="Start typing to search for Shop Owners"
+                        class="form-control form-control--search mx-auto" id="table-search" />
                 </div>
                 <div class="sa-divider"></div>
                 <table class="sa-datatables-init" data-order="[[ 0, &quot;desc&quot; ]]" data-sa-search-input="#table-search">
@@ -81,15 +110,15 @@
                     </thead>
                     <tbody>
                         @foreach($salesData as $sale)
-                            <tr>
-                                <td>{{ $sale['id'] }}</td>
-                                <td>{{ \Carbon\Carbon::parse($sale['created_at'])->format('d-m-Y') }}</td>
-                                <td>{{ $sale['name'] }}</td>
-                                <td>{{ $sale['email'] }}</td>
-                                <td>{{ $sale['grand_total'] }}</td>
-                                <td>{{ $sale['order_status'] }}</td>
-                                <td>{{ $sale['payment_method'] }}</td>
-                            </tr>
+                        <tr>
+                            <td>{{ $sale['id'] }}</td>
+                            <td>{{ \Carbon\Carbon::parse($sale['created_at'])->format('d-m-Y') }}</td>
+                            <td>{{ $sale['name'] }}</td>
+                            <td>{{ $sale['email'] }}</td>
+                            <td>{{ $sale['grand_total'] }}</td>
+                            <td>{{ $sale['order_status'] }}</td>
+                            <td>{{ $sale['payment_method'] }}</td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>
@@ -100,21 +129,3 @@
 </div>
 
 @endsection
-
-<script>
-    document.getElementById('filter-btn').addEventListener('click', function() {
-        var startDate = document.getElementById('start-date').value;
-        var endDate = document.getElementById('end-date').value;
-        var orderStatus = document.getElementById('order-status').value;
-
-        var url = '{{ route('admin.shopSaleReports') }}' + '?start_date=' + startDate + '&end_date=' + endDate + '&order_status=' + orderStatus;
-
-        // Send the request with the filters applied
-        fetch(url)
-            .then(response => response.text())
-            .then(html => {
-                // Replace the content of the table with the filtered results
-                document.querySelector('tbody').innerHTML = html;
-            });
-    });
-</script>

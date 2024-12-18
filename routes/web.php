@@ -58,7 +58,8 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::match(['get', 'post'], 'shop-owners-details/{id}', 'ShopOwnerController@showShopOwner');
 
         Route::get('sales-reports', 'ShopOwnerController@salesReport');
-        Route::match(['get', 'post'], 'shop-sales-report/{id}', 'ShopOwnerController@shopSaleReports');
+        Route::match(['get', 'post'], 'shop-sales-report', 'ShopOwnerController@shopSaleReports')->name('admin.sales_report');
+        Route::post('orders', 'ShopOwnerController@orders')->name('admin.orders');
 
 
         Route::match(['get', 'post'], 'admin-details', 'AdminController@adminDetails');

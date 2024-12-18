@@ -129,53 +129,67 @@ class ShopOwnerController extends Controller
     }
     public function shopSaleReports(Request $request)
     {
-        $data = [
-            "id" => '1'
-        ];
+        if ($request->isMethod('post')) {
+            $data = [
+                'start_date' => $request->start_date,
+                'end_date' => $request->end_date,
+                'status' => $request->status,
+                'type' => 'filter'
+            ];
 
-        $domainUrl = 'http://localhost/appwise-ecom'; // Example URL
+            $data = json_encode($data);
+            $domainUrl = 'http://localhost/appwise'; // Example URL
 
-        // Get the sales report response (which is already an array)
-        $response = $this->packageLogicService->saleReports($domainUrl, $data);
+            // Get the sales report response (which is already an array)
+            $response = $this->packageLogicService->saleReports($domainUrl, $data);
 
-        // Access the 'order' array directly from the response
-        $salesData = $response['order']; // This contains the list of orders
+            // Access the 'order' array directly from the response
+            $salesData = $response['order']; // This contains the list of orders
 
-        // Check for any error in the response (optional, as a good practice)
-        if (isset($response['error']) && $response['error']) {
-            return response()->json([
-                'message' => 'Failed to upgrade package.',
-                'details' => $response['message'],
-            ], 500);
+            // Check for any error in the response (optional, as a good practice)
+            if (isset($response['error']) && $response['error']) {
+                return response()->json([
+                    'message' => 'Failed to upgrade package.',
+                    'details' => $response['message'],
+                ], 500);
+            }
+
+            // return response()->json([
+            //     'message' => 'upgraded successfully!',
+            //     'response' => $response,
+            // ]);
+
+            // Return the filtered sales data to the view
+            return view('admin.sales.sales-report', [
+                'salesData' => $salesData
+            ]);
+        } else {
+            $data = [
+                "id" => '1'
+            ];
+
+            $domainUrl = 'http://localhost/appwise'; // Example URL
+
+            // Get the sales report response (which is already an array)
+            $response = $this->packageLogicService->saleReports($domainUrl, $data);
+
+            // Access the 'order' array directly from the response
+            $salesData = $response['order']; // This contains the list of orders
+
+            // Check for any error in the response (optional, as a good practice)
+            if (isset($response['error']) && $response['error']) {
+                return response()->json([
+                    'message' => 'Failed to upgrade package.',
+                    'details' => $response['message'],
+                ], 500);
+            }
+
+            // Return the filtered sales data to the view
+            return view('admin.sales.sales-report', [
+                'salesData' => $salesData
+            ]);
         }
-
-        // Get filter values from request
-        $startDate = $request->input('start_date');
-        $endDate = $request->input('end_date');
-        $orderStatus = $request->input('order_status');
-
-        // Apply filters if set
-        if ($startDate) {
-            $salesData = array_filter($salesData, function ($sale) use ($startDate) {
-                return \Carbon\Carbon::parse($sale['created_at'])->gte(\Carbon\Carbon::parse($startDate));
-            });
-        }
-
-        if ($endDate) {
-            $salesData = array_filter($salesData, function ($sale) use ($endDate) {
-                return \Carbon\Carbon::parse($sale['created_at'])->lte(\Carbon\Carbon::parse($endDate));
-            });
-        }
-
-        if ($orderStatus && $orderStatus !== 'Choose Order Status') {
-            $salesData = array_filter($salesData, function ($sale) use ($orderStatus) {
-                return $sale['order_status'] === $orderStatus;
-            });
-        }
-
-        // Return the filtered sales data to the view
-        return view('admin.sales.sales-report', [
-            'salesData' => $salesData
-        ]);
     }
+
+    public function orders(Request $request) {}
 }

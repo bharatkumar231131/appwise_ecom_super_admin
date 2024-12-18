@@ -246,7 +246,7 @@
                     </div> --}}
                     <div class="pkg_name">
                         <h3>{{ $package['name'] }}</h3>
-                        <span>For the basics</span>
+                        <span>{{ $package['description'] }}</span>
                     </div>
                     <span class="price">R{{ $package['price'] }}</span>
                     <ul class="benifits">
@@ -261,11 +261,11 @@
                             <p>Number of product add : {{ $package['number_of_product'] }}</p>
                         </li>
                         <li>
-                            <p>{{ $package['description'] }}</p>
+                            <p>Number of days : {{ $package['days'] }}</p>
                         </li>
-                        <li>
+                        <!-- <li>
                             <p>Support on request</p>
-                        </li>
+                        </li> -->
                     </ul>
                     <div>
                         <a data-bs-toggle="modal" data-bs-target="#buyNowModal" class="btn white_btn buy-now-btn"
