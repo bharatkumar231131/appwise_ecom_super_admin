@@ -139,7 +139,7 @@ class ShopOwnerController extends Controller
             ];
 
             $data = json_encode($data);
-            $domainUrl = 'http://localhost/appwise-ecom'; // Example URL
+            $domainUrl = 'http://localhost/appwise'; // Example URL
 
             // Get the sales report response (which is already an array)
             $response = $this->packageLogicService->saleReports($domainUrl, $data);
@@ -169,7 +169,7 @@ class ShopOwnerController extends Controller
                 "id" => '1'
             ];
 
-            $domainUrl = 'http://localhost/appwise-ecom'; // Example URL
+            $domainUrl = 'http://localhost/appwise'; // Example URL
 
             // Get the sales report response (which is already an array)
             $response = $this->packageLogicService->saleReports($domainUrl, $data);

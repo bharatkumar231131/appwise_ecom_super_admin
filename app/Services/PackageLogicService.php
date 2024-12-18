@@ -22,6 +22,7 @@ class PackageLogicService
         // $url = "http://localhost/appwise/api/shop-owner/update-package";
         $endpoint = "/api/shop-owner/update-package";
         $mainUrl = $domainUrl . $endpoint;
+
         // try {
         //     // API ko POST request bhejna with queryParams
         //     $response = Http::post($domainUrl . $endpoint, $queryParams);

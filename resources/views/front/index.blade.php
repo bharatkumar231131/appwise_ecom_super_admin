@@ -614,7 +614,7 @@
                 <form action="{{ url('inquiry-submit') }}" method="POST" data-parsley-validate>
                     @csrf
                     <div class="form-group">
-                        <input type="text" placeholder="Name" class="form-control" name="name" data-parsley-required="true"
+                        <input type="text" placeholder="Name <span>" class="form-control" name="name" data-parsley-required="true"
                             data-parsley-trigger="change">
                     </div>
                     <div class="form-group">
@@ -856,8 +856,8 @@
                         <div class="mb-3 col-6">
                             <label for="ownerDomain" class="form-label">Domain (https://example.co.za) <span class="text-danger">
                                     *</span> </label>
-                            <input type="url" class="form-control" id="ownerDomain" name="domain" placeholder="https://example.co.za"
-                                data-parsley-required="true" data-parsley-trigger="change">
+                            <input type="text" class="form-control" id="ownerDomain" name="domain"
+                                placeholder="https://example.co.za">
                         </div>
                         <div class="mb-3 col-6">
                             <label for="ownerAddress" class="form-label">Address <span class="text-danger">

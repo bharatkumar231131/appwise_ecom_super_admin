@@ -112,7 +112,6 @@ class PayfastController extends Controller
         ];
 
         $data = json_encode($data);
-
         $paylog = PackageLog::create([
             'logs' => $data
         ]);
