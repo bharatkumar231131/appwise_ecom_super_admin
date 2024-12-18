@@ -200,7 +200,7 @@ class PackageController extends Controller
             ], 500);
         }
 
-        // return redirect()->back()->with('success_message', 'Package Upgrade Successfully');
+        return redirect()->back()->with('success_message', 'Package Upgrade Successfully');
 
         return response()->json([
             'message' => 'Package upgraded successfully!',
