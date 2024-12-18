@@ -110,8 +110,8 @@
                 <!-- Total Amount Row -->
                 <div class="card-footer">
                     <div class="d-flex justify-content-between">
-                        <h4>Total Sales Amount:</h4>
-                        <h4>R {{ number_format($totalAmount, 2) }}</h4>
+                        <h5>Total Sales Amount:</h5>
+                        <h5>R {{ number_format($totalAmount, 2) }}</h5>
                     </div>
                 </div>
 
