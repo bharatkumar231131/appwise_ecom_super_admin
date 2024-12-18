@@ -13,7 +13,7 @@
                 </nav>
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 m-0">Permissions</h1>
-                    <a href="{{ route('permissions.create') }}" class="btn btn-primary">New Permission Add</a>
+                    <a href="{{ route('permissions.create') }}" class="btn btn-primary">New Create</a>
                 </div>
                 @if (Session::has('success_message'))
                 <!-- Check AdminController.php, updateAdminPassword() method -->

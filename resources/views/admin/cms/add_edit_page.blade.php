@@ -22,7 +22,7 @@
 
                
                 <div class="d-flex justify-content-between">
-                    <h1 class="h3 m-0">{{ isset($page) ? 'Edit Page' : 'Add Page' }}</h1>
+                    <h1 class="h3 m-0">Page</h1>
                 </div>
             </div>
             <div class="col-12">

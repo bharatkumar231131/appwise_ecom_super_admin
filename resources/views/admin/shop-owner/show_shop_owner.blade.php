@@ -12,7 +12,7 @@
                     </ol>
                 </nav>
                 <div class=" d-flex justify-content-between align-items-center">
-                    <h1 class="h3 m-0">Shop Owner Details</h1>
+                    <h1 class="h3 m-0">Shop Owner </h1>
                 </div>
             </div>
             <div class="col-12">
@@ -64,7 +64,12 @@
                         </div>
                         <div class="row mb-3">
                             <dt class="col-lg-3">Status:</dt>
-                            <dd class="col-lg-9 text-muted">{{ $shopOwnerDetails->status ?? 'N/A' }}
+                            <dd class="col-lg-9">
+                                @if($shopOwnerDetails->status == 'active')
+                                 <span class="badge bg-success">Active</span>
+                                 @elseif ($shopOwnerDetails->status == 'inactive')
+                                 <span class="badge bg-danger">Inactive</span>
+                                @endif
                             </dd>
                         </div>
                     </div>

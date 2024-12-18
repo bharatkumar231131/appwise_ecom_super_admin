@@ -34,7 +34,8 @@
         </div>
     </div>
 
-    <div class="row g-4 align-items-center">
+    <!-- Filter Section -->
+    <!-- <div class="row g-4 align-items-center">
         <div class="col-lg-4">
             <div class="d-flex">
                 <input type="date" class="form-control" id="start-date" placeholder="Start Date">
@@ -56,14 +57,43 @@
         <div class="col-lg-2">
             <button class="btn btn-info" id="filter-btn">Apply Filters</button>
         </div>
+    </div> -->
+
+    <div class="p-4">
+        <form action="{{ route('admin.sales_report') }}" method="post" class="row g-3">
+            @csrf
+            <div class="col-md-4">
+                <input type="date" name="start_date" class="form-control" placeholder="Start Date"
+                    value="{{ request('start_date') }}">
+            </div>
+            <div class="col-md-4">
+                <input type="date" name="end_date" class="form-control" placeholder="End Date"
+                    value="{{ request('end_date') }}">
+            </div>
+            <div class="col-md-3">
+                <select name="status" class="form-select" aria-label="Order Status">
+                    <option value="" selected>Choose Order Status</option>
+                    <option value="new" {{ request('status') == 'new' ? 'selected' : '' }}>New</option>
+                    <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Pending</option>
+                    <option value="canceled" {{ request('status') == 'canceled' ? 'selected' : '' }}>Canceled</option>
+                    <option value="shipped" {{ request('status') == 'shipped' ? 'selected' : '' }}>Shipped</option>
+                    <option value="delivered" {{ request('status') == 'delivered' ? 'selected' : '' }}>Delivered</option>
+                </select>
+            </div>
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-primary w-100">Filter</button>
+            </div>
+        </form>
     </div>
 
-    <!-- Sales Report Table -->
+
+    <!-- Sales Table -->
     <div class="row mt-4">
         <div class="col-lg-12">
             <div class="card">
                 <div class="p-4">
-                    <input type="text" placeholder="Start typing to search for Shop Owners" class="form-control form-control--search mx-auto" id="table-search" />
+                    <input type="text" placeholder="Start typing to search for Shop Owners"
+                        class="form-control form-control--search mx-auto" id="table-search" />
                 </div>
                 <div class="sa-divider"></div>
                 <table class="table table-bordered">
@@ -111,4 +141,5 @@
         </div>
     </div>
 </div>
+
 @endsection

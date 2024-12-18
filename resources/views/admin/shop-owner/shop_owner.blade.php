@@ -15,7 +15,7 @@
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 m-0">Shop Owners</h1>
                     @can('create owner')
-                    <a href="{{ route('admin.addEditShopOwner') }}" class="btn btn-primary">Add Shop Owner</a>
+                    <a href="{{ route('admin.addEditShopOwner') }}" class="btn btn-primary">New Create</a>
                     @endcan
                 </div>
 

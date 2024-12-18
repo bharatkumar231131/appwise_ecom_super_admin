@@ -56,7 +56,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-4">
                                         <label class="form-label" for="name">Package Name </label>
-                                        <input type="text" class="form-control" id="name" placeholder="Enter Package Name" name="name"
+                                        <input type="text" class="form-control" id="name" placeholder="Enter Your Package Name" name="name"
                                             @if(!empty($package['name'])) value="{{ $package['name'] }}" @else value="{{ old('name') }}"
                                             @endif data-parsley-required="true">
                                     </div>
