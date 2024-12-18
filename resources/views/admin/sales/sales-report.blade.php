@@ -12,12 +12,19 @@
                         <li class="breadcrumb-item active">Business Owner Sales Report</li>
                     </ol>
                 </nav>
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between align-items-center">
                     <h1 class="h3 m-0">Business Owner Sales Report</h1>
-                    <!-- <a href="" class="btn btn-primary">Export</a> -->
-
-                    {{--<a href="{{ url('admin/sales_report/export', $salesData ) }}" class="btn btn-primary">Export</a>--}}
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-primary me-3" type="button" data-toggle="collapse" data-target="#filter-section"
+                            aria-expanded="false" aria-controls="filter-section">Filter</button>
+                        <form action="{{ url('admin/sales_report/export') }}" method="POST" class="d-inline-block">
+                            @csrf
+                            <input type="hidden" name="salesData" value="{{ json_encode($salesData) }}">
+                            <button type="submit" class="btn btn-success">Export</button>
+                        </form>
+                    </div>
                 </div>
+
 
                 @if (Session::has('success_message'))
                 <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
@@ -34,32 +41,7 @@
         </div>
     </div>
 
-    <!-- Filter Section -->
-    <!-- <div class="row g-4 align-items-center">
-        <div class="col-lg-4">
-            <div class="d-flex">
-                <input type="date" class="form-control" id="start-date" placeholder="Start Date">
-                <span class="mx-2"></span>
-                <input type="date" class="form-control" id="end-date" placeholder="End Date">
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <select class="form-select" id="order-status" aria-label="Order Status Filter">
-                <option selected>Choose Order Status</option>
-                <option value="new">New</option>
-                <option value="pending">Pending</option>
-                <option value="cancelled">Cancelled</option>
-                <option value="shipped">Shipped</option>
-                <option value="delivered">Delivered</option>
-            </select>
-        </div>
-
-        <div class="col-lg-2">
-            <button class="btn btn-info" id="filter-btn">Apply Filters</button>
-        </div>
-    </div> -->
-
-    <div class="row">
+    <div id="filter-section" class="collapse row mb-4">
         <div class="col-lg-8">
             <form action="{{ route('admin.sales_report') }}" method="post" class="row g-3">
                 @csrf
@@ -82,20 +64,12 @@
                     </select>
                 </div>
                 <div class="col-md-1">
-                    <button type="submit" class="btn btn-primary w-100">Filter</button>
+                    <button type="submit" class="btn btn-primary w-200">Apply</button>
                 </div>
-            </form>
-        </div>
-        <div class="col-lg-4">
-            <form action="{{ url('admin/sales_report/export') }}" method="POST">
-                @csrf
-                <input type="hidden" name="salesData" value="{{ json_encode($salesData) }}">
-                <button type="submit" class="btn btn-primary">Export</button>
             </form>
         </div>
     </div>
 
-    <!-- Sales Table -->
     <div class="row mt-4">
         <div class="col-lg-12">
             <div class="card">
@@ -104,8 +78,8 @@
                         class="form-control form-control--search mx-auto" id="table-search" />
                 </div>
                 <div class="sa-divider"></div>
-                <table class="table table-bordered">
-                    <thead>
+                <table class="sa-datatables-init" data-order="[[ 0, &quot;desc&quot; ]]" data-sa-search-input="#table-search">
+                    <thead class="sticky-header">
                         <tr>
                             <th>Order Id</th>
                             <th>Order Date</th>
@@ -149,6 +123,36 @@
         </div>
     </div>
 </div>
+@endsection
 
 
+@section('scripts')
+<script>
+    $(document).ready(function() {
+        // Filter Section Toggle
+        $('[data-toggle="collapse"]').on('click', function() {
+            $('#filter-section').collapse('toggle');
+        });
+
+        // Form Auto-submit on Input Change
+        const filterForm = document.querySelector('form');
+        const statusSelect = document.getElementById('status');
+        const startDateInput = document.getElementById('start_date');
+        const endDateInput = document.getElementById('end_date');
+
+        function submitFormIfChanged(event) {
+            filterForm.submit();
+        }
+
+        if (statusSelect) {
+            statusSelect.addEventListener('change', submitFormIfChanged);
+        }
+        if (startDateInput) {
+            startDateInput.addEventListener('change', submitFormIfChanged);
+        }
+        if (endDateInput) {
+            endDateInput.addEventListener('change', submitFormIfChanged);
+        }
+    });
+</script>
 @endsection

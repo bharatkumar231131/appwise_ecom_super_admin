@@ -139,11 +139,11 @@ class ShopOwnerController extends Controller
             ];
 
             $data = json_encode($data);
-            $domainUrl = 'http://localhost/appwise-ecom'; 
+            $domainUrl = 'http://localhost/appwise';
 
             $response = $this->packageLogicService->saleReports($domainUrl, $data);
 
-            $salesData = $response['order']; 
+            $salesData = $response['order'];
 
             if (isset($response['error']) && $response['error']) {
                 return response()->json([
@@ -160,11 +160,11 @@ class ShopOwnerController extends Controller
                 "id" => '1'
             ];
 
-            $domainUrl = 'http://localhost/appwise-ecom'; 
+            $domainUrl = 'http://localhost/appwise';
 
             $response = $this->packageLogicService->saleReports($domainUrl, $data);
 
-            $salesData = $response['order']; 
+            $salesData = $response['order'];
 
             if (isset($response['error']) && $response['error']) {
                 return response()->json([
