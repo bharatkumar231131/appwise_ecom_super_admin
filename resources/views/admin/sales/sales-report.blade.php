@@ -17,11 +17,7 @@
                     <!-- <a href="" class="btn btn-primary">Export</a> -->
 
                     {{--<a href="{{ url('admin/sales_report/export', $salesData ) }}" class="btn btn-primary">Export</a>--}}
-                    <form action="{{ url('admin/sales_report/export') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="salesData" value="{{ json_encode($salesData) }}">
-                        <button type="submit" class="btn btn-primary">Export</button>
-                    </form>
+
                 </div>
 
                 @if (Session::has('success_message'))
@@ -64,33 +60,41 @@
         </div>
     </div> -->
 
-    <div class="p-4">
-        <form action="{{ route('admin.sales_report') }}" method="post" class="row g-3">
-            @csrf
-            <div class="col-md-4">
-                <input type="date" name="start_date" class="form-control" placeholder="Start Date"
-                    value="{{ request('start_date') }}">
-            </div>
-            <div class="col-md-4">
-                <input type="date" name="end_date" class="form-control" placeholder="End Date"
-                    value="{{ request('end_date') }}">
-            </div>
-            <div class="col-md-3">
-                <select name="status" class="form-select" aria-label="Order Status">
-                    <option value="" selected>Choose Order Status</option>
-                    <option value="new" {{ request('status') == 'new' ? 'selected' : '' }}>New</option>
-                    <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Pending</option>
-                    <option value="canceled" {{ request('status') == 'canceled' ? 'selected' : '' }}>Canceled</option>
-                    <option value="shipped" {{ request('status') == 'shipped' ? 'selected' : '' }}>Shipped</option>
-                    <option value="delivered" {{ request('status') == 'delivered' ? 'selected' : '' }}>Delivered</option>
-                </select>
-            </div>
-            <div class="col-md-1">
-                <button type="submit" class="btn btn-primary w-100">Filter</button>
-            </div>
-        </form>
+    <div class="row">
+        <div class="col-lg-8">
+            <form action="{{ route('admin.sales_report') }}" method="post" class="row g-3">
+                @csrf
+                <div class="col-md-4">
+                    <input type="date" name="start_date" class="form-control" placeholder="Start Date"
+                        value="{{ request('start_date') }}">
+                </div>
+                <div class="col-md-4">
+                    <input type="date" name="end_date" class="form-control" placeholder="End Date"
+                        value="{{ request('end_date') }}">
+                </div>
+                <div class="col-md-3">
+                    <select name="status" class="form-select" aria-label="Order Status">
+                        <option value="" selected>Choose Order Status</option>
+                        <option value="new" {{ request('status') == 'new' ? 'selected' : '' }}>New</option>
+                        <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Pending</option>
+                        <option value="canceled" {{ request('status') == 'canceled' ? 'selected' : '' }}>Canceled</option>
+                        <option value="shipped" {{ request('status') == 'shipped' ? 'selected' : '' }}>Shipped</option>
+                        <option value="delivered" {{ request('status') == 'delivered' ? 'selected' : '' }}>Delivered</option>
+                    </select>
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" class="btn btn-primary w-100">Filter</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4">
+            <form action="{{ url('admin/sales_report/export') }}" method="POST">
+                @csrf
+                <input type="hidden" name="salesData" value="{{ json_encode($salesData) }}">
+                <button type="submit" class="btn btn-primary">Export</button>
+            </form>
+        </div>
     </div>
-
 
     <!-- Sales Table -->
     <div class="row mt-4">
