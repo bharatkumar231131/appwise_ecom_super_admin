@@ -167,12 +167,11 @@ class ShopOwnerController extends Controller
             $data = [
                 "id" => '1'
             ];
-
+            $data = json_encode($data);
             $domainUrl = 'http://localhost/appwise'; // Example URL
 
             // Get the sales report response (which is already an array)
             $response = $this->packageLogicService->saleReports($domainUrl, $data);
-
             // Access the 'order' array directly from the response
             $salesData = $response['order']; // This contains the list of orders
 

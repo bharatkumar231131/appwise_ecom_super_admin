@@ -14,9 +14,14 @@
                 </nav>
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 m-0">Sales Report</h1>
-                    @can('create owner')
-                    <a href="" class="btn btn-primary">Export</a>
-                    @endcan
+                    <!-- <a href="" class="btn btn-primary">Export</a> -->
+
+                    {{--<a href="{{ url('admin/sales_report/export', $salesData ) }}" class="btn btn-primary">Export</a>--}}
+                    <form action="{{ url('admin/sales_report/export') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="salesData" value="{{ json_encode($salesData) }}">
+                        <button type="submit" class="btn btn-primary">Export</button>
+                    </form>
                 </div>
 
                 @if (Session::has('success_message'))
@@ -127,5 +132,6 @@
     </div>
     <br><br>
 </div>
+
 
 @endsection

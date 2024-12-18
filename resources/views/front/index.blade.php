@@ -261,11 +261,11 @@
                             <p>Number of product add : {{ $package['number_of_product'] }}</p>
                         </li>
                         <li>
-                            <p>Number of days : {{ $package['days'] }}</p>
+                            <p>Days : {{ $package['days'] }}</p>
                         </li>
-                        <!-- <li>
-                            <p>Support on request</p>
-                        </li> -->
+                        <li>
+                            <a href="#inquiry">Support on request</a>
+                        </li>
                     </ul>
                     <div>
                         <a data-bs-toggle="modal" data-bs-target="#buyNowModal" class="btn white_btn buy-now-btn"
@@ -854,7 +854,7 @@
                                 data-parsley-trigger="change">
                         </div>
                         <div class="mb-3 col-6">
-                            <label for="ownerDomain" class="form-label">Domain <span class="text-danger">
+                            <label for="ownerDomain" class="form-label">Domain (https://example.co.za) <span class="text-danger">
                                     *</span> </label>
                             <input type="url" class="form-control" id="ownerDomain" name="domain" placeholder="https://example.co.za"
                                 data-parsley-required="true" data-parsley-trigger="change">
