@@ -65,9 +65,9 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
 
 
 
-Route::get('admin/sales-report/export', function () {
-    return Excel::download(new SalesReportExport, 'sales_report.xlsx');
-})->name('admin.sales.report.export');
+// Route::get('admin/sales-report/export', function () {
+//     return Excel::download(new SalesReportExport, 'sales_report.xlsx');
+// })->name('admin.sales.report.export');
 
 
         Route::match(['get', 'post'], 'shop-sales-report', 'ShopOwnerController@shopSaleReports')->name('admin.sales_report');
@@ -111,6 +111,8 @@ Route::get('admin/sales-report/export', function () {
 
         // Route::get('/shop/upgrade-package', 'PackageController@upgradePackage');
         Route::post('/test-package-upgrade', 'PackageController@upgradePackage')->name('testpackage');
+
+        Route::post('/sales_report/export', 'AdminController@exportSalesReport')->name('admin.sales_report.export');
     });
 
     // Route::fallback(function () {
