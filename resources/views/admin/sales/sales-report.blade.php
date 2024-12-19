@@ -144,6 +144,7 @@
             filterForm.submit();
         }
 
+
         if (statusSelect) {
             statusSelect.addEventListener('change', submitFormIfChanged);
         }
