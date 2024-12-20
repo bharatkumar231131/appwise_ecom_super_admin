@@ -614,7 +614,7 @@
                 <form action="{{ url('inquiry-submit') }}" method="POST" data-parsley-validate>
                     @csrf
                     <div class="form-group">
-                        <input type="text" placeholder="Name <span>" class="form-control" name="name" data-parsley-required="true"
+                        <input type="text" placeholder="Name" class="form-control" name="name" data-parsley-required="true"
                             data-parsley-trigger="change">
                     </div>
                     <div class="form-group">

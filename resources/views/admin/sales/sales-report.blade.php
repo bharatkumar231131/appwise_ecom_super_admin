@@ -43,7 +43,8 @@
 
     <div id="filter-section" class="collapse row mb-4">
         <div class="col-lg-8">
-            <form action="{{ route('admin.sales_report') }}" method="post" class="row g-3">
+            <form action="{{ route('admin.shopSaleReports', $owner_id) }}" method="post" class="row g-3">
+
                 @csrf
                 <div class="col-md-4">
                     <input type="date" name="start_date" class="form-control" placeholder="Start Date"
@@ -55,7 +56,7 @@
                 </div>
                 <div class="col-md-3">
                     <select name="status" class="form-select" aria-label="Order Status">
-                        <option value="" selected>Choose Order Status</option>
+                        <option value="" selected>All</option>
                         <option value="new" {{ request('status') == 'new' ? 'selected' : '' }}>New</option>
                         <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Pending</option>
                         <option value="canceled" {{ request('status') == 'canceled' ? 'selected' : '' }}>Canceled</option>
@@ -74,7 +75,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="p-4">
-                    <input type="text" placeholder="Start typing to search for Shop Owners"
+                    <input type="text" placeholder="Start typing to search for Business Owner Sales Report"
                         class="form-control form-control--search mx-auto" id="table-search" />
                 </div>
                 <div class="sa-divider"></div>

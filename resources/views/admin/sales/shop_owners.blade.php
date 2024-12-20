@@ -31,14 +31,12 @@
         </div>
     </div>
 
-
-
     <!-- Shop Owners Table -->
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="p-4">
-                    <input type="text" placeholder="Start typing to search for Shop Owners"
+                    <input type="text" placeholder="Start typing to search for Business Owners"
                         class="form-control form-control--search mx-auto" id="table-search" />
                 </div>
                 <div class="sa-divider"></div>
@@ -50,8 +48,8 @@
                             <th>Shop Name</th>
                             <th>Domain</th>
                             <th>Package</th>
-                            <th>Start Date</th>
-                            <th>End Date </th>
+                            {{--<th>Start Date</th>
+                            <th>End Date </th>--}}
                             <th>Actions</th>
                             <!-- <th>Actions</th> -->
                         </tr>
@@ -64,8 +62,8 @@
                             <td>{{ $shopOwner->shop_name ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->domain ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->package->name ?? 'No Package' }}</td>
-                            <td>{{ $shopOwner->start_date ?? 'N/A' }}</td>
-                            <td>{{ $shopOwner->end_date ?? 'N/A' }}</td>
+                            {{--<td>{{ $shopOwner->start_date ?? 'N/A' }}</td>
+                            <td>{{ $shopOwner->end_date ?? 'N/A' }}</td>--}}
                             <td>
                                 <div class="d-flex gap-3">
                                     <a href="{{ url('admin/shop-sales-report/' . $shopOwner->id) }}" class="actionbtn-tb actionbtn-edit"
@@ -73,7 +71,6 @@
                                         <i class="far fa-file-alt text-white"></i> <!-- Report icon -->
                                     </a>
                                 </div>
-
                             </td>
                         </tr>
                         @endforeach
@@ -84,7 +81,6 @@
     </div>
 </div>
 @endsection
-
 @section('scripts')
 <script>
     var ownerId, currentStatus;
