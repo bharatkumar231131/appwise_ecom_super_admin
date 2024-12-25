@@ -67,7 +67,14 @@
                                     <a href="{{ url('admin/add-edit-page/' . $page['id']) }}" class="actionbtn-tb actionbtn-edit"
                                         data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Edit"><i
                                             class="far fa-edit text-white"></i></a>
+
+                                            <a href="#" data-url="{{ route('admin.delete', ['type' => 'page', 'id' => $page['id']]) }}"
+                                        class="actionbtn-tb actionbtn-remove delete-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-original-title="Delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
                                 </div>
+                                
                             </td>
                             @endcan
                         </tr>

@@ -33,8 +33,8 @@
                 <!-- app buttons -->
                 <ul class="app_btn">
                     <li>
-                        <a href="#">
-                            <button class="btn btn-primary">Get a Free Demo</button>
+                        <a href="https://123ecommerce.co.za/" target="_blank">
+                            <button class="btn btn-primary">View Demo Store</button>
                         </a>
                     </li>
                     <li>
@@ -614,7 +614,7 @@
                 <form action="{{ url('inquiry-submit') }}" method="POST" data-parsley-validate>
                     @csrf
                     <div class="form-group">
-                        <input type="text" placeholder="Name <span>" class="form-control" name="name" data-parsley-required="true"
+                        <input type="text" placeholder="Name" class="form-control" name="name" data-parsley-required="true"
                             data-parsley-trigger="change">
                     </div>
                     <div class="form-group">
@@ -854,9 +854,9 @@
                                 data-parsley-trigger="change">
                         </div>
                         <div class="mb-3 col-6">
-                            <label for="ownerDomain" class="form-label">Domain (https://example.co.za) <span class="text-danger">
+                            <label for="ownerDomain" class="form-label">Domain (www.example.co.za) <span class="text-danger">
                                     *</span> </label>
-                            <input type="url" class="form-control" id="ownerDomain" name="domain" placeholder="https://example.co.za"
+                            <input type="url" class="form-control" id="ownerDomain" name="domain" placeholder="www.example.co.za"
                                 data-parsley-required="true" data-parsley-trigger="change">
                         </div>
                         <div class="mb-3 col-6">

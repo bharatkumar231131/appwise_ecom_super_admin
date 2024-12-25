@@ -10,10 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Front\PayfastController;
 use App\Exports\SalesReportExport;
 use Maatwebsite\Excel\Facades\Excel;
-
-
-
-
+use App\Http\Controllers\NotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +22,6 @@ use Maatwebsite\Excel\Facades\Excel;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 
 
 Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function () {
@@ -85,6 +81,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::post('upload-image', 'CmsController@uploadImage');
 
 
+
         Route::get('/permissions/index', [PermissionController::class, 'index'])->name('permissions.index');
         Route::get('/permissions/create', [PermissionController::class, 'create'])->name('permissions.create');
         Route::post('/permissions', [PermissionController::class, 'store'])->name('permissions.store');
@@ -120,7 +117,9 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
     // });
 });
 
-
+Route::middleware(['auth'])->group(function () {
+    Route::post('/save-token', [NotificationController::class, 'saveToken'])->name('save.token');
+});
 
 Route::namespace('App\Http\Controllers\Front')->group(function () {
     // Route::get('/', 'IndexController@index')->name('home');

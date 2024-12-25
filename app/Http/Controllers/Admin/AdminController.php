@@ -18,8 +18,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Intervention\Image\Facades\Image;
 use App\Exports\SalesReportExport;
+use App\Models\Page;
 use Maatwebsite\Excel\Facades\Excel;
-
 
 class AdminController extends Controller
 {
@@ -118,6 +118,10 @@ class AdminController extends Controller
             $area = PackageBuy::findOrFail($id);
             $area->delete();
             return redirect()->back()->with('success_message', "Package delete succesfully");
+        }  elseif ($type === "page") {
+            $area = Page::findOrFail($id); 
+            $area->delete();
+            return redirect()->back()->with('success_message', "Page delete succesfully");
         }
     }
 
@@ -135,7 +139,6 @@ class AdminController extends Controller
 
     public function updateAdminDetails(Request $request)
     {
-        // Validate the incoming request data
         $request->validate([
             'admin_name' => 'required|string|max:255',
             'admin_mobile' => 'nullable|numeric|digits:10',
@@ -146,12 +149,11 @@ class AdminController extends Controller
             'admin_state' => 'nullable|string|max:255',
             'admin_city' => 'nullable|string|max:255',
             'admin_pincode' => 'nullable|string|max:10',
+            'admin_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Add validation for the image file
         ]);
-
-        // Get the currently authenticated user
+    
         $user = Auth::user(); // Authenticated user
-
-        // Update the user's details
+    
         $user->name = $request->input('admin_name');
         $user->mobile = $request->input('admin_mobile');
         $user->address = $request->input('admin_address');
@@ -159,14 +161,18 @@ class AdminController extends Controller
         $user->state = $request->input('admin_state');
         $user->city = $request->input('admin_city');
         $user->postal_code = $request->input('admin_pincode');
-
-        // Save the updated data
+    
+        if ($request->hasFile('admin_image')) {
+            $image = $request->file('admin_image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('admin/images/photos'), $imageName);
+            $user->image = $imageName;
+        }
         $user->save();
-
-        // Redirect back with success message
         Session::flash('success_message', 'Admin details updated successfully.');
         return redirect()->back(); // Or you can redirect to a specific route
     }
+    
 
 
     public function adminprofile()

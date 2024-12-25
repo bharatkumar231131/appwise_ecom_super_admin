@@ -173,6 +173,8 @@ class ShopOwnerController extends Controller
                 ], 500);
             }
 
+            
+
             return view('admin.sales.sales-report', [
                 'salesData' => $salesData
             ]);

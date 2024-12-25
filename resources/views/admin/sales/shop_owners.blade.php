@@ -50,8 +50,8 @@
                             <th>Shop Name</th>
                             <th>Domain</th>
                             <th>Package</th>
-                            <th>Start Date</th>
-                            <th>End Date </th>
+                            <!-- <th>Start Date</th>
+                            <th>End Date </th> -->
                             <th>Actions</th>
                             <!-- <th>Actions</th> -->
                         </tr>
@@ -64,8 +64,8 @@
                             <td>{{ $shopOwner->shop_name ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->domain ?? 'N/A' }}</td>
                             <td>{{ $shopOwner->package->name ?? 'No Package' }}</td>
-                            <td>{{ $shopOwner->start_date ?? 'N/A' }}</td>
-                            <td>{{ $shopOwner->end_date ?? 'N/A' }}</td>
+                            <!-- <td>{{ $shopOwner->start_date ?? 'N/A' }}</td>
+                            <td>{{ $shopOwner->end_date ?? 'N/A' }}</td> -->
                             <td>
                                 <div class="d-flex gap-3">
                                     <a href="{{ url('admin/shop-sales-report/' . $shopOwner->id) }}" class="actionbtn-tb actionbtn-edit"

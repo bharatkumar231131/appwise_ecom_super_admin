@@ -53,11 +53,11 @@
                 <div class="col-md-3">
                     <select name="status" class="form-select" aria-label="Order Status">
                         <option value="" selected>Choose Order Status</option>
-                        <option value="new" {{ request('status') == 'new' ? 'selected' : '' }}>New</option>
+                        <!-- <option value="new" {{ request('status') == 'new' ? 'selected' : '' }}>New</option> -->
                         <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Pending</option>
-                        <option value="canceled" {{ request('status') == 'canceled' ? 'selected' : '' }}>Canceled</option>
-                        <option value="shipped" {{ request('status') == 'shipped' ? 'selected' : '' }}>Shipped</option>
-                        <option value="delivered" {{ request('status') == 'delivered' ? 'selected' : '' }}>Delivered</option>
+                        <!-- <option value="canceled" {{ request('status') == 'canceled' ? 'selected' : '' }}>Canceled</option> -->
+                        <!-- <option value="shipped" {{ request('status') == 'shipped' ? 'selected' : '' }}>Shipped</option> -->
+                        <option value="delivered" {{ request('status') == 'delivered' ? 'selected' : '' }}>Completed</option>
                     </select>
                 </div>
                 <div class="col-md-1">

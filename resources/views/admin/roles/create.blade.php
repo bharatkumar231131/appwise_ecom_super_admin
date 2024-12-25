@@ -44,7 +44,7 @@
                         </div>
                         @endif
 
-                        <form action="{{ route('roles.store') }}" method="post">
+                        <form action="{{ route('roles.store') }}" method="post" data-parsley-validate>
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
@@ -52,7 +52,7 @@
                                         <label class="form-label" for="name">Role Name <span class="text-danger">
                                         *</span></label>
                                         <input type="text" class="form-control" id="name" placeholder="Enter Role Name" name="name"
-                                            value="{{ old('name') }}" required>
+                                            value="{{ old('name') }}" data-parsley-required="true">
                                         @error('name')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror
