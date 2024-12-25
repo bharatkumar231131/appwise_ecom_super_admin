@@ -30,7 +30,7 @@ $front_logo = $front_logo->front_logo;
                         <a class="nav-link" href="#pricing">Pricing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link white_btn" href="https://123ecommerce.co.za/">GET DEMO</a>
+                        <a class="nav-link white_btn" href="https://123ecommerce.co.za/" target="_blank">View Demo Store</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link dark_btn" href="#inquiry">GET Quote</a>

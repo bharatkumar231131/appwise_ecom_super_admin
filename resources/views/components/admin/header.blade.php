@@ -1,3 +1,8 @@
+<?php
+$adminImage = App\Models\User::where('id', '1')->get();
+$adminImage = $adminImage[0]->image;
+?>
+
 <div class="sa-toolbar sa-toolbar--search-hidden sa-app__toolbar">
   <div class="sa-toolbar__body">
     <div class="sa-toolbar__item"><button class="sa-toolbar__button" type="button" aria-label="Menu"
@@ -124,11 +129,17 @@ ons__item-icon">
         </div>
       </div>
     </div>
+
     <div class="dropdown sa-toolbar__item"><button class="sa-toolbar-user" type="button" id="dropdownMenuButton"
         data-bs-toggle="dropdown" data-bs-offset="0,1" aria-expanded="false">
         <span class="sa-toolbar-user__avatar sa-symbol sa-symbol--shape--rounded">
-          <img src="https://123ecommerce.co.za/public/admin/images/photos/ahmed.jpg" width="64" height="64"
-            alt=""></span>
+          @if($adminImage)
+          <img src="{{ asset('public/admin/images/photos/' . $adminImage) }}" width="64" height="64"
+            alt="">
+          @else
+          <img src="https://123ecommerce.co.za/public/admin/images/photos/ahmed.jpg" width="64" height="64">
+          @endif
+        </span>
         <span class="sa-toolbar-user__info">
           <span class="sa-toolbar-user__title">{{ Auth::user()->name }}</span>
           <span class="sa-toolbar-user__subtitle">{{ Auth::user()->email }}</span>
@@ -140,11 +151,11 @@ ons__item-icon">
 
         <li><a class="dropdown-item" href="{{ url('admin/admin-details') }}">Settings</a></li>
         <li>
-          <li><a class="dropdown-item" href="{{ url('admin/update-admin-password') }}">Password Change</a></li>
+        <li><a class="dropdown-item" href="{{ url('admin/update-admin-password') }}">Password Change</a></li>
         <li>
           <hr class="dropdown-divider">
         </li>
-        <li><a class="dropdown-item" href="{{ url('admin/logout') }}">Sign Out</a>
+        <li><a class="dropdown-item" href="{{ url('admin/logout') }}">Log Out</a>
         </li>
       </ul>
     </div>

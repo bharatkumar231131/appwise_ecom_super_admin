@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use App\Models\Inquiry;
+use App\Observers\InquiryObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,5 +26,6 @@ class AppServiceProvider extends ServiceProvider
         Gate::before(function ($user, $ability) {
             return $user->hasRole('superadmin') ? true : null;
         });
+        Inquiry::observe(InquiryObserver::class);
     }
 }

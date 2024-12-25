@@ -183,6 +183,8 @@ class ShopOwnerController extends Controller
                 ], 500);
             }
 
+            
+
             return view('admin.sales.sales-report', [
                 'salesData' => $salesData,
                 'owner_id' => $owner_id

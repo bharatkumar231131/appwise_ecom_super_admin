@@ -56,14 +56,14 @@
                                 <div class="col-md-6">
                                     <div class="mb-4">
                                         <label class="form-label" for="name">Package Name <span class="text-danger">
-                                        *</span></label>
+                                                *</span></label>
                                         <input type="text" class="form-control" id="name" placeholder="Enter Your Package Name" name="name"
                                             @if(!empty($package['name'])) value="{{ $package['name'] }}" @else value="{{ old('name') }}"
                                             @endif data-parsley-required="true">
                                     </div>
                                     <div class="mb-4">
                                         <label class="form-label" for="number_of_section">Number Of Section <span class="text-danger">
-                                        *</span></label>
+                                                *</span></label>
                                         <input type="number" class="form-control" id="number_of_section"
                                             placeholder="Enter Number of Section" name="number_of_section"
                                             @if(!empty($package['number_of_section'])) value="{{ $package['number_of_section'] }}" @else
@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="mb-4">
                                         <label class="form-label" for="number_of_category">Number Of Category <span class="text-danger">
-                                        *</span></label>
+                                                *</span></label>
                                         <input type="number" class="form-control" id="number_of_category"
                                             placeholder="Enter Number of Category" name="number_of_category"
                                             @if(!empty($package['number_of_category'])) value="{{ $package['number_of_category'] }}" @else
@@ -79,7 +79,7 @@
                                     </div>
                                     <div class="mb-4">
                                         <label class="form-label" for="number_of_product">Number Of Product <span class="text-danger">
-                                        *</span></label>
+                                                *</span></label>
                                         <input type="number" class="form-control" id="number_of_product"
                                             placeholder="Enter Number of Product" name="number_of_product"
                                             @if(!empty($package['number_of_product'])) value="{{ $package['number_of_product'] }}" @else
@@ -87,18 +87,18 @@
                                     </div>
                                     <div class="mb-4">
                                         <label class="form-label" for="price">Price <span class="text-danger">
-                                        *</span></label>
+                                                *</span></label>
                                         <input type="number" class="form-control" id="price" placeholder="Enter Package Price" name="price"
                                             @if (!empty($package['price'])) value="{{ $package['price'] }}" @else value="{{ old('price') }}"
                                             @endif data-parsley-required="true">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                   
+
 
                                     <div class="mb-4">
                                         <label class="form-label" for="days">Days <span class="text-danger">
-                                        *</span></label>
+                                                *</span></label>
                                         <input type="number" class="form-control" id="days" placeholder="Enter Package Days" name="days"
                                             @if (!empty($package['days'])) value="{{ $package['days'] }}" @else value="{{ old('days') }}"
                                             @endif data-parsley-required="true">
@@ -107,14 +107,14 @@
                                     <div class="mb-4">
                                         <label class="form-label" for="status">Status</label>
                                         <select class="form-control" id="status" name="status" required>
-                                            <option value="Active" @if(old('status', $package['status'] ?? '') == 'Active') selected @endif>Active</option>
-                                            <option value="Inactive" @if(old('status', $package['status'] ?? '') == 'Inactive') selected @endif>Inactive</option>
+                                            <option value="Active" @if(old('status', $package['status'] ?? '' )=='Active' ) selected @endif>Active</option>
+                                            <option value="Inactive" @if(old('status', $package['status'] ?? '' )=='Inactive' ) selected @endif>Inactive</option>
                                         </select>
                                     </div>
 
                                     <div class="mb-4">
                                         <label class="form-label" for="description">Package Description <span class="text-danger">
-                                        *</span></label>
+                                                *</span></label>
                                         <textarea name="description" id="description" class="form-control" rows="7"
                                             data-parsley-required="true">{{ old('description', $package['description']) }}</textarea>
                                     </div>

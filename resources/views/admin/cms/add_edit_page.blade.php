@@ -34,7 +34,7 @@
     </div>
 
 
-    <form action="{{ isset($page) ? url('admin/update-page/' . $page->id) : url('admin/update-page') }}" method="POST">
+    <form action="{{ isset($page) ? url('admin/update-page/' . $page->id) : url('admin/update-page') }}" method="POST" data-parsley-validate>
         @csrf
         <div class="row">
             <!-- Left Side: Page Details -->
@@ -44,7 +44,7 @@
                         <div class="mb-3">
                             <label for="page_title" class="form-label">Page Title</label>
                             <input type="text" class="form-control" id="page_title" name="page_title"
-                                value="{{ $page->page_title ?? '' }}" required>
+                                value="{{ $page->page_title ?? '' }}" data-parsley-required="true">
                         </div>
                         {{--<div class="mb-3">
                             <label for="url_key" class="form-label">URL Key</label>

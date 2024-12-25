@@ -48,8 +48,8 @@
                             <th>Shop Name</th>
                             <th>Domain</th>
                             <th>Package</th>
-                            {{--<th>Start Date</th>
-                            <th>End Date </th>--}}
+                            <!-- <th>Start Date</th>
+                            <th>End Date </th> -->
                             <th>Actions</th>
                             <!-- <th>Actions</th> -->
                         </tr>

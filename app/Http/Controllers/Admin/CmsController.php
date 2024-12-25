@@ -80,4 +80,10 @@ class CmsController extends Controller
 
         return response()->json(['success' => false, 'message' => 'No file uploaded'], 400);
     }
+
+    public function deletePage( $id){
+        $pages = Page::findOrFail($id);
+        return $pages;
+
+    }
 }
