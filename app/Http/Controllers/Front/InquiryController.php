@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Auth;
 
 class InquiryController extends Controller
 {
-    //
 
     public function inquiryForm()
     {
@@ -51,7 +50,6 @@ class InquiryController extends Controller
                 return redirect()->back()->withErrors($validator)->withInput();
             }
 
-
             Inquiry::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
@@ -60,14 +58,24 @@ class InquiryController extends Controller
                 'message' => $data['message']
             ]);
 
+            $email = "pareekh611@gmail.com";
+
+            $messageData = [
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'phone' => $data['phone'],
+                'address' => $data['address'],
+                'user_message' => $data['message']
+            ];
+
+            // return $messageData;
+            \Illuminate\Support\Facades\Mail::send('emails.inquiry', $messageData, function ($message) use ($email) {
+                $message->to($email)->subject('New Inquiry Received');
+            });
+
             return redirect()->back()->with('success_message', 'Inquiry submitted successfully!');
         } else {
             return view("front.inquiry.inquiry");
         }
     }
-
-
-
-  
-    
 }
