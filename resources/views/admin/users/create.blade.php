@@ -3,26 +3,19 @@
 <div class="container">
     <div class="py-5">
         <div class="row g-4 align-items-center">
-            <div class="col">
+            <div class="col-12">
                 <nav class="mb-2" aria-label="breadcrumb">
                     <ol class="breadcrumb breadcrumb-sa-simple">
                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
                         <span>&nbsp;/&nbsp;</span>
                         <li class="breadcrumb-item"><a href="{{ route('users.index') }}">Users</a></li>
-                        <span>&nbsp;/&nbsp;</span>
-                        <li class="breadcrumb-item active">Edit User</li>
                     </ol>
                 </nav>
 
                 <div class="mb-3">
-                    <h1 class="h3 m-0">Create User</h1>
+                    <h1 class="h3 m-0">User</h1>
                 </div>
 
-                <div class="col-12">
-                    <a class="btn btn-secondary backbtn" href="{{ url()->previous() }}">
-                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                    </a>
-                </div>
             </div>
             <div class="col-12">
                 <a class="btn btn-secondary backbtn" href="{{ url()->previous() }}">
@@ -58,7 +51,8 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label class="form-label" for="name">User Name</label>
+                                        <label class="form-label" for="name">User Name <span class="text-danger">
+                                        *</span></label>
                                         <input type="text" class="form-control" id="name" placeholder="Enter User Name" name="name"
                                             value="{{ old('name') }}" required>
                                         @error('name')
@@ -68,7 +62,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label class="form-label" for="email">User Email</label>
+                                        <label class="form-label" for="email">User Email <span class="text-danger">
+                                        *</span></label>
                                         <input type="email" class="form-control" id="email" placeholder="Enter User Email" name="email"
                                             value="{{ old('email') }}" required>
                                         @error('email')

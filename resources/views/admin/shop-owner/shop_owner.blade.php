@@ -9,13 +9,13 @@
                     <ol class="breadcrumb breadcrumb-sa-simple">
                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
                         <span>&nbsp;/&nbsp;</span>
-                        <li class="breadcrumb-item active">Shop Owners</li>
+                        <li class="breadcrumb-item active">Business Owners</li>
                     </ol>
                 </nav>
                 <div class="d-flex justify-content-between">
-                    <h1 class="h3 m-0">Shop Owners</h1>
+                    <h1 class="h3 m-0">Business Owners</h1>
                     @can('create owner')
-                    <a href="{{ route('admin.addEditShopOwner') }}" class="btn btn-primary">Add Shop Owner</a>
+                    <a href="{{ route('admin.addEditShopOwner') }}" class="btn btn-primary">New Create</a>
                     @endcan
                 </div>
 
@@ -46,7 +46,7 @@
                 </div>
                 <div class="sa-divider"></div>
                 <table class="sa-datatables-init" data-order="[[ 0, &quot;desc&quot; ]]" data-sa-search-input="#table-search">
-                    <thead>
+                    <thead class="sticky-header">
                         <tr>
                             <th>ID</th>
                             <th>Name</th>

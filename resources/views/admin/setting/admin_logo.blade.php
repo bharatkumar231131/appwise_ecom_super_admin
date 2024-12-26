@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="py-5">
-        <h1 class="h3 mb-3">Upload Admin and Front Logos</h1>
+        <h1 class="h3 mb-3">Admin & Front Logos</h1>
         <div class="mb-5">
             <a class="btn btn-secondary backbtn" href="{{ url()->previous() }}">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i>

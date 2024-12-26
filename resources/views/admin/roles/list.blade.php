@@ -13,7 +13,7 @@
                 </nav>
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 m-0">Roles</h1>
-                    <a href="{{ route('roles.create') }}" class="btn btn-primary">New Role Add</a>
+                    <a href="{{ route('roles.create') }}" class="btn btn-primary">New Create</a>
                 </div>
                 @if (Session::has('success_message'))
                 <!-- Check AdminController.php, updateAdminPassword() method -->
@@ -41,7 +41,7 @@
                 </div>
                 <div class="sa-divider"></div>
                 <table class="sa-datatables-init" data-order="[[ 0, &quot;desc&quot; ]]" data-sa-search-input="#table-search">
-                    <thead>
+                    <thead class="sticky-header">
                         <tr>
                             <th>ID</th>
                             <th>Name</th>

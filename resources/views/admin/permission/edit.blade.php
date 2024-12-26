@@ -44,12 +44,10 @@
                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
                         <span>&nbsp;/&nbsp;</span>
                         <li class="breadcrumb-item"><a href="{{ route('permissions.index') }}">Permissions</a></li>
-                        <span>&nbsp;/&nbsp;</span>
-                        <li class="breadcrumb-item active">Edit Permission</li>
                     </ol>
                 </nav>
                 <div class="mb-3">
-                    <h1 class="h3 m-0">Edit Permission</h1>
+                    <h1 class="h3 m-0">Permission</h1>
                 </div>
 
                 <div class="col-12">
@@ -87,7 +85,8 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label class="form-label" for="name">Permission Name</label>
+                                        <label class="form-label" for="name">Permission Name <span class="text-danger">
+                                        *</span></label>
                                         <input type="text" class="form-control" id="name" placeholder="Enter Permission Name" name="name"
                                             value="{{ old('name', $permission->name) }}" required>
                                         @error('name')

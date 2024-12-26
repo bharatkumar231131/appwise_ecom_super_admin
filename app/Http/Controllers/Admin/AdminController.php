@@ -17,6 +17,8 @@ use PhpParser\Node\Stmt\Return_;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Intervention\Image\Facades\Image;
+use App\Exports\SalesReportExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class AdminController extends Controller
@@ -39,7 +41,7 @@ class AdminController extends Controller
 
             $request->validate($rules, $customMessages);
 
-            
+
 
             if (Auth::attempt(['email' => $data['email'], 'password' => $data['password']])) {
                 $user = Auth::user();
@@ -101,10 +103,13 @@ class AdminController extends Controller
             return redirect()->back()->with('success_message', "Package delete succesfully");
         } elseif ($type === "owner") {
             $owner = ShopOwner::findOrFail($id);
-        $packageBuy = PackageBuy::where('shop_owner_id' , $owner->id)->get();
+            $packageBuy = PackageBuy::where('shop_owner_id', $owner->id)->get();
+            if ($packageBuy->isNotEmpty()) {
                 $packageBuy[0]->delete();
+            }
             $owner->delete();
-            return redirect()->back()->with('success_message', "ShopOwner delete succesfully");
+            return redirect()->back()->with('success_message', "ShopOwner deleted successfully");
+        
         } elseif ($type === "user") {
             $owner = User::findOrFail($id);
             $owner->delete();
@@ -237,17 +242,17 @@ class AdminController extends Controller
             $data = $request->all();
             // dd($data);
             // Check first if the entered admin current password is corret
-            if (Hash::check($data['current_password'], Auth::user()->password)) { 
+            if (Hash::check($data['current_password'], Auth::user()->password)) {
                 // Check if the new password is matching with confirm password
                 if ($data['confirm_password'] == $data['new_password']) {
-                    User::where('id', Auth::user()->id)->update([ 
+                    User::where('id', Auth::user()->id)->update([
                         'password' => bcrypt($data['new_password'])
-                    ]); 
+                    ]);
 
                     Auth::logout();
                     return redirect('admin/login')->with('success_message', 'Admin Password has been updated successfully!');
                     // return redirect()->back()->with('success_message', 'Admin Password has been updated successfully!');
-                } else { 
+                } else {
                     return redirect()->back()->with('error_message', 'New Password and Confirm Password does not match!');
                 }
             } else {
@@ -272,5 +277,11 @@ class AdminController extends Controller
         } else {
             return 'false';
         }
+    }
+
+    public function exportSalesReport(Request $request)
+    {
+        $salesData = json_decode($request->salesData);
+        return Excel::download(new SalesReportExport($salesData), 'sales_report.xlsx');
     }
 }

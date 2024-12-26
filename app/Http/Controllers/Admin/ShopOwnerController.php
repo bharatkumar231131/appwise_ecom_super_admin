@@ -9,10 +9,17 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\PackageBuy;
 use Carbon\Carbon;
-
+use App\Services\PackageLogicService;
 
 class ShopOwnerController extends Controller
 {
+    protected $packageLogicService;
+
+    public function __construct(PackageLogicService $packageLogicService)
+    {
+        $this->packageLogicService = $packageLogicService;
+    }
+
     public function index()
     {
         $shopOwners = ShopOwner::all();
@@ -113,4 +120,64 @@ class ShopOwnerController extends Controller
         $shopOwnerDetails = ShopOwner::with('package')->find($id);
         return view('admin.shop-owner.show_shop_owner', compact('shopOwnerDetails'));
     }
+
+    public function salesReport()
+    {
+        $shopOwners = ShopOwner::all();
+        return view('admin.sales.shop_owners', compact('shopOwners'));
+        // return "hello";
+    }
+
+    public function shopSaleReports(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            $data = [
+                'start_date' => $request->start_date,
+                'end_date' => $request->end_date,
+                'status' => $request->status,
+                'type' => 'filter'
+            ];
+
+            $data = json_encode($data);
+            $domainUrl = 'http://localhost/appwise_ecommerce';
+
+            $response = $this->packageLogicService->saleReports($domainUrl, $data);
+
+            $salesData = $response['order'];
+
+            if (isset($response['error']) && $response['error']) {
+                return response()->json([
+                    'message' => 'Failed to upgrade package.',
+                    'details' => $response['message'],
+                ], 500);
+            }
+
+            return view('admin.sales.sales-report', [
+                'salesData' => $salesData
+            ]);
+        } else {
+            $data = [
+                "id" => '1'
+            ];
+
+            $domainUrl = 'http://localhost/appwise_ecommerce';
+
+            $response = $this->packageLogicService->saleReports($domainUrl, $data);
+
+            $salesData = $response['order'];
+
+            if (isset($response['error']) && $response['error']) {
+                return response()->json([
+                    'message' => 'Failed to upgrade package.',
+                    'details' => $response['message'],
+                ], 500);
+            }
+
+            return view('admin.sales.sales-report', [
+                'salesData' => $salesData
+            ]);
+        }
+    }
+
+    public function orders(Request $request) {}
 }

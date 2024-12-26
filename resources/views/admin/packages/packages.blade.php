@@ -14,7 +14,7 @@
                 @can('create package')
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 m-0">Packages</h1>
-                    <a href="{{ url('admin/add-edit-package') }}" class="btn btn-primary">New Package Add</a>
+                    <a href="{{ url('admin/add-edit-package') }}" class="btn btn-primary">New Create</a>
                 </div>
                 @endcan
                 @if (Session::has('success_message'))
@@ -43,7 +43,7 @@
                 </div>
                 <div class="sa-divider"></div>
                 <table class="sa-datatables-init" data-order="[[ 0, &quot;desc&quot; ]]" data-sa-search-input="#table-search">
-                    <thead>
+                    <thead class="sticky-header">
                         <tr>
                             <th>ID</th>
                             <th>Name</th>

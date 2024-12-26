@@ -9,12 +9,10 @@
                     <ol class="breadcrumb breadcrumb-sa-simple">
                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
                         <span>&nbsp;/&nbsp;</span>
-                        <li class="breadcrumb-item"><a href="{{ route('admin.shopOwners') }}">Shop Owners</a></li>
-                        <span>&nbsp;/&nbsp;</span>
-                        <li class="breadcrumb-item active">{{ $shopOwner ? 'Edit' : 'Add' }} Shop Owner</li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.shopOwners') }}">Business Owner</a></li>
                     </ol>
                 </nav>
-                <h1 class="h3 m-0">{{ $shopOwner ? 'Edit' : 'Add' }} Shop Owner</h1>
+                <h1 class="h3 m-0"> Business Owner</h1>
             </div>
             <div class="col-12">
                 <a class="btn btn-secondary backbtn" href="{{ url()->previous() }}">
@@ -53,26 +51,30 @@
                                 <!-- Left Column: Shop Owner Details -->
                                 <div class="col-md-6">
                                     <div class="mb-4">
-                                        <label for="name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" name="name" placeholder="Enter Shop Owner Name"
+                                        <label for="name" class="form-label">Name <span class="text-danger">
+                                                *</span></label>
+                                        <input type="text" class="form-control" name="name" placeholder="Enter Name"
                                             value="{{ old('name', $shopOwner->name ?? '') }}" required>
                                     </div>
 
                                     <div class="mb-4">
-                                        <label for="shop_name" class="form-label">Shop Name</label>
+                                        <label for="shop_name" class="form-label">Shop Name <span class="text-danger">
+                                                *</span></label>
                                         <input type="text" class="form-control" name="shop_name" placeholder="Enter Shop Name"
                                             value="{{ old('shop_name', $shopOwner->shop_name ?? '') }}" required>
                                     </div>
 
                                     <div class="mb-4">
-                                        <label for="email" class="form-label">Shop Email</label>
-                                        <input type="email" class="form-control" name="email" placeholder="Enter Shop Email"
+                                        <label for="email" class="form-label">Shop Email <span class="text-danger">
+                                                *</span></label>
+                                        <input type="email" class="form-control" name="email" placeholder="Enter Your Shop Email"
                                             value="{{ old('email', $shopOwner->email ?? '') }}" required>
                                     </div>
 
                                     <div class="mb-4">
-                                        <label for="address" class="form-label">Shop Address</label>
-                                        <input type="text" class="form-control" name="address" placeholder="Enter Shop Address"
+                                        <label for="address" class="form-label">Shop Address <span class="text-danger">
+                                                *</span></label>
+                                        <input type="text" class="form-control" name="address" placeholder="Enter Your Shop Address"
                                             value="{{ old('address', $shopOwner->address ?? '') }}" required>
                                     </div>
 
@@ -83,8 +85,9 @@
 
 
                                     <div class="mb-4">
-                                        <label for="phone" class="form-label">Phone</label>
-                                        <input type="text" class="form-control" name="phone" placeholder="Enter Mobile Number"
+                                        <label for="phone" class="form-label">Phone <span class="text-danger">
+                                                *</span></label>
+                                        <input type="text" class="form-control" name="phone" placeholder="Enter Your Phone Number"
                                             value="{{ old('phone', $shopOwner->phone ?? '') }}" data-parsley-required="true"
                                             data-parsley-type="digits" data-parsley-length="[10, 15]"
                                             data-parsley-length-message="Phone number must be between 10 to 15 digits"
@@ -92,12 +95,14 @@
                                     </div>
 
                                     <div class="mb-4">
-                                        <label for="domain" class="form-label">Domain</label>
-                                        <input type="url" class="form-control" name="domain" placeholder="Enter Domain Name"
+                                        <label for="domain" class="form-label">Domain <span class="text-danger">
+                                                *</span> ( https://example.co.za ) </label>
+                                        <input type="url" class="form-control" name="domain" placeholder="Enter Your Domain Name"
                                             value="{{ old('domain', $shopOwner->domain ?? '') }}" required>
                                     </div>
                                     <div class="mb-4">
-                                        <label for="package_id" class="form-label">Package</label>
+                                        <label for="package_id" class="form-label">Package <span class="text-danger">
+                                                *</span></label>
                                         <select name="package_id" class="form-control" required>
                                             <option value="">Select Package</option>
                                             @foreach ($packages as $package)

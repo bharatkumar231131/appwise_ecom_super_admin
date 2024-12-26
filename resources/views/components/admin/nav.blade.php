@@ -1,6 +1,6 @@
 @php
 $setting = App\Models\Setting::where('id','1')->first();
-$admin_logo = $setting['admin_logo'] ?? 'default-logo.png'; 
+$admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
 @endphp
 <div class="sa-app__sidebar">
     <div class="sa-sidebar">
@@ -85,9 +85,9 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                             class="bi bi-shop" viewBox="0 0 16 16">
                                                             <path
                                                                 d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5M4 15h3v-5H4zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zm3 0h-2v3h2z" />
-                                                        </svg></span><span class="sa-nav__title">ShopOwner
-                                                        Management</span><span class="sa-nav__arrow"><svg xmlns="http://www.w3.org/2000/svg"
-                                                            width="6" height="9" viewBox="0 0 6 9" fill="currentColor">
+                                                        </svg></span><span class="sa-nav__title">Business Owner Management</span><span
+                                                        class="sa-nav__arrow"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="9"
+                                                            viewBox="0 0 6 9" fill="currentColor">
                                                             <path
                                                                 d="M5.605,0.213 C6.007,0.613 6.107,1.212 5.706,1.612 L2.696,4.511 L5.706,7.409 C6.107,7.809 6.107,8.509 5.605,8.808 C5.204,9.108 4.702,9.108 4.301,8.709 L-0.013,4.511 L4.401,0.313 C4.702,-0.087 5.304,-0.087 5.605,0.213 Z">
                                                             </path>
@@ -95,13 +95,35 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                 <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
                                                     <li class="sa-nav__menu-item {{ request()->is('admin/shop-owners') ? 'active' : '' }}">
                                                         <a href="{{ url('admin/shop-owners') }}" class="sa-nav__link"><span
-                                                                class="sa-nav__menu-item-padding"></span><span
-                                                                class="sa-nav__title">ShopOwner</span></a>
+                                                                class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Business
+                                                                Owner</span></a>
                                                     </li>
                                                 </ul>
                                             </li>
                                             @endcan
-                                             @can('view inquiries')
+                                            <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
+                                                data-sa-collapse-item="sa-nav__menu-item--open">
+                                                <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                                            viewBox="0 0 24 24">
+                                                            <path
+                                                                d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18l7.45 3.72-2.92 1.47L12 6.04 7.47 7.37 4.55 5.9 12 4.18zM4 9.6v7.91l8 4 8-4V9.6l-8 4-8-4zm8 2.36l4.7 2.36-4.7 2.35-4.7-2.35 4.7-2.36z" />
+                                                        </svg></span><span class="sa-nav__title">Business Owner Sales Report
+                                                    </span><span class="sa-nav__arrow"><svg xmlns="http://www.w3.org/2000/svg" width="6"
+                                                            height="9" viewBox="0 0 6 9" fill="currentColor">
+                                                            <path
+                                                                d="M5.605,0.213 C6.007,0.613 6.107,1.212 5.706,1.612 L2.696,4.511 L5.706,7.409 C6.107,7.809 6.107,8.509 5.605,8.808 C5.204,9.108 4.702,9.108 4.301,8.709 L-0.013,4.511 L4.401,0.313 C4.702,-0.087 5.304,-0.087 5.605,0.213 Z">
+                                                            </path>
+                                                        </svg></span></a>
+                                                <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
+                                                    <li class="sa-nav__menu-item {{ request()->is('admin/sales-reports') ? 'active' : '' }}">
+                                                        <a href="{{ url('admin/sales-reports') }}" class="sa-nav__link"><span
+                                                                class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Sales
+                                                                Report</span></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            @can('view inquiries')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon"
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
                                                 <a href="#" class="sa-nav__link" data-sa-collapse-trigger=""><span class="sa-nav__icon"><svg
@@ -176,7 +198,8 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
 
                                                     <li class="sa-nav__menu-item {{ request()->is('admin/admin-details') ? 'active' : '' }}">
                                                         <a href="{{ url('admin/admin-details') }}" class="sa-nav__link"><span
-                                                                class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Update Admin Setting</span></a>
+                                                                class="sa-nav__menu-item-padding"></span><span class="sa-nav__title">Update Admin
+                                                                Setting</span></a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -255,7 +278,7 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                             </li>
                                             @endcan
 
-                                           
+
                                         </ul>
                                     </li>
                                 </ul>
