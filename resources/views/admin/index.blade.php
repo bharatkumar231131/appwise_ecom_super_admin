@@ -49,9 +49,6 @@
             </a>
         </div>
 
-
-
-
         <!-- Monthly Packages Bought Chart -->
         <div class="col-12 col-lg-12 col-xxl-12 d-flex">
             <div class="card flex-grow-1 saw-chart">

@@ -128,9 +128,13 @@ class ShopOwnerController extends Controller
         // return "hello";
     }
 
-    public function shopSaleReports(Request $request)
+    public function shopSaleReports(Request $request, $id = null)
     {
         if ($request->isMethod('post')) {
+
+            $shopOwner = ShopOwner::where('id', $id)->first();
+            $owner_id = $shopOwner['id'];
+
             $data = [
                 'start_date' => $request->start_date,
                 'end_date' => $request->end_date,
@@ -139,7 +143,7 @@ class ShopOwnerController extends Controller
             ];
 
             $data = json_encode($data);
-            $domainUrl = 'http://localhost/appwise_ecommerce';
+            $domainUrl = $shopOwner['domain'];
 
             $response = $this->packageLogicService->saleReports($domainUrl, $data);
 
@@ -153,14 +157,20 @@ class ShopOwnerController extends Controller
             }
 
             return view('admin.sales.sales-report', [
-                'salesData' => $salesData
+                'salesData' => $salesData,
+                'owner_id' => $owner_id
             ]);
         } else {
             $data = [
                 "id" => '1'
             ];
 
-            $domainUrl = 'http://localhost/appwise_ecommerce';
+            $shopOwner = ShopOwner::where('id', $id)->first();
+            $owner_id = $shopOwner['id'];
+
+            $domainUrl = $shopOwner['domain'];
+
+            // $domainUrl = 'http://localhost/appwise';
 
             $response = $this->packageLogicService->saleReports($domainUrl, $data);
 
@@ -173,8 +183,11 @@ class ShopOwnerController extends Controller
                 ], 500);
             }
 
+
+
             return view('admin.sales.sales-report', [
-                'salesData' => $salesData
+                'salesData' => $salesData,
+                'owner_id' => $owner_id
             ]);
         }
     }

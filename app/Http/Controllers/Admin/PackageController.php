@@ -47,6 +47,7 @@ class PackageController extends Controller
     {
         if ($id == '') {
             $title = 'Add Package';
+            
             $package = new Package();
             $message = 'Package added successfully!';
         } else {

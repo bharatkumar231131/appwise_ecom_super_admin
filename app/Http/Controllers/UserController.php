@@ -35,7 +35,6 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
         $users = User::all();
         return view('admin.users.list', ['users' => $users]);
     }
@@ -69,7 +68,7 @@ class UserController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = bcrypt('12345678');
+        $user->password = bcrypt('1234567890');
         // $user->status = '1';
         $user->save();
 

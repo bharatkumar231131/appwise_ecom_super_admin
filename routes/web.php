@@ -11,10 +11,6 @@ use App\Http\Controllers\Front\PayfastController;
 use App\Exports\SalesReportExport;
 use Maatwebsite\Excel\Facades\Excel;
 
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +21,6 @@ use Maatwebsite\Excel\Facades\Excel;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 
 
 Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function () {
@@ -61,16 +56,15 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::match(['get', 'post'], 'shop-owners-details/{id}', 'ShopOwnerController@showShopOwner');
 
         Route::get('sales-reports', 'ShopOwnerController@salesReport');
-        Route::match(['get', 'post'], 'shop-sales-report/{id}', 'ShopOwnerController@shopSaleReports')->name('admin.shopSaleReports');
+        Route::match(['get', 'post'], 'shop-sales-report/{id?}', 'ShopOwnerController@shopSaleReports')->name('admin.shopSaleReports');
 
 
 
-// Route::get('admin/sales-report/export', function () {
-//     return Excel::download(new SalesReportExport, 'sales_report.xlsx');
-// })->name('admin.sales.report.export');
+        // Route::get('admin/sales-report/export', function () {
+        //     return Excel::download(new SalesReportExport, 'sales_report.xlsx');
+        // })->name('admin.sales.report.export');
 
-
-        Route::match(['get', 'post'], 'shop-sales-report', 'ShopOwnerController@shopSaleReports')->name('admin.sales_report');
+        // Route::match(['get', 'post'], 'shop-sales-report', 'ShopOwnerController@shopSaleReports')->name('admin.sales_report');
         Route::post('orders', 'ShopOwnerController@orders')->name('admin.orders');
 
 
@@ -83,6 +77,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::get('add-edit-page/{id?}', 'CmsController@addEditPage')->name('admin.addEditPage');
         Route::post('update-page/{id?}', 'CmsController@updatePage')->name('admin.updatePage');
         Route::post('upload-image', 'CmsController@uploadImage');
+
 
 
         Route::get('/permissions/index', [PermissionController::class, 'index'])->name('permissions.index');
@@ -120,7 +115,9 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
     // });
 });
 
-
+Route::middleware(['auth'])->group(function () {
+    Route::post('/save-token', [NotificationController::class, 'saveToken'])->name('save.token');
+});
 
 Route::namespace('App\Http\Controllers\Front')->group(function () {
     // Route::get('/', 'IndexController@index')->name('home');

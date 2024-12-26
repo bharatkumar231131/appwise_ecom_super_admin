@@ -12,7 +12,7 @@
     <div class="py-5">
         <div class="row g-4 align-items-center">
             <div class="col-12">
-            <nav class="mb-2" aria-label="breadcrumb">
+                <nav class="mb-2" aria-label="breadcrumb">
                     <ol class="breadcrumb breadcrumb-sa-simple">
                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard')}}">Dashboard</a></li>
                         <span>&nbsp;/&nbsp;</span>
@@ -20,7 +20,7 @@
                     </ol>
                 </nav>
 
-               
+
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 m-0">Page</h1>
                 </div>
@@ -34,17 +34,17 @@
     </div>
 
 
-    <form action="{{ isset($page) ? url('admin/update-page/' . $page->id) : url('admin/update-page') }}" method="POST">
+    <form action="{{ isset($page) ? url('admin/update-page/' . $page->id) : url('admin/update-page') }}" method="POST" data-parsley-validate>
         @csrf
         <div class="row">
             <!-- Left Side: Page Details -->
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-3">
                             <label for="page_title" class="form-label">Page Title</label>
                             <input type="text" class="form-control" id="page_title" name="page_title"
-                                value="{{ $page->page_title ?? '' }}" required>
+                                value="{{ $page->page_title ?? '' }}" data-parsley-required="true">
                         </div>
                         {{--<div class="mb-3">
                             <label for="url_key" class="form-label">URL Key</label>
@@ -53,8 +53,8 @@
                     </div>--}}
                     <div class="mb-3">
                         <label for="html_content" class="form-label">HTML Content</label>
-                        <textarea class="form-control ckeditor" id="html_content" name="html_content"
-                            rows="10">{{ $page->html_content ?? '' }}</textarea>
+                        <textarea class="form-control ckeditor" id="html_content" name="html_content" rows="10"
+                            required>{{ $page->html_content ?? '' }}</textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Save Page</button>
                 </div>
@@ -62,7 +62,7 @@
         </div>
 
         <!-- Right Side: Image Upload -->
-        <div class="col-lg-4">
+        <div class="col-lg-4 d-none">
             <div class="card">
                 <div class="card-body">
                     <h5>Upload Image</h5>
@@ -216,8 +216,7 @@
                 timeOut: 3000,
             });
         });
-
-
     });
 </script>
+
 @endsection

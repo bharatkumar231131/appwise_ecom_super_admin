@@ -44,14 +44,14 @@
                         </div>
                         @endif
 
-                        <form action="{{ route('roles.update', $role->id) }}" method="post">
+                        <form action="{{ route('roles.update', $role->id) }}" method="post" data-parsley-validate>
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="mb-4">
                                         <label class="form-label" for="name">Role Name <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" id="name" placeholder="Enter Role Name" name="name"
-                                            value="{{ old('name', $role->name) }}" required>
+                                            value="{{ old('name', $role->name) }}" data-parsley-required="true">
                                         @error('name')
                                         <div class="text-danger">{{ $message }}</div>
                                         @enderror

@@ -12,17 +12,11 @@ use App\Models\User;
 
 class IndexController extends Controller
 {
-    //
     public function index()
     {
-        $packages = Package::all();
+        $packages = Package::where('status', 'Active')->get();
         $users = User::where('id', '1')->get();
-        return view('front.index', compact('packages','users'));
-    }
-
-    public function packageBuy($id)
-    {
-        return "hello";
+        return view('front.index', compact('packages', 'users'));
     }
 
     public function saveOwnerDetails(Request $request, $id)
@@ -66,7 +60,6 @@ class IndexController extends Controller
 
     public function processPayment(Request $request, $id)
     {
-
         // Retrieve the package details
         $package = Package::find($id);
         $owner_id = $request->owner_id;

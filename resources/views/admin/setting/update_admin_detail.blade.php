@@ -135,6 +135,23 @@
                                     name="admin_pincode" value="{{ Auth::user()->postal_code }}">
                             </div>
 
+                            <div class="mb-4 col-2">
+          <label class="form-label mt-3" for="admin_image">Admin Photo</label>
+          <input type="file" class="d-none" id="admin_image" name="admin_image" onchange="previewAdminImage(event)">
+          <div class="choosefilenew form-control" onclick="document.getElementById('admin_image').click()"
+            style="height: 200px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+            <div id="admin-image-message"
+              style="{{ !empty(Auth::user()->image) ? 'display: none;' : '' }}">
+              Click to upload Admin Photo
+            </div>
+            <img id="admin-preview"
+              src="{{ !empty(Auth::user()->image) ? asset('public/admin/images/photos/' . Auth::user()->image) : '' }}"
+              alt="Admin Photo"
+              style="display: {{ !empty(Auth::user()->image) ? 'block' : 'none' }}; max-height: 100%; max-width: 100%; object-fit: contain;">
+          </div>
+
+        </div>
+
                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
                             <button type="reset" class="btn btn-secondary">Cancel</button>
                 </form>
