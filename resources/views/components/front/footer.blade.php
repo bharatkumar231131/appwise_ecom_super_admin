@@ -3,7 +3,7 @@
 $front_logo = App\Models\Setting::where('id', '1')->first();
 $front_logo = $front_logo->front_logo;
 
-$admin = App\Models\User::where('id' , '1')->first();
+$admin = App\Models\User::where('id', '1')->first();
 $adminEmail = $admin->email;
 $adminPhone = $admin->mobile;
 
@@ -38,10 +38,14 @@ $adminPhone = $admin->mobile;
                             <li><a href="#">{{ $adminPhone }}</a></li>
                         </ul>
                         <ul class="social_media">
-                            <li><a class="d-flex justify-content-center align-items-center" href="#"><i class="icofont-facebook"></i></a></li>
-                            <li><a class="d-flex justify-content-center align-items-center" href="#"><i class="icofont-twitter"></i></a></li>
-                            <li><a class="d-flex justify-content-center align-items-center" href="#"><i class="icofont-instagram"></i></a></li>
-                            <li><a class="d-flex justify-content-center align-items-center" href="#"><i class="icofont-pinterest"></i></a></li>
+                            <li><a class="d-flex justify-content-center align-items-center" href="#"><i
+                                        class="icofont-facebook"></i></a></li>
+                            <li><a class="d-flex justify-content-center align-items-center" href="#"><i
+                                        class="icofont-twitter"></i></a></li>
+                            <li><a class="d-flex justify-content-center align-items-center" href="#"><i
+                                        class="icofont-instagram"></i></a></li>
+                            <li><a class="d-flex justify-content-center align-items-center" href="#"><i
+                                        class="icofont-pinterest"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -97,6 +101,7 @@ $adminPhone = $admin->mobile;
 
     <!-- go top button -->
     <div class="go_top">
+
         <span><img src="{{ asset('public/front/images/go_top.png') }}" alt="image"></span>
     </div>
 </footer>

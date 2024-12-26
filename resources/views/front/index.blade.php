@@ -642,10 +642,10 @@
                         <textarea class="form-control" placeholder="Your message" name="message" data-parsley-required="true"
                             data-parsley-trigger="change"></textarea>
                     </div>
-                    <div class="form-group term_check">
+                    <!-- <div class="form-group term_check">
                         <input type="checkbox" id="term">
                         <label for="term">I agree to receive emails, newsletters and promotional messages</label>
-                    </div>
+                    </div> -->
                     <div class="form-group mb-0 text-center">
                         <button type="submit" class="btn puprple_btn">SEND MESSAGE</button>
                     </div>
@@ -855,7 +855,7 @@
                         </div>
                         <div class="mb-3 col-6">
                             <label for="ownerDomain" class="form-label">Domain (www.example.co.za)  </label>
-                            <input type="url" class="form-control" id="ownerDomain" name="domain" placeholder="www.example.co.za">
+                            <input type="url" class="form-control" id="ownerDomain" name="domain" placeholder="Enter Your Domain">
                         </div>
                         <div class="mb-3 col-6">
                             <label for="ownerAddress" class="form-label">Address <span class="text-danger">
