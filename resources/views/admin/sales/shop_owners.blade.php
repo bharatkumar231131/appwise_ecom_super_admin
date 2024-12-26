@@ -22,6 +22,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @endif
+                
             </div>
             <div class="col-12">
                 <a class="btn btn-secondary backbtn" href="{{ url()->previous() }}">

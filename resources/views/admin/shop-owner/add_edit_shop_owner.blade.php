@@ -95,10 +95,9 @@
                                     </div>
 
                                     <div class="mb-4">
-                                        <label for="domain" class="form-label">Domain <span class="text-danger">
-                                                *</span> ( https://example.co.za ) </label>
+                                        <label for="domain" class="form-label">Domain ( www.example.co.za ) </label>
                                         <input type="url" class="form-control" name="domain" placeholder="Enter Your Domain Name"
-                                            value="{{ old('domain', $shopOwner->domain ?? '') }}" required>
+                                            value="{{ old('domain', $shopOwner->domain ?? '') }}" >
                                     </div>
                                     <div class="mb-4">
                                         <label for="package_id" class="form-label">Package <span class="text-danger">

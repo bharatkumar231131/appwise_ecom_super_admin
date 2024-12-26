@@ -173,6 +173,7 @@ class ShopOwnerController extends Controller
             // $domainUrl = 'http://localhost/appwise';
 
             $response = $this->packageLogicService->saleReports($domainUrl, $data);
+            
 
             $salesData = $response['order'];
 

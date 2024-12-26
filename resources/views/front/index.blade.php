@@ -854,10 +854,8 @@
                                 data-parsley-trigger="change">
                         </div>
                         <div class="mb-3 col-6">
-                            <label for="ownerDomain" class="form-label">Domain (www.example.co.za) <span class="text-danger">
-                                    *</span> </label>
-                            <input type="url" class="form-control" id="ownerDomain" name="domain" placeholder="www.example.co.za"
-                                data-parsley-required="true" data-parsley-trigger="change">
+                            <label for="ownerDomain" class="form-label">Domain (www.example.co.za)  </label>
+                            <input type="url" class="form-control" id="ownerDomain" name="domain" placeholder="www.example.co.za">
                         </div>
                         <div class="mb-3 col-6">
                             <label for="ownerAddress" class="form-label">Address <span class="text-danger">
