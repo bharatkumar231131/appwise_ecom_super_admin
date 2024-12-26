@@ -170,6 +170,11 @@ class ShopOwnerController extends Controller
 
             $domainUrl = $shopOwner['domain'];
 
+            if (empty($domainUrl)) {
+                // return redirect()->back()->with('error_message', 'domain name is required');
+                return redirect()->back()->with('error_message', 'Please provide domain name.');
+            }
+
             // $domainUrl = 'http://localhost/appwise';
 
             $response = $this->packageLogicService->saleReports($domainUrl, $data);
@@ -183,7 +188,7 @@ class ShopOwnerController extends Controller
                 ], 500);
             }
 
-            
+
 
             return view('admin.sales.sales-report', [
                 'salesData' => $salesData,

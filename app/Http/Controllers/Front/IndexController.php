@@ -39,7 +39,7 @@ class IndexController extends Controller
             'shop_name' => $request->shop_name,
             'email' => $request->shop_email,
             'phone' => $request->shop_phone,
-            'domain' => $request->domain,
+            'domain' => $request->domain ?? "",
             'address' => $request->address,
             'package_id' => $id,
             // 'price' => 'required|numeric',

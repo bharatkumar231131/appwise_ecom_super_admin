@@ -68,7 +68,6 @@ class InquiryController extends Controller
                 'user_message' => $data['message']
             ];
 
-            // return $messageData;
             \Illuminate\Support\Facades\Mail::send('emails.inquiry', $messageData, function ($message) use ($email) {
                 $message->to($email)->subject('New Inquiry Received');
             });
