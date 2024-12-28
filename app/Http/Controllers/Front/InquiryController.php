@@ -20,11 +20,9 @@ class InquiryController extends Controller
 
     public function inquirySubmit(Request $request)
     {
-        // return $request;
         if ($request->isMethod('post')) {
 
             $data = $request->all();
-            // return $data;
             $rules = [
                 'name' => 'required',
                 'email' => 'required|email',
@@ -49,7 +47,7 @@ class InquiryController extends Controller
             if ($validator->fails()) {
                 return redirect()->back()->withErrors($validator)->withInput();
             }
-            // return "hello";
+
             Inquiry::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
@@ -57,8 +55,8 @@ class InquiryController extends Controller
                 'address' => $data['address'],
                 'message' => $data['message']
             ]);
-            // return "hello";
-            $email = "pareekh611@gmail.com";
+
+            $email = "sales@appwise.co.za";
 
             $messageData = [
                 'name' => $data['name'],

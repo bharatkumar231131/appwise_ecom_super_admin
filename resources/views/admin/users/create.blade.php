@@ -52,7 +52,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-4">
                                         <label class="form-label" for="name">User Name <span class="text-danger">
-                                        *</span></label>
+                                                *</span></label>
                                         <input type="text" class="form-control" id="name" placeholder="Enter User Name" name="name"
                                             value="{{ old('name') }}" required>
                                         @error('name')
@@ -63,7 +63,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-4">
                                         <label class="form-label" for="email">User Email <span class="text-danger">
-                                        *</span></label>
+                                                *</span></label>
                                         <input type="email" class="form-control" id="email" placeholder="Enter User Email" name="email"
                                             value="{{ old('email') }}" required>
                                         @error('email')
@@ -71,25 +71,48 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-4">
-                                            <label class="form-label">Assign Roles</label>
-                                            <div class="row">
-                                                @forelse($roles as $role)
-                                                @if($role->name != 'superadmin' )
-                                                <div class="col-sm-6 mb-2">
-                                                    <div class="form-check">
-                                                        <input type="checkbox" name="role[]" id="role-{{ $role->id }}" value="{{ $role->name }}"
-                                                            class="form-check-input">
-                                                        <label for="role-{{ $role->id }}" class="form-check-label">{{ $role->name }}</label>
-                                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-4">
+                                        <label class="form-label" for="password">Password <span class="text-danger">
+                                                *</span></label>
+                                        <input type="password" class="form-control" id="password" placeholder="Enter Password"
+                                            name="password" required>
+                                        @error('password')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-4">
+                                        <label class="form-label" for="password_confirmation">Confirm Password <span class="text-danger">
+                                                *</span></label>
+                                        <input type="password" class="form-control" id="password_confirmation"
+                                            placeholder="Enter Confirm Password" name="password_confirmation" data-parsley-equalto="#password"
+                                            data-parsley-required-message="Confirm Password is required"
+                                            data-parsley-equalto-message="Passwords do not match">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-4">
+                                        <label class="form-label">Assign Roles</label>
+                                        <div class="row">
+                                            @forelse($roles as $role)
+                                            @if($role->name != 'superadmin' )
+                                            <div class="col-sm-6 mb-2">
+                                                <div class="form-check">
+                                                    <input type="checkbox" name="role[]" id="role-{{ $role->id }}" value="{{ $role->name }}"
+                                                        class="form-check-input">
+                                                    <label for="role-{{ $role->id }}" class="form-check-label">{{ $role->name }}</label>
                                                 </div>
-                                                @endif
-                                                @empty
-                                                <p class="text-muted">No roles available.</p>
-                                                @endforelse
                                             </div>
+                                            @endif
+                                            @empty
+                                            <p class="text-muted">No roles available.</p>
+                                            @endforelse
                                         </div>
                                     </div>
                                 </div>

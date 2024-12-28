@@ -37,14 +37,19 @@ class PayfastController extends Controller
             'owner_id' => $owner_id
         ]);
 
+        $passphrase = 'jt7NOE43FZPn';
         $merchant_id = '10000100';
         $merchant_key = '46f0cd694581a';
+
+        // $passphrase = 'Appwiseisno1';
+        // $merchant_id = '17557494';
+        // $merchant_key = '5i2mnu7g9frwg';
 
         $return_url = route('payfastsuccess');
         $cancel_url = route('payfastcancel');
         $notify_url = route('payfastnotify');
 
-        $data = [
+        $data = array(
             'merchant_id' => $merchant_id,
             'merchant_key' => $merchant_key,
             'return_url' => $return_url,
@@ -56,20 +61,28 @@ class PayfastController extends Controller
             'm_payment_id' => $package_id,
             'amount' => number_format($price, 2, '.', ''),
             'item_name' => $package_name,
-        ];
+        );
 
-        PayFastLog::create([
-            'logs' => 'PayFast Payment Initiated',
-            'data' => json_encode($data),
-        ]);
+        // PayFastLog::create([
+        //     'logs' => 'PayFast Payment Initiated',
+        //     'data' => json_encode($data),
+        // ]);
 
-        $htmlForm = '<form action="https://sandbox.payfast.co.za/eng/process" method="post" name="payfastform">';
+
+        $signature = $this->generateSignature($data, $passphrase);
+        $data['signature'] = $signature;
+
+        $testingMode = true;
+
+        $pfHost = $testingMode ? 'sandbox.payfast.co.za' : 'www.payfast.co.za';
+        $htmlForm = '<form action="https://' . $pfHost . '/eng/process" method="post" id="payfastform">';
         foreach ($data as $name => $value) {
-            $htmlForm .= '<input name="' . $name . '" type="hidden" value="' . $value . '" />';
+            $htmlForm .= '<input name="' . $name . '" type="hidden" value=\'' . $value . '\' />';
         }
+        // $htmlForm .= '<input type="submit" id="payfastbtn" value="Pay Now" />';
         $htmlForm .= '</form>';
 
-        return view('front.payfast.form', compact('htmlForm'));
+        return view('front.payfast.form')->with(['htmlForm' => $htmlForm]);
     }
 
     public function payFastSuccess(Request $request)
@@ -132,8 +145,8 @@ class PayfastController extends Controller
             'logs' => 'PayFast Payment Cancelled',
             'data' => json_encode($request->all())
         ]);
-
-        return view('front.payment_cancelled', ['message' => 'Payment was cancelled.']);
+        return redirect('/home');
+        // return view('front.payment_cancelled', ['message' => 'Payment was cancelled.']);
     }
 
 
@@ -145,5 +158,24 @@ class PayfastController extends Controller
         ]);
 
         return response()->json(['status' => 'success']);
+    }
+
+    function generateSignature($data, $passPhrase = null)
+    {
+        // Create parameter string
+        $pfOutput = '';
+        foreach ($data as $key => $val) {
+            if ($val !== '') {
+                $pfOutput .= $key . '=' . urlencode(trim($val)) . '&';
+            }
+        }
+
+        // Remove last ampersand
+        $getString = substr($pfOutput, 0, -1);
+        if ($passPhrase !== null) {
+            $getString .= '&passphrase=' . urlencode(trim($passPhrase));
+        }
+
+        return md5($getString);
     }
 }

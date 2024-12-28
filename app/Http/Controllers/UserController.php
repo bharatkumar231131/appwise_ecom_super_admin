@@ -58,17 +58,19 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:3',
-            'email' => 'required|email|unique:users,email,'
+            'email' => 'required|email|unique:users,email,',
+            'password' => 'required|min:8|confirmed',
         ]);
 
         if ($validator->fails()) {
-            return redirect()->route('user.create')->withInput()->withErrors($validator);
+            return redirect()->route('users.create')->withInput()->withErrors($validator);
         }
 
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = bcrypt('1234567890');
+        // $user->password = bcrypt('1234567890');
+        $user->password = bcrypt($request->password);
         // $user->status = '1';
         $user->save();
 
