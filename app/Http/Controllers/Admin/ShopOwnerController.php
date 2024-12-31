@@ -178,7 +178,12 @@ class ShopOwnerController extends Controller
             // $domainUrl = 'http://localhost/appwise';
 
             $response = $this->packageLogicService->saleReports($domainUrl, $data);
-            
+
+            if (!empty($response['order'])) {
+                $salesData = $response['order'];
+            } else {
+                return redirect()->back()->with('error_message', 'Domain Name Not Found.');
+            }
 
             $salesData = $response['order'];
 

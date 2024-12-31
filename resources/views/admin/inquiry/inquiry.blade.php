@@ -62,7 +62,15 @@
                             <td>{{ $inquiry->email }}</td>
                             <td>{{ $inquiry->phone }}</td>
                             <td>{{ $inquiry->address }}</td>
-                            <td>{{ Str::limit($inquiry->message) }}</td>
+                            {{--<td>{{ Str::limit($inquiry->message) }}</td>--}}
+                            <td>
+                                {{ Str::limit($inquiry->message, 20) }}
+                                @if (strlen($inquiry->message) > 20)
+                                <span data-bs-toggle="modal" data-bs-target="#messageModal{{ $inquiry->id }}" class="badge bg-info"
+                                    style="cursor:pointer; color:black;">Read
+                                    More</span>
+                                @endif
+                            </td>
                             <!-- <td>
                                 @if ($inquiry->status == 'in_progress')
                                 <span class="badge bg-warning">In Progress</span>
@@ -81,6 +89,24 @@
                                 </div>
                             </td>
                         </tr>
+
+                        <div class="modal fade" id="messageModal{{ $inquiry->id }}" tabindex="-1"
+                            aria-labelledby="messageModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="messageModalLabel">Inquiry Message</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>{{ $inquiry->message }}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         @endforeach
                     </tbody>
                 </table>

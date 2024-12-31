@@ -35,7 +35,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::match(['get', 'post'], 'add-edit-package/{id?}', 'PackageController@addeditpackage')->name('admin.addeditpackage');
         Route::post('change-package-status', 'PackageController@changePackageStatus')->name('packages.status');
 
-        Route::get('package_buy', 'PackageController@packageBuy');
+        Route::match(['get', 'post'], 'package_buy', 'PackageController@packageBuy');
         Route::get('edit_package_buy/{id}', 'PackageController@editPackageBuy');
         Route::post('change-package_buy-status', 'packagecontroller@changePackageBuyStatus')->name('package_buy.status');
 

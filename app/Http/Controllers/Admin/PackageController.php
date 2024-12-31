@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Validator;
 // use Illuminate\Routing\Controllers\HasMiddleware;
 // use Illuminate\Routing\Controllers\Middleware;
 use App\Services\PackageLogicService;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\PackagePurchaseExport;
 
 class PackageController extends Controller
 {
@@ -47,7 +49,7 @@ class PackageController extends Controller
     {
         if ($id == '') {
             $title = 'Add Package';
-            
+
             $package = new Package();
             $message = 'Package added successfully!';
         } else {
@@ -125,8 +127,26 @@ class PackageController extends Controller
         return response()->json(['success' => true]);
     }
 
-    public function packageBuy()
+    public function packageBuy(Request $request)
     {
+        if ($request->isMethod('post')) {
+
+            if ($request->type == "export") {
+                $packageBuy = json_decode($request->package_purchases);
+                return Excel::download(new PackagePurchaseExport($packageBuy), 'package_purchases.xlsx');
+            } else {
+                $query = PackageBuy::query();
+                if ($request->filled('start_date') && $request->filled('end_date')) {
+                    $query->whereBetween('created_at', [
+                        $request->start_date,
+                        $request->end_date
+                    ]);
+                }
+                $packageBuy = $query->with('shopOwner')->get();
+                return view('admin.packages.package_buy', compact('packageBuy'));
+            }
+        }
+
         $packageBuy = PackageBuy::with('shopOwner')->get();
         return view('admin.packages.package_buy', compact('packageBuy'));
     }
