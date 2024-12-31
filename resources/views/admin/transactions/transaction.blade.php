@@ -8,11 +8,11 @@
                     <ol class="breadcrumb breadcrumb-sa-simple">
                         <li class="breadcrumb-item"><a href="{{ url('admin/dashboard')}}">Dashboard</a></li>
                         <span>&nbsp;/&nbsp;</span>
-                        <li class="breadcrumb-item active">Inquiries</li>
+                        <li class="breadcrumb-item active">Transaction</li>
                     </ol>
                 </nav>
                 <div class="d-flex justify-content-between">
-                    <h1 class="h3 m-0">Inquiries</h1>
+                    <h1 class="h3 m-0">Transaction</h1>
                 </div>
                 @if (Session::has('success_message'))
                 <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
@@ -32,7 +32,7 @@
     <!-- Search Bar -->
 
 
-    <!-- Inquiries Table -->
+    
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -45,41 +45,25 @@
                     <thead class="sticky-header">
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Address</th>
-                            <th>Message</th>
-                            <!-- <th>Status</th> -->
+                            <th>Transaction Id</th>
+                            <th>Package Name</th>
+                            <th>Amount</th>
+                            <th>Payment Method</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($inquiries as $inquiry)
+                       @foreach ($transactions as $transaction)
                         <tr>
-                            <td>{{ $inquiry->id }}</td>
-                            <td>{{ $inquiry->name }}</td>
-                            <td>{{ $inquiry->email }}</td>
-                            <td>{{ $inquiry->phone }}</td>
-                            <td>{{ $inquiry->address }}</td>
-                            <td>{{ Str::limit($inquiry->message) }}</td>
-                            <!-- <td>
-                                @if ($inquiry->status == 'in_progress')
-                                <span class="badge bg-warning">In Progress</span>
-                                @elseif ($inquiry->status == 'resolved')
-                                <span class="badge bg-success">Resolved</span>
-                                @else
-                                <span class="badge bg-info">New</span>
-                                @endif
-                            </td> -->
+                            <td>{{$transaction->id}}</td>
+                            <td>{{$transaction->transaction_id}}</td>
+                            <td>{{ $transaction->package_name }}</td>
+                            <td>{{$transaction->amount}}</td>
+                            <td>{{$transaction->payment_method}}</td>
                             <td>
                                 <div class="d-flex gap-3">
-                                    <a href="{{ url('admin/inquiry_details/' . $inquiry->id) }}" class="actionbtn-tb actionbtn-edit"
-                                        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="View">
-                                        <i class="far fa-eye text-white"></i>
-                                    </a>
 
-                                    <a href="#" data-url="{{ route('admin.delete', ['type' => 'inquiry', 'id' => $inquiry['id']]) }}"
+                                    <a href="#" data-url="{{ route('admin.delete', ['type' => 'transaction', 'id' => $transaction->id]) }}"
                                         class="actionbtn-tb actionbtn-remove delete-btn" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-original-title="Delete">
                                         <i class="fas fa-trash-alt"></i>
