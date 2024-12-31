@@ -108,6 +108,10 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::post('/test-package-upgrade', 'PackageController@upgradePackage')->name('testpackage');
 
         Route::post('/sales_report/export', 'AdminController@exportSalesReport')->name('admin.sales_report.export');
+        Route::get('transaction', 'transactionController@index');
+        
+
+        
     });
 
     // Route::fallback(function () {

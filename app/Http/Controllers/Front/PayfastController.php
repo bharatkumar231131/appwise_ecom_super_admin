@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use App\Models\PayFastLog;
 use App\Models\ShopOwner;
+use App\Models\Transaction;
 use App\Services\PackageLogicService;
+use Illuminate\Support\Str; 
 
 class PayfastController extends Controller
 {
@@ -99,6 +101,9 @@ class PayfastController extends Controller
 
         $package = Package::where('id', '=', $payfastData['package_id'])->first();
 
+        $transaction_id = 'PF' . strtoupper(Str::random(12));
+
+
         PackageBuy::create([
             'package_id' => $payfastData['package_id'],
             'shop_owner_id' => $payfastData['owner_id'],
@@ -111,6 +116,15 @@ class PayfastController extends Controller
             'status' => 'active',
             'payment_method' => "PayFast",
         ]);
+
+        Transaction::create([
+            'transaction_id' => $transaction_id,
+            'package_name' => $payfastData['package_name'],
+            'amount' => $payfastData['price'],
+            'payment_method' => 'PayFast',
+
+        ]);
+        
 
         $shopOwner = ShopOwner::where('id', $payfastData['owner_id'])->first();
 

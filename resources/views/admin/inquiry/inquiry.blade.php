@@ -86,6 +86,12 @@
                                         data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="View">
                                         <i class="far fa-eye text-white"></i>
                                     </a>
+
+                                    <a href="#" data-url="{{ route('admin.delete', ['type' => 'inquiry', 'id' => $inquiry['id']]) }}"
+                                        class="actionbtn-tb actionbtn-remove delete-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-original-title="Delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                        </a>
                                 </div>
                             </td>
                         </tr>

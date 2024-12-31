@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Hash;
 use Intervention\Image\Facades\Image;
 use App\Exports\SalesReportExport;
 use App\Models\Page;
+use App\Models\Transaction;
 use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
@@ -122,6 +123,14 @@ class AdminController extends Controller
             $area = Page::findOrFail($id); 
             $area->delete();
             return redirect()->back()->with('success_message', "Page delete succesfully");
+        }  elseif ($type === "inquiry") {
+            $area = Inquiry::findOrFail($id); 
+            $area->delete();
+            return redirect()->back()->with('success_message', "Inquiry delete succesfully");
+        }  elseif ($type === "transaction") {
+            $area = Transaction::findOrFail($id); 
+            $area->delete();
+            return redirect()->back()->with('success_message', "Transaction delete succesfully");
         }
     }
 

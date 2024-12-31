@@ -46,6 +46,19 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                     <span class="sa-nav__title">Dashboard</span>
                                                 </a>
                                             </li>
+                                            <li class="sa-nav__menu-item sa-nav__menu-item--has-icon {{ request()->is('admin/transaction') ? 'active' : '' }}">
+                                                <a href="{{ url('admin/transaction') }}" class="sa-nav__link">
+                                                    <span class="sa-nav__icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor">
+                                                            <!-- Coin with "R" for Rand (ZAR) -->
+                                                            <circle cx="12" cy="12" r="10" stroke="black" stroke-width="2" fill="" />
+                                                            <text x="12" y="16" font-size="12" text-anchor="middle" fill="black" font-family="Arial, sans-serif" font-weight="bold">R</text>
+                                                        </svg>
+                                                    </span>
+                                                    <span class="sa-nav__title">Transaction</span>
+                                                </a>
+                                            </li>
+
                                             @can('view packages')
                                             <li class="sa-nav__menu-item sa-nav__menu-item--has-icon "
                                                 data-sa-collapse-item="sa-nav__menu-item--open">
