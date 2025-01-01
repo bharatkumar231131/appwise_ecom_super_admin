@@ -43,8 +43,6 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::get('inquiries', 'InquiryController@index');
         Route::any('inquiry_details/{id}', 'InquiryController@inquirydetails')->name('admin.returnorderdetail');
 
-
-
         Route::get('shop-owners', 'ShopOwnerController@index');
         Route::match(['get', 'post'], 'shop-owners/{id?}', 'ShopOwnerController@createOrEdit');
         Route::post('change-owner-status', 'ShopOwnerController@changeOwnerStatus')->name('owners.status');
@@ -58,8 +56,6 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::get('sales-reports', 'ShopOwnerController@salesReport');
         Route::match(['get', 'post'], 'shop-sales-report/{id?}', 'ShopOwnerController@shopSaleReports')->name('admin.shopSaleReports');
 
-
-
         // Route::get('admin/sales-report/export', function () {
         //     return Excel::download(new SalesReportExport, 'sales_report.xlsx');
         // })->name('admin.sales.report.export');
@@ -67,18 +63,14 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         // Route::match(['get', 'post'], 'shop-sales-report', 'ShopOwnerController@shopSaleReports')->name('admin.sales_report');
         Route::post('orders', 'ShopOwnerController@orders')->name('admin.orders');
 
-
         Route::match(['get', 'post'], 'admin-details', 'AdminController@adminDetails');
         Route::match(['get', 'post'], 'update-admin-detail', 'AdminController@updateAdminDetails');
         Route::match(['get', 'post'], 'admin-profile', 'AdminController@adminprofile');
-
 
         Route::get('pages', 'CmsController@pages');
         Route::get('add-edit-page/{id?}', 'CmsController@addEditPage')->name('admin.addEditPage');
         Route::post('update-page/{id?}', 'CmsController@updatePage')->name('admin.updatePage');
         Route::post('upload-image', 'CmsController@uploadImage');
-
-
 
         Route::get('/permissions/index', [PermissionController::class, 'index'])->name('permissions.index');
         Route::get('/permissions/create', [PermissionController::class, 'create'])->name('permissions.create');
@@ -86,7 +78,6 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::get('/permissions/{id}/edit', [PermissionController::class, 'edit'])->name('permissions.edit');
         Route::post('/permissions/{id}', [PermissionController::class, 'update'])->name('permissions.update');
         Route::any('/permissions/{id}/delete', [PermissionController::class, 'destroy'])->name('permissions.delete');
-
 
         Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
         Route::get('/roles/create', [RoleController::class, 'create'])->name('roles.create');
@@ -101,17 +92,13 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
         Route::post('/users/{id}', [UserController::class, 'update'])->name('users.update');
 
-
         Route::match(['get', 'post'], 'logo', 'AdminController@updateLogo')->name('logo');
 
         // Route::get('/shop/upgrade-package', 'PackageController@upgradePackage');
         Route::post('/test-package-upgrade', 'PackageController@upgradePackage')->name('testpackage');
 
         Route::post('/sales_report/export', 'AdminController@exportSalesReport')->name('admin.sales_report.export');
-        Route::get('transaction', 'transactionController@index');
-        
-
-        
+        Route::match(['get', 'post'], 'transaction', 'transactionController@index');
     });
 
     // Route::fallback(function () {
