@@ -12,7 +12,7 @@
                     </ol>
                 </nav>
                 <div class="d-flex justify-content-between">
-                    <h1 class="h3 m-0">Transaction</h1>
+                    <h1 class="h3 m-0">Transaction Report</h1>
                 </div>
                 @if (Session::has('success_message'))
                 <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
@@ -32,7 +32,7 @@
     <!-- Search Bar -->
 
 
-    
+
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -45,6 +45,7 @@
                     <thead class="sticky-header">
                         <tr>
                             <th>ID</th>
+                            <th>Onwer Name</th>
                             <th>Transaction Id</th>
                             <th>Package Name</th>
                             <th>Amount</th>
@@ -53,9 +54,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                       @foreach ($transactions as $transaction)
+                        @foreach ($transactions as $transaction)
                         <tr>
                             <td>{{$transaction->id}}</td>
+                            <td><?php $owner = App\Models\ShopOwner::find($transaction->owner_id);?>{{$owner->name ?? "N/A"}}</td>
                             <td>{{$transaction->transaction_id}}</td>
                             <td>{{ $transaction->package_name }}</td>
                             <td>{{$transaction->amount}}</td>
@@ -67,7 +69,7 @@
                                         class="actionbtn-tb actionbtn-remove delete-btn" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-original-title="Delete">
                                         <i class="fas fa-trash-alt"></i>
-                                        </a>
+                                    </a>
                                 </div>
                             </td>
                         </tr>

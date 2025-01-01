@@ -13,7 +13,7 @@
                 </nav>
                 <div class="d-flex justify-content-between">
                     <h1 class="h3 m-0">Packages Purchase</h1>
-                    <div class="d-flex align-items-center d-none">
+                    <div class="d-flex align-items-center ">
                         <button class="btn btn-primary me-3" type="button" data-toggle="collapse" data-target="#filter-section"
                             aria-expanded="false" aria-controls="filter-section">Filter</button>
                         <form action="{{ url('admin/package_buy') }}" method="POST" class="d-inline-block">

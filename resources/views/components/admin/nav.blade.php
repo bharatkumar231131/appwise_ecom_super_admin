@@ -55,7 +55,7 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
                                                             <text x="12" y="16" font-size="12" text-anchor="middle" fill="black" font-family="Arial, sans-serif" font-weight="bold">R</text>
                                                         </svg>
                                                     </span>
-                                                    <span class="sa-nav__title">Transaction</span>
+                                                    <span class="sa-nav__title">Transaction Report</span>  
                                                 </a>
                                             </li>
 
@@ -312,3 +312,4 @@ $admin_logo = $setting['admin_logo'] ?? 'default-logo.png';
     <div class="sa-app__sidebar-shadow"></div>
     <d i v="" class="sa-app__sidebar-backdrop" data-sa-close-sidebar=""></d>
 </div>
+

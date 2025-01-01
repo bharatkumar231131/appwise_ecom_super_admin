@@ -1,4 +1,5 @@
 @extends('components.admin.layouts')
+
 @section('content')
 <div class="container">
     <div class="py-5">
@@ -16,12 +17,9 @@
                     <a href="{{ route('roles.create') }}" class="btn btn-primary">New Create</a>
                 </div>
                 @if (Session::has('success_message'))
-                <!-- Check AdminController.php, updateAdminPassword() method -->
                 <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
                     <strong>Success:</strong> {{ Session::get('success_message') }}
-                    <button type="button" class="sa-close" data-bs-dismiss="alert" aria-label="Close">
-
-                    </button>
+                    <button type="button" class="sa-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @endif
             </div>
@@ -56,7 +54,19 @@
                         <tr>
                             <td>{{ $role['id'] ?? "N/A"}}</td>
                             <td>{{ $role['name'] ?? "N/A"}}</td>
-                            <td>{{ $role->permissions->pluck('name')->implode(', ') }}</td>
+                            <td>
+                                @php
+                                $permissions = $role->permissions->pluck('name')->implode(', ');
+                                @endphp
+
+                                <!-- Truncate the permission string for display in the table -->
+                                @if (strlen($permissions) > 50)
+                                <span>{{ substr($permissions, 0, 50) }}...</span>
+                                <span data-bs-toggle="modal" data-bs-target="#permissionModal{{ $role['id'] }}" class="badge bg-info" style="cursor:pointer; color:black;">Read More</span>
+                                @else
+                                {{ $permissions }}
+                                @endif
+                            </td>
                             <td>
                                 <div class="d-flex gap-3">
                                     <a href="{{ route('roles.edit', $role['id']) }}" class="actionbtn-tb actionbtn-edit"
@@ -71,8 +81,38 @@
                                 </div>
                             </td>
                         </tr>
+
+                        <!-- Modal for displaying full permissions list -->
+                        <div class="modal fade" id="permissionModal{{ $role['id'] }}" tabindex="-1" aria-labelledby="permissionModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="permissionModalLabel">Permissions for {{ $role['name'] }}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+                                        <!-- Displaying permissions list in proper format -->
+                                        <ul class="row">
+                                            @foreach ($role->permissions as $permission)
+                                            <div class="col-4 d-flex align-items-center permission-checkbox mt-3"> 
+                                                <i class=" me-2 fas fa-check-square mr-2 text-info"></i>
+                                                {{ $permission->name }}
+                                            </div>
+                                            @endforeach
+                                        </ul>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         @endif
                         @empty
+                        <tr>
+                            <td colspan="4" class="text-center">No roles found</td>
+                        </tr>
                         @endforelse
 
                     </tbody>
@@ -81,39 +121,5 @@
         </div>
     </div>
 </div>
-
-@endsection
-
-@section('scripts')
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        document.addEventListener('click', function(event) {
-            if (event.target.classList.contains('delete-btn') || event.target.closest('.delete-btn')) {
-                event.preventDefault();
-                const button = event.target.closest('.delete-btn');
-                const url = button.getAttribute('data-url');
-                confirmDelete(url);
-            }
-        });
-    });
-
-    function confirmDelete(url) {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You want to delete this permission!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!',
-            cancelButtonText: 'No, cancel'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = url;
-            }
-        });
-    }
-</script>
 
 @endsection

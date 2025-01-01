@@ -118,6 +118,7 @@ class PayfastController extends Controller
         ]);
 
         Transaction::create([
+            'owner_id' => $payfastData['owner_id'],
             'transaction_id' => $transaction_id,
             'package_name' => $payfastData['package_name'],
             'amount' => $payfastData['price'],

@@ -72,7 +72,7 @@
                         </button>
                     </a>
                 </div>
-                <div class="saw-table__body sa-widget-table text-nowrap">
+                <div class="saw-table__body sa-widget-table">
                     <table>
                         <thead>
                             <tr>
@@ -93,7 +93,16 @@
                                 <td>{{ $inquiry->email ?? 'N/A' }}</td>
                                 <td>{{ $inquiry->phone ?? 'N/A' }}</td>
                                 <td>{{ $inquiry->address ?? 'N/A' }}</td>
-                                <td>{{ Str::limit($inquiry->message ?? 'N/A') }}</td>
+                             {{--   <td>{{ Str::limit($inquiry->message ?? 'N/A') }}</td> --}}
+                                <td>
+                                @if (strlen($inquiry->message) > 50)
+                                <span>{{ substr($inquiry->message, 0, 30) }}...</span>
+                                <span data-bs-toggle="modal" data-bs-target="#messageModal{{ $inquiry->id }}" class="badge bg-info"
+                                    style="cursor:pointer; color:black;">Read
+                                    More</span>
+                                @endif
+                                </td>
+                               
                                 <!-- <td>
                                     @if ($inquiry->status == 'in_progress')
                                     <span class="badge bg-warning">In Progress</span>
@@ -104,6 +113,23 @@
                                     @endif
                                 </td> -->
                             </tr>
+                            <div class="modal fade" id="messageModal{{ $inquiry->id }}" tabindex="-1"
+                            aria-labelledby="messageModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="messageModalLabel">Inquiry Message</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>{{ $inquiry->message }}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                             @endforeach
                         </tbody>
                     </table>
