@@ -6,7 +6,7 @@
             <div class="col-12">
                 <nav class="mb-2" aria-label="breadcrumb">
                     <ol class="breadcrumb breadcrumb-sa-simple">
-                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard')}}">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
                         <span>&nbsp;/&nbsp;</span>
                         <li class="breadcrumb-item active">Packages Purchase</li>
                     </ol>
@@ -41,7 +41,6 @@
         </div>
     </div>
 
-
     <div id="filter-section" class="collapse row mb-4">
         <div class="col-lg-8">
             <form action="{{ url('admin/package_buy') }}" method="post" class="row g-3">
@@ -60,7 +59,6 @@
             </form>
         </div>
     </div>
-
 
     <div class="row">
         <div class="col-lg-12">
@@ -124,10 +122,7 @@
         </div>
     </div>
 </div>
-
 @endsection
-
-
 @section('scripts')
 <script>
     var packageId, currentStatus;
