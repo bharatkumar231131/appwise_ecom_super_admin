@@ -62,7 +62,6 @@
         </div>
     </div>
 
-
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -83,21 +82,15 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
-
                     <tbody>
-<<<<<<< HEAD
-                        @foreach ($transactions as $transaction)
-                        <tr>
-                            <td>{{$transaction->id}}</td>
-                            <td><?php $owner = App\Models\ShopOwner::find($transaction->owner_id);?>{{$owner->name ?? "N/A"}}</td>
-=======
                         @php
                         $i = 1;
                         @endphp
                         @foreach ($transactions as $transaction)
                         <tr>
                             <td>{{$i}}</td>
->>>>>>> db8e6d8a57016a177c19d488f8f71116fff6cdc6
+                            <td><?php $owner = App\Models\ShopOwner::find($transaction->owner_id);
+                                ?>{{$owner->name ?? "N/A"}}</td>
                             <td>{{$transaction->transaction_id}}</td>
                             <td>{{ $transaction->package_name }}</td>
                             <td>{{$transaction->amount}}</td>
@@ -123,7 +116,6 @@
         </div>
     </div>
 </div>
-
 @endsection
 
 @section('scripts')
@@ -144,13 +136,14 @@
             filterForm.submit();
         }
 
-
         if (statusSelect) {
             statusSelect.addEventListener('change', submitFormIfChanged);
         }
+
         if (startDateInput) {
             startDateInput.addEventListener('change', submitFormIfChanged);
         }
+
         if (endDateInput) {
             endDateInput.addEventListener('change', submitFormIfChanged);
         }
