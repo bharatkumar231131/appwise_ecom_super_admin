@@ -85,19 +85,13 @@
                     </thead>
 
                     <tbody>
-<<<<<<< HEAD
-                        @foreach ($transactions as $transaction)
-                        <tr>
-                            <td>{{$transaction->id}}</td>
-                            <td><?php $owner = App\Models\ShopOwner::find($transaction->owner_id);?>{{$owner->name ?? "N/A"}}</td>
-=======
                         @php
                         $i = 1;
                         @endphp
                         @foreach ($transactions as $transaction)
                         <tr>
                             <td>{{$i}}</td>
->>>>>>> db8e6d8a57016a177c19d488f8f71116fff6cdc6
+                            <td><?php $owner = App\Models\ShopOwner::find($transaction->owner_id);?>{{$owner->name ?? "N/A"}}</td>
                             <td>{{$transaction->transaction_id}}</td>
                             <td>{{ $transaction->package_name }}</td>
                             <td>{{$transaction->amount}}</td>
